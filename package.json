@@ -8,6 +8,7 @@
 	"keywords": [
 		"snippets"
 	],
+	"license": "MIT",
 	"homepage": "https://github.com/terminal-nerds/snippets",
 	"repository": {
 		"type": "git",
