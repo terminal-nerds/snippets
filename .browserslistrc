@@ -1,0 +1,3 @@
+# https://browsersl.ist/
+extends @terminal-nerds/browserslist-config/browsers
+extends @terminal-nerds/browserslist-config/node

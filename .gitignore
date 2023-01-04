@@ -1,0 +1,5 @@
+# Node.js packages/modules
+node_modules/
+
+# Build output
+dist/
