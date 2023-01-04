@@ -39,6 +39,9 @@
 		"preinstall": "npx only-allow pnpm",
 		"test": "vitest run --dir \"./source\""
 	},
+	"dependencies": {
+		"zod": "3.20.2"
+	},
 	"devDependencies": {
 		"@terminal-nerds/browserslist-config": "0.1.1",
 		"@terminal-nerds/eslint-config": "0.10.3",
