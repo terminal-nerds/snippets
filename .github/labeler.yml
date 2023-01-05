@@ -1,0 +1,10 @@
+# https://github.com/actions/labeler
+---
+"🏗️ continuous integration":
+    - .github/**/*
+
+"📓 documentation":
+    - README.md
+
+"🎉 release":
+    - CHANGELOG.md
