@@ -1,0 +1,54 @@
+{
+	"$schema": "https://docs.renovatebot.com/renovate-schema.json",
+	"extends": ["github>terminal-nerds/.github//.github/renovate"],
+	"packageRules": [
+		{
+			"groupName": "project tools & linters",
+			"addLabels": ["🧰 project"],
+			"packagePatterns": [
+				"@terminal-nerds/*-config",
+				"all-contributors-cli",
+				"browserslist",
+				"concurrently",
+				"del-cli",
+				"depcheck",
+				"eslint",
+				"husky",
+				"lint-staged",
+				"markdownlint-cli",
+				"prettier",
+				"pretty-quick",
+				"syncpack"
+			]
+		},
+		{
+			"groupName": "build tools",
+			"addLabels": ["  tools"],
+			"matchUpdateTypes": ["major", "minor", "patch", "rollback"],
+			"packagePatterns": [
+				"@terminal-nerds/tsup-config",
+				"@terminal-nerds/typescript-config",
+				"@types/node",
+				"tsup",
+				"typescript"
+			]
+		},
+		{
+			"groupName": "testing tools",
+			"addLabels": ["🧪 testing"],
+			"matchUpdateTypes": ["major", "minor", "patch", "rollback"],
+			"packagePatterns": ["@vitest/ui", "vite", "vitest"]
+		},
+		{
+			"groupName": "dependencies",
+			"addLabels": ["🧩 dependencies"],
+			"matchUpdateTypes": ["major", "minor", "patch", "rollback"],
+			"packagePatterns": [""]
+		},
+		{
+			"groupName": "project prerequisities",
+			"addLabels": ["🧰 project"],
+			"packagePatterns": ["node", "pnpm"]
+		}
+	]
+}
