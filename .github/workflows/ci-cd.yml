@@ -87,7 +87,6 @@ jobs:
         name: Lint / syncpack
         # https://github.com/terminal-nerds/.github/blob/main/.github/workflows/nodejs-job.yml
         uses: terminal-nerds/.github/.github/workflows/nodejs-job.yml@main
-        needs: [build]
         with:
             download-build: true
             step-name: Execute syncpack CLI task
