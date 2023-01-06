@@ -87,7 +87,6 @@ jobs:
         name: Lint / syncpack
         # https://github.com/terminal-nerds/.github/blob/main/.github/workflows/nodejs-job.yml
         uses: terminal-nerds/.github/.github/workflows/nodejs-job.yml@main
-        needs: [build]
         with:
             download-build: true
             step-name: Execute syncpack CLI task
@@ -135,3 +134,14 @@ jobs:
             artifact-upload: true
             include: "./dist/**/*.{js,cjs,json}"
             script-build: build
+
+    release:
+        name: Release
+        needs: [security_codeql, security_git-guardian, security_snyk, build]
+        # https://github.com/terminal-nerds/.github/blob/main/.github/workflows/semantic-release.yml
+        uses: terminal-nerds/.github/.github/workflows/semantic-release.yml@main
+        with:
+            script-release: pnpm release
+        secrets:
+            GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+            NPM_TOKEN: ${{ secrets.NPM_TOKEN }}
