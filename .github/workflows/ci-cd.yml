@@ -43,7 +43,6 @@ jobs:
         # https://github.com/terminal-nerds/.github/blob/main/.github/workflows/nodejs-job.yml
         uses: terminal-nerds/.github/.github/workflows/nodejs-job.yml@main
         with:
-            download-build: true
             step-name: Execute ESLint CLI task
             # https://eslint.org/docs/user-guide/command-line-interface
             run: >
@@ -59,7 +58,6 @@ jobs:
         # https://github.com/terminal-nerds/.github/blob/main/.github/workflows/nodejs-job.yml
         uses: terminal-nerds/.github/.github/workflows/nodejs-job.yml@main
         with:
-            download-build: true
             step-name: Execute markdownlint CLI task
             # https://github.com/igorshubovych/markdownlint-cli#usage
             run: >
@@ -74,7 +72,6 @@ jobs:
         # https://github.com/terminal-nerds/.github/blob/main/.github/workflows/nodejs-job.yml
         uses: terminal-nerds/.github/.github/workflows/nodejs-job.yml@main
         with:
-            download-build: true
             step-name: Execute "pretty-quick" CLI task
             # https://github.com/azz/pretty-quick#usage
             run: >
