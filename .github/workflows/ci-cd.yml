@@ -113,7 +113,12 @@ jobs:
 
     build:
         name: Build
-        needs: [lint_depcheck, lint_eslint, lint_markdownlint, lint_prettier, lint_syncpack]
+        runs-on: ${{ matrix.os }}
+        timeout-minutes: 3
+        strategy:
+            matrix:
+                OS: [ubuntu-latest]
+            fail-fast: true
         # https://github.com/terminal-nerds/.github/blob/main/.github/workflows/build.yml
         uses: terminal-nerds/.github/.github/workflows/build.yml@main
         with:
@@ -124,17 +129,28 @@ jobs:
             script-build: build
 
     test:
-        name: Test / Vitest
+        name: Test / Unit / Vitest
         needs: [build]
         # https://github.com/terminal-nerds/.github/blob/main/.github/workflows/snyk.yml
         uses: terminal-nerds/.github/.github/workflows/nodejs-job.yml@main
         with:
-            step-name: Run tests with Vitest
-            run: pnpm test
+            step-name: Run unit tests with Vitest
+            run: pnpm test:unit
 
     release:
         name: Release
-        needs: [security_codeql, security_git-guardian, security_snyk, test]
+        needs:
+            [
+                security_codeql,
+                security_git-guardian,
+                security_snyk,
+                lint_depcheck,
+                lint_eslint,
+                lint_markdownlint,
+                lint_prettier,
+                lint_syncpack,
+                test,
+            ]
         # https://github.com/terminal-nerds/.github/blob/main/.github/workflows/semantic-release.yml
         uses: terminal-nerds/.github/.github/workflows/semantic-release.yml@main
         with:
