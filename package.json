@@ -45,6 +45,7 @@
 		"@semantic-release/commit-analyzer": "9.0.2",
 		"@semantic-release/github": "8.0.7",
 		"@semantic-release/npm": "9.0.1",
+		"@semantic-release/release-notes-generator": "10.0.3",
 		"@terminal-nerds/browserslist-config": "0.1.1",
 		"@terminal-nerds/eslint-config": "0.10.3",
 		"@terminal-nerds/markdownlint-config": "0.5.0",
