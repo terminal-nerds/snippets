@@ -1,5 +1,13 @@
 {
 	"ignore-bin-package": false,
-	"ignores": ["@semantic-release/*", "@terminal-nerds/*", "@types/node", "browserslist", "lint-staged", "vite"],
+	"ignores": [
+		"@semantic-release/*",
+		"@terminal-nerds/*",
+		"@types/node",
+		"@vitest/coverage-c8",
+		"browserslist",
+		"lint-staged",
+		"vite"
+	],
 	"skip-missing": false
 }
