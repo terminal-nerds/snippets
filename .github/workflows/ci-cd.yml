@@ -123,13 +123,21 @@ jobs:
             script-build: build
 
     test:
-        name: Test / Unit / Vitest
+        name: Test / Unit
         needs: [build]
-        # https://github.com/terminal-nerds/.github/blob/main/.github/workflows/snyk.yml
+        # https://github.com/terminal-nerds/.github/blob/main/.github/workflows/nodejs-job.yml
         uses: terminal-nerds/.github/.github/workflows/nodejs-job.yml@main
         with:
             step-name: Run unit tests with Vitest
             run: pnpm test:unit
+
+    coverage:
+        name: Test / Coverage
+        needs: [test]
+        # https://github.com/terminal-nerds/.github/blob/main/.github/workflows/nodejs-job.yml
+        uses: terminal-nerds/.github/.github/workflows/coveralls.yml@main
+        with:
+            script-coverage: pnpm test:coverage
 
     release:
         name: Release
