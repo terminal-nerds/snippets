@@ -1,6 +1,7 @@
 lockfileVersion: 5.4
 
 specifiers:
+  '@semantic-release/commit-analyzer': 9.0.2
   '@semantic-release/github': 8.0.7
   '@semantic-release/npm': 9.0.1
   '@terminal-nerds/browserslist-config': 0.1.1
@@ -30,6 +31,7 @@ specifiers:
   vitest: 0.26.3
 
 devDependencies:
+  '@semantic-release/commit-analyzer': 9.0.2_semantic-release@19.0.5
   '@semantic-release/github': 8.0.7_semantic-release@19.0.5
   '@semantic-release/npm': 9.0.1_semantic-release@19.0.5
   '@terminal-nerds/browserslist-config': 0.1.1_browserslist@4.21.4
