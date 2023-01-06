@@ -134,7 +134,7 @@ jobs:
     coverage:
         name: Test / Coverage
         needs: [test]
-        # https://github.com/terminal-nerds/.github/blob/main/.github/workflows/nodejs-job.yml
+        # https://github.com/terminal-nerds/.github/blob/main/.github/workflows/coveralls.yml
         uses: terminal-nerds/.github/.github/workflows/coveralls.yml@main
         with:
             script-coverage: pnpm test:coverage
