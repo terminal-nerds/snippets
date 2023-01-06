@@ -42,6 +42,7 @@
 		"semantic-release": "semantic-release"
 	},
 	"devDependencies": {
+		"@semantic-release/github": "8.0.7",
 		"@terminal-nerds/browserslist-config": "0.1.1",
 		"@terminal-nerds/eslint-config": "0.10.3",
 		"@terminal-nerds/markdownlint-config": "0.5.0",
