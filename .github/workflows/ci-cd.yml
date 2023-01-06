@@ -113,12 +113,6 @@ jobs:
 
     build:
         name: Build
-        runs-on: ${{ matrix.os }}
-        timeout-minutes: 3
-        strategy:
-            matrix:
-                OS: [ubuntu-latest]
-            fail-fast: true
         # https://github.com/terminal-nerds/.github/blob/main/.github/workflows/build.yml
         uses: terminal-nerds/.github/.github/workflows/build.yml@main
         with:
