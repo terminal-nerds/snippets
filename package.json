@@ -38,8 +38,8 @@
 		"lint:types": "tsc --noEmit",
 		"prepare": "husky install",
 		"preinstall": "npx only-allow pnpm",
-		"test": "vitest run --dir \"./source\"",
-		"semantic-release": "semantic-release"
+		"release": "semantic-release",
+		"test": "vitest run --dir \"./source\""
 	},
 	"devDependencies": {
 		"@semantic-release/changelog": "6.0.2",
