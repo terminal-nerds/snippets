@@ -35,7 +35,7 @@ jobs:
         uses: terminal-nerds/.github/.github/workflows/nodejs-job.yml@main
         with:
             step-name: Execute package.json script
-            run: pnpm deps:check
+            run: pnpm lint:deps
 
     lint_eslint:
         # Analyze the JavaScript codebase
@@ -85,7 +85,6 @@ jobs:
         # https://github.com/terminal-nerds/.github/blob/main/.github/workflows/nodejs-job.yml
         uses: terminal-nerds/.github/.github/workflows/nodejs-job.yml@main
         with:
-            download-build: true
             step-name: Execute syncpack CLI task
             # https://github.com/JamieMason/syncpack
             run: pnpm syncpack list-mismatches
