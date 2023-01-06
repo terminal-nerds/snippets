@@ -2,6 +2,7 @@ lockfileVersion: 5.4
 
 specifiers:
   '@semantic-release/github': 8.0.7
+  '@semantic-release/npm': 9.0.1
   '@terminal-nerds/browserslist-config': 0.1.1
   '@terminal-nerds/eslint-config': 0.10.3
   '@terminal-nerds/markdownlint-config': 0.5.0
@@ -30,6 +31,7 @@ specifiers:
 
 devDependencies:
   '@semantic-release/github': 8.0.7_semantic-release@19.0.5
+  '@semantic-release/npm': 9.0.1_semantic-release@19.0.5
   '@terminal-nerds/browserslist-config': 0.1.1_browserslist@4.21.4
   '@terminal-nerds/eslint-config': 0.10.3_iukboom6ndih5an6iafl45j2fe
   '@terminal-nerds/markdownlint-config': 0.5.0_markdownlint-cli@0.32.2
