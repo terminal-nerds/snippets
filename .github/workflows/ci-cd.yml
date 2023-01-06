@@ -35,7 +35,7 @@ jobs:
         uses: terminal-nerds/.github/.github/workflows/nodejs-job.yml@main
         with:
             step-name: Execute package.json script
-            run: pnpm deps:check
+            run: pnpm lint:deps
 
     lint_eslint:
         # Analyze the JavaScript codebase
@@ -43,7 +43,6 @@ jobs:
         # https://github.com/terminal-nerds/.github/blob/main/.github/workflows/nodejs-job.yml
         uses: terminal-nerds/.github/.github/workflows/nodejs-job.yml@main
         with:
-            download-build: true
             step-name: Execute ESLint CLI task
             # https://eslint.org/docs/user-guide/command-line-interface
             run: >
@@ -59,7 +58,6 @@ jobs:
         # https://github.com/terminal-nerds/.github/blob/main/.github/workflows/nodejs-job.yml
         uses: terminal-nerds/.github/.github/workflows/nodejs-job.yml@main
         with:
-            download-build: true
             step-name: Execute markdownlint CLI task
             # https://github.com/igorshubovych/markdownlint-cli#usage
             run: >
@@ -74,7 +72,6 @@ jobs:
         # https://github.com/terminal-nerds/.github/blob/main/.github/workflows/nodejs-job.yml
         uses: terminal-nerds/.github/.github/workflows/nodejs-job.yml@main
         with:
-            download-build: true
             step-name: Execute "pretty-quick" CLI task
             # https://github.com/azz/pretty-quick#usage
             run: >
@@ -88,18 +85,9 @@ jobs:
         # https://github.com/terminal-nerds/.github/blob/main/.github/workflows/nodejs-job.yml
         uses: terminal-nerds/.github/.github/workflows/nodejs-job.yml@main
         with:
-            download-build: true
             step-name: Execute syncpack CLI task
             # https://github.com/JamieMason/syncpack
             run: pnpm syncpack list-mismatches
-
-    test:
-        name: Test / Vitest
-        # https://github.com/terminal-nerds/.github/blob/main/.github/workflows/snyk.yml
-        uses: terminal-nerds/.github/.github/workflows/nodejs-job.yml@main
-        with:
-            step-name: Run tests with Vitest
-            run: pnpm test
 
     security_codeql:
         if: github.ref_name == 'main'
@@ -125,7 +113,6 @@ jobs:
 
     build:
         name: Build
-        needs: [lint_depcheck, lint_eslint, lint_markdownlint, lint_prettier, lint_syncpack, test]
         # https://github.com/terminal-nerds/.github/blob/main/.github/workflows/build.yml
         uses: terminal-nerds/.github/.github/workflows/build.yml@main
         with:
@@ -135,13 +122,32 @@ jobs:
             include: "./dist/**/*.{js,cjs,json}"
             script-build: build
 
+    test:
+        name: Test / Unit / Vitest
+        needs: [build]
+        # https://github.com/terminal-nerds/.github/blob/main/.github/workflows/snyk.yml
+        uses: terminal-nerds/.github/.github/workflows/nodejs-job.yml@main
+        with:
+            step-name: Run unit tests with Vitest
+            run: pnpm test:unit
+
     release:
         name: Release
-        needs: [security_codeql, security_git-guardian, security_snyk, build]
+        needs:
+            [
+                security_codeql,
+                security_git-guardian,
+                security_snyk,
+                lint_depcheck,
+                lint_eslint,
+                lint_markdownlint,
+                lint_prettier,
+                lint_syncpack,
+                test,
+            ]
         # https://github.com/terminal-nerds/.github/blob/main/.github/workflows/semantic-release.yml
         uses: terminal-nerds/.github/.github/workflows/semantic-release.yml@main
         with:
             script-release: pnpm release
         secrets:
-            GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
             NPM_TOKEN: ${{ secrets.NPM_TOKEN }}

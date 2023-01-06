@@ -39,7 +39,7 @@
 		"prepare": "husky install",
 		"preinstall": "npx only-allow pnpm",
 		"release": "semantic-release",
-		"test": "vitest run --dir \"./source\""
+		"test:unit": "vitest run --dir \"./source\""
 	},
 	"devDependencies": {
 		"@semantic-release/changelog": "6.0.2",
