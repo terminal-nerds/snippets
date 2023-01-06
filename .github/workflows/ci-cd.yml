@@ -93,14 +93,6 @@ jobs:
             # https://github.com/JamieMason/syncpack
             run: pnpm syncpack list-mismatches
 
-    test:
-        name: Test / Vitest
-        # https://github.com/terminal-nerds/.github/blob/main/.github/workflows/snyk.yml
-        uses: terminal-nerds/.github/.github/workflows/nodejs-job.yml@main
-        with:
-            step-name: Run tests with Vitest
-            run: pnpm test
-
     security_codeql:
         if: github.ref_name == 'main'
         name: Security / CodeQL
@@ -125,7 +117,7 @@ jobs:
 
     build:
         name: Build
-        needs: [lint_depcheck, lint_eslint, lint_markdownlint, lint_prettier, lint_syncpack, test]
+        needs: [lint_depcheck, lint_eslint, lint_markdownlint, lint_prettier, lint_syncpack]
         # https://github.com/terminal-nerds/.github/blob/main/.github/workflows/build.yml
         uses: terminal-nerds/.github/.github/workflows/build.yml@main
         with:
@@ -135,9 +127,18 @@ jobs:
             include: "./dist/**/*.{js,cjs,json}"
             script-build: build
 
+    test:
+        name: Test / Vitest
+        needs: [build]
+        # https://github.com/terminal-nerds/.github/blob/main/.github/workflows/snyk.yml
+        uses: terminal-nerds/.github/.github/workflows/nodejs-job.yml@main
+        with:
+            step-name: Run tests with Vitest
+            run: pnpm test
+
     release:
         name: Release
-        needs: [security_codeql, security_git-guardian, security_snyk, build]
+        needs: [security_codeql, security_git-guardian, security_snyk, test]
         # https://github.com/terminal-nerds/.github/blob/main/.github/workflows/semantic-release.yml
         uses: terminal-nerds/.github/.github/workflows/semantic-release.yml@main
         with:
