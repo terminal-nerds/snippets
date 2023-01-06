@@ -39,6 +39,7 @@
 		"prepare": "husky install",
 		"preinstall": "npx only-allow pnpm",
 		"release": "semantic-release",
+		"test:coverage": "vitest run --coverage",
 		"test:unit": "vitest run --dir \"./source\""
 	},
 	"devDependencies": {
