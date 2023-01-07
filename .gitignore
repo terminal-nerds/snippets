@@ -1,5 +1,8 @@
-# Node.js packages/modules
-node_modules/
+# Tests coverage report
+coverage/
 
 # Build output
 dist/
+
+# Node.js packages/modules
+node_modules/
