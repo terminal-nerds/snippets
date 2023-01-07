@@ -1,0 +1,153 @@
+# yaml-language-server: $schema=https://json.schemastore.org/github-workflow
+---
+# NOTE: CI -> Continuous Integration
+# NOTE: CD -> Continuous Deployment
+name: CI & CD
+
+on:
+    pull_request:
+        branches: [main]
+    push:
+        branches: [main]
+    workflow_dispatch:
+        inputs:
+            reason:
+                description: Reason of re-running this workflow
+                required: false
+                type: string
+
+concurrency:
+    group: ${{ github.workflow }}-${{ github.event.number || github.sha }}
+    cancel-in-progress: true
+
+defaults:
+    run:
+        shell: bash
+
+env:
+    CI: true
+
+jobs:
+    lint_depcheck:
+        # Analyze dependencies usage in package.json files
+        name: Lint / depcheck
+        # https://github.com/terminal-nerds/.github/blob/main/.github/workflows/nodejs-job.yml
+        uses: terminal-nerds/.github/.github/workflows/nodejs-job.yml@main
+        with:
+            step-name: Execute package.json script
+            run: pnpm lint:deps
+
+    lint_eslint:
+        # Analyze the JavaScript codebase
+        name: Lint / ESLint
+        # https://github.com/terminal-nerds/.github/blob/main/.github/workflows/nodejs-job.yml
+        uses: terminal-nerds/.github/.github/workflows/nodejs-job.yml@main
+        with:
+            step-name: Execute ESLint CLI task
+            # https://eslint.org/docs/user-guide/command-line-interface
+            run: >
+                DEBUG="eslint:cli-engine"
+                pnpm eslint .
+                --cache
+                --cache-location "./node_modules/.cache/eslint"
+                --ext .cjs,.js,.json,.ts,.yaml,.yml
+
+    lint_markdownlint:
+        # Analyze the markdownlint files
+        name: Lint / markdownlint
+        # https://github.com/terminal-nerds/.github/blob/main/.github/workflows/nodejs-job.yml
+        uses: terminal-nerds/.github/.github/workflows/nodejs-job.yml@main
+        with:
+            step-name: Execute markdownlint CLI task
+            # https://github.com/igorshubovych/markdownlint-cli#usage
+            run: >
+                pnpm markdownlint .
+                --dot
+                --ignore "./.changeset/*.md"
+                --ignore-path ".gitignore"
+
+    lint_prettier:
+        # Analyze the code format style
+        name: Lint / Prettier
+        # https://github.com/terminal-nerds/.github/blob/main/.github/workflows/nodejs-job.yml
+        uses: terminal-nerds/.github/.github/workflows/nodejs-job.yml@main
+        with:
+            step-name: Execute "pretty-quick" CLI task
+            # https://github.com/azz/pretty-quick#usage
+            run: >
+                pnpm pretty-quick
+                --branch HEAD~${{ github.event.pull_request.commits }}
+                --verbose
+
+    lint_syncpack:
+        # Analyze the package.json files to find dependencies mismatches
+        name: Lint / syncpack
+        # https://github.com/terminal-nerds/.github/blob/main/.github/workflows/nodejs-job.yml
+        uses: terminal-nerds/.github/.github/workflows/nodejs-job.yml@main
+        with:
+            step-name: Execute syncpack CLI task
+            # https://github.com/JamieMason/syncpack
+            run: pnpm syncpack list-mismatches
+
+    security_codeql:
+        if: github.ref_name == 'main'
+        name: Security / CodeQL
+        # https://github.com/terminal-nerds/.github/blob/main/.github/workflows/codeql.yml
+        uses: terminal-nerds/.github/.github/workflows/codeql.yml@main
+
+    security_git-guardian:
+        if: github.ref_name == 'main'
+        name: Security / Git Guardian
+        # https://github.com/terminal-nerds/.github/blob/main/.github/workflows/git-guardian.yml
+        uses: terminal-nerds/.github/.github/workflows/git-guardian.yml@main
+        secrets:
+            GITGUARDIAN_API_KEY: ${{ secrets.GITGUARDIAN_API_KEY }}
+
+    security_snyk:
+        if: github.ref_name == 'main'
+        name: Security / Snyk
+        # https://github.com/terminal-nerds/.github/blob/main/.github/workflows/snyk.yml
+        uses: terminal-nerds/.github/.github/workflows/snyk.yml@main
+        secrets:
+            SNYK_TOKEN: ${{ secrets.SNYK_TOKEN }}
+
+    build:
+        name: Build
+        # https://github.com/terminal-nerds/.github/blob/main/.github/workflows/build.yml
+        uses: terminal-nerds/.github/.github/workflows/build.yml@main
+        with:
+            artifact-name: "built-package"
+            artifact-path: "./dist/"
+            artifact-upload: true
+            include: "./dist/**/*.{js,cjs,json}"
+            script-build: build
+
+    test:
+        name: Test / Unit / Vitest
+        needs: [build]
+        # https://github.com/terminal-nerds/.github/blob/main/.github/workflows/snyk.yml
+        uses: terminal-nerds/.github/.github/workflows/nodejs-job.yml@main
+        with:
+            step-name: Run unit tests with Vitest
+            run: pnpm test:unit
+
+    release:
+        name: Release
+        needs:
+            [
+                security_codeql,
+                security_git-guardian,
+                security_snyk,
+                lint_depcheck,
+                lint_eslint,
+                lint_markdownlint,
+                lint_prettier,
+                lint_syncpack,
+                test,
+            ]
+        # https://github.com/terminal-nerds/.github/blob/main/.github/workflows/semantic-release.yml
+        uses: terminal-nerds/.github/.github/workflows/semantic-release.yml@main
+        with:
+            script-release: pnpm release
+        secrets:
+            NPM_TOKEN: ${{ secrets.NPM_TOKEN }}
