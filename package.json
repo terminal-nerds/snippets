@@ -25,7 +25,7 @@
 		"clean": "concurrently \"pnpm:clean:*\" --group --timings",
 		"clean:build": "del \"./dist\"",
 		"clean:cache": "del \"./node_modules/.cache\"",
-		"dev:test": "vitest watch --dir \"./source\"",
+		"dev:test": "vitest watch --ui",
 		"dev:package": "tsup --watch",
 		"format": "concurrently \"pnpm:format:*\" --group --timings",
 		"format:prettier": "pretty-quick --branch main --pattern \"**/*\" --verbose",
@@ -39,6 +39,7 @@
 		"prepare": "husky install",
 		"preinstall": "npx only-allow pnpm",
 		"release": "semantic-release",
+		"test:coverage": "vitest run --coverage",
 		"test:unit": "vitest run --dir \"./source\""
 	},
 	"dependencies": {
