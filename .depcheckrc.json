@@ -4,7 +4,7 @@
 		"@semantic-release/*",
 		"@terminal-nerds/*",
 		"@types/node",
-		"@vitest/coverage-c8",
+		"@vitest/*",
 		"browserslist",
 		"lint-staged",
 		"vite"
