@@ -116,7 +116,6 @@ jobs:
         # https://github.com/terminal-nerds/.github/blob/main/.github/workflows/build.yml
         uses: terminal-nerds/.github/.github/workflows/build.yml@main
         with:
-            artifact-name: "built-package"
             artifact-path: "./dist/"
             artifact-upload: true
             include: "./dist/**/*.{js,cjs,json}"
@@ -132,19 +131,20 @@ jobs:
             with-coverage: true
 
     release:
+        # prettier-ignore
         name: Release
         needs: [
-                security_codeql,
-                security_git-guardian,
-                # security_snyk,
-                lint_depcheck,
-                lint_eslint,
-                lint_markdownlint,
-                lint_prettier,
-                lint_syncpack,
-                build,
-                test,
-            ]
+            security_codeql,
+            security_git-guardian,
+            # security_snyk,
+            lint_depcheck,
+            lint_eslint,
+            lint_markdownlint,
+            lint_prettier,
+            lint_syncpack,
+            build,
+            test,
+        ]
         # https://github.com/terminal-nerds/.github/blob/main/.github/workflows/semantic-release.yml
         uses: terminal-nerds/.github/.github/workflows/semantic-release.yml@main
         with:
