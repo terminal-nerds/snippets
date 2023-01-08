@@ -23,7 +23,7 @@
 	"scripts": {
 		"build": "tsup",
 		"clean": "concurrently \"pnpm:clean:*\" --group --timings",
-		"clean:build": "del \"./dist\"",
+		"clean:build": "del \"./coverage\" \"./dist\"",
 		"clean:cache": "del \"./node_modules/.cache\"",
 		"dev:test": "vitest watch --ui",
 		"dev:package": "tsup --watch",
