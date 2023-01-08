@@ -14,6 +14,7 @@ specifiers:
   '@terminal-nerds/syncpack-config': 0.4.0
   '@terminal-nerds/tsup-config': 0.1.1
   '@terminal-nerds/typescript-config': 0.4.0
+  '@terminal-nerds/vitest-config': 0.1.0
   '@types/node': 18.11.18
   '@vitest/coverage-c8': 0.26.3
   '@vitest/ui': 0.26.3
@@ -52,6 +53,7 @@ devDependencies:
   '@terminal-nerds/syncpack-config': 0.4.0_syncpack@8.4.11
   '@terminal-nerds/tsup-config': 0.1.1_tsup@6.5.0
   '@terminal-nerds/typescript-config': 0.4.0_typescript@4.9.4
+  '@terminal-nerds/vitest-config': 0.1.0_vitest@0.26.3
   '@types/node': 18.11.18
   '@vitest/coverage-c8': 0.26.3_@vitest+ui@0.26.3
   '@vitest/ui': 0.26.3
@@ -927,6 +929,16 @@ packages:
       typescript: 4.9.4
     dependencies:
       typescript: 4.9.4
+    dev: true
+
+  /@terminal-nerds/vitest-config/0.1.0_vitest@0.26.3:
+    resolution: {integrity: sha512-tgAzSEX74+Bt68/a8f0NX+urJW0aukUUWC2gi0pRRBJjKiqtHK9m0LzeJqFbcwWLUu0iHVBtsPX/+2/VPQH9Rg==}
+    engines: {node: '>=18'}
+    peerDependencies:
+      vitest: 0.26.3
+    dependencies:
+      '@vitest/ui': 0.26.3
+      vitest: 0.26.3_@vitest+ui@0.26.3
     dev: true
 
   /@testing-library/dom/8.19.1:
