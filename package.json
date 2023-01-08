@@ -12,10 +12,10 @@
 	"homepage": "https://github.com/terminal-nerds/snippets",
 	"repository": {
 		"type": "git",
-		"url": "https://github.com/terminal-nerds/configs.git",
+		"url": "https://github.com/terminal-nerds/snippets.git",
 		"directory": "/"
 	},
-	"bugs": "https://github.com/terminal-nerds/configs/issues",
+	"bugs": "https://github.com/terminal-nerds/snippets/issues",
 	"engines": {
 		"node": ">=18"
 	},
