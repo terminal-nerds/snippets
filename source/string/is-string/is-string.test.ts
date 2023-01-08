@@ -4,7 +4,7 @@ import { isString } from "./is-string.js";
 
 describe("isString(value)", () => {
 	it("should return `true` for strings", () => {
-		const sample = "terminal-nerds" as const;
+		const sample = "terminal-nerds";
 
 		expect(isString("")).toBe(true);
 		expect(isString(sample)).toBe(true);
