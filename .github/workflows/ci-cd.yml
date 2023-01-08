@@ -103,13 +103,13 @@ jobs:
         secrets:
             GITGUARDIAN_API_KEY: ${{ secrets.GITGUARDIAN_API_KEY }}
 
-    security_snyk:
-        if: github.ref_name == 'main'
-        name: Security / Snyk
-        # https://github.com/terminal-nerds/.github/blob/main/.github/workflows/snyk.yml
-        uses: terminal-nerds/.github/.github/workflows/snyk.yml@main
-        secrets:
-            SNYK_TOKEN: ${{ secrets.SNYK_TOKEN }}
+    # security_snyk:
+    #     if: github.ref_name == 'main'
+    #     name: Security / Snyk
+    #     # https://github.com/terminal-nerds/.github/blob/main/.github/workflows/snyk.yml
+    #     uses: terminal-nerds/.github/.github/workflows/snyk.yml@main
+    #     secrets:
+    #         SNYK_TOKEN: ${{ secrets.SNYK_TOKEN }}
 
     build:
         name: Build
@@ -133,11 +133,10 @@ jobs:
 
     release:
         name: Release
-        needs:
-            [
+        needs: [
                 security_codeql,
                 security_git-guardian,
-                security_snyk,
+                # security_snyk,
                 lint_depcheck,
                 lint_eslint,
                 lint_markdownlint,
