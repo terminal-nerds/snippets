@@ -56,6 +56,7 @@
 		"@semantic-release/release-notes-generator": "10.0.3",
 		"@terminal-nerds/browserslist-config": "0.1.1",
 		"@terminal-nerds/eslint-config": "0.10.3",
+		"@terminal-nerds/lint-staged-config": "0.1.1",
 		"@terminal-nerds/markdownlint-config": "0.5.0",
 		"@terminal-nerds/prettier-config": "0.3.2",
 		"@terminal-nerds/syncpack-config": "0.4.0",
