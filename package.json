@@ -20,10 +20,13 @@
 		"node": ">=18"
 	},
 	"packageManager": "pnpm@7.21.0",
+	"files": [
+		"dist/"
+	],
 	"scripts": {
 		"build": "tsup",
 		"clean": "concurrently \"pnpm:clean:*\" --group --timings",
-		"clean:build": "del \"./dist\"",
+		"clean:build": "del \"./coverage\" \"./dist\"",
 		"clean:cache": "del \"./node_modules/.cache\"",
 		"dev:test": "vitest watch --ui",
 		"dev:package": "tsup --watch",
@@ -39,7 +42,6 @@
 		"prepare": "husky install",
 		"preinstall": "npx only-allow pnpm",
 		"release": "semantic-release",
-		"test:coverage": "vitest run --coverage",
 		"test:unit": "vitest run --dir \"./source\""
 	},
 	"dependencies": {
@@ -54,14 +56,14 @@
 		"@semantic-release/release-notes-generator": "10.0.3",
 		"@terminal-nerds/browserslist-config": "0.1.1",
 		"@terminal-nerds/eslint-config": "0.10.3",
+		"@terminal-nerds/lint-staged-config": "0.1.1",
 		"@terminal-nerds/markdownlint-config": "0.5.0",
 		"@terminal-nerds/prettier-config": "0.3.2",
 		"@terminal-nerds/syncpack-config": "0.4.0",
 		"@terminal-nerds/tsup-config": "0.1.1",
 		"@terminal-nerds/typescript-config": "0.4.0",
+		"@terminal-nerds/vitest-config": "0.1.1",
 		"@types/node": "18.11.18",
-		"@vitest/coverage-c8": "0.26.3",
-		"@vitest/ui": "0.26.3",
 		"browserslist": "4.21.4",
 		"concurrently": "7.6.0",
 		"del-cli": "5.0.0",
@@ -76,7 +78,6 @@
 		"syncpack": "8.4.11",
 		"tsup": "6.5.0",
 		"typescript": "4.9.4",
-		"vite": "4.0.4",
 		"vitest": "0.26.3"
 	}
 }

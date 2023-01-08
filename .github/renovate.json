@@ -7,6 +7,7 @@
 			"addLabels": ["🧰 project"],
 			"packagePatterns": [
 				"@terminal-nerds/*-config",
+				"@types/node",
 				"all-contributors-cli",
 				"browserslist",
 				"concurrently",
@@ -18,26 +19,12 @@
 				"markdownlint-cli",
 				"prettier",
 				"pretty-quick",
-				"syncpack"
-			]
-		},
-		{
-			"groupName": "build tools",
-			"addLabels": ["  tools"],
-			"matchUpdateTypes": ["major", "minor", "patch", "rollback"],
-			"packagePatterns": [
-				"@terminal-nerds/tsup-config",
-				"@terminal-nerds/typescript-config",
-				"@types/node",
+				"syncpack",
 				"tsup",
-				"typescript"
+				"typescript",
+				"vite",
+				"vitest"
 			]
-		},
-		{
-			"groupName": "testing tools",
-			"addLabels": ["🧪 testing"],
-			"matchUpdateTypes": ["major", "minor", "patch", "rollback"],
-			"packagePatterns": ["@vitest/ui", "vite", "vitest"]
 		},
 		{
 			"groupName": "dependencies",

@@ -124,20 +124,12 @@ jobs:
 
     test:
         name: Test / Unit
-        needs: [build]
-        # https://github.com/terminal-nerds/.github/blob/main/.github/workflows/nodejs-job.yml
-        uses: terminal-nerds/.github/.github/workflows/nodejs-job.yml@main
+        # https://github.com/terminal-nerds/.github/blob/main/.github/workflows/test.yml
+        uses: terminal-nerds/.github/.github/workflows/test.yml@main
         with:
-            step-name: Run unit tests with Vitest
-            run: pnpm test:unit
-
-    coverage:
-        name: Test / Coverage
-        needs: [test]
-        # https://github.com/terminal-nerds/.github/blob/main/.github/workflows/coveralls.yml
-        uses: terminal-nerds/.github/.github/workflows/coveralls.yml@main
-        with:
-            script-coverage: pnpm test:coverage
+            script-test: pnpm test:unit
+            type-name: Unit
+            with-coverage: true
 
     release:
         name: Release
@@ -151,6 +143,7 @@ jobs:
                 lint_markdownlint,
                 lint_prettier,
                 lint_syncpack,
+                build,
                 test,
             ]
         # https://github.com/terminal-nerds/.github/blob/main/.github/workflows/semantic-release.yml
