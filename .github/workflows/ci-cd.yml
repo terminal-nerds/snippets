@@ -143,6 +143,7 @@ jobs:
                 lint_markdownlint,
                 lint_prettier,
                 lint_syncpack,
+                build,
                 test,
             ]
         # https://github.com/terminal-nerds/.github/blob/main/.github/workflows/semantic-release.yml
