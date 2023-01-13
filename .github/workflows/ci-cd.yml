@@ -6,7 +6,7 @@ name: CI & CD
 
 on:
     pull_request:
-        branches: [main]
+        branches: ["*"]
     push:
         branches: [main]
     workflow_dispatch:
@@ -127,7 +127,6 @@ jobs:
         uses: terminal-nerds/.github/.github/workflows/test.yml@main
         with:
             script-test: pnpm test:unit
-            type-name: Unit
             with-coverage: true
 
     release:
