@@ -144,8 +144,8 @@ jobs:
             build,
             test,
         ]
-        # https://github.com/terminal-nerds/.github/blob/main/.github/workflows/semantic-release.yml
-        uses: terminal-nerds/.github/.github/workflows/semantic-release.yml@main
+        # https://github.com/terminal-nerds/.github/blob/main/.github/workflows/release.yml
+        uses: terminal-nerds/.github/.github/workflows/release.yml@main
         with:
             script-release: pnpm release
         secrets:
