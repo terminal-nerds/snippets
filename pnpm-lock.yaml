@@ -1,8 +1,8 @@
 lockfileVersion: 5.4
 
 specifiers:
-  '@changesets/changelog-github': ^0.4.8
-  '@changesets/cli': ^2.26.0
+  '@changesets/changelog-github': 0.4.8
+  '@changesets/cli': 2.26.0
   '@terminal-nerds/browserslist-config': 0.1.1
   '@terminal-nerds/eslint-config': 0.10.3
   '@terminal-nerds/lint-staged-config': 0.1.1
