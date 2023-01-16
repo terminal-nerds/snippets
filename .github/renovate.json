@@ -6,6 +6,7 @@
 			"groupName": "project tools & linters",
 			"addLabels": ["🧰 project"],
 			"packagePatterns": [
+				"@changesets/*",
 				"@terminal-nerds/*-config",
 				"@types/node",
 				"all-contributors-cli",
