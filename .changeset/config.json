@@ -1,0 +1,10 @@
+{
+	"$schema": "https://unpkg.com/@changesets/config@latest/schema.json",
+	"changelog": ["@changesets/changelog-github", { "repo": "terminal-nerds/snippets" }],
+	"commit": false,
+	"linked": [],
+	"access": "public",
+	"baseBranch": "main",
+	"updateInternalDependencies": "patch",
+	"ignore": []
+}
