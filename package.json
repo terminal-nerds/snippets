@@ -3,18 +3,15 @@
 	"private": true,
 	"type": "module",
 	"name": "@terminal-nerds/snippets",
-	"version": "0.0.0-development",
+	"version": "0.0.0",
 	"description": "@terminal-nerds reusable snippets.",
 	"keywords": [
-		"snippets"
+		"snippets",
+		"typescript"
 	],
 	"license": "MIT",
 	"homepage": "https://github.com/terminal-nerds/snippets",
-	"repository": {
-		"type": "git",
-		"url": "https://github.com/terminal-nerds/snippets.git",
-		"directory": "/"
-	},
+	"repository": "terminal-nerds/snippets.git",
 	"bugs": "https://github.com/terminal-nerds/snippets/issues",
 	"engines": {
 		"node": ">=18"
@@ -25,11 +22,13 @@
 	],
 	"scripts": {
 		"build": "tsup",
+		"changelog": "pnpm changeset add",
 		"clean": "concurrently \"pnpm:clean:*\" --group --timings",
-		"clean:build": "del \"./coverage\" \"./dist\"",
+		"clean:build": "del \"./dist\"",
 		"clean:cache": "del \"./node_modules/.cache\"",
+		"clean:test": "del \"./coverage\"",
 		"dev:test": "vitest watch --ui",
-		"dev:package": "tsup --watch",
+		"dev:pkg": "tsup --watch",
 		"fix": "concurrently \"pnpm:fix:*\" --group --timings",
 		"fix:format": "pretty-quick --branch main --pattern \"**/*\" --verbose",
 		"fix:js": "DEBUG=\"eslint:cli-engine\" eslint . --ext .cjs,.json,.yml,.yaml --cache --cache-location \"./node_modules/.cache/eslint\" --fix",
