@@ -47,12 +47,7 @@ jobs:
             job-name: ESLint
             step-name: Lint with ESLint
             # https://eslint.org/docs/user-guide/command-line-interface
-            run: >
-                DEBUG="eslint:cli-engine"
-                pnpm eslint .
-                --cache
-                --cache-location "./node_modules/.cache/eslint"
-                --ext .cjs,.js,.json,.ts,.yaml,.yml
+            run: pnpm lint:js
 
     lint_markdownlint:
         # Analyze the markdownlint files
@@ -63,11 +58,7 @@ jobs:
             job-name: markdownlint
             step-name: Lint with markdownlint
             # https://github.com/igorshubovych/markdownlint-cli#usage
-            run: >
-                pnpm markdownlint .
-                --dot
-                --ignore "./.changeset/*.md"
-                --ignore-path ".gitignore"
+            run: pnpm lint:md
 
     lint_prettier:
         # Analyze the code format style
@@ -76,12 +67,9 @@ jobs:
         uses: terminal-nerds/.github/.github/workflows/nodejs-script.yml@main
         with:
             job-name: Prettier
-            step-name: Lint code format with "pretty-quick"
+            step-name: Lint the code format with "pretty-quick"
             # https://github.com/azz/pretty-quick#usage
-            run: >
-                pnpm pretty-quick
-                --branch HEAD~${{ github.event.pull_request.commits }}
-                --verbose
+            run: pnpm lint:format
 
     lint_syncpack:
         # Analyze the package.json files to find dependencies mismatches
@@ -92,7 +80,7 @@ jobs:
             job-name: syncpack
             step-name: Lint package.json file(s) with syncpack
             # https://github.com/JamieMason/syncpack
-            run: pnpm syncpack list-mismatches
+            run: pnpm lint:pkg
 
     security_codeql:
         if: github.ref_name == 'main'
