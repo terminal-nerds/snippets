@@ -118,6 +118,8 @@ jobs:
         name: Test
         # https://github.com/terminal-nerds/.github/blob/main/.github/workflows/test.yml
         uses: terminal-nerds/.github/.github/workflows/test.yml@main
+        secrets:
+            CC_TEST_REPORTER_ID: ${{ secrets.CC_TEST_REPORTER_ID }}
         with:
             job-name: Unit
             script-test: pnpm test:unit
