@@ -1,0 +1,27 @@
+{
+	"$schema": "https://json.schemastore.org/package",
+	"private": true,
+	"type": "module",
+	"name": "@scripts/create",
+	"version": "0.0.0",
+	"engines": {
+		"node": ">=18"
+	},
+	"scripts": {},
+	"dependencies": {
+		"inquirer": "9.1.4",
+		"inquirer-autocomplete-prompt": "3.0.0",
+		"minimist": "1.2.8",
+		"node-plop": "0.31.1",
+		"plop": "3.1.2",
+		"zod": "^3.20.6"
+	},
+	"devDependencies": {
+		"@types/inquirer": "9.0.3",
+		"@types/inquirer-autocomplete-prompt": "3.0.0",
+		"@types/minimist": "1.2.2"
+	},
+	"bin": {
+		"create": "./source/create.ts"
+	}
+}
