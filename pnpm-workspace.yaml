@@ -3,6 +3,7 @@
 link-workspace-packages: true
 packages:
     - "packages/**"
+    - "scripts/**"
 prefer-workspace-packages: true
 shared-workspace-lockfile: true
 save-workspace-protocol: true
