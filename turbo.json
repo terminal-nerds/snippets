@@ -1,0 +1,80 @@
+{
+	"$schema": "https://turborepo.org/schema.json",
+	"globalDependencies": [".env"],
+	"remoteCache": {
+		"signature": true
+	},
+	"pipeline": {
+		"build": {
+			"dependsOn": ["^build"],
+			"outputs": ["dist/**"],
+			"cache": true
+		},
+		"clean": {
+			"dependsOn": [],
+			"outputs": [],
+			"cache": false
+		},
+		"clean:build": {
+			"dependsOn": [],
+			"outputs": [],
+			"cache": false
+		},
+		"clean:cache": {
+			"dependsOn": [],
+			"outputs": [],
+			"cache": false
+		},
+		"dev": {
+			"dependsOn": [],
+			"outputs": [],
+			"cache": false
+		},
+		"format": {
+			"dependsOn": [],
+			"outputs": [],
+			"cache": true
+		},
+		"lint": {
+			"dependsOn": [],
+			"outputs": [],
+			"cache": true
+		},
+		"lint:deps": {
+			"dependsOn": [],
+			"outputs": [],
+			"cache": true
+		},
+		"lint:format": {
+			"dependsOn": [],
+			"outputs": [],
+			"cache": true
+		},
+		"lint:js": {
+			"dependsOn": [],
+			"outputs": [],
+			"cache": true
+		},
+		"lint:md": {
+			"dependsOn": [],
+			"outputs": [],
+			"cache": true
+		},
+		"lint:pkg": {
+			"dependsOn": [],
+			"outputs": [],
+			"cache": true
+		},
+		"lint:types": {
+			"dependsOn": [],
+			"outputs": [],
+			"cache": true
+		},
+		"test:unit": {
+			"dependsOn": ["build"],
+			"outputs": [],
+			"inputs": ["source/**/*.ts"],
+			"cache": true
+		}
+	}
+}
