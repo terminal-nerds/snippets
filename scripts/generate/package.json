@@ -1,0 +1,45 @@
+{
+	"$schema": "https://json.schemastore.org/package",
+	"private": true,
+	"type": "module",
+	"name": "@scripts/generate",
+	"version": "0.0.0",
+	"engines": {
+		"node": ">=18"
+	},
+	"scripts": {
+		"clean": "concurrently \"pnpm:clean:*\" --group --timings",
+		"clean:cache": "del \"./node_modules/.cache\"",
+		"clean:test": "del \"./coverage\"",
+		"dev:pkg": "tsup --watch",
+		"fix": "concurrently \"pnpm:fix:*\" --group --timings",
+		"fix:format": "pretty-quick --branch main --pattern \"scripts/generate/**/*\" --verbose",
+		"fix:js": "pnpm lint:js --fix",
+		"fix:md": "pnpm lint:md --fix",
+		"fix:pkg": "syncpack format ; syncpack fix-mismatches",
+		"lint": "concurrently \"pnpm:lint:*\" --group --timings",
+		"lint:deps": "depcheck",
+		"lint:format": "pnpm fix:format --check",
+		"lint:js": "DEBUG=\"eslint:cli-engine\" eslint . --ext .cjs,.js,.ts,.json,.yml --cache --cache-location \"./node_modules/.cache/eslint\"",
+		"lint:md": "markdownlint . --config \"../../.markdownlint.json\" --dot --ignore-path \"../../.gitignore\"",
+		"lint:pkg": "syncpack list-mismatches",
+		"lint:types": "tsc --noEmit"
+	},
+	"dependencies": {
+		"@terminal-nerds/snippets-string": "workspace:^0.0.0",
+		"inquirer": "9.1.4",
+		"inquirer-autocomplete-prompt": "3.0.0",
+		"minimist": "1.2.8",
+		"node-plop": "0.31.1",
+		"plop": "3.1.2",
+		"zod": "^3.20.6"
+	},
+	"devDependencies": {
+		"@types/inquirer": "9.0.3",
+		"@types/inquirer-autocomplete-prompt": "3.0.0",
+		"@types/minimist": "1.2.2"
+	},
+	"bin": {
+		"generate": "./source/cli.ts"
+	}
+}
