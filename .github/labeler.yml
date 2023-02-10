@@ -5,6 +5,7 @@
 
 "📓 documentation":
     - README.md
+    - packages/*/README.md
 
 "🎉 release":
-    - CHANGELOG.md
+    - packages/*/CHANGELOG.md
