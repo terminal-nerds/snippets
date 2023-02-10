@@ -1,0 +1,63 @@
+{
+	"$schema": "https://json.schemastore.org/package",
+	"type": "module",
+	"name": "@terminal-nerds/snippets-string",
+	"version": "0.0.0",
+	"description": "@terminal-nerds reusable snippets for strings.",
+	"keywords": [
+		"snippets",
+		"typescript",
+		"string"
+	],
+	"license": "MIT",
+	"homepage": "https://github.com/terminal-nerds/snippets",
+	"repository": {
+		"type": "git",
+		"url": "https://github.com/terminal-nerds/snippets.git",
+		"directory": "packages/string"
+	},
+	"bugs": "https://github.com/terminal-nerds/snippets/issues",
+	"engines": {
+		"node": ">=18"
+	},
+	"exports": {
+		".": {
+			"types": "./dist/main.d.ts",
+			"import": "./dist/main.js"
+		},
+		"./*": {
+			"types": "./dist/*/*.d.ts",
+			"import": "./dist/*/*.js"
+		}
+	},
+	"files": [
+		"dist/"
+	],
+	"scripts": {
+		"build": "tsup",
+		"clean": "concurrently \"pnpm:clean:*\" --group --timings",
+		"clean:build": "del \"./dist\"",
+		"clean:cache": "del \"./node_modules/.cache\"",
+		"clean:test": "del \"./coverage\"",
+		"dev:test": "vitest watch --ui",
+		"dev:pkg": "tsup --watch",
+		"fix": "concurrently \"pnpm:fix:*\" --group --timings",
+		"fix:format": "pretty-quick --branch main --pattern \"packages/string/**/*\" --verbose",
+		"fix:js": "pnpm lint:js --fix",
+		"fix:md": "pnpm lint:md --fix",
+		"fix:pkg": "syncpack format ; syncpack fix-mismatches",
+		"lint": "concurrently \"pnpm:lint:*\" --group --timings",
+		"lint:deps": "depcheck",
+		"lint:format": "pnpm fix:format --check",
+		"lint:js": "DEBUG=\"eslint:cli-engine\" eslint . --ext .cjs,.js,.ts,.json,.yml --cache --cache-location \"./node_modules/.cache/eslint\"",
+		"lint:md": "markdownlint . --config \"../../.markdownlint.json\" --dot --ignore-path \"../../.gitignore\"",
+		"lint:pkg": "syncpack list-mismatches",
+		"lint:types": "tsc --noEmit",
+		"test:unit": "vitest run --dir \"./source\""
+	},
+	"dependencies": {
+		"case-anything": "2.1.10",
+		"type-fest": "3.5.7",
+		"zod": "3.20.6"
+	}
+}

@@ -1,0 +1,1 @@
+# @terminal-nerds/snippets-string

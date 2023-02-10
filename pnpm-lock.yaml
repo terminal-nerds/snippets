@@ -60,11 +60,21 @@ importers:
       typescript: 4.9.5
       vitest: 0.28.4
 
+  packages/snippets:
+    specifiers:
+      '@terminal-nerds/snippets-string': workspace:*
+    dependencies:
+      '@terminal-nerds/snippets-string': link:../string
+
   packages/string:
     specifiers:
-      zod: 3.20.2
+      case-anything: 2.1.10
+      type-fest: 3.5.7
+      zod: 3.20.6
     dependencies:
-      zod: 3.20.2
+      case-anything: 2.1.10
+      type-fest: 3.5.7
+      zod: 3.20.6
 
 packages:
 
@@ -1774,6 +1784,11 @@ packages:
   /caniuse-lite/1.0.30001450:
     resolution: {integrity: sha512-qMBmvmQmFXaSxexkjjfMvD5rnDL0+m+dUMZKoDYsGG8iZN29RuYh9eRoMvKsT6uMAWlyUUGDEQGJJYjzCIO9ew==}
     dev: true
+
+  /case-anything/2.1.10:
+    resolution: {integrity: sha512-JczJwVrCP0jPKh05McyVsuOg6AYosrB9XWZKbQzXeDAm2ClE/PJE/BcrrQrVyGYH7Jg8V/LDupmyL4kFlVsVFQ==}
+    engines: {node: '>=12.13'}
+    dev: false
 
   /chai/4.3.7:
     resolution: {integrity: sha512-HLnAzZ2iupm25PlN0xFreAlBA5zaBSv3og0DdeGA4Ar6h6rJ3A0rolRUKJhSF2V10GZKDgWF/VmAEsNWjCRB+A==}
@@ -6589,6 +6604,11 @@ packages:
     engines: {node: '>=10'}
     dev: true
 
+  /type-fest/3.5.7:
+    resolution: {integrity: sha512-6J4bYzb4sdkcLBty4XW7F18VPI66M4boXNE+CY40532oq2OJe6AVMB5NmjOp6skt/jw5mRjz/hLRpuglz0U+FA==}
+    engines: {node: '>=14.16'}
+    dev: false
+
   /typed-array-length/1.0.4:
     resolution: {integrity: sha512-KjZypGq+I/H7HI5HlOoGHkWUUGq+Q0TPhQurLbyrVrvnKTBgzLhIJ7j6J/XTQOi0d1RjyZ0wdas8bKs2p0x3Ng==}
     dependencies:
@@ -7078,6 +7098,6 @@ packages:
     engines: {node: '>=12.20'}
     dev: true
 
-  /zod/3.20.2:
-    resolution: {integrity: sha512-1MzNQdAvO+54H+EaK5YpyEy0T+Ejo/7YLHS93G3RnYWh5gaotGHwGeN/ZO687qEDU2y4CdStQYXVHIgrUl5UVQ==}
+  /zod/3.20.6:
+    resolution: {integrity: sha512-oyu0m54SGCtzh6EClBVqDDlAYRz4jrVtKwQ7ZnsEmMI9HnzuZFj8QFwAY1M5uniIYACdGvv0PBWPF2kO0aNofA==}
     dev: false
