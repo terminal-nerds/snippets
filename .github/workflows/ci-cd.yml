@@ -36,7 +36,7 @@ jobs:
         with:
             job-name: depcheck
             step-name: Lint dependencies with depcheck
-            run: pnpm lint:deps
+            run: pnpm turbo run lint:deps
 
     lint_eslint:
         # Analyze the JavaScript codebase
@@ -47,7 +47,7 @@ jobs:
             job-name: ESLint
             step-name: Lint with ESLint
             # https://eslint.org/docs/user-guide/command-line-interface
-            run: pnpm lint:js
+            run: pnpm turbo run lint:js
 
     lint_markdownlint:
         # Analyze the markdownlint files
@@ -58,7 +58,7 @@ jobs:
             job-name: markdownlint
             step-name: Lint with markdownlint
             # https://github.com/igorshubovych/markdownlint-cli#usage
-            run: pnpm lint:md
+            run: pnpm turbo run lint:md
 
     lint_prettier:
         # Analyze the code format style
@@ -69,7 +69,7 @@ jobs:
             job-name: Prettier
             step-name: Lint the code format with "pretty-quick"
             # https://github.com/azz/pretty-quick#usage
-            run: pnpm lint:format
+            run: pnpm turbo run lint:format
 
     lint_syncpack:
         # Analyze the package.json files to find dependencies mismatches
@@ -80,7 +80,7 @@ jobs:
             job-name: syncpack
             step-name: Lint package.json file(s) with syncpack
             # https://github.com/JamieMason/syncpack
-            run: pnpm lint:pkg
+            run: pnpm turbo run lint:pkg
 
     security_codeql:
         if: github.ref_name == 'main'
@@ -109,10 +109,10 @@ jobs:
         # https://github.com/terminal-nerds/.github/blob/main/.github/workflows/build.yml
         uses: terminal-nerds/.github/.github/workflows/build.yml@main
         with:
-            artifact-path: "./dist/"
+            artifact-path: "./packages/*dist/"
             artifact-upload: true
             include: "./dist/**/*.{js,cjs,json}"
-            script-build: build
+            script-build: build:pkgs
 
     test:
         name: Test
@@ -122,7 +122,7 @@ jobs:
             CC_TEST_REPORTER_ID: ${{ secrets.CC_TEST_REPORTER_ID }}
         with:
             job-name: Unit
-            script-test: pnpm test:unit
+            script-test: turbo run test:unit
             with-coverage: true
 
     release:
