@@ -1,5 +1,5 @@
 {
 	"ignore-bin-package": false,
-	"ignores": ["@changesets/*", "@terminal-nerds/*", "@types/node", "browserslist", "lint-staged"],
+	"ignores": ["@changesets/*", "@terminal-nerds/*", "@types/node", "tsup", "typescript"],
 	"skip-missing": false
 }
