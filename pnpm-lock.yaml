@@ -6,6 +6,7 @@ importers:
     specifiers:
       '@changesets/changelog-github': 0.4.8
       '@changesets/cli': 2.26.0
+      '@scripts/create': workspace:*
       '@terminal-nerds/browserslist-config': 0.1.2
       '@terminal-nerds/eslint-config': 0.15.0
       '@terminal-nerds/lint-staged-config': 0.2.0
@@ -34,6 +35,7 @@ importers:
     devDependencies:
       '@changesets/changelog-github': 0.4.8
       '@changesets/cli': 2.26.0
+      '@scripts/create': link:scripts/create
       '@terminal-nerds/browserslist-config': 0.1.2_browserslist@4.21.5
       '@terminal-nerds/eslint-config': 0.15.0_4vsywjlpuriuw3tl5oq6zy5a64
       '@terminal-nerds/lint-staged-config': 0.2.0_lint-staged@13.1.0

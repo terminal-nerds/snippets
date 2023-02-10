@@ -18,6 +18,7 @@
 		"clean": "concurrently \"pnpm:clean:*\" --group --timings",
 		"clean:cache": "del \"./node_modules/.cache\"",
 		"clean:test": "del \"./coverage\"",
+		"create": "create",
 		"dev:test": "vitest watch --dir \"./packages\" --ui",
 		"fix": "concurrently \"pnpm:fix:*\" --group --timings",
 		"fix:format": "pretty-quick --branch main --pattern \"**/*\" --patern \"!{shared,packages}/**/*\" --verbose",
@@ -39,6 +40,7 @@
 	"devDependencies": {
 		"@changesets/changelog-github": "0.4.8",
 		"@changesets/cli": "2.26.0",
+		"@scripts/create": "workspace:*",
 		"@terminal-nerds/browserslist-config": "0.1.2",
 		"@terminal-nerds/eslint-config": "0.15.0",
 		"@terminal-nerds/lint-staged-config": "0.2.0",
