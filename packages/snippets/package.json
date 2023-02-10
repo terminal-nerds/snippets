@@ -41,8 +41,7 @@
 		"lint:js": "DEBUG=\"eslint:cli-engine\" eslint . --ext .cjs,.js,.ts,.json,.yml --cache --cache-location \"./node_modules/.cache/eslint\"",
 		"lint:md": "markdownlint . --config \"../../.markdownlint.json\" --dot --ignore-path \"../../.gitignore\"",
 		"lint:pkg": "syncpack list-mismatches",
-		"lint:types": "tsc --noEmit",
-		"test:unit": "vitest run --dir \"./source\""
+		"lint:types": "tsc --noEmit"
 	},
 	"dependencies": {
 		"@terminal-nerds/snippets-string": "workspace:*"
