@@ -40,6 +40,31 @@
 			"outputs": [],
 			"cache": true
 		},
+		"fix:format": {
+			"dependsOn": [],
+			"outputs": [],
+			"cache": true
+		},
+		"fix:js": {
+			"dependsOn": [],
+			"outputs": [],
+			"cache": true
+		},
+		"fix:md": {
+			"dependsOn": [],
+			"outputs": [],
+			"cache": true
+		},
+		"fix:pkg": {
+			"dependsOn": [],
+			"outputs": [],
+			"cache": true
+		},
+		"fix:types": {
+			"dependsOn": [],
+			"outputs": [],
+			"cache": true
+		},
 		"lint:deps": {
 			"dependsOn": [],
 			"outputs": [],
