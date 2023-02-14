@@ -26,7 +26,7 @@
 		"lint:types": "tsc --noEmit"
 	},
 	"dependencies": {
-		"@terminal-nerds/snippets-string": "workspace:^0.0.0",
+		"@terminal-nerds/snippets-string": "workspace:*",
 		"inquirer": "9.1.4",
 		"inquirer-autocomplete-prompt": "3.0.0",
 		"minimist": "1.2.8",
