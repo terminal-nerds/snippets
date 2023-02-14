@@ -10,11 +10,15 @@
 
 [string]: https://developer.mozilla.org/en-US/docs/Glossary/String
 [terminal-nerds/snippets]: https://github.com/terminal-nerds/snippets-string
+
 [package version badge]: https://img.shields.io/npm/v/@terminal-nerds/snippets-string/latest?style=for-the-badge&logo=npm
+
 [dependencies badge]: https://img.shields.io/librariesio/release/npm/@terminal-nerds/snippets-string?style=for-the-badge
 [dependencies url]: https://libraries.io/npm/@terminal-nerds%2snippets-string
+
 [size badge]: https://img.shields.io/bundlephobia/minzip/@terminal-nerds/snippets-string?style=for-the-badge&label=size
 [size url]: https://packagephobia.com/result?p=@terminal-nerds/snippets-string
+
 [types badge]: https://img.shields.io/npm/types/@terminal-nerds/snippets-string?style=for-the-badge&logo=typescript
 
 ## Modules included

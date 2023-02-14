@@ -1,4 +1,3 @@
-import { execFileSync } from "node:child_process";
 import { readdirSync } from "node:fs";
 import { join } from "node:path";
 import { chdir } from "node:process";
@@ -8,7 +7,15 @@ import type { Answers, Question } from "inquirer";
 import type { Actions, ActionType, CustomActionFunction, PlopGeneratorConfig } from "node-plop";
 import { z } from "zod";
 
-import { __dirname, PACKAGES_DIRECTORY_PATH } from "../../shared.js";
+import {
+	__dirname,
+	defineAddAction,
+	defineAppendAction,
+	defineToolAction,
+	formatWithPrettier,
+	hasAppendedTemplate,
+	PACKAGES_DIRECTORY_PATH,
+} from "../../shared.js";
 
 // TODO: __dirname should return current file path
 const TEMPLATES_DIRECTORY_PATH = join(__dirname, "generators", "module", "templates");
@@ -38,83 +45,20 @@ export const snippetModuleGenerator: PlopGeneratorConfig = {
 		} as Question<Answers>,
 	],
 	actions(answers) {
-		const actions: Actions = [];
-
 		if (answers && isGenerateSnippetsModuleAnswers(answers)) {
-			const { includeTestFile, moduleName, packageName } = answers;
-			const packageDirectory = join(PACKAGES_DIRECTORY_PATH, kebabCase(packageName));
-			const transformedModuleName = kebabCase(moduleName);
-			const mainFile = join(packageDirectory, "source", "main.ts");
-			const readmeFile = join(packageDirectory, "README.md");
-			const moduleDirectory = join(packageDirectory, "source", transformedModuleName);
-			const moduleFile = join(moduleDirectory, `${transformedModuleName}.ts`);
-			const moduleTestFile = join(moduleDirectory, `${transformedModuleName}.test.ts`);
+			const { includeTestFile } = answers;
+			const names = getNames(answers);
+			const paths = getPaths(names);
 
-			const generateSnippetsModuleSourceFile: ActionType = {
-				type: "add",
-				path: moduleFile,
-				skipIfExists: true,
-				templateFile: join(TEMPLATES_DIRECTORY_PATH, `module.ts.hbs`),
-			};
-
-			const generateSnippetsModuleTestFile: ActionType = {
-				type: "add",
-				path: moduleTestFile,
-				skipIfExists: true,
-				templateFile: join(TEMPLATES_DIRECTORY_PATH, `module.test.ts.hbs`),
-			};
-
-			const appendExportToMainFile: ActionType = {
-				type: "append",
-				path: mainFile,
-				templateFile: join(TEMPLATES_DIRECTORY_PATH, "main-export-line.ts.hbs"),
-			};
-
-			const fixMainFile: CustomActionFunction = async () => {
-				chdir(packageDirectory);
-				execFileSync("pnpm", ["eslint", "--fix", mainFile]);
-
-				return `Fixed issues in: ${mainFile}`;
-			};
-
-			const appendToReadmeTable: ActionType = {
-				type: "append",
-				path: readmeFile,
-				pattern: /## Modules included\n{2}.*\n{2}.*\n.*- \|$/gm,
-				templateFile: join(TEMPLATES_DIRECTORY_PATH, "README-table.md.hbs"),
-			};
-
-			const appendToReadmeLinks: ActionType = {
-				type: "append",
-				path: readmeFile,
-				pattern: `<!-- MODULES LINKS -->`,
-				templateFile: join(TEMPLATES_DIRECTORY_PATH, "README-links.md.hbs"),
-			};
-
-			const formatReadmeFile: CustomActionFunction = async () => {
-				chdir(packageDirectory);
-				execFileSync("pnpm", ["prettier", "--write", readmeFile]);
-				// FIXME: Once appended, and fixed... the format, the sort plugin doesn't work, hence needs to be called again
-				execFileSync("pnpm", ["prettier", "--write", readmeFile]);
-
-				return `Formatted: ${readmeFile}`;
-			};
-
-			if (includeTestFile) actions.push(generateSnippetsModuleTestFile);
 			/* prettier-ignore */
-			actions.push(
-				generateSnippetsModuleSourceFile,
-				appendExportToMainFile,
-				fixMainFile,
-				appendToReadmeTable,
-				appendToReadmeLinks,
-				formatReadmeFile,
-			);
+			return [
+				...setModuleFilesAction(paths, includeTestFile),
+				...setPackageMainFileAction(paths),
+				...setPackageReadmeFileActions(paths),
+			];
 		} else {
 			throw new Error("Something went wrong with getting answers.");
 		}
-
-		return actions;
 	},
 };
 
@@ -135,4 +79,98 @@ function getPackagesNames(): Array<string> {
 
 function searchPackageName(_: Answers, input = "") {
 	return AVAILABLE_PACKAGE_NAMES.filter((name) => name.startsWith(input));
+}
+
+type Names = ReturnType<typeof getNames>;
+function getNames(answers: GenerateSnippetsModuleAnswers) {
+	return {
+		moduleName: kebabCase(answers.moduleName),
+		packageName: kebabCase(answers.packageName),
+	};
+}
+
+type Paths = ReturnType<typeof getPaths>;
+function getPaths(names: Names) {
+	const { moduleName, packageName } = names;
+	const packageDirectoryPath = join(PACKAGES_DIRECTORY_PATH, kebabCase(packageName));
+	const moduleDirectoryPath = join(packageDirectoryPath, "source", moduleName);
+
+	return {
+		mainFilePath: join(packageDirectoryPath, "source", "main.ts"),
+		mainExportTemplatePath: join(TEMPLATES_DIRECTORY_PATH, "main-export-line.ts.hbs"),
+		moduleDirectoryPath,
+		moduleFilePath: join(moduleDirectoryPath, `${moduleName}.ts`),
+		moduleFileTemplatePath: join(TEMPLATES_DIRECTORY_PATH, "module.ts.hbs"),
+		moduleTestFilePath: join(moduleDirectoryPath, `${moduleName}.test.ts`),
+		moduleTestFileTemplatePath: join(TEMPLATES_DIRECTORY_PATH, "module.test.ts.hbs"),
+		packageDirectoryPath,
+		readmeFilePath: join(packageDirectoryPath, "README.md"),
+		readmeLinksTemplatePath: join(TEMPLATES_DIRECTORY_PATH, "README-links.md.hbs"),
+		readmeTableTemplatePath: join(TEMPLATES_DIRECTORY_PATH, "README-table.md.hbs"),
+	};
+}
+
+/** Generate files in `/packages/<packageName>/<source>/<moduleName>/` */
+function setModuleFilesAction(paths: Paths, includeTest: boolean): Array<ActionType> {
+	const { moduleFilePath, moduleTestFilePath, moduleTestFileTemplatePath, moduleFileTemplatePath } = paths;
+	const actions: Actions = [];
+	const addSourceFileAction = defineAddAction(moduleFilePath, moduleFileTemplatePath);
+	const addSourceTestFileAction = defineAddAction(moduleTestFilePath, moduleTestFileTemplatePath);
+
+	actions.push(addSourceFileAction);
+	if (includeTest) actions.push(addSourceTestFileAction);
+
+	return actions;
+}
+
+/** Generate export in `./packages/<packageName>/<source>/main.ts` */
+function setPackageMainFileAction(paths: Paths): Array<ActionType> {
+	const { mainFilePath, mainExportTemplatePath, packageDirectoryPath } = paths;
+	const actions: Actions = [];
+	const appendExportToMainFileAction = defineAppendAction({
+		path: mainFilePath,
+		templateFile: mainExportTemplatePath,
+		pattern: /\/\* MODULES \*\//g,
+	});
+	const fixMainFileAction = defineToolAction("eslint", { directory: packageDirectoryPath, file: mainFilePath });
+
+	(async function run() {
+		if (!(await hasAppendedTemplate(appendExportToMainFileAction))) {
+			actions.push(appendExportToMainFileAction, fixMainFileAction);
+		}
+	})();
+
+	return actions;
+}
+
+/** Generate an row and links in package's `README.md` file */
+function setPackageReadmeFileActions(paths: Paths): Array<ActionType> {
+	const { packageDirectoryPath, readmeFilePath, readmeTableTemplatePath, readmeLinksTemplatePath } = paths;
+	const actions: Actions = [];
+	const appendToReadmeLinksAction = defineAppendAction({
+		path: readmeFilePath,
+		templateFile: readmeLinksTemplatePath,
+		pattern: `<!-- MODULES LINKS -->`,
+	});
+	const appendToReadmeTableAction = defineAppendAction({
+		path: readmeFilePath,
+		templateFile: readmeTableTemplatePath,
+		pattern: /## Modules included\n{2}.*\n{2}.*\n.*- \|$/gm,
+	});
+	const formatReadmeFileAction: CustomActionFunction = async () => {
+		chdir(packageDirectoryPath);
+		formatWithPrettier(readmeFilePath);
+		// FIXME: Once appended, and formatted, the sort plugin doesn't work, hence needs to be called again
+		formatWithPrettier(readmeFilePath);
+
+		return `Formatted: ${readmeFilePath}`;
+	};
+
+	(async function run() {
+		if (!(await hasAppendedTemplate(appendToReadmeLinksAction))) {
+			actions.push(appendToReadmeTableAction, appendToReadmeLinksAction, formatReadmeFileAction);
+		}
+	})();
+
+	return actions;
 }
