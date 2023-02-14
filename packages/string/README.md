@@ -2,7 +2,7 @@
 
 ![package version badge]
 [![size badge]][size url]
-[![dependents badge]][dependents url]
+[![dependencies badge]][dependencies url]
 ![types badge]
 
 ➡️ **This package wraps all available modules with snippets related to [string]**
@@ -10,12 +10,12 @@
 
 [string]: https://developer.mozilla.org/en-US/docs/Glossary/String
 [terminal-nerds/snippets]: https://github.com/terminal-nerds/snippets-string
-[package version badge]: https://badgen.net/npm/v/@terminal-nerds/snippets-string?icon=npm
-[dependents badge]: https://badgen.net/npm/dependents/@terminal-nerds/snippets-string
-[dependents url]: https://libraries.io/npm/@terminal-nerds%2snippets-string
-[size badge]: https://badgen.net/packagephobia/publish/@terminal-nerds/snippets-string?icon=packagephobia
+[package version badge]: https://img.shields.io/npm/v/@terminal-nerds/snippets-string/latest?style=for-the-badge&logo=npm
+[dependencies badge]: https://img.shields.io/librariesio/release/npm/@terminal-nerds/snippets-string?style=for-the-badge
+[dependencies url]: https://libraries.io/npm/@terminal-nerds%2snippets-string
+[size badge]: https://img.shields.io/bundlephobia/minzip/@terminal-nerds/snippets-string?style=for-the-badge&label=size
 [size url]: https://packagephobia.com/result?p=@terminal-nerds/snippets-string
-[types badge]: https://badgen.net/npm/types/@terminal-nerds/snippets-string?icon=typescript
+[types badge]: https://img.shields.io/npm/types/@terminal-nerds/snippets-string?style=for-the-badge&logo=typescript
 
 ## Modules included
 
@@ -54,6 +54,34 @@
 
 ---
 
+## Prerequisites
+
+> **Note:** > **The packages are written in ES Module _(ESM)_ type.**\
+> If you with to use in project with CommonJS _(CJS)_ type, then, you need to bundle this package.
+
+### Required
+
+[![node.js version support badge]][node.js]
+
+1. Latest ![node.js icon] [Node.js] LTS _(Long-Term Support)_ version.
+
+[node.js]: https://nodejs.org/en/
+[node.js icon]: https://api.iconify.design/logos/nodejs-icon.svg
+[node.js version support badge]: https://img.shields.io/node/v-lts/@terminal-nerds/snippets?style=for-the-badge&logo=nodedotjs
+
+### Optional
+
+[![supported typescript version badge]][typescript]
+
+[typescript]: https://typescriptlang.org/
+[typescript icon]: https://api.iconify.design/logos/typescript-icon.svg
+[supported typescript version badge]: https://img.shields.io/github/package-json/dependency-version/terminal-nerds/snippets/peer/typescript?filename=packages%2Ftypescript%2Fpackage.json&logo=typescript&style=for-the-badge&label=typescript
+
+1. If you are using ![typescript icon] [TypeScript], then the latest version which supports new features _(such as `satisfies`)_
+   is recommended.
+
+---
+
 ## Security
 
 [![workflow security badge]][security policy]
@@ -61,7 +89,7 @@
 🔐 For more information, please refer to the [Security section] at the root of
 the [terminal-nerds/snippets] monorepo.
 
-[workflow security badge]: https://badgen.net/github/checks/terminal-nerds/snippets/main/security?icon=github
+[workflow security badge]: https://img.shields.io/github/actions/workflow/status/terminal-nerds/snippets/maintenance.yml?label=Security&logo=github&style=for-the-badge&branch=main
 [security section]: https://github.com/terminal-nerds/snippets#security
 [security policy]: https://github.com/terminal-nerds/snippets/security/policy
 
@@ -77,7 +105,7 @@ Please refer to the monorepo _([terminal-nerds/snippets])_ project's [CONTRIBUTI
 if you wish to get involved.
 
 [contributing file]: https://github.com/terminal-nerds/snippets/blob/main/.github/CONTRIBUTING.md
-[contributors badge]: https://badgen.net/github/contributors/terminal-nerds/snippets
+[contributors badge]: https://img.shields.io/github/contributors/terminal-nerds/snippets?style=for-the-badge
 [contributors url]: https://github.com/terminal-nerds/snippets#contributors
 
 ---
@@ -89,5 +117,5 @@ if you wish to get involved.
 ⚖️ For more information, please refer to the [License section] at the root of the [terminal-nerds/snippets] monorepo.
 
 [license]: https://github.com/terminal-nerds/snippets/blob/main/LICENSE.md
-[license badge]: https://badgen.net/github/license/terminal-nerds/snippets
+[license badge]: https://img.shields.io/github/license/terminal-nerds/snippets?style=for-the-badge
 [license section]: https://github.com/terminal-nerds/snippets#License

@@ -19,6 +19,12 @@
 	"engines": {
 		"node": ">=18"
 	},
+	"exports": {
+		".": {
+			"types": "./dist/main.d.ts",
+			"import": "./dist/main.js"
+		}
+	},
 	"files": [
 		"dist/"
 	],
@@ -43,7 +49,15 @@
 		"lint:pkg": "syncpack list-mismatches",
 		"lint:types": "tsc --noEmit"
 	},
+	"peerDependencies": {
+		"typescript": "4.9.5"
+	},
 	"dependencies": {
 		"@terminal-nerds/snippets-string": "workspace:*"
+	},
+	"peerDependenciesMeta": {
+		"typescript": {
+			"optional": true
+		}
 	}
 }

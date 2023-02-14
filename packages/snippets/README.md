@@ -1,11 +1,19 @@
 # @terminal-nerds/snippets
 
 ![package version badge]
+[![size badge]][size url]
+[![dependencies badge]][dependencies url]
+![types badge]
 
 ➡️ **This package wraps all available snippets packages in one** — part of the [terminal-nerds/snippets] project.
 
-[package version badge]: https://img.shields.io/npm/v/@terminal-nerds/snippets/latest?style=for-the-badge&logo=npm
 [terminal-nerds/snippets]: https://github.com/terminal-nerds/snippets
+[package version badge]: https://img.shields.io/npm/v/@terminal-nerds/snippets/latest?style=for-the-badge&logo=npm
+[dependencies badge]: https://img.shields.io/librariesio/release/npm/@terminal-nerds/snippets?style=for-the-badge
+[dependencies url]: https://libraries.io/npm/@terminal-nerds%2snippets
+[size badge]: https://img.shields.io/bundlephobia/minzip/@terminal-nerds/snippets?style=for-the-badge&label=size
+[size url]: https://packagephobia.com/result?p=@terminal-nerds/snippets
+[types badge]: https://img.shields.io/npm/types/@terminal-nerds/snippets?style=for-the-badge&logo=typescript
 
 ## Packages included
 
