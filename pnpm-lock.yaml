@@ -88,6 +88,7 @@ importers:
       '@types/inquirer': 9.0.3
       '@types/inquirer-autocomplete-prompt': 3.0.0
       '@types/minimist': 1.2.2
+      '@types/which': 2.0.2
       inquirer: 9.1.4
       inquirer-autocomplete-prompt: 3.0.0
       minimist: 1.2.8
@@ -108,6 +109,7 @@ importers:
       '@types/inquirer': 9.0.3
       '@types/inquirer-autocomplete-prompt': 3.0.0
       '@types/minimist': 1.2.2
+      '@types/which': 2.0.2
 
 packages:
 
@@ -1380,6 +1382,10 @@ packages:
 
   /@types/unist/2.0.6:
     resolution: {integrity: sha512-PBjIUxZHOuj0R15/xuwJYjFi+KZdNFrehocChv4g5hu6aFroHue8m0lBP0POdK2nKzbw0cgV1mws8+V/JAcEkQ==}
+    dev: true
+
+  /@types/which/2.0.2:
+    resolution: {integrity: sha512-113D3mDkZDjo+EeUEHCFy0qniNc1ZpecGiAU7WSo7YDoSzolZIQKpYFHrPpjkB2nuyahcKfrmLXeQlh7gqJYdw==}
     dev: true
 
   /@typescript-eslint/eslint-plugin/5.50.0_go4drrxstycfikanvu45pi4vgq:
