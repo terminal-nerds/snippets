@@ -13,7 +13,6 @@ import {
 	defineAppendAction,
 	defineToolAction,
 	formatWithPrettier,
-	hasAppendedTemplate,
 	PACKAGES_DIRECTORY_PATH,
 } from "../../shared.js";
 
@@ -126,7 +125,6 @@ function setModuleFilesAction(paths: Paths, includeTest: boolean): Array<ActionT
 /** Generate export in `./packages/<packageName>/<source>/main.ts` */
 function setPackageMainFileAction(paths: Paths): Array<ActionType> {
 	const { mainFilePath, mainExportTemplatePath, packageDirectoryPath } = paths;
-	const actions: Actions = [];
 	const appendExportToMainFileAction = defineAppendAction({
 		path: mainFilePath,
 		templateFile: mainExportTemplatePath,
@@ -134,19 +132,12 @@ function setPackageMainFileAction(paths: Paths): Array<ActionType> {
 	});
 	const fixMainFileAction = defineToolAction("eslint", { directory: packageDirectoryPath, file: mainFilePath });
 
-	(async function run() {
-		if (!(await hasAppendedTemplate(appendExportToMainFileAction))) {
-			actions.push(appendExportToMainFileAction, fixMainFileAction);
-		}
-	})();
-
-	return actions;
+	return [appendExportToMainFileAction, fixMainFileAction];
 }
 
 /** Generate an row and links in package's `README.md` file */
 function setPackageReadmeFileActions(paths: Paths): Array<ActionType> {
 	const { packageDirectoryPath, readmeFilePath, readmeTableTemplatePath, readmeLinksTemplatePath } = paths;
-	const actions: Actions = [];
 	const appendToReadmeLinksAction = defineAppendAction({
 		path: readmeFilePath,
 		templateFile: readmeLinksTemplatePath,
@@ -166,11 +157,5 @@ function setPackageReadmeFileActions(paths: Paths): Array<ActionType> {
 		return `Formatted: ${readmeFilePath}`;
 	};
 
-	(async function run() {
-		if (!(await hasAppendedTemplate(appendToReadmeLinksAction))) {
-			actions.push(appendToReadmeTableAction, appendToReadmeLinksAction, formatReadmeFileAction);
-		}
-	})();
-
-	return actions;
+	return [appendToReadmeTableAction, appendToReadmeLinksAction, formatReadmeFileAction];
 }
