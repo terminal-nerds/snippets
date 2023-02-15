@@ -93,6 +93,7 @@ importers:
       minimist: 1.2.8
       node-plop: 0.31.1
       plop: 3.1.2
+      which: 3.0.0
       zod: ^3.20.6
     dependencies:
       '@terminal-nerds/snippets-string': link:../../packages/string
@@ -101,6 +102,7 @@ importers:
       minimist: 1.2.8
       node-plop: 0.31.1
       plop: 3.1.2
+      which: 3.0.0
       zod: 3.20.6
     devDependencies:
       '@types/inquirer': 9.0.3
@@ -7879,6 +7881,14 @@ packages:
     dependencies:
       isexe: 2.0.0
     dev: true
+
+  /which/3.0.0:
+    resolution: {integrity: sha512-nla//68K9NU6yRiwDY/Q8aU6siKlSs64aEC7+IV56QoAuyQT2ovsJcgGYGyqMOmI/CGN1BOR6mM5EN0FBO+zyQ==}
+    engines: {node: ^14.17.0 || ^16.13.0 || >=18.0.0}
+    hasBin: true
+    dependencies:
+      isexe: 2.0.0
+    dev: false
 
   /why-is-node-running/2.2.2:
     resolution: {integrity: sha512-6tSwToZxTOcotxHeA+qGCq1mVzKR3CwcJGmVcY+QE8SHy6TnpFnh8PAvPNHYr7EcuVeG0QSMxtYCuO1ta/G/oA==}
