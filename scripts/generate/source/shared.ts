@@ -12,9 +12,12 @@ import type {
 	CustomActionFunction,
 } from "node-plop";
 import nodePlop from "node-plop";
+import which from "which";
 
 export const __filename = fileURLToPath(import.meta.url);
 export const __dirname = dirname(__filename);
+
+const PNPM_EXECUTABLE_PATH = getPnpmExecutablePath();
 
 // TODO: Make it more flexible by finding the project root path
 export const ROOT_DIRECTORY_PATH = join(__dirname, "..", "..", "..");
@@ -46,23 +49,29 @@ async function getGeneratedTemplate(action: AppendActionConfig): Promise<string>
 	}
 }
 
+export function getPnpmExecutablePath() {
+	return which.sync("pnpm");
+}
+
 export function isAppendActionConfig(action: ActionType): action is AppendActionConfig {
 	return typeof action === "object" && action.type === "append";
 }
 
 export function fixWithESLint(file: string) {
-	execFileSync("pnpm", ["eslint", "--fix", file]);
+	execFileSync(PNPM_EXECUTABLE_PATH, ["eslint", "--fix", file]);
 }
 
 export function formatWithPrettier(file: string) {
-	execFileSync("pnpm", ["prettier", "--write", file]);
+	execFileSync(PNPM_EXECUTABLE_PATH, ["prettier", "--write", file]);
 }
 
 export function formatWithSyncpack() {
-	execFileSync("pnpm", ["syncpack", "format"]);
+	execFileSync(PNPM_EXECUTABLE_PATH, ["syncpack", "format"]);
 }
 
-export function defineAddManyAction(config: Pick<AddManyActionConfig, "base" | "data" | "destination" | "templateFiles">): AddManyActionConfig {
+export function defineAddManyAction(
+	config: Pick<AddManyActionConfig, "base" | "data" | "destination" | "templateFiles">,
+): AddManyActionConfig {
 	const { base = "", data = {}, destination, templateFiles = "" } = config;
 
 	return {
