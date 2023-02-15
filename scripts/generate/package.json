@@ -1,43 +1,19 @@
 {
 	"$schema": "https://json.schemastore.org/package",
+	"private": true,
 	"type": "module",
-	"name": "@terminal-nerds/snippets",
+	"name": "@scripts/generate",
 	"version": "0.0.0",
-	"description": "@terminal-nerds all of the reusable snippets.",
-	"keywords": [
-		"snippets",
-		"typescript"
-	],
-	"license": "MIT",
-	"homepage": "https://github.com/terminal-nerds/snippets",
-	"repository": {
-		"type": "git",
-		"url": "https://github.com/terminal-nerds/snippets.git",
-		"directory": "packages/snippets"
-	},
-	"bugs": "https://github.com/terminal-nerds/snippets/issues",
 	"engines": {
 		"node": ">=18"
 	},
-	"exports": {
-		".": {
-			"types": "./dist/main.d.ts",
-			"import": "./dist/main.js"
-		}
-	},
-	"files": [
-		"dist/"
-	],
 	"scripts": {
-		"build": "tsup",
 		"clean": "concurrently \"pnpm:clean:*\" --group --timings",
-		"clean:build": "del \"./dist\"",
 		"clean:cache": "del \"./node_modules/.cache\"",
 		"clean:test": "del \"./coverage\"",
-		"dev:test": "vitest watch --ui",
 		"dev:pkg": "tsup --watch",
 		"fix": "concurrently \"pnpm:fix:*\" --group --timings",
-		"fix:format": "pretty-quick --branch main --pattern \"packages/snippets/**/*\" --verbose",
+		"fix:format": "pretty-quick --branch main --pattern \"scripts/generate/**/*\" --verbose",
 		"fix:js": "pnpm lint:js --fix",
 		"fix:md": "pnpm lint:md --fix",
 		"fix:pkg": "syncpack format ; syncpack fix-mismatches",
@@ -49,15 +25,23 @@
 		"lint:pkg": "syncpack list-mismatches",
 		"lint:types": "tsc --noEmit"
 	},
-	"peerDependencies": {
-		"typescript": "4.9.5"
-	},
 	"dependencies": {
-		"@terminal-nerds/snippets-string": "workspace:*"
+		"@terminal-nerds/snippets-string": "workspace:*",
+		"inquirer": "9.1.4",
+		"inquirer-autocomplete-prompt": "3.0.0",
+		"minimist": "1.2.8",
+		"node-plop": "0.31.1",
+		"plop": "3.1.2",
+		"which": "3.0.0",
+		"zod": "^3.20.6"
 	},
-	"peerDependenciesMeta": {
-		"typescript": {
-			"optional": true
-		}
+	"devDependencies": {
+		"@types/inquirer": "9.0.3",
+		"@types/inquirer-autocomplete-prompt": "3.0.0",
+		"@types/minimist": "1.2.2",
+		"@types/which": "2.0.2"
+	},
+	"bin": {
+		"generate": "./source/cli.ts"
 	}
 }
