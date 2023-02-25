@@ -1,3 +1,4 @@
+import type { PascalCase } from "type-fest";
 import { z } from "zod";
 
 import { validateString } from "../main.js";
@@ -15,9 +16,9 @@ export function validateSingleChar(char: string): string {
 
 /* prettier-ignore */
 export const LATIN_CHARS = ["a", "b", "c", "d", "e", "f", "g", "h", "i", "j", "k", "l", "m", "n", "o", "p", "r", "s", "t", "u", "v", "w", "x", "y", "z"] as const;
-export type LatinChar = (typeof LATIN_CHARS)[number];
+export const UPPERCASED_LATIN_CHARS = LATIN_CHARS.map((char) => char.toUpperCase() as PascalCase<typeof char>);
+export type LatinChar = (typeof LATIN_CHARS)[number] | (typeof UPPERCASED_LATIN_CHARS)[number];
 export const LATIN_CHAR_SCHEMA = z.enum(LATIN_CHARS);
-export const UPPERCASED_LATIN_CHARS = LATIN_CHARS.map((char) => char.toUpperCase());
 
 export function isLatinChar(char: string): char is LatinChar {
 	validateSingleChar(char);
