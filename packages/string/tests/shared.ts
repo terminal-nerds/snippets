@@ -42,7 +42,7 @@ export const NON_STRING_VALUES = [
 	new RegExp(""),
 ];
 
-export function stringifyArray(array: Array<unknown>): string {
+export function stringifyArray(array: Array<unknown> | readonly unknown[]): string {
 	return array.map((value) => `"${value}"`).join(", ");
 }
 
