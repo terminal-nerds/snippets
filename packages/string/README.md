@@ -10,28 +10,21 @@
 
 [string]: https://developer.mozilla.org/en-US/docs/Glossary/String
 [terminal-nerds/snippets]: https://github.com/terminal-nerds/snippets-string
-
 [package version badge]: https://img.shields.io/npm/v/@terminal-nerds/snippets-string/latest?style=for-the-badge&logo=npm
-
 [dependencies badge]: https://img.shields.io/librariesio/release/npm/@terminal-nerds/snippets-string?style=for-the-badge
 [dependencies url]: https://libraries.io/npm/@terminal-nerds%2snippets-string
-
 [size badge]: https://img.shields.io/bundlephobia/minzip/@terminal-nerds/snippets-string?style=for-the-badge&label=size
 [size url]: https://packagephobia.com/result?p=@terminal-nerds/snippets-string
-
 [types badge]: https://img.shields.io/npm/types/@terminal-nerds/snippets-string?style=for-the-badge&logo=typescript
 
 ## Modules included
 
 <!-- prettier-sort-markdown-table -->
 
-| Name                                                | Size                                                                    |
-| --------------------------------------------------- | ----------------------------------------------------------------------- |
-| [`@terminal-nerds/snippets-string/case`]            | ![case size gzip badge] ![case size brotli badge]                       |
-| [`@terminal-nerds/snippets-string/is-string-empty`] | ![is-string-empty size gzip badge] ![is-string-empty size brotli badge] |
-| [`@terminal-nerds/snippets-string/is-string`]       | ![is-string size gzip badge] ![is-string size brotli badge]             |
-| [`@terminal-nerds/snippets-string/schema`]          | ![schema size gzip badge] ![schema size brotli badge]                   |
-| [`@terminal-nerds/snippets-string/validate-string`] | ![validate-string size gzip badge] ![validate-string size brotli badge] |
+| Name                                       | Size                                                  |
+| ------------------------------------------ | ----------------------------------------------------- |
+| [`@terminal-nerds/snippets-string/case`]   | ![case size gzip badge] ![case size brotli badge]     |
+| [`@terminal-nerds/snippets-string/schema`] | ![schema size gzip badge] ![schema size brotli badge] |
 
 <!-- prettier-ignore-start -->
 <!-- MODULES LINKS -->
@@ -39,21 +32,9 @@
 [case size gzip badge]: https://badgen.net/badgesize/gzip/file-url/unpkg.com/@terminal-nerds/snippets-string/dist/case/case.js?label=gzip
 [case size brotli badge]: https://badgen.net/badgesize/brotli/file-url/unpkg.com/@terminal-nerds/snippets-string/dist/case/case.js?label=brotli
 
-[`@terminal-nerds/snippets-string/is-string`]: https://github.com/terminal-nerds/snippets/blob/main/packages/string/source/is-string/is-string.ts
-[is-string size gzip badge]: https://badgen.net/badgesize/gzip/file-url/unpkg.com/@terminal-nerds/snippets-string/dist/is-string/is-string.js?label=gzip
-[is-string size brotli badge]: https://badgen.net/badgesize/brotli/file-url/unpkg.com/@terminal-nerds/snippets-string/dist/is-string/is-string.js?label=brotli
-
-[`@terminal-nerds/snippets-string/is-string-empty`]: https://github.com/terminal-nerds/snippets/blob/main/packages/string/source/is-string-empty/is-string-empty.ts
-[is-string-empty size gzip badge]: https://badgen.net/badgesize/gzip/file-url/unpkg.com/@terminal-nerds/snippets-string/dist/is-string-empty/is-string-empty.js?label=gzip
-[is-string-empty size brotli badge]: https://badgen.net/badgesize/brotli/file-url/unpkg.com/@terminal-nerds/snippets-string/dist/is-string-empty/is-string-empty.js?label=brotli
-
 [`@terminal-nerds/snippets-string/schema`]: https://github.com/terminal-nerds/snippets/blob/main/packages/string/source/schema/schema.ts
 [schema size gzip badge]: https://badgen.net/badgesize/gzip/file-url/unpkg.com/@terminal-nerds/snippets-string/dist/schema/schema.js?label=gzip
 [schema size brotli badge]: https://badgen.net/badgesize/brotli/file-url/unpkg.com/@terminal-nerds/snippets-string/dist/schema/schema.js?label=brotli
-
-[`@terminal-nerds/snippets-string/validate-string`]: https://github.com/terminal-nerds/snippets/blob/main/packages/string/source/validate-string/validate-string.ts
-[validate-string size gzip badge]: https://badgen.net/badgesize/gzip/file-url/unpkg.com/@terminal-nerds/snippets-string/dist/validate-string/validate-string.js?label=gzip
-[validate-string size brotli badge]: https://badgen.net/badgesize/brotli/file-url/unpkg.com/@terminal-nerds/snippets-string/dist/validate-string/validate-string.js?label=brotli
 <!-- prettier-ignore-end -->
 
 ---

@@ -1,8 +1,14 @@
+/* eslint-disable jest/no-export */
+
+import { expect, it } from "vitest";
+import { ZodError } from "zod";
+
 export const SAMPLE_STRING = "terminal-nerds";
 
 /* prettier-ignore */
 export const EMPTY_STRING_VALUES = [
-	"", String(),
+	"",
+	String(),
 	String(""),
 ];
 
@@ -35,3 +41,16 @@ export const NON_STRING_VALUES = [
 	// eslint-disable-next-line prefer-regex-literals
 	new RegExp(""),
 ];
+
+export function stringifyArray(array: Array<unknown>): string {
+	return array.map((value) => `"${value}"`).join(", ");
+}
+
+/* eslint-disable @typescript-eslint/no-explicit-any */
+export function testInvalidInput(method: (input: any) => void): void {
+	it(`throws 'ZodError' on passed non-string arguments`, () => {
+		for (const nonString of NON_STRING_VALUES) {
+			expect(() => method(nonString)).toThrowError(ZodError);
+		}
+	});
+}
