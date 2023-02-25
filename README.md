@@ -66,6 +66,7 @@ There are two recommended ways to use the snippets:
 | ----------------------------- | ---------------------------------------------- |
 | [![snippets badge]][snippets] | [![snippets version badge]][snippets npm page] |
 | <!-- PACKAGES -->             | <!-- PACKAGES -->                              |
+| [![regexp badge]][regexp]     | [![regexp version badge]][regexp npm page]     |
 | [![string badge]][string]     | [![string version badge]][string npm page]     |
 
 [snippets]: ./packages/snippets/README.md
@@ -75,6 +76,11 @@ There are two recommended ways to use the snippets:
 
 <!-- prettier-ignore-start -->
 <!-- PACKAGES LINKS -->
+[regexp]: ./packages/regexp/README.md
+[regexp badge]: https://img.shields.io/static/v1?label=%40terminal-nerds&message=snippets-regexp&style=flat-square&color=informational
+[regexp version badge]: https://img.shields.io/npm/v/@terminal-nerds/snippets-regexp/latest?style=flat-square&logo=npm
+[regexp npm page]: https://www.npmjs.com/package/@terminal-nerds/snippets-regexp
+
 [string]: ./packages/string/README.md
 [string badge]: https://img.shields.io/static/v1?label=%40terminal-nerds&message=snippets-string&style=flat-square&color=informational
 [string version badge]: https://img.shields.io/npm/v/@terminal-nerds/snippets-string/latest?style=flat-square&logo=npm
