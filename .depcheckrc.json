@@ -1,5 +1,5 @@
 {
 	"ignore-bin-package": false,
-	"ignores": ["@changesets/*", "@terminal-nerds/*", "@types/node", "tsup", "typescript"],
+	"ignores": ["@changesets/*", "@terminal-nerds/*", "@types/node", "tsup", "typescript", "tsx", "prettier-*"],
 	"skip-missing": false
 }
