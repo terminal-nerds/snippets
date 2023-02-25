@@ -56,8 +56,7 @@
 		"test:unit": "vitest run --dir \"./source\""
 	},
 	"dependencies": {
-		"case-anything": "2.1.10",
-		"type-fest": "3.5.7",
+		"magic-regexp": "0.6.2",
 		"zod": "3.20.6"
 	}
 }
