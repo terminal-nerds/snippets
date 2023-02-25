@@ -26,9 +26,14 @@
 | [`@terminal-nerds/snippets-string/case`]   | ![case size gzip badge] ![case size brotli badge]     |
 | [`@terminal-nerds/snippets-string/char`]   | ![char size gzip badge] ![char size brotli badge]     |
 | [`@terminal-nerds/snippets-string/schema`] | ![schema size gzip badge] ![schema size brotli badge] |
+| [`@terminal-nerds/snippets-string/word`]   | ![word size gzip badge] ![word size brotli badge]     |
 
 <!-- prettier-ignore-start -->
 <!-- MODULES LINKS -->
+[`@terminal-nerds/snippets-string/word`]: https://github.com/terminal-nerds/snippets/blob/main/packages/string/source/word/word.ts
+[word size gzip badge]: https://badgen.net/badgesize/gzip/file-url/unpkg.com/@terminal-nerds/snippets-string/dist/word/word.js?label=gzip
+[word size brotli badge]: https://badgen.net/badgesize/brotli/file-url/unpkg.com/@terminal-nerds/snippets-string/dist/word/word.js?label=brotli
+
 [`@terminal-nerds/snippets-string/char`]: https://github.com/terminal-nerds/snippets/blob/main/packages/string/source/char/char.ts
 [char size gzip badge]: https://badgen.net/badgesize/gzip/file-url/unpkg.com/@terminal-nerds/snippets-string/dist/char/char.js?label=gzip
 [char size brotli badge]: https://badgen.net/badgesize/brotli/file-url/unpkg.com/@terminal-nerds/snippets-string/dist/char/char.js?label=brotli

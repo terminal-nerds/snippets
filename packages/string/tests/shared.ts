@@ -40,6 +40,9 @@ export const NON_STRING_VALUES = [
 	/a/,
 	// eslint-disable-next-line prefer-regex-literals
 	new RegExp(""),
+	Number.POSITIVE_INFINITY,
+	Number.NEGATIVE_INFINITY,
+	Number.NaN,
 ];
 
 export function stringifyArray(array: Array<unknown> | readonly unknown[]): string {

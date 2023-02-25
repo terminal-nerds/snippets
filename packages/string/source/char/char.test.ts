@@ -3,23 +3,19 @@ import { ZodError } from "zod";
 
 import { EMPTY_STRING_VALUES, SAMPLE_STRING, stringifyArray, testInvalidInput } from "../../tests/shared.js";
 import {
-	hasLatinChars,
-	hasNumberChars,
-	hasSpecialChars,
 	isLatinChar,
 	isNumberChar,
 	isSingleChar,
 	isSpecialChar,
 	LATIN_CHARS,
+	NON_LATIN_CHARS,
+	NON_NUMBER_CHARS,
+	NON_SPECIAL_CHARS,
 	NUMBER_CHARS,
+	SINGLE_CHARS,
 	SPECIAL_CHARS,
+	UPPERCASED_LATIN_CHARS,
 } from "./char.js";
-
-const UPPERCASED_LATIN_CHARS = LATIN_CHARS.map((char) => char.toUpperCase());
-const SINGLE_CHARS = [...LATIN_CHARS, ...UPPERCASED_LATIN_CHARS, ...NUMBER_CHARS, ...SPECIAL_CHARS];
-const NON_LATIN_CHARS = [...NUMBER_CHARS, ...SPECIAL_CHARS];
-const NON_NUMBER_CHARS = [...LATIN_CHARS, ...UPPERCASED_LATIN_CHARS, ...SPECIAL_CHARS];
-const NON_SPECIAL_CHARS = [...LATIN_CHARS, ...UPPERCASED_LATIN_CHARS, ...NUMBER_CHARS];
 
 describe("isSingleChar(input)", () => {
 	testInvalidInput(isSingleChar);
@@ -66,21 +62,11 @@ describe("isLatinChar(char)", () => {
 			expect(isLatinChar(char)).toBe(true);
 		}
 	});
-});
 
-describe("hasLatinChars(input)", () => {
-	testInvalidInput(hasLatinChars);
-
-	const inputWithoutLatinChars = NON_LATIN_CHARS.join("");
-
-	it(`returns 'false' on input without latin chars: ${inputWithoutLatinChars}`, () => {
-		expect(hasLatinChars(inputWithoutLatinChars)).toBe(false);
-	});
-
-	const inputWithLatinChars = SINGLE_CHARS.join("");
-
-	it(`returns 'true' on input with latin chars: ${inputWithLatinChars}`, () => {
-		expect(hasLatinChars(inputWithLatinChars)).toBe(true);
+	it(`returns 'true' on uppercased latin chars: ${stringifyArray(UPPERCASED_LATIN_CHARS)}`, () => {
+		for (const char of UPPERCASED_LATIN_CHARS) {
+			expect(isLatinChar(char)).toBe(true);
+		}
 	});
 });
 
@@ -101,22 +87,6 @@ describe("isNumberChar(char)", () => {
 	});
 });
 
-describe("hasNumberChars(input)", () => {
-	testInvalidInput(hasNumberChars);
-
-	const inputWithoutNumberChars = NON_NUMBER_CHARS.join("");
-
-	it(`returns 'false' on input without number chars: ${inputWithoutNumberChars}`, () => {
-		expect(hasNumberChars(inputWithoutNumberChars)).toBe(false);
-	});
-
-	const inputWithNumberChars = SINGLE_CHARS.join("");
-
-	it(`returns 'true' on input with number chars: ${inputWithNumberChars}`, () => {
-		expect(hasNumberChars(inputWithNumberChars)).toBe(true);
-	});
-});
-
 describe("isSpecialChar(char)", () => {
 	testInvalidInput(isSpecialChar);
 	testNonSingleChars(isSpecialChar);
@@ -131,21 +101,5 @@ describe("isSpecialChar(char)", () => {
 		for (const char of SPECIAL_CHARS) {
 			expect(isSpecialChar(char)).toBe(true);
 		}
-	});
-});
-
-describe("hasSpecialChars(input)", () => {
-	testInvalidInput(hasSpecialChars);
-
-	const inputWithoutSpecialChars = NON_SPECIAL_CHARS.join("");
-
-	it(`returns 'false' on input without special chars: ${inputWithoutSpecialChars}`, () => {
-		expect(hasSpecialChars(inputWithoutSpecialChars)).toBe(false);
-	});
-
-	const inputWithSpecialChars = SINGLE_CHARS.join("");
-
-	it(`returns 'true' on input with special chars: ${inputWithSpecialChars}`, () => {
-		expect(hasSpecialChars(inputWithSpecialChars)).toBe(true);
 	});
 });

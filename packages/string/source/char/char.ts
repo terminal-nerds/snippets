@@ -1,4 +1,3 @@
-import { caseInsensitive, charIn, createRegExp, global, multiline } from "magic-regexp";
 import { z } from "zod";
 
 import { validateString } from "../main.js";
@@ -18,19 +17,13 @@ export function validateSingleChar(char: string): string {
 export const LATIN_CHARS = ["a", "b", "c", "d", "e", "f", "g", "h", "i", "j", "k", "l", "m", "n", "o", "p", "r", "s", "t", "u", "v", "w", "x", "y", "z"] as const;
 export type LatinChar = (typeof LATIN_CHARS)[number];
 export const LATIN_CHAR_SCHEMA = z.enum(LATIN_CHARS);
+export const UPPERCASED_LATIN_CHARS = LATIN_CHARS.map((char) => char.toUpperCase());
 
 export function isLatinChar(char: string): char is LatinChar {
 	validateSingleChar(char);
 
-	return LATIN_CHAR_SCHEMA.safeParse(char).success;
+	return LATIN_CHAR_SCHEMA.safeParse(char.toLowerCase()).success;
 }
-
-export function hasLatinChars(input: string): boolean {
-	validateString(input);
-
-	return createRegExp(charIn(LATIN_CHARS.join("")), [caseInsensitive, global, multiline]).test(input);
-}
-
 export const NUMBER_CHARS = ["0", "1", "2", "3", "4", "5", "6", "7", "8", "9"] as const;
 export type NumberChar = (typeof NUMBER_CHARS)[number];
 export const NUMBER_CHAR_SCHEMA = z.enum(NUMBER_CHARS);
@@ -39,12 +32,6 @@ export function isNumberChar(char: string): char is NumberChar {
 	validateSingleChar(char);
 
 	return NUMBER_CHAR_SCHEMA.safeParse(char).success;
-}
-
-export function hasNumberChars(input: string): boolean {
-	validateString(input);
-
-	return createRegExp(charIn(NUMBER_CHARS.join("")), [global, multiline]).test(input);
 }
 
 /* prettier-ignore */
@@ -58,8 +45,7 @@ export function isSpecialChar(char: string): char is SpecialChar {
 	return SPECIAL_CHAR_SCHEMA.safeParse(char).success;
 }
 
-export function hasSpecialChars(input: string): boolean {
-	validateString(input);
-
-	return createRegExp(charIn(SPECIAL_CHARS.join("")), [global, multiline]).test(input);
-}
+export const NON_LATIN_CHARS = [...NUMBER_CHARS, ...SPECIAL_CHARS];
+export const NON_NUMBER_CHARS = [...LATIN_CHARS, ...UPPERCASED_LATIN_CHARS, ...SPECIAL_CHARS];
+export const NON_SPECIAL_CHARS = [...LATIN_CHARS, ...UPPERCASED_LATIN_CHARS, ...NUMBER_CHARS];
+export const SINGLE_CHARS = [...LATIN_CHARS, ...UPPERCASED_LATIN_CHARS, ...NUMBER_CHARS, ...SPECIAL_CHARS];
