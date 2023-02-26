@@ -109,9 +109,12 @@ jobs:
         # https://github.com/terminal-nerds/.github/blob/main/.github/workflows/build.yml
         uses: terminal-nerds/.github/.github/workflows/build.yml@main
         with:
-            artifact-path: "./packages/*/dist/"
+            artifact-path: |
+                ./packages/*/dist/
+                ./scripts/*/dist/
+
             artifact-upload: true
-            include: "./dist/**/*.{js,cjs,json}"
+            include: "./packages/*/dist/**/*.{js,cjs,json}"
             script-build: build:pkgs
 
     test:
