@@ -20,11 +20,15 @@
 
 <!-- prettier-sort-markdown-table -->
 
-| Name | Size |
-| ---- | ---- |
+| Name                                      | Size                                                    |
+| ----------------------------------------- | ------------------------------------------------------- |
+| [`@terminal-nerds/regexp-string/creator`] | ![creator size gzip badge] ![creator size brotli badge] |
 
 <!-- prettier-ignore-start -->
 <!-- MODULES LINKS -->
+[`@terminal-nerds/snippets-regexp/creator`]: https://github.com/terminal-nerds/snippets/blob/main/packages/regexp/source/creator/creator.ts
+[creator size gzip badge]: https://badgen.net/badgesize/gzip/file-url/unpkg.com/@terminal-nerds/snippets-regexp/dist/creator/creator.js?label=gzip
+[creator size brotli badge]: https://badgen.net/badgesize/brotli/file-url/unpkg.com/@terminal-nerds/snippets-regexp/dist/creator/creator.js?label=brotli
 <!-- prettier-ignore-end -->
 
 ---
