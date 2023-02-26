@@ -4,23 +4,38 @@
 
 ✨ Added a module `char` for grouped snippets. It includes:
 
--   `CHAR_SCHEMA`
--   `isSingleChar()`
--   `validateSingleChar()`
+-   `CHAR_TYPES`
+-   `type CharType`
+-   `LOWER_CASED_LATIN_CHARS`
+-   `type LowerCasedLatinChar`
+-   `UPPER_CASED_LATIN_CHARS`
+-   `type LowerCasedLatinChar`
 -   `LATIN_CHARS`
--   `UPPERCASED_LATIN_CHARS`
--   `LATIN_CHAR_SCHEMA`
 -   `type LatinChar`
--   `isLatinChar()`
 -   `NUMBER_CHARS`
--   `NUMBER_CHAR_SCHEMA`
 -   `type NumberChar`
--   `isNumberChar()`
 -   `SPECIAL_CHARS`
--   `SPECIAL_CHAR_SCHEMA`
--   `isSpecialChar()`
 -   `type SpecialChar`
+-   `SINGLE_CHARS`
+-   `type SingleChar`
+-   `CHARS`
+-   `type Char`
 -   `NON_LATIN_CHARS`
 -   `NON_NUMBER_CHARS`
 -   `NON_SPECIAL_CHARS`
--   `SINGLE_CHARS`
+-   `CHAR_SCHEMA`
+-   `CHAR_TYPE_SCHEMA`
+-   `LATIN_CHAR_SCHEMA`
+-   `NUMBER_CHAR_SCHEMA`
+-   `SPECIAL_CHAR_SCHEMA`
+-   `CHARS_SCHEMAS`
+-   `isSingleChar()`
+-   `validateSingleChar()`
+-   `getJoinedChars()`
+-   `type CharOptions()`
+-   `validateCharType()`
+-   `isValidCharType()`
+-   `getCharType()`
+-   `isChar()`
+-   `hasChars()`
+-   `getChars()`

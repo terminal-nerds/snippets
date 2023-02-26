@@ -5,8 +5,8 @@
 ✨ Added a module `schema` for grouped snippets. It includes:
 
 -   `STRING_SCHEMA`
--   `isString()`
--   `validateString()`
 -   `EMPTY_STRING_SCHEMA`
 -   `type EmptyString`
+-   `isString()`
 -   `isStringEmpty()`
+-   `validateString()`
