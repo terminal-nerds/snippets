@@ -1,64 +1,17 @@
 import { describe, expect, it } from "vitest";
 
-import { EMPTY_STRING_VALUES, SAMPLE_STRING, stringifyArray, testInvalidInput } from "../../tests/shared.js";
-import { NON_LATIN_CHARS, NON_NUMBER_CHARS, NON_SPECIAL_CHARS, NUMBER_CHARS, SINGLE_CHARS } from "../char/char.js";
-import { hasLatinChars, hasNumberChars, hasSpecialChars, isNumeric, isPalindrome, reverseString } from "./word.js";
-
-describe("hasLatinChars(input)", () => {
-	testInvalidInput(hasLatinChars);
-
-	const inputWithoutLatinChars = NON_LATIN_CHARS.join("");
-
-	it(`returns 'false' on input without latin chars: ${inputWithoutLatinChars}`, () => {
-		expect(hasLatinChars(inputWithoutLatinChars)).toBe(false);
-	});
-
-	const inputWithLatinChars = SINGLE_CHARS.join("");
-
-	it(`returns 'true' on input with latin chars: ${inputWithLatinChars}`, () => {
-		expect(hasLatinChars(inputWithLatinChars)).toBe(true);
-	});
-});
-
-describe("hasNumberChars(input)", () => {
-	testInvalidInput(hasNumberChars);
-
-	const inputWithoutNumberChars = NON_NUMBER_CHARS.join("");
-
-	it(`returns 'false' on input without number chars: ${inputWithoutNumberChars}`, () => {
-		expect(hasNumberChars(inputWithoutNumberChars)).toBe(false);
-	});
-
-	const inputWithNumberChars = SINGLE_CHARS.join("");
-
-	it(`returns 'true' on input with number chars: ${inputWithNumberChars}`, () => {
-		expect(hasNumberChars(inputWithNumberChars)).toBe(true);
-	});
-});
-
-describe("hasSpecialChars(input)", () => {
-	testInvalidInput(hasSpecialChars);
-
-	const inputWithoutSpecialChars = NON_SPECIAL_CHARS.join("");
-
-	it(`returns 'false' on input without special chars: ${inputWithoutSpecialChars}`, () => {
-		expect(hasSpecialChars(inputWithoutSpecialChars)).toBe(false);
-	});
-
-	const inputWithSpecialChars = SINGLE_CHARS.join("");
-
-	it(`returns 'true' on input with special chars: ${inputWithSpecialChars}`, () => {
-		expect(hasSpecialChars(inputWithSpecialChars)).toBe(true);
-	});
-});
+import { EMPTY_STRING_VALUES, SAMPLE_INPUT, testInvalidInput } from "../../tests/shared.js";
+import { SINGLE_CHARS } from "../char/char.js";
+import { stringifyArray } from "../shared.js";
+import { isNumeric, isPalindrome, reverseString } from "./word.js";
 
 describe("reverseString(input)", () => {
-	testInvalidInput(hasSpecialChars);
+	testInvalidInput(reverseString);
 
-	const reversedSampleString = `sdren-lanimret`;
+	const reversedSampleString = `sdren-lanimret@19OHEX`;
 
-	it(`returns reversed string from: '${SAMPLE_STRING}' to: '${reversedSampleString}'`, () => {
-		expect(reverseString(SAMPLE_STRING)).toStrictEqual(reversedSampleString);
+	it(`🔙 returns reversed string: '${reversedSampleString}' from sample input: '${SAMPLE_INPUT}'`, () => {
+		expect(reverseString(SAMPLE_INPUT)).toStrictEqual(reversedSampleString);
 	});
 });
 
@@ -70,25 +23,25 @@ const PALINDROME_SAMPLES = [
 ] as const;
 
 describe("isPalindrome(input)", () => {
-	testInvalidInput(hasSpecialChars);
+	testInvalidInput(isPalindrome);
 
-	it(`returns 'false' on: '${SAMPLE_STRING}'`, () => {
-		expect(isPalindrome(SAMPLE_STRING)).toBe(false);
+	it(`🔴 returns 'false' on sample input: '${SAMPLE_INPUT}'`, () => {
+		expect(isPalindrome(SAMPLE_INPUT)).toBe(false);
 	});
 
-	it(`returns 'true' on empty string`, () => {
+	it(`🟢 returns 'true' on empty string input`, () => {
 		for (const emptyString of EMPTY_STRING_VALUES) {
 			expect(isPalindrome(emptyString)).toBe(true);
 		}
 	});
 
-	it(`returns 'true' on single characters: ${stringifyArray(SINGLE_CHARS)}`, () => {
+	it(`🟢 returns 'true' on single characters input: ${stringifyArray(SINGLE_CHARS)}`, () => {
 		for (const char of SINGLE_CHARS) {
 			expect(isPalindrome(char)).toBe(true);
 		}
 	});
 
-	it(`returns 'true' on sample palindromes: ${stringifyArray(PALINDROME_SAMPLES)}`, () => {
+	it(`🟢 returns 'true' on sample palindromes input: ${stringifyArray(PALINDROME_SAMPLES)}`, () => {
 		for (const palindrome of PALINDROME_SAMPLES) {
 			expect(isPalindrome(palindrome)).toBe(true);
 		}
@@ -97,12 +50,12 @@ describe("isPalindrome(input)", () => {
 
 /* prettier-ignore */
 const NUMERIC_STRING_SAMPLES = [
-	"123",
-	"-123",
-	"12.3",
-	"-12.3",
-	" 12.3 ",
-	" -12.3 ",
+	"123456789",
+	"-123456789",
+	"123.456789",
+	"-123.456789",
+	" 123.456789 ",
+	" -123.456789 ",
 	"0b11111111", // 255
 	"0o377", // 255
 	"0xFF", // 255
@@ -112,33 +65,27 @@ const NUMERIC_STRING_SAMPLES = [
 ] as const;
 
 describe("isNumeric(input)", () => {
-	testInvalidInput(hasSpecialChars);
+	testInvalidInput(isNumeric);
 
-	it(`returns 'false' on: '${SAMPLE_STRING}'`, () => {
-		expect(isNumeric(SAMPLE_STRING)).toBe(false);
+	it(`🔴 returns 'false' on input: '${SAMPLE_INPUT}'`, () => {
+		expect(isNumeric(SAMPLE_INPUT)).toBe(false);
 	});
 
-	it(`returns 'false' on: 'NaN'`, () => {
+	it(`🔴 returns 'false' on input: 'NaN'`, () => {
 		expect(isNumeric("NaN")).toBe(false);
 	});
 
-	it(`returns 'false' on: 'null'`, () => {
+	it(`🔴 returns 'false' on input: 'null'`, () => {
 		expect(isNumeric("null")).toBe(false);
 	});
 
-	it(`returns 'true' on empty string`, () => {
+	it(`🟢 returns 'true' on empty string input`, () => {
 		for (const emptyString of EMPTY_STRING_VALUES) {
 			expect(isNumeric(emptyString)).toBe(true);
 		}
 	});
 
-	it(`returns 'true' on single numbers: ${stringifyArray(NUMBER_CHARS)}`, () => {
-		for (const char of NUMBER_CHARS) {
-			expect(isNumeric(char)).toBe(true);
-		}
-	});
-
-	it(`returns 'true' on sample numeric strings: ${stringifyArray(NUMERIC_STRING_SAMPLES)}`, () => {
+	it(`🟢 returns 'true' on sample numeric strings inputs: ${stringifyArray(NUMERIC_STRING_SAMPLES)}`, () => {
 		for (const numericString of NUMERIC_STRING_SAMPLES) {
 			expect(isNumeric(numericString)).toBe(true);
 		}

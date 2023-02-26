@@ -3,7 +3,7 @@
 import { expect, it } from "vitest";
 import { ZodError } from "zod";
 
-export const SAMPLE_STRING = "terminal-nerds";
+export const SAMPLE_INPUT = "XEHO91@terminal-nerds";
 
 /* prettier-ignore */
 export const EMPTY_STRING_VALUES = [
@@ -14,8 +14,8 @@ export const EMPTY_STRING_VALUES = [
 
 /* prettier-ignore */
 export const NON_EMPTY_STRING_VALUES = [
-	SAMPLE_STRING,
-	String(SAMPLE_STRING),
+	SAMPLE_INPUT,
+	String(SAMPLE_INPUT),
 	"10",
 ];
 
@@ -45,15 +45,11 @@ export const NON_STRING_VALUES = [
 	Number.NaN,
 ];
 
-export function stringifyArray(array: Array<unknown> | readonly unknown[]): string {
-	return array.map((value) => `"${value}"`).join(", ");
-}
-
 /* eslint-disable @typescript-eslint/no-explicit-any */
-export function testInvalidInput(method: (input: any) => void): void {
-	it(`throws 'ZodError' on passed non-string arguments`, () => {
+export function testInvalidInput(method: (input: any, options?: any) => void, options?: any): void {
+	it(`💣 throws 'ZodError' on passed non-string input`, () => {
 		for (const nonString of NON_STRING_VALUES) {
-			expect(() => method(nonString)).toThrowError(ZodError);
+			expect(() => method(nonString, options)).toThrowError(ZodError);
 		}
 	});
 }
