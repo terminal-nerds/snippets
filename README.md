@@ -43,7 +43,7 @@ Prevent searching for a certain snippet in projects, reduce the issues during at
 
 📦 The following packages are available under the [packages/](./packages) directory.
 
-> **Info:** > **All of them are [scoped] - they are prefixed with `@terminal-nerds/`.**
+> **Note** **All of them are [scoped] - they are prefixed with `@terminal-nerds/`.**\
 > They are accessible for public use and downloadable from the [npmjs.com registry].
 
 [scoped]: https://docs.npmjs.com/cli/v6/using-npm/scope

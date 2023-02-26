@@ -39,8 +39,8 @@
 
 ## Prerequisites
 
-> **Note:** > **The packages are written in ES Module _(ESM)_ type.**\
-> If you with to use in project with CommonJS _(CJS)_ type, then, you need to bundle this package.
+> **Note** **The packages are written in ES Module _(ESM)_ type.**\
+> If you wish to use in project with CommonJS _(CJS)_ type, then, you need to bundle this package.
 
 ### Required
 

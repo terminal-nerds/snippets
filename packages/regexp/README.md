@@ -20,9 +20,9 @@
 
 <!-- prettier-sort-markdown-table -->
 
-| Name                                      | Size                                                    |
-| ----------------------------------------- | ------------------------------------------------------- |
-| [`@terminal-nerds/regexp-string/creator`] | ![creator size gzip badge] ![creator size brotli badge] |
+| Name                                        | Size                                                    |
+| ------------------------------------------- | ------------------------------------------------------- |
+| [`@terminal-nerds/snippets-regexp/creator`] | ![creator size gzip badge] ![creator size brotli badge] |
 
 <!-- prettier-ignore-start -->
 <!-- MODULES LINKS -->
@@ -35,8 +35,8 @@
 
 ## Prerequisites
 
-> **Note:** > **The packages are written in ES Module _(ESM)_ type.**\
-> If you with to use in project with CommonJS _(CJS)_ type, then, you need to bundle this package.
+> **Note** **The packages are written in ES Module _(ESM)_ type.**\
+> If you wish to use in project with CommonJS _(CJS)_ type, then, you need to bundle this package.
 
 ### Required
 
