@@ -116,6 +116,7 @@ jobs:
 
     test:
         name: Test
+        needs: [build]
         # https://github.com/terminal-nerds/.github/blob/main/.github/workflows/test.yml
         uses: terminal-nerds/.github/.github/workflows/test.yml@main
         secrets:
