@@ -25,7 +25,12 @@
 			"outputs": [],
 			"cache": false
 		},
-		"dev": {
+		"dev:pkg": {
+			"dependsOn": [],
+			"outputs": [],
+			"cache": false
+		},
+		"dev:test": {
 			"dependsOn": [],
 			"outputs": [],
 			"cache": false
