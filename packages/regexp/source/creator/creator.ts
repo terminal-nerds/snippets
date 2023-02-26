@@ -1,6 +1,8 @@
 import type { Flag } from "magic-regexp";
 import { z } from "zod";
 
+export * from "magic-regexp";
+
 export enum REGEXP_FLAGS {
 	/** Case-insensitive search */
 	caseInsensitive = "i",
@@ -37,5 +39,3 @@ export function setRegExpFlags(options: RegExpOptions): Array<Flag> {
 		.map(([key]) => REGEXP_FLAGS[key as RegExpFlagName])
 		.filter(Boolean);
 }
-
-export * from "magic-regexp";

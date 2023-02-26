@@ -68,14 +68,10 @@ importers:
 
   packages/regexp:
     specifiers:
-      case-anything: 2.1.10
       magic-regexp: 0.6.2
-      type-fest: 3.5.7
       zod: 3.20.6
     dependencies:
-      case-anything: 2.1.10
       magic-regexp: 0.6.2
-      type-fest: 3.5.7
       zod: 3.20.6
 
   packages/snippets:
@@ -88,13 +84,13 @@ importers:
 
   packages/string:
     specifiers:
+      '@terminal-nerds/snippets-regexp': workspace:*
       case-anything: 2.1.10
-      magic-regexp: 0.6.2
       type-fest: 3.5.7
       zod: 3.20.6
     dependencies:
+      '@terminal-nerds/snippets-regexp': link:../regexp
       case-anything: 2.1.10
-      magic-regexp: 0.6.2
       type-fest: 3.5.7
       zod: 3.20.6
 

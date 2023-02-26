@@ -18,6 +18,7 @@
 		"clean": "concurrently \"pnpm:clean:*\" --group --timings",
 		"clean:cache": "del \"./node_modules/.cache\"",
 		"clean:test": "del \"./coverage\"",
+		"dev:pkgs": "turbo run dev:pkg",
 		"dev:test": "vitest watch --dir \"./packages\" --ui",
 		"fix": "concurrently \"pnpm:fix:*\" --group --timings",
 		"fix:format": "pretty-quick --branch main --pattern \"**/*\" --patern \"!{shared,packages}/**/*\" --verbose",
