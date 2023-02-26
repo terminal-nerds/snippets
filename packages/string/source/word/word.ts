@@ -1,30 +1,14 @@
-import { caseInsensitive, charIn, createRegExp, global, multiline } from "magic-regexp";
+import type { Join, Split } from "type-fest";
 
-import { LATIN_CHARS, NUMBER_CHARS, SPECIAL_CHARS } from "../char/char.js";
 import { validateString } from "../schema/schema.js";
 
-export function hasLatinChars(input: string): boolean {
+export type ReversedTuple<T> = T extends [infer Head, ...infer Rest] ? [...ReversedTuple<Rest>, Head] : [];
+export type ReversedString<T extends string> = Join<ReversedTuple<Split<T, "">>, "">;
+
+export function reverseString<T extends string>(input: T): ReversedString<T> {
 	validateString(input);
 
-	return createRegExp(charIn(LATIN_CHARS.join("")), [caseInsensitive, global, multiline]).test(input);
-}
-
-export function hasNumberChars(input: string): boolean {
-	validateString(input);
-
-	return createRegExp(charIn(NUMBER_CHARS.join("")), [global, multiline]).test(input);
-}
-
-export function hasSpecialChars(input: string): boolean {
-	validateString(input);
-
-	return createRegExp(charIn(SPECIAL_CHARS.join("")), [global, multiline]).test(input);
-}
-
-export function reverseString(input: string): string {
-	validateString(input);
-
-	return [...input].reverse().join("");
+	return [...input].reverse().join("") as ReversedString<T>;
 }
 
 /** Palindrome - {@link https://en.wikipedia.org/wiki/Palindrome} */
