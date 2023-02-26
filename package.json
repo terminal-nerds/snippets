@@ -4,7 +4,6 @@
 	"type": "module",
 	"name": "@workspace/root",
 	"version": "0.0.0",
-	"license": "MIT",
 	"homepage": "https://github.com/terminal-nerds/snippets",
 	"repository": "terminal-nerds/snippets.git",
 	"bugs": "https://github.com/terminal-nerds/snippets/issues",
