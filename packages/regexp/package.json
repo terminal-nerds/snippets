@@ -1,19 +1,20 @@
 {
 	"$schema": "https://json.schemastore.org/package",
 	"type": "module",
-	"name": "@terminal-nerds/snippets",
+	"name": "@terminal-nerds/snippets-regexp",
 	"version": "0.0.0",
-	"description": "@terminal-nerds all of the reusable snippets.",
+	"description": "@terminal-nerds reusable snippets for regexps.",
 	"keywords": [
 		"snippets",
-		"typescript"
+		"typescript",
+		"regexp"
 	],
 	"license": "MIT",
 	"homepage": "https://github.com/terminal-nerds/snippets",
 	"repository": {
 		"type": "git",
 		"url": "https://github.com/terminal-nerds/snippets.git",
-		"directory": "packages/snippets"
+		"directory": "packages/regexp"
 	},
 	"bugs": "https://github.com/terminal-nerds/snippets/issues",
 	"engines": {
@@ -23,6 +24,10 @@
 		".": {
 			"types": "./dist/main.d.ts",
 			"import": "./dist/main.js"
+		},
+		"./*": {
+			"types": "./dist/*/*.d.ts",
+			"import": "./dist/*/*.js"
 		}
 	},
 	"files": [
@@ -37,7 +42,7 @@
 		"dev:test": "vitest watch --ui",
 		"dev:pkg": "tsup --watch",
 		"fix": "concurrently \"pnpm:fix:*\" --group --timings",
-		"fix:format": "pretty-quick --branch main --pattern \"packages/snippets/**/*\" --verbose",
+		"fix:format": "pretty-quick --branch main --pattern \"packages/regexp/**/*\" --verbose",
 		"fix:js": "pnpm lint:js --fix",
 		"fix:md": "pnpm lint:md --fix",
 		"fix:pkg": "syncpack format ; syncpack fix-mismatches",
@@ -47,18 +52,11 @@
 		"lint:js": "DEBUG=\"eslint:cli-engine\" eslint . --ext .cjs,.js,.ts,.json,.yml --cache --cache-location \"./node_modules/.cache/eslint\"",
 		"lint:md": "markdownlint . --config \"../../.markdownlint.json\" --dot --ignore-path \"../../.gitignore\"",
 		"lint:pkg": "syncpack list-mismatches",
-		"lint:types": "tsc --noEmit"
-	},
-	"peerDependencies": {
-		"typescript": "4.9.5"
+		"lint:types": "tsc --noEmit",
+		"test:unit": "vitest run --dir \"./source\""
 	},
 	"dependencies": {
-		"@terminal-nerds/snippets-regexp": "workspace:*",
-		"@terminal-nerds/snippets-string": "workspace:*"
-	},
-	"peerDependenciesMeta": {
-		"typescript": {
-			"optional": true
-		}
+		"magic-regexp": "0.6.2",
+		"zod": "3.20.6"
 	}
 }
