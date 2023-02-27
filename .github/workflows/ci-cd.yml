@@ -128,7 +128,25 @@ jobs:
         with:
             job-name: Unit
             script-test: pnpm test:unit
-            with-coverage: true
+            upload-coverage: true
+
+    coverage:
+        name: Coverage
+        needs: [test]
+        # https://github.com/terminal-nerds/.github/blob/main/.github/workflows/coverage.yml
+        uses: terminal-nerds/.github/.github/workflows/coverage.yml@main
+        secrets:
+            CC_TEST_REPORTER_ID: ${{ secrets.CC_TEST_REPORTER_ID }}
+
+    scan:
+        name: Scan
+        needs: [coverage]
+        # https://github.com/terminal-nerds/.github/blob/main/.github/workflows/sonar-cloud.yml
+        uses: terminal-nerds/.github/.github/workflows/sonar-cloud.yml@main
+        secrets:
+            SONAR_TOKEN: ${{ secrets.SONAR_TOKEN }}
+        with:
+            sonar-project-key: terminal-nerds_snippets
 
     release:
         # prettier-ignore
