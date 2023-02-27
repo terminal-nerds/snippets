@@ -67,14 +67,9 @@ Reusable pieces of code, which can be **reused** across the projects.
 ## Packages
 
 ![workflow CI-CD badge]
-[![CodeClimate issues badge]][codeclimate report]\
-![node.js version support badge]
 [![Dependencies badge]][dependencies url]
 
 [workflow ci-cd badge]: https://img.shields.io/github/actions/workflow/status/terminal-nerds/snippets/ci-cd.yml?label=CI%20%26%20CD&logo=github&style=for-the-badge&branch=main
-[codeclimate issues badge]: https://img.shields.io/codeclimate/issues/terminal-nerds/snippets?logo=codeclimate&style=for-the-badge
-[codeclimate report]: https://codeclimate.com/github/terminal-nerds/snippets
-[node.js version support badge]: https://img.shields.io/node/v-lts/@terminal-nerds/snippets?style=for-the-badge&logo=nodedotjs
 [dependencies badge]: https://img.shields.io/librariesio/github/terminal-nerds/snippets?style=for-the-badge
 [dependencies url]: https://libraries.io/github/terminal-nerds/snippets "Dependencies status"
 
@@ -155,8 +150,15 @@ issue, please follow the instructions, and remember one thing:
 
 ### Project contributors
 
+[![contributors badge]][contributors url]
+[![discord badge]][discord invite url]
+
 🥰 Thanks go to these wonderful people and bots _([emoji key])_:
 
+[contributors badge]: https://img.shields.io/github/contributors/terminal-nerds/snippets?style=for-the-badge
+[contributors url]: /#contributors
+[discord badge]: https://img.shields.io/discord/862890839537877012?label=Discord&logo=discord&style=for-the-badge
+[discord invite url]: https://discord.terminal-nerds.dev
 [emoji key]: https://allcontributors.org/docs/en/emoji-key
 
 <!-- ALL-CONTRIBUTORS-LIST:START - Do not remove or modify this section -->
@@ -177,9 +179,9 @@ issue, please follow the instructions, and remember one thing:
 
 ### Contributing
 
-[![contributors badge]][contributors url]
 [![SonarCloud badge]][sonarcloud report]
 [![coverage badge]][coverage report]
+[![CodeClimate issues badge]][codeclimate report]
 
 🤝 This project follows the [all-contributors] specification.\
 **Therefore, contributions of any kind are welcome!**
@@ -188,12 +190,12 @@ Please refer to our [CONTRIBUTING] file for more information about getting invol
 
 [all-contributors]: https://github.com/all-contributors/all-contributors
 [contributing]: ./.github/CONTRIBUTING.md
-[contributors badge]: https://img.shields.io/github/contributors/terminal-nerds/snippets?style=for-the-badge
-[contributors url]: /#contributors
 [sonarcloud badge]: https://img.shields.io/sonar/quality_gate/terminal-nerds_snippets/main?logo=sonarcloud&server=https%3A%2F%2Fsonarcloud.io&style=for-the-badge
 [sonarcloud report]: https://sonarcloud.io/summary/overall?id=terminal-nerds_snippets
 [coverage badge]: https://img.shields.io/coverallsCoverage/github/terminal-nerds/snippets?branch=main&style=for-the-badge
 [coverage report]: https://coveralls.io/github/terminal-nerds/snippets
+[codeclimate issues badge]: https://img.shields.io/codeclimate/issues/terminal-nerds/snippets?logo=codeclimate&style=for-the-badge
+[codeclimate report]: https://codeclimate.com/github/terminal-nerds/snippets
 
 ### Author
 
