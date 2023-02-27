@@ -3,8 +3,9 @@
 [![pnpm workspace badge]][pnpm workspace]
 [![changesets badge]][changesets]
 [![turborepo badge]][turborepo]
+[![vitest badge]][vitest]
 
-➡️ This project is a [monorepo] made with [pnpm workspace] and powered by [changesets], [turborepo].
+➡️ This project is a [monorepo] made with [pnpm workspace] and powered by [changesets], [turborepo], [vitest].
 
 [monorepo]: https://en.wikipedia.org/wiki/monorepo
 [pnpm workspace]: https://pnpm.io/workspaces
@@ -13,17 +14,53 @@
 [changesets badge]: https://img.shields.io/badge/-changesets-gray?style=for-the-badge&logo=data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAA4AAAAKCAYAAACE2W/HAAABYUlEQVQoU02RvUoDQRDHZ3b3TiwsjI0xWFjb+gIKoqIIKUSCCjY+ho3voO9gF7wq+AaBVOJXY4JaCH5FMSbeJTf+Z3OeWVhmv37zn/kvCwYR6dTBmA1mXsj2Pmyed+6N4dkgdBJYQ4Eh5gzU+1EYN6xJaDFqi3NGAQ6cHYIOJECD+36mJikWMVJ0cbISvfns+tgFVkJrCUkoWho3PivgC4T5eEAcY9sbEPX6xOvRMxQYChYJGAmwHrO12vLEqgcz2LYTSgCxgl3McvQkoQJQc1CtlwtWu/szY9QHuvuS9Af1dlDqVvWRh4YwXVamtaV85Ip6cvspolCckkCRt88eJIRJXtEYut75h3Pw6kMEpghM4QTxG3G32hLfn/bmezR0szfjmRxsvEvaTQBl5qwV2Zc2ddJM1ckQ7jrnpLlf8ucerL/KIUo7UlMAtjaKPDfaz+Rx8wV/V9D/C1JTaR2UTn8B1OeSRP02JSkAAAAASUVORK5CYII=
 [turborepo]: https://github.com/vercel/turborepo
 [turborepo badge]: https://img.shields.io/badge/-turborepo-gray?style=for-the-badge&logo=data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAABHNCSVQICAgIfAhkiAAAAklJREFUOE91kU9oE1EQxuftbpqkmBRJKRYVih6iIEEELcYoBUF6EQ8lPWihtoInNVYQAhZKLRQiikgvRQ968KDtIRUKKpVWq6IHRaonUVs0BitRBJtkk+xmn9+sG9lG/eC382dnZt/OE1TThFS3fNK7LVKOSKKdkoSuSnWYFLNfNa2pynr/tfc94uefescRbMOpXCBoemarJMjUxLhHpacVw/pqyCbFp5Y6qVo+plliK2z/i6GWu/VD7Hjfue8bSUp74L8UG/4S7xjKLsWSH9e63/+voR1FEVAED0GWm+ITssF8+W6aSJ5Np8ILnFP44dI6+PPgObgKboIlMALEZLeorDH0uUA5n6r1uAewPwX2grcgCS4BAwyCM4ACpdaxgF6KJk8/a+PYrQMIcAG0DNz/2eXkv8Fq3JA8OjM92Hevj333CXZwAroPfjg+mzTgXYRAGyeCRuGGt2LYe7EnOuKjslZtGXEj8DjvdLsgvxLS1N/7d59gBu/4FzpBh9PAVecBD3gD7K82mYWuRrPoZd894DXiMaf4ASzfBC9zAJTBCUBzBy82Byt61FeWsxzXi7+YABnAp6mCJ2B3rXB+z8iFR7HR27XYvQPOcdMVh2bYEsjXij/vHw3lCnqrYjXwFa9WJpJolxsG/PV5jiVJJbPt1MnFSGL5w6bjTe4ae5W5cH+gSuotTVjbNUnXNaE8lsLKauRbMcxS3FCp1yRVCq/S27Iw/uqvAbVEcXNPVJHyMDa7iyzLUIRy2RDikCQr7V807gia5J2s0i8UIcDwgEVTwgAAAABJRU5ErkJggg==
+[vitest]: https://github.com/vitest-dev/vitest
+[vitest badge]: https://img.shields.io/badge/-vitest-gray?style=for-the-badge&logo=vitest
+
+![sauron-monorepo-meme]
+
+[sauron-monorepo-meme]: https://github.com/terminal-nerds/.github/blob/main/assets/monorepo-sauron.jpg
 
 ## Project goal
 
-🎯 **Collect all of the snippets in one repository, and keep them organized**.
-For easier maintainability, testability, etc.
-Prevent searching for a certain snippet in projects, reduce the issues during attempt to revive a project with legacy code.
+🎯 **Collect all code snippets in one repository, and keep them organized.**
 
--   typed
--   testable
--   tree-shakeable (bundlers can easily do code-splitting)
--   written with ES Module (_ESM_) type - we adhere to the future of JavaScript (_follow EcmaScript)_
+### What are snippets?
+
+Reusable pieces of code, which can be **reused** across the projects.
+
+### Why?
+
+-   follows the **[DRY principle]**,
+-   easier maintainability,
+-   testable, and easier to debug,
+-   prevents searching for a snippet in projects,
+-   lowers the amount of automated dependencies updates in Pull Requests,
+-   eases the issues during the attempts to revive a project with legacy code.
+
+[DRY principle]: https://en.wikipedia.org/wiki/Don%27t_repeat_yourself
+
+### Features
+
+-   typed 📑,
+-   tested 🧪,
+-   [tree-shakeable] 🎋 - _(bundless can easily do "code-splitting")_,
+-   relieves the count of project dependencies ☀️ - you have a better view of what package is being used, for what, and where.
+
+> **Note**\
+> **They are written with [ES Module] (_ESM_) type** - we adhere to the future of JavaScript (_following EcmaScript)_.\
+> Hence they can be used in as many runtimes as possible, such as:
+>
+> -   ![Node.js icon] Node.js,
+> -   ![Deno icon] Deno,
+> -   ![Bun icon] Bun,
+> -   modern website browsers.
+
+[tree-shakeable]: https://developer.mozilla.org/en-US/docs/Glossary/Tree_shaking
+[ES Module]: https://www.freecodecamp.org/news/javascript-es-modules-and-module-bundlers
+[node.js icon]: https://api.iconify.design/logos/nodejs-icon.svg
+[deno icon]: https://api.iconify.design/logos/deno.svg
+[bun icon]: https://api.iconify.design/logos/bun.svg
 
 ---
 
@@ -43,24 +80,26 @@ Prevent searching for a certain snippet in projects, reduce the issues during at
 
 📦 The following packages are available under the [packages/](./packages) directory.
 
-> **Note** **All of them are [scoped] - they are prefixed with `@terminal-nerds/`.**\
+> **Note**\
+> **All of them are [scoped] - they are prefixed with `@terminal-nerds/`.**\
 > They are accessible for public use and downloadable from the [npmjs.com registry].
 
 [scoped]: https://docs.npmjs.com/cli/v6/using-npm/scope
 [npmjs.com registry]: https://npmjs.com/org/terminal-nerds
 
-There are two recommended ways to use the snippets:
+**There are two recommended ways to use the snippets**:
 
-1. If you are unsure which snippets you are going to need,
-   use [`snippets`](snippets) package which contains all of the snippets.
-   They're still tree-shakeable.
+1. **If you are still determining which snippets you will need**,\
+   use the [`@terminal-nerds/snippets`][snippets] package, which contains all snippets.
 
-2. You know which snippets you're going to need, you can download one or few of specific snippets.
-   It might help understand what exactly in being used in the project(s),
-   reduce the automated Pull Requests related to updating dependencies and so on.
+1. **You know which snippets you need**;\
+   you can download one or a few specific snippets.\
+   It might help understand what is being used in the project(s),
+   reduce the automated Pull Requests related to updating dependencies, etc.
 
-    > **Info**:
-    > Package names are prefixed with `snippets-`. As in: `@terminal-nerds/snippets-<package name>`
+    > **Note**\
+    > Package names are prefixed with `snippets-`.\
+    > As in: `@terminal-nerds/snippets-<package name>`
 
 | Name                          | Version                                        |
 | ----------------------------- | ---------------------------------------------- |
@@ -70,7 +109,7 @@ There are two recommended ways to use the snippets:
 | [![string badge]][string]     | [![string version badge]][string npm page]     |
 
 [snippets]: ./packages/snippets/README.md
-[snippets badge]: https://img.shields.io/static/v1?label=%40terminal-nerds&message=string&style=flat-square&color=informational
+[snippets badge]: https://img.shields.io/static/v1?label=%40terminal-nerds&message=snippets&style=flat-square&color=informational
 [snippets version badge]: https://img.shields.io/npm/v/@terminal-nerds/snippets/latest?style=flat-square&logo=npm
 [snippets npm page]: https://www.npmjs.com/package/@terminal-nerds/snippets
 
@@ -95,10 +134,10 @@ There are two recommended ways to use the snippets:
 ![Snyk vulnerabilities badge]
 
 🔐 Our team has a shared [Security Policy]. If you have concerns or found an
-issue, please follow the instructions, and remember about one thing:
+issue, please follow the instructions, and remember one thing:
 
-> We are all ears, but please, **DO NOT create a GitHub issue for reporting a
-> vulnerability**.
+> **Warning**\
+> We are all ears, but please, **DO NOT create a GitHub issue for reporting a vulnerability**.
 
 [workflow maintenance badge]: https://img.shields.io/github/actions/workflow/status/terminal-nerds/snippets/maintenance.yml?label=Security&logo=github&style=for-the-badge&branch=main
 [snyk vulnerabilities badge]: https://img.shields.io/snyk/vulnerabilities/github/terminal-nerds/snippets?logo=snyk&style=for-the-badge
@@ -106,30 +145,17 @@ issue, please follow the instructions, and remember about one thing:
 
 ---
 
-## Contributing
+## License
 
-[![contributors badge]][contributors url]
-[![SonarCloud badge]][sonarcloud report]
-[![coverage badge]][coverage report]
+![License badge](https://img.shields.io/github/license/terminal-nerds/snippets?style=for-the-badge)
 
-🤝 This project follows the [all-contributors] specification.\
-**Therefore, contributions of any kind are welcome!**
+⚖️ **The code, including packages**, is licensed under the [MIT license](./LICENSE.md).
 
-Please refer to our [CONTRIBUTING] file for more information if you wish to get
-involved.
-
-[all-contributors]: https://github.com/all-contributors/all-contributors
-[contributing]: ./.github/CONTRIBUTING.md
-[contributors badge]: https://img.shields.io/github/contributors/terminal-nerds/snippets?style=for-the-badge
-[contributors url]: /#contributors
-[sonarcloud badge]: https://img.shields.io/sonar/quality_gate/terminal-nerds_snippets/main?logo=sonarcloud&server=https%3A%2F%2Fsonarcloud.io&style=for-the-badge
-[sonarcloud report]: https://sonarcloud.io/summary/overall?id=terminal-nerds_snippets
-[coverage badge]: https://img.shields.io/coverallsCoverage/github/terminal-nerds/snippets?branch=main&style=for-the-badge
-[coverage report]: https://coveralls.io/github/terminal-nerds/snippets
+![FOSSA Status Card](https://app.fossa.com/api/projects/custom%2B20521%2Fgit%40github.com%3Aterminal-nerds%2Fsnippets.git.svg?type=large)
 
 ### Project contributors
 
-🥰 Thanks goes to these wonderful people and bots _([emoji key])_:
+🥰 Thanks go to these wonderful people and bots _([emoji key])_:
 
 [emoji key]: https://allcontributors.org/docs/en/emoji-key
 
@@ -148,3 +174,29 @@ involved.
 <!-- markdownlint-restore -->
 <!-- prettier-ignore-end -->
 <!-- ALL-CONTRIBUTORS-LIST:END -->
+
+### Contributing
+
+[![contributors badge]][contributors url]
+[![SonarCloud badge]][sonarcloud report]
+[![coverage badge]][coverage report]
+
+🤝 This project follows the [all-contributors] specification.\
+**Therefore, contributions of any kind are welcome!**
+
+Please refer to our [CONTRIBUTING] file for more information about getting involved.
+
+[all-contributors]: https://github.com/all-contributors/all-contributors
+[contributing]: ./.github/CONTRIBUTING.md
+[contributors badge]: https://img.shields.io/github/contributors/terminal-nerds/snippets?style=for-the-badge
+[contributors url]: /#contributors
+[sonarcloud badge]: https://img.shields.io/sonar/quality_gate/terminal-nerds_snippets/main?logo=sonarcloud&server=https%3A%2F%2Fsonarcloud.io&style=for-the-badge
+[sonarcloud report]: https://sonarcloud.io/summary/overall?id=terminal-nerds_snippets
+[coverage badge]: https://img.shields.io/coverallsCoverage/github/terminal-nerds/snippets?branch=main&style=for-the-badge
+[coverage report]: https://coveralls.io/github/terminal-nerds/snippets
+
+### Author
+
+🎉 The idea of this project repository was initiated by [xeho91]. However, it's the contributors who matter the most.
+
+[xeho91]: https://github.com/xeho91
