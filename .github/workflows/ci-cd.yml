@@ -136,7 +136,7 @@ jobs:
 
     scan:
         name: Scan
-        needs: [coverage]
+        needs: [test]
         # https://github.com/terminal-nerds/.github/blob/main/.github/workflows/sonar-cloud.yml
         uses: terminal-nerds/.github/.github/workflows/sonar-cloud.yml@main
         secrets:
