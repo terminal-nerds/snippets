@@ -124,6 +124,7 @@ jobs:
         uses: terminal-nerds/.github/.github/workflows/test.yml@main
         secrets:
             CC_TEST_REPORTER_ID: ${{ secrets.CC_TEST_REPORTER_ID }}
+            SONAR_TOKEN: ${{ secrets.SONAR_TOKEN }}
         with:
             job-name: Unit
             script-test: pnpm test:unit
