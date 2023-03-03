@@ -3,19 +3,17 @@
 ![package version badge]
 [![size badge]][size url]
 [![dependencies badge]][dependencies url]
-![types badge]
 
 ➡️ **This package wraps all available modules with snippets related to [string]**
 — part of the [terminal-nerds/snippets] project.
 
 [string]: https://developer.mozilla.org/en-US/docs/Glossary/String
-[terminal-nerds/snippets]: https://github.com/terminal-nerds/snippets-string
+[terminal-nerds/snippets]: https://github.com/terminal-nerds/snippets
 [package version badge]: https://img.shields.io/npm/v/@terminal-nerds/snippets-string/latest?style=for-the-badge&logo=npm
 [dependencies badge]: https://img.shields.io/librariesio/release/npm/@terminal-nerds/snippets-string?style=for-the-badge
 [dependencies url]: https://libraries.io/npm/@terminal-nerds%2snippets-string
 [size badge]: https://img.shields.io/bundlephobia/minzip/@terminal-nerds/snippets-string?style=for-the-badge&label=size
 [size url]: https://packagephobia.com/result?p=@terminal-nerds/snippets-string
-[types badge]: https://img.shields.io/npm/types/@terminal-nerds/snippets-string?style=for-the-badge&logo=typescript
 
 ## Modules included
 
@@ -49,31 +47,112 @@
 
 ---
 
-## Prerequisites
-
-> **Note** **The packages are written in ES Module _(ESM)_ type.**\
-> If you wish to use in project with CommonJS _(CJS)_ type, then, you need to bundle this package.
-
-### Required
-
-[![node.js version support badge]][node.js]
-
-1. Latest ![node.js icon] [Node.js] LTS _(Long-Term Support)_ version.
-
-[node.js]: https://nodejs.org/en/
-[node.js icon]: https://api.iconify.design/logos/nodejs-icon.svg
-[node.js version support badge]: https://img.shields.io/node/v-lts/@terminal-nerds/snippets?style=for-the-badge&logo=nodedotjs
+## Prerequisites & usage
 
 ### Optional
 
 [![supported typescript version badge]][typescript]
+![types badge]
 
 [typescript]: https://typescriptlang.org/
 [typescript icon]: https://api.iconify.design/logos/typescript-icon.svg
 [supported typescript version badge]: https://img.shields.io/github/package-json/dependency-version/terminal-nerds/snippets/peer/typescript?filename=packages%2Ftypescript%2Fpackage.json&logo=typescript&style=for-the-badge&label=typescript
+[types badge]: https://img.shields.io/npm/types/@terminal-nerds/snippets-string?style=for-the-badge&logo=typescript
 
-1. If you are using ![typescript icon] [TypeScript], then the latest version which supports new features _(such as `satisfies`)_
-   is recommended.
+If you are using ![typescript icon] [TypeScript],
+the latest version, which supports new features _(such as `satisfies`)_, is supported.
+
+### Runtime environments
+
+This package can be used in several runtime environments.
+We aim for cross-runtime compatibility and ensure proper error messages
+if a particular snippet cannot be run in the currently running environment.
+
+#### Browsers
+
+We use [browserslist] to define the minimum browsers versions supported.\
+Take a look at our [shared browserslist configuration] for more details.
+
+[browserslist]: https://github.com/browserslist/browserslist
+[shared browserslist configuration]: https://github.com/terminal-nerds/configs/blob/main/packages/browserslist/source/browsers.ts
+
+**Usage**:
+
+```html
+<script type="module">
+	import { snippet } from "https://cdn.jsdelivr.net/npm/@terminal-nerds/snippets-string";
+</script>
+```
+
+---
+
+#### Bun
+
+We aim to support the latest version of ![bun icon] [bun].
+
+**Usage**:
+
+Firstly, install it:
+
+```sh
+bun add @terminal-nerds/snippets-string
+```
+
+And then in a particular file:
+
+```js
+import { snippet } from "@terminal-nerds/snippets-string";
+```
+
+[bun]: https://bun.sh/
+[bun icon]: https://api.iconify.design/logos/bun.svg
+
+---
+
+#### Deno
+
+We aim to support the latest version of ![deno icon] [Deno].
+
+**Usage**:
+
+```ts
+import { snippet } from "npm:@terminal-nerds/snippets-string";
+```
+
+[deno]: https://deno.land/
+[deno icon]: https://api.iconify.design/logos/deno.svg
+
+---
+
+#### Node.js
+
+[![node.js version support badge]][node.js]
+
+The latest ![node.js icon] [Node.js] LTS _(Long-Term Support)_ version is the minimum one supported.
+
+> **Warning**\
+> **This package is written in [ES Module] _(ESM)_ type.**\
+> So, if you wish to use it in a project with CommonJS (CJS) type, you need to bundle this package or a particular module(s).
+
+**Usage**:
+
+Install it first with the Node.js package manager of your choice. In our example, we use [pnpm].
+
+```sh
+pnpm add @terminal-nerds/snippets-string
+```
+
+And then in a particular file:
+
+```js
+import { snippet } from "@terminal-nerds/snippets-string";
+```
+
+[ES Module]: https://www.freecodecamp.org/news/javascript-es-modules-and-module-bundlers
+[pnpm]: https://pnpm.io
+[node.js]: https://nodejs.org/en/
+[node.js icon]: https://api.iconify.design/logos/nodejs-icon.svg
+[node.js version support badge]: https://img.shields.io/node/v-lts/@terminal-nerds/snippets?style=for-the-badge&logo=nodedotjs
 
 ---
 
@@ -90,7 +169,17 @@ the [terminal-nerds/snippets] monorepo.
 
 ---
 
-## Contributing
+## License
+
+[![license badge]][license]
+
+⚖️ For more information, please refer to the [License section] at the root of the [terminal-nerds/snippets] monorepo.
+
+[license]: https://github.com/terminal-nerds/snippets/blob/main/LICENSE.md
+[license badge]: https://img.shields.io/github/license/terminal-nerds/snippets?style=for-the-badge
+[license section]: https://github.com/terminal-nerds/snippets#License
+
+### Contributing
 
 [![contributors badge]][contributors url]
 
@@ -103,14 +192,9 @@ if you wish to get involved.
 [contributors badge]: https://img.shields.io/github/contributors/terminal-nerds/snippets?style=for-the-badge
 [contributors url]: https://github.com/terminal-nerds/snippets#contributors
 
----
+### Author
 
-## License
+🎉 The idea of this project was initiated by [xeho91]. However, it's the [contributors] who matter the most.
 
-[![license badge]][license]
-
-⚖️ For more information, please refer to the [License section] at the root of the [terminal-nerds/snippets] monorepo.
-
-[license]: https://github.com/terminal-nerds/snippets/blob/main/LICENSE.md
-[license badge]: https://img.shields.io/github/license/terminal-nerds/snippets?style=for-the-badge
-[license section]: https://github.com/terminal-nerds/snippets#License
+[contributors]: https://github.com/terminal-nerds/snippets/blob/main/README.md#project-contributors
+[xeho91]: https://github.com/xeho91

@@ -3,7 +3,6 @@
 ![package version badge]
 [![size badge]][size url]
 [![dependencies badge]][dependencies url]
-![types badge]
 
 ➡️ **This package wraps all available snippets packages in one** — part of the [terminal-nerds/snippets] project.
 
@@ -13,17 +12,28 @@
 [dependencies url]: https://libraries.io/npm/@terminal-nerds%2snippets
 [size badge]: https://img.shields.io/bundlephobia/minzip/@terminal-nerds/snippets?style=for-the-badge&label=size
 [size url]: https://packagephobia.com/result?p=@terminal-nerds/snippets
-[types badge]: https://img.shields.io/npm/types/@terminal-nerds/snippets?style=for-the-badge&logo=typescript
 
 ## Packages included
 
-| Name                      | Version                                    |
-| ------------------------- | ------------------------------------------ |
-| [![regexp badge]][regexp] | [![regexp version badge]][regexp npm page] |
-| [![string badge]][string] | [![string version badge]][string npm page] |
+| Name                          | Version                                        |
+| ----------------------------- | ---------------------------------------------- |
+| [![function badge]][function] | [![function version badge]][function npm page] |
+| [![test badge]][test]         | [![test version badge]][test npm page]         |
+| [![regexp badge]][regexp]     | [![regexp version badge]][regexp npm page]     |
+| [![string badge]][string]     | [![string version badge]][string npm page]     |
 
 <!-- prettier-ignore-start -->
 <!-- PACKAGES LINKS -->
+[function]: https://github.com/terminal-nerds/snippets/blob/main/packages/function/README.md
+[function badge]: https://img.shields.io/static/v1?label=%40terminal-nerds&message=snippets-function&style=flat-square&color=informational
+[function version badge]: https://img.shields.io/npm/v/@terminal-nerds/snippets-function/latest?style=flat-square&logo=npm
+[function npm page]: https://www.npmjs.com/package/@terminal-nerds/snippets-function
+
+[test]: https://github.com/terminal-nerds/snippets/blob/main/packages/test/README.md
+[test badge]: https://img.shields.io/static/v1?label=%40terminal-nerds&message=snippets-test&style=flat-square&color=informational
+[test version badge]: https://img.shields.io/npm/v/@terminal-nerds/snippets-test/latest?style=flat-square&logo=npm
+[test npm page]: https://www.npmjs.com/package/@terminal-nerds/snippets-test
+
 [regexp]: https://github.com/terminal-nerds/snippets/blob/main/packages/regexp/README.md
 [regexp badge]: https://img.shields.io/static/v1?label=%40terminal-nerds&message=snippets-regexp&style=flat-square&color=informational
 [regexp version badge]: https://img.shields.io/npm/v/@terminal-nerds/snippets-regexp/latest?style=flat-square&logo=npm
@@ -37,52 +47,112 @@
 
 ---
 
-## Prerequisites
-
-> **Note** **The packages are written in ES Module _(ESM)_ type.**\
-> If you wish to use in project with CommonJS _(CJS)_ type, then, you need to bundle this package.
-
-### Required
-
-[![node.js version support badge]][node.js]
-
-1. Latest ![node.js icon] [Node.js] LTS _(Long-Term Support)_ version.
-
-[node.js]: https://nodejs.org/en/
-[node.js icon]: https://api.iconify.design/logos/nodejs-icon.svg
-[node.js version support badge]: https://img.shields.io/node/v-lts/@terminal-nerds/snippets?style=for-the-badge&logo=nodedotjs
+## Prerequisites & usage
 
 ### Optional
 
 [![supported typescript version badge]][typescript]
+![types badge]
 
 [typescript]: https://typescriptlang.org/
 [typescript icon]: https://api.iconify.design/logos/typescript-icon.svg
-[supported typescript version badge]: https://img.shields.io/github/package-json/dependency-version/terminal-nerds/snippets/peer/typescript?filename=packages%2Ftypescript%2Fpackage.json&logo=typescript&style=for-the-badge
+[supported typescript version badge]: https://img.shields.io/github/package-json/dependency-version/terminal-nerds/snippets/peer/typescript?filename=packages%2Ftypescript%2Fpackage.json&logo=typescript&style=for-the-badge&label=typescript
+[types badge]: https://img.shields.io/npm/types/@terminal-nerds/snippets-function?style=for-the-badge&logo=typescript
 
-1. If you are using ![typescript icon] [TypeScript], then the latest version which supports new features _(such as `satisfies`)_
-   is recommended.
+If you are using ![typescript icon] [TypeScript],
+the latest version, which supports new features _(such as `satisfies`)_, is supported.
+
+### Runtime environments
+
+This package can be used in several runtime environments.
+We aim for cross-runtime compatibility and ensure proper error messages
+if a particular snippet cannot be run in the currently running environment.
+
+#### Browsers
+
+We use [browserslist] to define the minimum browsers versions supported.\
+Take a look at our [shared browserslist configuration] for more details.
+
+[browserslist]: https://github.com/browserslist/browserslist
+[shared browserslist configuration]: https://github.com/terminal-nerds/configs/blob/main/packages/browserslist/source/browsers.ts
+
+**Usage**:
+
+```html
+<script type="module">
+	import { snippet } from "https://cdn.jsdelivr.net/npm/@terminal-nerds/snippets";
+</script>
+```
 
 ---
 
-## Usage
+#### Bun
 
-1. **Install it with the ![node.js icon] [Node.js] package manager of your choice** _(in our case, we use ![pnpm icon] [pnpm])_.
+We aim to support the latest version of ![bun icon] [bun].
 
-    ```sh
-     pnpm install --save-dev eslint @terminal-nerds/snippets
-    ```
+**Usage**:
 
-1. **Import snippet(s) from this package _(module)_ and use it.**
+Firstly, install it:
 
-    ```ts
-    import { isString } from "@terminal-nerds/snippets";
+```sh
+bun add @terminal-nerds/snippets
+```
 
-    console.log(isString("terminal-nerds")); // true
-    ```
+And then in a particular file:
 
-[pnpm]: https://pnpm.io/
-[pnpm icon]: https://api.iconify.design/vscode-icons/file-type-light-pnpm.svg
+```js
+import { snippet } from "@terminal-nerds/snippets";
+```
+
+[bun]: https://bun.sh/
+[bun icon]: https://api.iconify.design/logos/bun.svg
+
+---
+
+#### Deno
+
+We aim to support the latest version of ![deno icon] [Deno].
+
+**Usage**:
+
+```ts
+import { snippet } from "npm:@terminal-nerds/snippets";
+```
+
+[deno]: https://deno.land/
+[deno icon]: https://api.iconify.design/logos/deno.svg
+
+---
+
+#### Node.js
+
+[![node.js version support badge]][node.js]
+
+The latest ![node.js icon] [Node.js] LTS _(Long-Term Support)_ version is the minimum one supported.
+
+> **Warning**\
+> **This package is written in [ES Module] _(ESM)_ type.**\
+> So, if you wish to use it in a project with CommonJS (CJS) type, you need to bundle this package or a particular module(s).
+
+**Usage**:
+
+Install it first with the Node.js package manager of your choice. In our example, we use [pnpm].
+
+```sh
+pnpm add @terminal-nerds/snippets
+```
+
+And then in a particular file:
+
+```js
+import { snippet } from "@terminal-nerds/snippets";
+```
+
+[ES Module]: https://www.freecodecamp.org/news/javascript-es-modules-and-module-bundlers
+[pnpm]: https://pnpm.io
+[node.js]: https://nodejs.org/en/
+[node.js icon]: https://api.iconify.design/logos/nodejs-icon.svg
+[node.js version support badge]: https://img.shields.io/node/v-lts/@terminal-nerds/snippets?style=for-the-badge&logo=nodedotjs
 
 ---
 
@@ -90,26 +160,12 @@
 
 [![workflow security badge]][security policy]
 
-🔐 For more information, please refer to the [Security section] at the root of the [terminal-nerds/snippets] monorepo.
+🔐 For more information, please refer to the [Security section] at the root of
+the [terminal-nerds/snippets] monorepo.
 
 [workflow security badge]: https://img.shields.io/github/actions/workflow/status/terminal-nerds/snippets/maintenance.yml?label=Security&logo=github&style=for-the-badge&branch=main
 [security section]: https://github.com/terminal-nerds/snippets#security
 [security policy]: https://github.com/terminal-nerds/snippets/security/policy
-
----
-
-## Contributing
-
-[![contributors badge]][contributors url]
-
-🤝 **Contributions of any kind are welcome!**
-
-Please refer to the monorepo _([terminal-nerds/snippets])_ project's [CONTRIBUTING file] for more information if you wish
-to get involved.
-
-[contributing file]: https://github.com/terminal-nerds/snippets/blob/main/.github/CONTRIBUTING.md
-[contributors badge]: https://img.shields.io/github/contributors/terminal-nerds/snippets?style=for-the-badge
-[contributors url]: https://github.com/terminal-nerds/snippets#contributors
 
 ---
 
@@ -119,6 +175,26 @@ to get involved.
 
 ⚖️ For more information, please refer to the [License section] at the root of the [terminal-nerds/snippets] monorepo.
 
-[license badge]: https://img.shields.io/github/license/terminal-nerds/snippets?style=for-the-badge
 [license]: https://github.com/terminal-nerds/snippets/blob/main/LICENSE.md
+[license badge]: https://img.shields.io/github/license/terminal-nerds/snippets?style=for-the-badge
 [license section]: https://github.com/terminal-nerds/snippets#License
+
+### Contributing
+
+[![contributors badge]][contributors url]
+
+🤝 **Contributions of any kind are welcome!**
+
+Please refer to the monorepo _([terminal-nerds/snippets])_ project's [CONTRIBUTING file] for more information
+if you wish to get involved.
+
+[contributing file]: https://github.com/terminal-nerds/snippets/blob/main/.github/CONTRIBUTING.md
+[contributors badge]: https://img.shields.io/github/contributors/terminal-nerds/snippets?style=for-the-badge
+[contributors url]: https://github.com/terminal-nerds/snippets#contributors
+
+### Author
+
+🎉 The idea of this project was initiated by [xeho91]. However, it's the [contributors] who matter the most.
+
+[contributors]: https://github.com/terminal-nerds/snippets/blob/main/README.md#project-contributors
+[xeho91]: https://github.com/xeho91

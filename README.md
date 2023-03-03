@@ -100,6 +100,8 @@ Reusable pieces of code, which can be **reused** across the projects.
 | ----------------------------- | ---------------------------------------------- |
 | [![snippets badge]][snippets] | [![snippets version badge]][snippets npm page] |
 | <!-- PACKAGES -->             | <!-- PACKAGES -->                              |
+| [![function badge]][function] | [![function version badge]][function npm page] |
+| [![test badge]][test]         | [![test version badge]][test npm page]         |
 | [![regexp badge]][regexp]     | [![regexp version badge]][regexp npm page]     |
 | [![string badge]][string]     | [![string version badge]][string npm page]     |
 
@@ -110,6 +112,16 @@ Reusable pieces of code, which can be **reused** across the projects.
 
 <!-- prettier-ignore-start -->
 <!-- PACKAGES LINKS -->
+[function]: ./packages/function/README.md
+[function badge]: https://img.shields.io/static/v1?label=%40terminal-nerds&message=snippets-function&style=flat-square&color=informational
+[function version badge]: https://img.shields.io/npm/v/@terminal-nerds/snippets-function/latest?style=flat-square&logo=npm
+[function npm page]: https://www.npmjs.com/package/@terminal-nerds/snippets-function
+
+[test]: ./packages/test/README.md
+[test badge]: https://img.shields.io/static/v1?label=%40terminal-nerds&message=snippets-test&style=flat-square&color=informational
+[test version badge]: https://img.shields.io/npm/v/@terminal-nerds/snippets-test/latest?style=flat-square&logo=npm
+[test npm page]: https://www.npmjs.com/package/@terminal-nerds/snippets-test
+
 [regexp]: ./packages/regexp/README.md
 [regexp badge]: https://img.shields.io/static/v1?label=%40terminal-nerds&message=snippets-regexp&style=flat-square&color=informational
 [regexp version badge]: https://img.shields.io/npm/v/@terminal-nerds/snippets-regexp/latest?style=flat-square&logo=npm
