@@ -4,9 +4,10 @@
 [![size badge]][size url]
 [![dependencies badge]][dependencies url]
 
-➡️ **This package wraps all available modules with snippets related to error**
+➡️ **This package wraps all available modules with snippets related to [Error]**
 — part of the [terminal-nerds/snippets] project.
 
+[error]: https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Error
 [terminal-nerds/snippets]: https://github.com/terminal-nerds/snippets
 [package version badge]: https://img.shields.io/npm/v/@terminal-nerds/snippets-error/latest?style=for-the-badge&logo=npm
 [dependencies badge]: https://img.shields.io/librariesio/release/npm/@terminal-nerds/snippets-error?style=for-the-badge
@@ -18,11 +19,16 @@
 
 <!-- prettier-sort-markdown-table -->
 
-| Name | Size |
-| ---- | ---- |
+| Name                                      | Size                                                  |
+| ----------------------------------------- | ----------------------------------------------------- |
+| [`@terminal-nerds/snippets-error/custom`] | ![custom size gzip badge] ![custom size brotli badge] |
 
 <!-- prettier-ignore-start -->
 <!-- MODULES LINKS -->
+[`@terminal-nerds/snippets-error/custom`]: https://github.com/terminal-nerds/snippets/blob/main/packages/error/source/custom/custom.ts
+[custom size gzip badge]: https://badgen.net/badgesize/gzip/file-url/unpkg.com/@terminal-nerds/snippets-error/dist/custom/custom.js?label=gzip
+[custom size brotli badge]: https://badgen.net/badgesize/brotli/file-url/unpkg.com/@terminal-nerds/snippets-error/dist/custom/custom.js?label=brotli
+
 <!-- prettier-ignore-end -->
 
 ---
