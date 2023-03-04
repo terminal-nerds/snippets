@@ -1,13 +1,13 @@
 {
 	"$schema": "https://json.schemastore.org/package",
 	"type": "module",
-	"name": "@terminal-nerds/snippets-string",
+	"name": "@terminal-nerds/snippets-error",
 	"version": "0.0.0",
-	"description": "@terminal-nerds reusable snippets for strings.",
+	"description": "@terminal-nerds reusable snippets for errors.",
 	"keywords": [
 		"snippets",
 		"typescript",
-		"string"
+		"error"
 	],
 	"license": "MIT",
 	"author": {
@@ -19,7 +19,7 @@
 	"repository": {
 		"type": "git",
 		"url": "https://github.com/terminal-nerds/snippets.git",
-		"directory": "packages/string"
+		"directory": "packages/error"
 	},
 	"bugs": "https://github.com/terminal-nerds/snippets/issues",
 	"engines": {
@@ -47,7 +47,7 @@
 		"dev:test": "vitest watch --ui",
 		"dev:pkg": "tsup --watch",
 		"fix": "concurrently \"pnpm:fix:*\" --group --timings",
-		"fix:format": "pretty-quick --branch main --pattern \"packages/string/**/*\" --verbose",
+		"fix:format": "pretty-quick --branch main --pattern \"packages/error/**/*\" --verbose",
 		"fix:js": "pnpm lint:js --fix",
 		"fix:md": "pnpm lint:md --fix",
 		"fix:pkg": "syncpack format ; syncpack fix-mismatches",
@@ -60,18 +60,8 @@
 		"lint:types": "tsc --noEmit",
 		"test:unit": "vitest run --dir \"./source\""
 	},
-	"peerDependencies": {
-		"typescript": "4.9.5"
-	},
 	"dependencies": {
-		"@terminal-nerds/snippets-regexp": "workspace:*",
-		"case-anything": "2.1.10",
-		"type-fest": "3.5.7",
-		"zod": "3.20.6"
-	},
-	"peerDependenciesMeta": {
-		"typescript": {
-			"optional": true
-		}
+		"modern-errors": "5.5.1",
+		"zod": "3.21.0"
 	}
 }

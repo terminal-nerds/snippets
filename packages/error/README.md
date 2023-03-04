@@ -1,54 +1,34 @@
-# @terminal-nerds/snippets
+# @terminal-nerds/snippets-error
 
 ![package version badge]
 [![size badge]][size url]
 [![dependencies badge]][dependencies url]
 
-➡️ **This package wraps all available snippets packages in one** — part of the [terminal-nerds/snippets] project.
+➡️ **This package wraps all available modules with snippets related to [Error]**
+— part of the [terminal-nerds/snippets] project.
 
+[error]: https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Error
 [terminal-nerds/snippets]: https://github.com/terminal-nerds/snippets
-[package version badge]: https://img.shields.io/npm/v/@terminal-nerds/snippets/latest?style=for-the-badge&logo=npm
-[dependencies badge]: https://img.shields.io/librariesio/release/npm/@terminal-nerds/snippets?style=for-the-badge
-[dependencies url]: https://libraries.io/npm/@terminal-nerds%2snippets
-[size badge]: https://img.shields.io/bundlephobia/minzip/@terminal-nerds/snippets?style=for-the-badge&label=size
-[size url]: https://packagephobia.com/result?p=@terminal-nerds/snippets
+[package version badge]: https://img.shields.io/npm/v/@terminal-nerds/snippets-error/latest?style=for-the-badge&logo=npm
+[dependencies badge]: https://img.shields.io/librariesio/release/npm/@terminal-nerds/snippets-error?style=for-the-badge
+[dependencies url]: https://libraries.io/npm/@terminal-nerds%2snippets-error
+[size badge]: https://img.shields.io/bundlephobia/minzip/@terminal-nerds/snippets-error?style=for-the-badge&label=size
+[size url]: https://packagephobia.com/result?p=@terminal-nerds/snippets-error
 
-## Packages included
+## Modules included
 
-| Name                          | Version                                        |
-| ----------------------------- | ---------------------------------------------- |
-| [![error badge]][error]       | [![error version badge]][error npm page]       |
-| [![function badge]][function] | [![function version badge]][function npm page] |
-| [![test badge]][test]         | [![test version badge]][test npm page]         |
-| [![regexp badge]][regexp]     | [![regexp version badge]][regexp npm page]     |
-| [![string badge]][string]     | [![string version badge]][string npm page]     |
+<!-- prettier-sort-markdown-table -->
+
+| Name                                      | Size                                                  |
+| ----------------------------------------- | ----------------------------------------------------- |
+| [`@terminal-nerds/snippets-error/custom`] | ![custom size gzip badge] ![custom size brotli badge] |
 
 <!-- prettier-ignore-start -->
-<!-- PACKAGES LINKS -->
-[error]: https://github.com/terminal-nerds/snippets/blob/main/packages/error/README.md
-[error badge]: https://img.shields.io/static/v1?label=%40terminal-nerds&message=snippets-error&style=flat-square&color=informational
-[error version badge]: https://img.shields.io/npm/v/@terminal-nerds/snippets-error/latest?style=flat-square&logo=npm
-[error npm page]: https://www.npmjs.com/package/@terminal-nerds/snippets-error
+<!-- MODULES LINKS -->
+[`@terminal-nerds/snippets-error/custom`]: https://github.com/terminal-nerds/snippets/blob/main/packages/error/source/custom/custom.ts
+[custom size gzip badge]: https://badgen.net/badgesize/gzip/file-url/unpkg.com/@terminal-nerds/snippets-error/dist/custom/custom.js?label=gzip
+[custom size brotli badge]: https://badgen.net/badgesize/brotli/file-url/unpkg.com/@terminal-nerds/snippets-error/dist/custom/custom.js?label=brotli
 
-[function]: https://github.com/terminal-nerds/snippets/blob/main/packages/function/README.md
-[function badge]: https://img.shields.io/static/v1?label=%40terminal-nerds&message=snippets-function&style=flat-square&color=informational
-[function version badge]: https://img.shields.io/npm/v/@terminal-nerds/snippets-function/latest?style=flat-square&logo=npm
-[function npm page]: https://www.npmjs.com/package/@terminal-nerds/snippets-function
-
-[test]: https://github.com/terminal-nerds/snippets/blob/main/packages/test/README.md
-[test badge]: https://img.shields.io/static/v1?label=%40terminal-nerds&message=snippets-test&style=flat-square&color=informational
-[test version badge]: https://img.shields.io/npm/v/@terminal-nerds/snippets-test/latest?style=flat-square&logo=npm
-[test npm page]: https://www.npmjs.com/package/@terminal-nerds/snippets-test
-
-[regexp]: https://github.com/terminal-nerds/snippets/blob/main/packages/regexp/README.md
-[regexp badge]: https://img.shields.io/static/v1?label=%40terminal-nerds&message=snippets-regexp&style=flat-square&color=informational
-[regexp version badge]: https://img.shields.io/npm/v/@terminal-nerds/snippets-regexp/latest?style=flat-square&logo=npm
-[regexp npm page]: https://www.npmjs.com/package/@terminal-nerds/snippets-regexp
-
-[string]: https://github.com/terminal-nerds/snippets/blob/main/packages/string/README.md
-[string badge]: https://img.shields.io/static/v1?label=%40terminal-nerds&message=snippets-string&style=flat-square&color=informational
-[string version badge]: https://img.shields.io/npm/v/@terminal-nerds/snippets-string/latest?style=flat-square&logo=npm
-[string npm page]: https://www.npmjs.com/package/@terminal-nerds/snippets-string
 <!-- prettier-ignore-end -->
 
 ---
@@ -63,7 +43,7 @@
 [typescript]: https://typescriptlang.org/
 [typescript icon]: https://api.iconify.design/logos/typescript-icon.svg
 [supported typescript version badge]: https://img.shields.io/github/package-json/dependency-version/terminal-nerds/snippets/peer/typescript?filename=packages%2Ftypescript%2Fpackage.json&logo=typescript&style=for-the-badge&label=typescript
-[types badge]: https://img.shields.io/npm/types/@terminal-nerds/snippets-function?style=for-the-badge&logo=typescript
+[types badge]: https://img.shields.io/npm/types/@terminal-nerds/snippets-error?style=for-the-badge&logo=typescript
 
 If you are using ![typescript icon] [TypeScript],
 the latest version, which supports new features _(such as `satisfies`)_, is supported.
@@ -86,7 +66,7 @@ Take a look at our [shared browserslist configuration] for more details.
 
 ```html
 <script type="module">
-	import { snippet } from "https://cdn.jsdelivr.net/npm/@terminal-nerds/snippets";
+	import { snippet } from "https://cdn.jsdelivr.net/npm/@terminal-nerds/snippets-error";
 </script>
 ```
 
@@ -101,13 +81,13 @@ We aim to support the latest version of ![bun icon] [bun].
 Firstly, install it:
 
 ```sh
-bun add @terminal-nerds/snippets
+bun add @terminal-nerds/snippets-error
 ```
 
 And then in a particular file:
 
 ```js
-import { snippet } from "@terminal-nerds/snippets";
+import { snippet } from "@terminal-nerds/snippets-error";
 ```
 
 [bun]: https://bun.sh/
@@ -122,7 +102,7 @@ We aim to support the latest version of ![deno icon] [Deno].
 **Usage**:
 
 ```ts
-import { snippet } from "npm:@terminal-nerds/snippets";
+import { snippet } from "npm:@terminal-nerds/snippets-error";
 ```
 
 [deno]: https://deno.land/
@@ -145,13 +125,13 @@ The latest ![node.js icon] [Node.js] LTS _(Long-Term Support)_ version is the mi
 Install it first with the Node.js package manager of your choice. In our example, we use [pnpm].
 
 ```sh
-pnpm add @terminal-nerds/snippets
+pnpm add @terminal-nerds/snippets-error
 ```
 
 And then in a particular file:
 
 ```js
-import { snippet } from "@terminal-nerds/snippets";
+import { snippet } from "@terminal-nerds/snippets-error";
 ```
 
 [ES Module]: https://www.freecodecamp.org/news/javascript-es-modules-and-module-bundlers

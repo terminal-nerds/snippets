@@ -55,7 +55,7 @@
 		"lint:deps": "depcheck",
 		"lint:format": "pnpm fix:format --check",
 		"lint:js": "DEBUG=\"eslint:cli-engine\" eslint . --ext .cjs,.js,.ts,.json,.yml --cache --cache-location \"./node_modules/.cache/eslint\"",
-		"lint:md": "markdownlint . --config \"../../.markdownlint.json\" --dot --ignore-path \"../../.gitignore\" --ignore \"./LICENSE.md\"",
+		"lint:md": "markdownlint . --config \"../../.markdownlint.json\" --dot --ignore \"./LICENSE.md\" --ignore-path \"../../.gitignore\" --ignore \"./LICENSE.md\"",
 		"lint:pkg": "syncpack list-mismatches",
 		"lint:types": "tsc --noEmit",
 		"test:unit": "vitest run --dir \"./source\""
