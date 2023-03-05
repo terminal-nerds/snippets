@@ -7,6 +7,7 @@ import type {} from "modern-errors";
 import ModernError from "modern-errors";
 import { z, ZodError } from "zod";
 
+/** Error related to the currently used JavaScript runtime environment. */
 export const RuntimeError: typeof ModernError = ModernError.subclass("RuntimeError", {
 	props: {
 		bun: typeof globalThis.Bun,
@@ -15,15 +16,18 @@ export const RuntimeError: typeof ModernError = ModernError.subclass("RuntimeErr
 		window: typeof globalThis.window,
 	},
 });
+/** @see {@link RuntimeError} */
 export const RUNTIME_ERROR_SCHEMA: ReturnType<typeof z.instanceof<typeof RuntimeError>> = z.instanceof(RuntimeError);
-
+/** @see {@link RuntimeError} */
 export function isRuntimeError(error: unknown): error is typeof RuntimeError {
 	return RUNTIME_ERROR_SCHEMA.safeParse(error).success;
 }
 
+/** Error related to the type validation. */
 export const ValidationError = ZodError;
+/** @see {@link ValidationError} */
 export const VALIDATION_ERROR_SCHEMA = z.instanceof(ValidationError);
-
+/** @see {@link ValidationError} */
 export function isValidationError(error: unknown): error is typeof ValidationError {
 	return VALIDATION_ERROR_SCHEMA.safeParse(error).success;
 }
