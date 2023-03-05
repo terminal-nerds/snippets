@@ -1,24 +1,25 @@
 {
 	"$schema": "https://json.schemastore.org/package",
 	"type": "module",
-	"name": "@terminal-nerds/snippets",
+	"name": "@terminal-nerds/snippets-test",
 	"version": "0.0.0",
-	"description": "@terminal-nerds all of the reusable snippets.",
+	"description": "@terminal-nerds reusable snippets for tests.",
 	"keywords": [
 		"snippets",
-		"typescript"
+		"typescript",
+		"test"
 	],
+	"license": "MIT",
 	"author": {
 		"name": "Mateusz Kadlubowski",
 		"email": "xeho91@pm.me",
 		"url": "https://xeho91.com"
 	},
-	"license": "MIT",
 	"homepage": "https://github.com/terminal-nerds/snippets",
 	"repository": {
 		"type": "git",
 		"url": "https://github.com/terminal-nerds/snippets.git",
-		"directory": "packages/snippets"
+		"directory": "packages/test"
 	},
 	"bugs": "https://github.com/terminal-nerds/snippets/issues",
 	"engines": {
@@ -28,6 +29,10 @@
 		".": {
 			"types": "./dist/main.d.ts",
 			"import": "./dist/main.js"
+		},
+		"./*": {
+			"types": "./dist/*/*.d.ts",
+			"import": "./dist/*/*.js"
 		}
 	},
 	"files": [
@@ -42,7 +47,7 @@
 		"dev:test": "vitest watch --ui",
 		"dev:pkg": "tsup --watch",
 		"fix": "concurrently \"pnpm:fix:*\" --group --timings",
-		"fix:format": "pretty-quick --branch main --pattern \"packages/snippets/**/*\" --verbose",
+		"fix:format": "pretty-quick --branch main --pattern \"packages/test/**/*\" --verbose",
 		"fix:js": "pnpm lint:js --fix",
 		"fix:md": "pnpm lint:md --fix",
 		"fix:pkg": "syncpack format ; syncpack fix-mismatches",
@@ -50,22 +55,9 @@
 		"lint:deps": "depcheck",
 		"lint:format": "pnpm fix:format --check",
 		"lint:js": "DEBUG=\"eslint:cli-engine\" eslint . --ext .cjs,.js,.ts,.json,.yml --cache --cache-location \"./node_modules/.cache/eslint\"",
-		"lint:md": "markdownlint . --config \"../../.markdownlint.json\" --dot --ignore \"./LICENSE.md\" --ignore-path \"../../.gitignore\"",
+		"lint:md": "markdownlint . --config \"../../.markdownlint.json\" --dot --ignore-path \"../../.gitignore\"",
 		"lint:pkg": "syncpack list-mismatches",
-		"lint:types": "tsc --noEmit"
-	},
-	"peerDependencies": {
-		"typescript": "4.9.5"
-	},
-	"dependencies": {
-		"@terminal-nerds/snippets-error": "workspace:*",
-		"@terminal-nerds/snippets-regexp": "workspace:*",
-		"@terminal-nerds/snippets-string": "workspace:*",
-		"@terminal-nerds/snippets-test": "workspace:*"
-	},
-	"peerDependenciesMeta": {
-		"typescript": {
-			"optional": true
-		}
+		"lint:types": "tsc --noEmit",
+		"test:unit": "vitest run --dir \"./source\""
 	}
 }

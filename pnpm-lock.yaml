@@ -91,10 +91,12 @@ importers:
       '@terminal-nerds/snippets-error': workspace:*
       '@terminal-nerds/snippets-regexp': workspace:*
       '@terminal-nerds/snippets-string': workspace:*
+      '@terminal-nerds/snippets-test': workspace:*
     dependencies:
       '@terminal-nerds/snippets-error': link:../error
       '@terminal-nerds/snippets-regexp': link:../regexp
       '@terminal-nerds/snippets-string': link:../string
+      '@terminal-nerds/snippets-test': link:../test
 
   packages/string:
     specifiers:
@@ -107,6 +109,9 @@ importers:
       case-anything: 2.1.10
       type-fest: 3.5.7
       zod: 3.20.6
+
+  packages/test:
+    specifiers: {}
 
   scripts/generate:
     specifiers:
