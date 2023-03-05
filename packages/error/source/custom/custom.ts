@@ -5,24 +5,25 @@
  */
 import type {} from "modern-errors";
 import ModernError from "modern-errors";
-import { ZodError } from "zod";
-
-export function isError(error: unknown): error is Error {
-	return error instanceof Error;
-}
+import { z, ZodError } from "zod";
 
 export const RuntimeError: typeof ModernError = ModernError.subclass("RuntimeError", {
 	props: {
-		isRuntimeError: true,
+		bun: typeof globalThis.Bun,
+		deno: typeof globalThis.Deno,
+		process: typeof globalThis.process,
+		window: typeof globalThis.window,
 	},
 });
+export const RUNTIME_ERROR_SCHEMA: ReturnType<typeof z.instanceof<typeof RuntimeError>> = z.instanceof(RuntimeError);
 
 export function isRuntimeError(error: unknown): error is typeof RuntimeError {
-	return error instanceof RuntimeError;
+	return RUNTIME_ERROR_SCHEMA.safeParse(error).success;
 }
 
 export const ValidationError = ZodError;
+export const VALIDATION_ERROR_SCHEMA = z.instanceof(ValidationError);
 
 export function isValidationError(error: unknown): error is typeof ValidationError {
-	return error instanceof ValidationError;
+	return VALIDATION_ERROR_SCHEMA.safeParse(error).success;
 }

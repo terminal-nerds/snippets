@@ -19,16 +19,20 @@
 
 <!-- prettier-sort-markdown-table -->
 
-| Name                                      | Size                                                  |
-| ----------------------------------------- | ----------------------------------------------------- |
-| [`@terminal-nerds/snippets-error/custom`] | ![custom size gzip badge] ![custom size brotli badge] |
+| Name                                        | Size                                                      |
+| ------------------------------------------- | --------------------------------------------------------- |
+| [`@terminal-nerds/snippets-error/built-in`] | ![built-in size gzip badge] ![built-in size brotli badge] |
+| [`@terminal-nerds/snippets-error/custom`]   | ![custom size gzip badge] ![custom size brotli badge]     |
 
 <!-- prettier-ignore-start -->
 <!-- MODULES LINKS -->
+[`@terminal-nerds/snippets-error/built-in`]: https://github.com/terminal-nerds/snippets/blob/main/packages/error/source/built-in/built-in.ts
+[built-in size gzip badge]: https://badgen.net/badgesize/gzip/file-url/unpkg.com/@terminal-nerds/snippets-error/dist/built-in/built-in.js?label=gzip
+[built-in size brotli badge]: https://badgen.net/badgesize/brotli/file-url/unpkg.com/@terminal-nerds/snippets-error/dist/built-in/built-in.js?label=brotli
+
 [`@terminal-nerds/snippets-error/custom`]: https://github.com/terminal-nerds/snippets/blob/main/packages/error/source/custom/custom.ts
 [custom size gzip badge]: https://badgen.net/badgesize/gzip/file-url/unpkg.com/@terminal-nerds/snippets-error/dist/custom/custom.js?label=gzip
 [custom size brotli badge]: https://badgen.net/badgesize/brotli/file-url/unpkg.com/@terminal-nerds/snippets-error/dist/custom/custom.js?label=brotli
-
 <!-- prettier-ignore-end -->
 
 ---
