@@ -64,7 +64,6 @@
 		"typescript": "4.9.5"
 	},
 	"dependencies": {
-		"@terminal-nerds/snippets-error": "workspace:*",
 		"@terminal-nerds/snippets-regexp": "workspace:*",
 		"case-anything": "2.1.10",
 		"type-fest": "3.5.7",
