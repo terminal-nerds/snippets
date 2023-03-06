@@ -1,6 +1,6 @@
 import { describe, expect, it } from "vitest";
 
-import { returns, throws } from "./unit.js";
+import { returns, throws, VALUE_TYPE_EMOJIS } from "./unit.js";
 
 describe("throws(value)", () => {
 	const expectedBase = `💥 throws 📛 'Error'`;
@@ -20,15 +20,21 @@ describe("throws(value)", () => {
 });
 
 describe("returns(value)", () => {
-	const expectedBase = `🔙 returns 🔢 'Number' (0)`;
+	const expectedNumberBase = `🔙 returns ${VALUE_TYPE_EMOJIS.Number} 'Number' (0)`;
 
-	it(`🔙 returns a string: "${expectedBase}"`, () => {
-		expect(`${returns(0)}`).toStrictEqual(expectedBase);
+	it(`🔙 returns a string: "${expectedNumberBase}"`, () => {
+		expect(`${returns(0)}`).toStrictEqual(expectedNumberBase);
+	});
+
+	const expectedStringBase = `🔙 returns ${VALUE_TYPE_EMOJIS.String} 'String' ("")`;
+
+	it(`🔙 returns a string: "${expectedStringBase}"`, () => {
+		expect(`${returns("")}`).toStrictEqual(expectedStringBase);
 	});
 
 	describe(`returns(value).on(situation)`, () => {
 		const situation = `sample situation description`;
-		const expectedDescription = `${expectedBase} - on ${situation}`;
+		const expectedDescription = `${expectedNumberBase} - on ${situation}`;
 
 		it(`🔙 returns a string: "${expectedDescription}"`, () => {
 			expect(returns(0).on(situation)).toStrictEqual(expectedDescription);
