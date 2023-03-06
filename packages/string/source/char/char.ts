@@ -93,7 +93,7 @@ export function isValidCharType(type: string): type is CharType {
 /* prettier-ignore */
 export function getCharType<T extends SingleChar>(
 	char: T,
-	/** @default `{ caseInsensitive: true }` */
+	/** @defaultValue `{ caseInsensitive: true }` */
 	options: Pick<CharOptions<CharType>, "caseInsensitive"> = {},
 ): CharType {
 	validateSingleChar(char);
@@ -113,7 +113,7 @@ export function getCharType<T extends SingleChar>(
 /* prettier-ignore */
 export function isChar<T extends CharType>(
 	char: string,
-	/** @default `{ caseInsensitive: true }` */
+	/** @defaultValue `{ caseInsensitive: true }` */
 	options: Pick<CharOptions<T>, "type" | "caseInsensitive">,
 ): char is Char<T> {
 	const { type, caseInsensitive = true } = options;

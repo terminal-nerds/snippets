@@ -1,5 +1,6 @@
 /* eslint-disable jest/no-export */
 
+import { throws } from "@terminal-nerds/snippets-test/unit";
 import { expect, it } from "vitest";
 import { ZodError } from "zod";
 
@@ -47,7 +48,7 @@ export const NON_STRING_VALUES = [
 
 /* eslint-disable @typescript-eslint/no-explicit-any */
 export function testInvalidInput(method: (input: any, options?: any) => void, options?: any): void {
-	it(`💣 throws 'ZodError' on passed non-string input`, () => {
+	it(throws(ZodError).on(`passed non-string input`), () => {
 		for (const nonString of NON_STRING_VALUES) {
 			expect(() => method(nonString, options)).toThrowError(ZodError);
 		}
