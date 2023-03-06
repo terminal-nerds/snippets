@@ -60,7 +60,8 @@
 	"dependencies": {
 		"@terminal-nerds/snippets-error": "workspace:*",
 		"@terminal-nerds/snippets-regexp": "workspace:*",
-		"@terminal-nerds/snippets-string": "workspace:*"
+		"@terminal-nerds/snippets-string": "workspace:*",
+		"@terminal-nerds/snippets-test": "workspace:*"
 	},
 	"peerDependenciesMeta": {
 		"typescript": {

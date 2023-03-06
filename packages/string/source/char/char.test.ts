@@ -1,8 +1,8 @@
+import { returns, throws } from "@terminal-nerds/snippets-test/unit";
 import { describe, expect, it } from "vitest";
 import { ZodError } from "zod";
 
 import { EMPTY_STRING_VALUES, SAMPLE_INPUT, testInvalidInput } from "../../tests/shared.js";
-import { stringifyArray } from "../shared.js";
 import {
 	CHAR_TYPES,
 	type CharOptions,
@@ -42,11 +42,11 @@ function testInvalidStringInput(method: Parameters<typeof testInvalidInput>[0]):
 function testInvalidCharInput(method: Parameters<typeof testInvalidInput>[0]): void {
 	testInvalidStringInput(method);
 
-	it(`💣 throws 'ZodError' on input longer than 1 char: ${SAMPLE_INPUT}`, () => {
+	it(throws(ZodError).on(`input longer than 1 char`).sample(SAMPLE_INPUT), () => {
 		expect(() => method(SAMPLE_INPUT, { type: "latin" })).toThrowError(ZodError);
 	});
 
-	it(`💣 throws 'ZodError' on empty string input`, () => {
+	it(throws(ZodError).on(`empty string input`), () => {
 		for (const emptyString of EMPTY_STRING_VALUES) {
 			expect(() => method(emptyString, { type: "latin" })).toThrowError(ZodError);
 		}
@@ -54,24 +54,26 @@ function testInvalidCharInput(method: Parameters<typeof testInvalidInput>[0]): v
 }
 
 function testInvalidCharTypeOption(method: (input: string, options: CharOptions<CharType>) => void): void {
-	it(`options: { type: "wrong" } - 💣 throws 'TypeError' on passed unrecognized char type option`, () => {
+	const options = { type: "wrong" };
+
+	it(throws(ZodError).on(`passed unrecognized char type option`).with(options), () => {
 		// @ts-expect-error Testing
-		expect(() => method(SAMPLE_INPUT, { type: "wrong" })).toThrowError(ZodError);
+		expect(() => method(SAMPLE_INPUT, options)).toThrowError(ZodError);
 	});
 }
 
 describe("isSingleChar(input)", () => {
 	testInvalidInput(isSingleChar);
 
-	it(`🔴 returns 'false' on empty string input`, () => {
+	it(returns(false).on(`empty string input`), () => {
 		expect(isSingleChar("")).toBe(false);
 	});
 
-	it(`🔴 returns 'false' on input longer than 1 char: "${SAMPLE_INPUT}"`, () => {
+	it(returns(false).on(`input longer than 1 char`).sample(SAMPLE_INPUT), () => {
 		expect(isSingleChar(SAMPLE_INPUT)).toBe(false);
 	});
 
-	it(`🟢 returns 'true' on single chars input: ${stringifyArray(SINGLE_CHARS)}`, () => {
+	it(returns(true).on(`single chars input`).samples(SINGLE_CHARS), () => {
 		for (const char of SINGLE_CHARS) {
 			expect(isSingleChar(char)).toBe(true);
 		}
@@ -81,7 +83,7 @@ describe("isSingleChar(input)", () => {
 describe("validateSingleChar(char)", () => {
 	testInvalidCharInput(validateSingleChar);
 
-	it(`🔙 returns a string on passed single chars: ${stringifyArray(SINGLE_CHARS)}`, () => {
+	it(returns({ what: "String", value: "<single char>" }).on(`passed single chars`).samples(SINGLE_CHARS), () => {
 		for (const singleChar of SINGLE_CHARS) {
 			const validatedChar = validateSingleChar(singleChar);
 
@@ -92,11 +94,13 @@ describe("validateSingleChar(char)", () => {
 });
 
 describe("validateCharType(type)", () => {
-	it(`💣 throws 'ZodError' on invalid char type: ${"wrong"}`, () => {
-		expect(() => validateCharType("wrong")).toThrowError(ZodError);
+	const sample = "wrong";
+
+	it(throws(ZodError).on(`invalid char type`).sample(sample), () => {
+		expect(() => validateCharType(sample)).toThrowError(ZodError);
 	});
 
-	it(`🔙 returns a string on valid char types: ${stringifyArray(CHAR_TYPES)}`, () => {
+	it(returns({ what: "String", value: "<valid char type>" }).on(`valid char types`).samples(CHAR_TYPES), () => {
 		for (const type of CHAR_TYPES) {
 			const validatedCharType = validateCharType(type);
 
@@ -109,11 +113,13 @@ describe("validateCharType(type)", () => {
 describe("isValidCharType(type)", () => {
 	testInvalidInput(isValidCharType);
 
-	it(`🔴 returns 'false' on invalid char type: ${"wrong"}`, () => {
-		expect(isValidCharType("wrong")).toBe(false);
+	const sampleInvalid = "alien";
+
+	it(returns(false).on(`invalid char type`).sample(sampleInvalid), () => {
+		expect(isValidCharType(sampleInvalid)).toBe(false);
 	});
 
-	it(`🟢 returns 'true' on valid char types: ${stringifyArray(CHAR_TYPES)}`, () => {
+	it(returns(true).on(`valid char types`).samples(CHAR_TYPES), () => {
 		for (const type of CHAR_TYPES) {
 			expect(isValidCharType(type)).toBe(true);
 		}
@@ -123,163 +129,195 @@ describe("isValidCharType(type)", () => {
 describe("getCharType(char, options?)", () => {
 	testInvalidCharInput(getCharType);
 
-	it(`options: { caseInsensitive: false } - 💣 throws 'TypeError' on upper cased latin chars: ${stringifyArray(
-		UPPER_CASED_LATIN_CHARS,
-	)}`, () => {
+	const optionsInsentitive = { caseInsensitive: false };
+	const optionsSentitive = { caseInsensitive: true };
+
+	it(throws(ZodError).on(`upper cased latin chars`).samples(UPPER_CASED_LATIN_CHARS).with(optionsInsentitive), () => {
 		for (const upperCasedLatinChar of UPPER_CASED_LATIN_CHARS) {
-			expect(() => getCharType(upperCasedLatinChar, { caseInsensitive: false })).toThrowError(TypeError);
+			expect(() => getCharType(upperCasedLatinChar, optionsInsentitive)).toThrowError(TypeError);
 		}
 	});
 
-	it(`🔙 returns a string 'latin' on latin characters: ${stringifyArray(LATIN_CHARS)}`, () => {
+	it(returns("latin").on(`lower cased latin chars`).samples(LOWER_CASED_LATIN_CHARS).with(optionsSentitive), () => {
+		for (const upperCasedLatinChar of LOWER_CASED_LATIN_CHARS) {
+			expect(getCharType(upperCasedLatinChar, optionsSentitive)).toStrictEqual("latin");
+		}
+	});
+
+	it(returns("latin").on(`upper cased latin chars`).samples(UPPER_CASED_LATIN_CHARS).with(optionsSentitive), () => {
+		for (const upperCasedLatinChar of UPPER_CASED_LATIN_CHARS) {
+			expect(getCharType(upperCasedLatinChar, optionsSentitive)).toStrictEqual("latin");
+		}
+	});
+
+	it(returns("latin").on(`latin characters`).samples(LATIN_CHARS), () => {
 		for (const latinChar of LATIN_CHARS) {
 			expect(getCharType(latinChar)).toStrictEqual("latin");
 		}
 	});
 
-	it(`options: { caseInsensitive: false } - 🔙  returns a string 'latin' on lower cased latin chars: ${stringifyArray(
-		LOWER_CASED_LATIN_CHARS,
-	)}`, () => {
+	it(returns("latin").on(`lower cased latin chars`).samples(LOWER_CASED_LATIN_CHARS).with(optionsInsentitive), () => {
 		for (const lowerCasedLatinChar of LOWER_CASED_LATIN_CHARS) {
-			expect(getCharType(lowerCasedLatinChar, { caseInsensitive: false })).toStrictEqual("latin");
+			expect(getCharType(lowerCasedLatinChar, optionsInsentitive)).toStrictEqual("latin");
 		}
 	});
 
-	it(`🔙 returns a string 'number' on number characters: ${stringifyArray(NUMBER_CHARS)}`, () => {
+	it(returns("number").on(`number characters`).samples(NUMBER_CHARS), () => {
 		for (const numberChar of NUMBER_CHARS) {
 			expect(getCharType(numberChar)).toStrictEqual("number");
 		}
 	});
 
-	it(`🔙 returns a string 'special' on specials characters: ${stringifyArray(LATIN_CHARS)}`, () => {
+	it(returns("special").on(`specials characters`).samples(SPECIAL_CHARS), () => {
 		for (const specialChar of SPECIAL_CHARS) {
 			expect(getCharType(specialChar)).toStrictEqual("special");
 		}
 	});
 });
 
-describe("isChar(char, options)", () => {
+describe("isChar(char, options?)", () => {
 	testInvalidCharInput(isChar);
 	testInvalidCharTypeOption(isChar);
 
-	it(`options: { type: "latin" } - 🔴 returns 'false' on non-latin char: ${stringifyArray(NON_LATIN_CHARS)}`, () => {
+	const latinOptions = { type: "latin" } as const;
+
+	it(returns(false).on(`non-latin chars`).samples(NON_LATIN_CHARS).with(latinOptions), () => {
 		for (const char of NON_LATIN_CHARS) {
-			expect(isChar(char, { type: "latin" })).toBe(false);
+			expect(isChar(char, latinOptions)).toBe(false);
 		}
 	});
 
-	it(`options: { type: "latin" } - 🟢 returns 'true' on latin char: ${stringifyArray(LATIN_CHARS)}`, () => {
+	it(returns(true).on(`latin chars`).samples(LATIN_CHARS).with(latinOptions), () => {
 		for (const char of LATIN_CHARS) {
-			expect(isChar(char, { type: "latin" })).toBe(true);
+			expect(isChar(char, latinOptions)).toBe(true);
 		}
 	});
 
-	it(`options: { type: "number" } - 🔴 returns 'false' on non-number char: ${stringifyArray(
-		NON_NUMBER_CHARS,
-	)}`, () => {
+	const numberOptions = { type: "number" } as const;
+
+	it(returns(false).on(`non-number chars`).samples(NON_NUMBER_CHARS).with(numberOptions), () => {
 		for (const char of NON_NUMBER_CHARS) {
-			expect(isChar(char, { type: "number" })).toBe(false);
+			expect(isChar(char, numberOptions)).toBe(false);
 		}
 	});
 
-	it(`options: { type: "number" } - 🟢 returns 'true' on number char: ${stringifyArray(NUMBER_CHARS)}`, () => {
+	it(returns(true).on(`number chars`).samples(NUMBER_CHARS).with(numberOptions), () => {
 		for (const char of NUMBER_CHARS) {
-			expect(isChar(char, { type: "number" })).toBe(true);
+			expect(isChar(char, numberOptions)).toBe(true);
 		}
 	});
 
-	it(`options: { type: "special" } - 🔴 returns 'false' on non-special char: ${stringifyArray(
-		NON_SPECIAL_CHARS,
-	)}`, () => {
+	const specialOptions = { type: "special" } as const;
+
+	it(returns(false).on(`non-special chars`).samples(NON_SPECIAL_CHARS).with(specialOptions), () => {
 		for (const char of NON_SPECIAL_CHARS) {
-			expect(isChar(char, { type: "special" })).toBe(false);
+			expect(isChar(char, specialOptions)).toBe(false);
 		}
 	});
 
-	it(`options: { type: "special" } - 🟢 returns 'true' on special char: ${stringifyArray(SPECIAL_CHARS)}`, () => {
+	it(returns(true).on(`special chars`).samples(SPECIAL_CHARS).with(specialOptions), () => {
 		for (const char of SPECIAL_CHARS) {
-			expect(isChar(char, { type: "special" })).toBe(true);
+			expect(isChar(char, specialOptions)).toBe(true);
 		}
 	});
 });
 
-describe("hasChars(input, options)", () => {
+describe("hasChars(input, options?)", () => {
 	testInvalidStringInput(hasChars);
 	testInvalidCharTypeOption(hasChars);
 
-	it(`options: { type: "latin" } - 🔴 returns 'false' on input without latin chars: ${INPUT_WITHOUT_LATIN_CHARS}`, () => {
-		expect(hasChars(INPUT_WITHOUT_LATIN_CHARS, { type: "latin" })).toBe(false);
+	const latinOptions = { type: "latin" } as const;
+
+	it(returns(false).on(`input without latin chars`).sample(INPUT_WITHOUT_LATIN_CHARS).with(latinOptions), () => {
+		expect(hasChars(INPUT_WITHOUT_LATIN_CHARS, latinOptions)).toBe(false);
 	});
 
-	it(`options: { type: "latin" } - 🟢 returns 'true' on input with latin chars: ${INPUT_WITH_ALL_CHARS}`, () => {
-		expect(hasChars(INPUT_WITH_ALL_CHARS, { type: "latin" })).toBe(true);
+	it(returns(true).on(`input with latin chars`).sample(INPUT_WITH_ALL_CHARS), () => {
+		expect(hasChars(INPUT_WITH_ALL_CHARS, latinOptions)).toBe(true);
 	});
 
-	it(`options: { type: "latin", caseInsensitive: false } - 🔴 returns 'false' on input with uppercased latin chars: ${INPUT_WITH_UPPER_CASED_LATIN_CHARS}`, () => {
-		expect(hasChars(INPUT_WITH_UPPER_CASED_LATIN_CHARS, { type: "latin", caseInsensitive: false })).toBe(false);
+	const latinInsentitiveOptions = { ...latinOptions, caseInsensitive: false } as const;
+
+	it(
+		returns(false)
+			.on(`input with uppercased latin chars`)
+			.sample(INPUT_WITH_UPPER_CASED_LATIN_CHARS)
+			.with(latinInsentitiveOptions),
+		() => {
+			expect(hasChars(INPUT_WITH_UPPER_CASED_LATIN_CHARS, latinInsentitiveOptions)).toBe(false);
+		},
+	);
+
+	it(
+		returns(true)
+			.on(`input with uppercased latin chars`)
+			.sample(INPUT_WITH_UPPER_CASED_LATIN_CHARS)
+			.with(latinInsentitiveOptions),
+		() => {
+			expect(hasChars(INPUT_WITH_UPPER_CASED_LATIN_CHARS, latinInsentitiveOptions)).toBe(false);
+		},
+	);
+
+	const latinSentitiveOptions = { ...latinOptions, caseInsensitive: true } as const;
+
+	it(returns(true).on(`input with uppercased latin chars`).sample(INPUT_WITH_UPPER_CASED_LATIN_CHARS), () => {
+		expect(hasChars(INPUT_WITH_UPPER_CASED_LATIN_CHARS, latinSentitiveOptions)).toBe(true);
 	});
 
-	it(`options: { type: "latin", caseInsensitive: false } - 🟢 returns 'true' on input with lowercased latin chars: ${INPUT_WITH_LOWER_CASED_LATIN_CHARS}`, () => {
-		expect(hasChars(INPUT_WITH_LOWER_CASED_LATIN_CHARS, { type: "latin", caseInsensitive: false })).toBe(true);
+	const numberOptions = { type: "number" } as const;
+
+	it(returns(false).on(`input without number chars`).sample(INPUT_WITHOUT_NUMBER_CHARS), () => {
+		expect(hasChars(INPUT_WITHOUT_NUMBER_CHARS, numberOptions)).toBe(false);
 	});
 
-	it(`options: { type: "latin", caseInsensitive: true } - 🟢 returns 'true' on input with uppercased latin chars: ${INPUT_WITH_UPPER_CASED_LATIN_CHARS}`, () => {
-		expect(hasChars(INPUT_WITH_UPPER_CASED_LATIN_CHARS, { type: "latin", caseInsensitive: true })).toBe(true);
+	it(returns(true).on(`input with number chars`).sample(INPUT_WITH_ALL_CHARS), () => {
+		expect(hasChars(INPUT_WITH_ALL_CHARS, numberOptions)).toBe(true);
 	});
 
-	it(`options: { type: "number" } - 🔴 returns 'false' on input without number chars: ${INPUT_WITHOUT_NUMBER_CHARS}`, () => {
-		expect(hasChars(INPUT_WITHOUT_NUMBER_CHARS, { type: "number" })).toBe(false);
+	const specialOptions = { type: "special" } as const;
+
+	it(returns(false).on(`input without special chars`).sample(INPUT_WITHOUT_SPECIAL_CHARS), () => {
+		expect(hasChars(INPUT_WITHOUT_SPECIAL_CHARS, specialOptions)).toBe(false);
 	});
 
-	it(`options: { type: "number" } - 🟢 returns 'true' on input with number chars: ${INPUT_WITH_ALL_CHARS}`, () => {
-		expect(hasChars(INPUT_WITH_ALL_CHARS, { type: "number" })).toBe(true);
-	});
-
-	it(`options: { type: "special" } - 🔴 returns 'false' on input without special chars: ${INPUT_WITHOUT_SPECIAL_CHARS}`, () => {
-		expect(hasChars(INPUT_WITHOUT_SPECIAL_CHARS, { type: "special" })).toBe(false);
-	});
-
-	it(`options: { type: "special" } - 🟢 returns 'true' on input with special chars: ${INPUT_WITH_ALL_CHARS}`, () => {
-		expect(hasChars(INPUT_WITH_ALL_CHARS, { type: "special" })).toBe(true);
+	it(returns(true).on(`input with special chars`).sample(INPUT_WITH_ALL_CHARS), () => {
+		expect(hasChars(INPUT_WITH_ALL_CHARS, specialOptions)).toBe(true);
 	});
 });
 
-describe("getChars(input, options)", () => {
+describe("getChars(input, options?)", () => {
 	testInvalidStringInput(getChars);
 	testInvalidCharTypeOption(getChars);
 
+	const latinOptions = { type: "latin" } as const;
 	/* prettier-ignore */
 	const expectedLatinChars = ["X", "E", "H", "O", "t", "e", "r", "m", "i", "n", "a", "l", "n", "e", "r", "d", "s"] as const;
 
-	it(`options: { type: "latin" } - 🔙 returns an array: ${JSON.stringify(
-		expectedLatinChars,
-	)} - on sample input: ${SAMPLE_INPUT}`, () => {
-		expect(getChars(SAMPLE_INPUT, { type: "latin" })).toStrictEqual(expectedLatinChars);
+	it(returns(expectedLatinChars).on(`sample input`).sample(SAMPLE_INPUT).with(latinOptions), () => {
+		expect(getChars(SAMPLE_INPUT, latinOptions)).toStrictEqual(expectedLatinChars);
 	});
 
+	const latinInsentitiveOptions = { type: "latin", caseInsensitive: false } as const;
 	const expectedLowerCasedLatinChars = ["t", "e", "r", "m", "i", "n", "a", "l", "n", "e", "r", "d", "s"] as const;
 
-	it(`options: { type: "latin", caseInsensitive: false } - 🔙 returns an array: ${JSON.stringify(
-		expectedLowerCasedLatinChars,
-	)} - on sample input: ${SAMPLE_INPUT}`, () => {
-		expect(getChars(SAMPLE_INPUT, { type: "latin", caseInsensitive: false })).toStrictEqual(
-			expectedLowerCasedLatinChars,
-		);
-	});
+	it(
+		returns(expectedLowerCasedLatinChars).on(`sample input`).sample(SAMPLE_INPUT).with(latinInsentitiveOptions),
+		() => {
+			expect(getChars(SAMPLE_INPUT, latinInsentitiveOptions)).toStrictEqual(expectedLowerCasedLatinChars);
+		},
+	);
 
+	const numberOptions = { type: "number" } as const;
 	const expectedNumberChars = ["9", "1"] as const;
 
-	it(`options: { type: "number" } - 🔙 returns an array: ${JSON.stringify(
-		expectedNumberChars,
-	)} - on sample input: ${SAMPLE_INPUT}`, () => {
-		expect(getChars(SAMPLE_INPUT, { type: "number" })).toStrictEqual(expectedNumberChars);
+	it(returns(expectedNumberChars).on(`sample input`).sample(SAMPLE_INPUT).with(numberOptions), () => {
+		expect(getChars(SAMPLE_INPUT, numberOptions)).toStrictEqual(expectedNumberChars);
 	});
 
+	const specialOptions = { type: "special" } as const;
 	const expectedSpecialChars = ["@", "-"] as const;
 
-	it(`options: { type: "special" } - 🔙 returns an array: ${JSON.stringify(
-		expectedSpecialChars,
-	)} - on sample input: ${SAMPLE_INPUT}`, () => {
-		expect(getChars(SAMPLE_INPUT, { type: "special" })).toStrictEqual(expectedSpecialChars);
+	it(returns(expectedSpecialChars).on(`sample input`).sample(SAMPLE_INPUT).with(specialOptions), () => {
+		expect(getChars(SAMPLE_INPUT, specialOptions)).toStrictEqual(expectedSpecialChars);
 	});
 });

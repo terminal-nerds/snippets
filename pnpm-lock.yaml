@@ -72,11 +72,14 @@ importers:
 
   packages/error:
     specifiers:
+      '@terminal-nerds/snippets-test': workspace:*
       modern-errors: 5.5.1
       zod: 3.21.0
     dependencies:
       modern-errors: 5.5.1
       zod: 3.21.0
+    devDependencies:
+      '@terminal-nerds/snippets-test': link:../test
 
   packages/regexp:
     specifiers:
@@ -91,14 +94,17 @@ importers:
       '@terminal-nerds/snippets-error': workspace:*
       '@terminal-nerds/snippets-regexp': workspace:*
       '@terminal-nerds/snippets-string': workspace:*
+      '@terminal-nerds/snippets-test': workspace:*
     dependencies:
       '@terminal-nerds/snippets-error': link:../error
       '@terminal-nerds/snippets-regexp': link:../regexp
       '@terminal-nerds/snippets-string': link:../string
+      '@terminal-nerds/snippets-test': link:../test
 
   packages/string:
     specifiers:
       '@terminal-nerds/snippets-regexp': workspace:*
+      '@terminal-nerds/snippets-test': workspace:*
       case-anything: 2.1.10
       type-fest: 3.5.7
       zod: 3.20.6
@@ -107,6 +113,11 @@ importers:
       case-anything: 2.1.10
       type-fest: 3.5.7
       zod: 3.20.6
+    devDependencies:
+      '@terminal-nerds/snippets-test': link:../test
+
+  packages/test:
+    specifiers: {}
 
   scripts/generate:
     specifiers:

@@ -1,13 +1,13 @@
 {
 	"$schema": "https://json.schemastore.org/package",
 	"type": "module",
-	"name": "@terminal-nerds/snippets-error",
+	"name": "@terminal-nerds/snippets-test",
 	"version": "0.0.0",
-	"description": "@terminal-nerds reusable snippets for errors.",
+	"description": "@terminal-nerds reusable snippets for tests.",
 	"keywords": [
 		"snippets",
 		"typescript",
-		"error"
+		"test"
 	],
 	"license": "MIT",
 	"author": {
@@ -19,7 +19,7 @@
 	"repository": {
 		"type": "git",
 		"url": "https://github.com/terminal-nerds/snippets.git",
-		"directory": "packages/error"
+		"directory": "packages/test"
 	},
 	"bugs": "https://github.com/terminal-nerds/snippets/issues",
 	"engines": {
@@ -47,7 +47,7 @@
 		"dev:test": "vitest watch --ui",
 		"dev:pkg": "tsup --watch",
 		"fix": "concurrently \"pnpm:fix:*\" --group --timings",
-		"fix:format": "pretty-quick --branch main --pattern \"packages/error/**/*\" --verbose",
+		"fix:format": "pretty-quick --branch main --pattern \"packages/test/**/*\" --verbose",
 		"fix:js": "pnpm lint:js --fix",
 		"fix:md": "pnpm lint:md --fix",
 		"fix:pkg": "syncpack format ; syncpack fix-mismatches",
@@ -59,12 +59,5 @@
 		"lint:pkg": "syncpack list-mismatches",
 		"lint:types": "tsc --noEmit",
 		"test:unit": "vitest run --dir \"./source\""
-	},
-	"dependencies": {
-		"modern-errors": "5.5.1",
-		"zod": "3.21.0"
-	},
-	"devDependencies": {
-		"@terminal-nerds/snippets-test": "workspace:*"
 	}
 }
