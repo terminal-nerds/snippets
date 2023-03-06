@@ -1,6 +1,6 @@
 import { describe, expect, it } from "vitest";
 
-import { returns, throws } from "./print.js";
+import { returns, throws } from "./unit.js";
 
 describe("throws(value)", () => {
 	const expectedBase = `💥 throws 📛 'Error'`;

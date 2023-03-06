@@ -12,15 +12,15 @@
 
 ## Modules included
 
-| Name                                    | Size                                                |
-| --------------------------------------- | --------------------------------------------------- |
-| [`@terminal-nerds/snippets-test/print`] | ![print size gzip badge] ![print size brotli badge] |
+| Name                                   | Size                                              |
+| -------------------------------------- | ------------------------------------------------- |
+| [`@terminal-nerds/snippets-test/unit`] | ![unit size gzip badge] ![unit size brotli badge] |
 
 <!-- prettier-ignore-start -->
 <!-- MODULES LINKS -->
-[`@terminal-nerds/snippets-test/print`]: https://github.com/terminal-nerds/snippets/blob/main/packages/test/source/print/print.ts
-[print size gzip badge]: https://badgen.net/badgesize/gzip/file-url/unpkg.com/@terminal-nerds/snippets-test/dist/print/print.js?label=gzip
-[print size brotli badge]: https://badgen.net/badgesize/brotli/file-url/unpkg.com/@terminal-nerds/snippets-test/dist/print/print.js?label=brotli
+[`@terminal-nerds/snippets-test/unit`]: https://github.com/terminal-nerds/snippets/blob/main/packages/test/source/unit/unit.ts
+[unit size gzip badge]: https://badgen.net/badgesize/gzip/file-url/unpkg.com/@terminal-nerds/snippets-test/dist/unit/unit.js?label=gzip
+[unit size brotli badge]: https://badgen.net/badgesize/brotli/file-url/unpkg.com/@terminal-nerds/snippets-test/dist/unit/unit.js?label=brotli
 <!-- prettier-ignore-end -->
 
 ---

@@ -95,7 +95,7 @@ export function getValueTypeEmoji(valueType: ValueTypeName, value?: unknown): Va
 	}
 }
 
-class TestString {
+class UnitTestPrint {
 	public prefixEmoji: string;
 	public prefix: string;
 	public value: unknown;
@@ -144,5 +144,5 @@ class TestString {
 	}
 }
 
-export const throws = (value: unknown) => new TestString(`💥`, `throws`, value);
-export const returns = (value: unknown) => new TestString(`🔙`, `returns`, value);
+export const throws = (value: unknown) => new UnitTestPrint(`💥`, `throws`, value);
+export const returns = (value: unknown) => new UnitTestPrint(`🔙`, `returns`, value);
