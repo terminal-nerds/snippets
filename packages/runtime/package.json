@@ -1,12 +1,13 @@
 {
 	"$schema": "https://json.schemastore.org/package",
 	"type": "module",
-	"name": "@terminal-nerds/snippets",
+	"name": "@terminal-nerds/snippets-runtime",
 	"version": "0.0.0",
-	"description": "@terminal-nerds all of the reusable snippets.",
+	"description": "@terminal-nerds reusable snippets for runtime.",
 	"keywords": [
 		"snippets",
-		"typescript"
+		"typescript",
+		"runtime"
 	],
 	"author": {
 		"name": "Mateusz Kadlubowski",
@@ -18,7 +19,7 @@
 	"repository": {
 		"type": "git",
 		"url": "https://github.com/terminal-nerds/snippets.git",
-		"directory": "packages/snippets"
+		"directory": "packages/runtime"
 	},
 	"bugs": "https://github.com/terminal-nerds/snippets/issues",
 	"engines": {
@@ -28,6 +29,10 @@
 		".": {
 			"types": "./dist/main.d.ts",
 			"import": "./dist/main.js"
+		},
+		"./*": {
+			"types": "./dist/*/*.d.ts",
+			"import": "./dist/*/*.js"
 		}
 	},
 	"files": [
@@ -42,7 +47,7 @@
 		"dev:test": "vitest watch --ui",
 		"dev:pkg": "tsup --watch",
 		"fix": "concurrently \"pnpm:fix:*\" --group --timings",
-		"fix:format": "pretty-quick --branch main --pattern \"packages/snippets/**/*\" --verbose",
+		"fix:format": "pretty-quick --branch main --pattern \"packages/runtime/**/*\" --verbose",
 		"fix:js": "pnpm lint:js --fix",
 		"fix:md": "pnpm lint:md --fix",
 		"fix:pkg": "syncpack format ; syncpack fix-mismatches",
@@ -59,9 +64,6 @@
 	},
 	"dependencies": {
 		"@terminal-nerds/snippets-error": "workspace:*",
-		"@terminal-nerds/snippets-regexp": "workspace:*",
-		"@terminal-nerds/snippets-runtime": "workspace:*",
-		"@terminal-nerds/snippets-string": "workspace:*",
 		"@terminal-nerds/snippets-test": "workspace:*"
 	},
 	"peerDependenciesMeta": {

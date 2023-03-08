@@ -89,15 +89,25 @@ importers:
       magic-regexp: 0.6.2
       zod: 3.20.6
 
+  packages/runtime:
+    specifiers:
+      '@terminal-nerds/snippets-error': workspace:*
+      '@terminal-nerds/snippets-test': workspace:*
+    dependencies:
+      '@terminal-nerds/snippets-error': link:../error
+      '@terminal-nerds/snippets-test': link:../test
+
   packages/snippets:
     specifiers:
       '@terminal-nerds/snippets-error': workspace:*
       '@terminal-nerds/snippets-regexp': workspace:*
+      '@terminal-nerds/snippets-runtime': workspace:*
       '@terminal-nerds/snippets-string': workspace:*
       '@terminal-nerds/snippets-test': workspace:*
     dependencies:
       '@terminal-nerds/snippets-error': link:../error
       '@terminal-nerds/snippets-regexp': link:../regexp
+      '@terminal-nerds/snippets-runtime': link:../runtime
       '@terminal-nerds/snippets-string': link:../string
       '@terminal-nerds/snippets-test': link:../test
 
