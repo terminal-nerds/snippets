@@ -64,7 +64,8 @@
 	},
 	"dependencies": {
 		"@terminal-nerds/snippets-error": "workspace:*",
-		"@terminal-nerds/snippets-test": "workspace:*"
+		"@terminal-nerds/snippets-test": "workspace:*",
+		"zod": "3.20.6"
 	},
 	"peerDependenciesMeta": {
 		"typescript": {
