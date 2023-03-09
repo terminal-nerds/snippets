@@ -1,25 +1,25 @@
 {
 	"$schema": "https://json.schemastore.org/package",
 	"type": "module",
-	"name": "@terminal-nerds/snippets-error",
+	"name": "@terminal-nerds/snippets-runtime",
 	"version": "0.0.0",
-	"description": "@terminal-nerds reusable snippets for errors.",
+	"description": "@terminal-nerds reusable snippets for runtime.",
 	"keywords": [
 		"snippets",
 		"typescript",
-		"error"
+		"runtime"
 	],
-	"license": "MIT",
 	"author": {
 		"name": "Mateusz Kadlubowski",
 		"email": "xeho91@pm.me",
 		"url": "https://xeho91.com"
 	},
+	"license": "MIT",
 	"homepage": "https://github.com/terminal-nerds/snippets",
 	"repository": {
 		"type": "git",
 		"url": "https://github.com/terminal-nerds/snippets.git",
-		"directory": "packages/error"
+		"directory": "packages/runtime"
 	},
 	"bugs": "https://github.com/terminal-nerds/snippets/issues",
 	"engines": {
@@ -47,7 +47,7 @@
 		"dev:test": "vitest watch --ui",
 		"dev:pkg": "tsup --watch",
 		"fix": "concurrently \"pnpm:fix:*\" --group --timings",
-		"fix:format": "pretty-quick --branch main --pattern \"packages/error/**/*\" --verbose",
+		"fix:format": "pretty-quick --branch main --pattern \"packages/runtime/**/*\" --verbose",
 		"fix:js": "pnpm lint:js --fix",
 		"fix:md": "pnpm lint:md --fix",
 		"fix:pkg": "syncpack format ; syncpack fix-mismatches",
@@ -57,14 +57,24 @@
 		"lint:js": "DEBUG=\"eslint:cli-engine\" eslint . --ext .cjs,.js,.ts,.json,.yml --cache --cache-location \"./node_modules/.cache/eslint\"",
 		"lint:md": "markdownlint . --config \"../../.markdownlint.json\" --dot --ignore \"./LICENSE.md\" --ignore-path \"../../.gitignore\"",
 		"lint:pkg": "syncpack list-mismatches",
-		"lint:types": "tsc --noEmit",
-		"test:unit": "vitest run --dir \"./source\""
+		"lint:types": "tsc --noEmit"
+	},
+	"peerDependencies": {
+		"typescript": "4.9.5"
 	},
 	"dependencies": {
-		"modern-errors": "5.5.1",
+		"@terminal-nerds/snippets-error": "workspace:*",
 		"zod": "3.20.6"
 	},
+	"peerDependenciesMeta": {
+		"typescript": {
+			"optional": true
+		}
+	},
 	"devDependencies": {
-		"@terminal-nerds/snippets-test": "workspace:*"
+		"@terminal-nerds/snippets-test": "workspace:*",
+		"@edge-runtime/vm": "2.1.2",
+		"happy-dom": "8.9.0",
+		"jsdom": "21.1.0"
 	}
 }

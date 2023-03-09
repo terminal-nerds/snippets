@@ -1,54 +1,36 @@
-# @terminal-nerds/snippets
+# @terminal-nerds/snippets-runtime
 
-![package version badge]
-[![size badge]][size url]
-[![dependencies badge]][dependencies url]
-
-➡️ **This package wraps all available snippets packages in one** — part of the [terminal-nerds/snippets] project.
+➡️ **This package wraps all available modules with snippets related to JavasScript runtimes**
+— part of the [terminal-nerds/snippets] project.
 
 [terminal-nerds/snippets]: https://github.com/terminal-nerds/snippets
-[package version badge]: https://img.shields.io/npm/v/@terminal-nerds/snippets/latest?style=for-the-badge&logo=npm
-[dependencies badge]: https://img.shields.io/librariesio/release/npm/@terminal-nerds/snippets?style=for-the-badge
-[dependencies url]: https://libraries.io/npm/@terminal-nerds%2snippets
-[size badge]: https://img.shields.io/bundlephobia/minzip/@terminal-nerds/snippets?style=for-the-badge&label=size
-[size url]: https://packagephobia.com/result?p=@terminal-nerds/snippets
+[package version badge]: https://img.shields.io/npm/v/@terminal-nerds/snippets-runtime/latest?style=for-the-badge&logo=npm
+[dependencies badge]: https://img.shields.io/librariesio/release/npm/@terminal-nerds/snippets-runtime?style=for-the-badge
+[dependencies url]: https://libraries.io/npm/@terminal-nerds%2snippets-runtime
+[size badge]: https://img.shields.io/bundlephobia/minzip/@terminal-nerds/snippets-runtime?style=for-the-badge&label=size
+[size url]: https://packagephobia.com/result?p=@terminal-nerds/snippets-runtime
 
-## Packages included
+## Modules included
 
-| Name                        | Version                                      |
-| --------------------------- | -------------------------------------------- |
-| [![error badge]][error]     | [![error version badge]][error npm page]     |
-| [![regexp badge]][regexp]   | [![regexp version badge]][regexp npm page]   |
-| [![runtime badge]][runtime] | [![runtime version badge]][runtime npm page] |
-| [![string badge]][string]   | [![string version badge]][string npm page]   |
-| [![test badge]][test]       | [![test version badge]][test npm page]       |
+| Name                                             | Size                                                            |
+| ------------------------------------------------ | --------------------------------------------------------------- |
+| [`@terminal-nerds/snippets-runtime/environment`] | ![environment size gzip badge] ![environment size brotli badge] |
+| [`@terminal-nerds/snippets-runtime/scope`]       | ![scope size gzip badge] ![scope size brotli badge]             |
+| [`@terminal-nerds/snippets-runtime/variable`]    | ![variable size gzip badge] ![variable size brotli badge]       |
 
 <!-- prettier-ignore-start -->
-<!-- PACKAGES LINKS -->
-[error]: https://github.com/terminal-nerds/snippets/blob/main/packages/error/README.md
-[error badge]: https://img.shields.io/static/v1?label=%40terminal-nerds&message=snippets-error&style=flat-square&color=informational
-[error version badge]: https://img.shields.io/npm/v/@terminal-nerds/snippets-error/latest?style=flat-square&logo=npm
-[error npm page]: https://www.npmjs.com/package/@terminal-nerds/snippets-error
+<!-- MODULES LINKS -->
+[`@terminal-nerds/snippets-runtime/environment`]: https://github.com/terminal-nerds/snippets/blob/main/packages/runtime/source/environment/environment.ts
+[environment size gzip badge]: https://badgen.net/badgesize/gzip/file-url/unpkg.com/@terminal-nerds/snippets-runtime/dist/environment/environment.js?label=gzip
+[environment size brotli badge]: https://badgen.net/badgesize/brotli/file-url/unpkg.com/@terminal-nerds/snippets-runtime/dist/environment/environment.js?label=brotli
 
-[regexp]: https://github.com/terminal-nerds/snippets/blob/main/packages/regexp/README.md
-[regexp badge]: https://img.shields.io/static/v1?label=%40terminal-nerds&message=snippets-regexp&style=flat-square&color=informational
-[regexp version badge]: https://img.shields.io/npm/v/@terminal-nerds/snippets-regexp/latest?style=flat-square&logo=npm
-[regexp npm page]: https://www.npmjs.com/package/@terminal-nerds/snippets-regexp
+[`@terminal-nerds/snippets-runtime/scope`]: https://github.com/terminal-nerds/snippets/blob/main/packages/runtime/source/scope/scope.ts
+[scope size gzip badge]: https://badgen.net/badgesize/gzip/file-url/unpkg.com/@terminal-nerds/snippets-runtime/dist/scope/scope.js?label=gzip
+[scope size brotli badge]: https://badgen.net/badgesize/brotli/file-url/unpkg.com/@terminal-nerds/snippets-runtime/dist/scope/scope.js?label=brotli
 
-[runtime]: https://github.com/terminal-nerds/snippets/blob/main/packages/runtime/README.md
-[runtime badge]: https://img.shields.io/static/v1?label=%40terminal-nerds&message=snippets-runtime&style=flat-square&color=informational
-[runtime version badge]: https://img.shields.io/npm/v/@terminal-nerds/snippets-runtime/latest?style=flat-square&logo=npm
-[runtime npm page]: https://www.npmjs.com/package/@terminal-nerds/snippets-runtime
-
-[string]: https://github.com/terminal-nerds/snippets/blob/main/packages/string/README.md
-[string badge]: https://img.shields.io/static/v1?label=%40terminal-nerds&message=snippets-string&style=flat-square&color=informational
-[string version badge]: https://img.shields.io/npm/v/@terminal-nerds/snippets-string/latest?style=flat-square&logo=npm
-[string npm page]: https://www.npmjs.com/package/@terminal-nerds/snippets-string
-
-[test]: https://github.com/terminal-nerds/snippets/blob/main/packages/test/README.md
-[test badge]: https://img.shields.io/static/v1?label=%40terminal-nerds&message=snippets-test&style=flat-square&color=informational
-[test version badge]: https://img.shields.io/npm/v/@terminal-nerds/snippets-test/latest?style=flat-square&logo=npm
-[test npm page]: https://www.npmjs.com/package/@terminal-nerds/snippets-test
+[`@terminal-nerds/snippets-runtime/variable`]: https://github.com/terminal-nerds/snippets/blob/main/packages/runtime/source/variable/variable.ts
+[variable size gzip badge]: https://badgen.net/badgesize/gzip/file-url/unpkg.com/@terminal-nerds/snippets-runtime/dist/variable/variable.js?label=gzip
+[variable size brotli badge]: https://badgen.net/badgesize/brotli/file-url/unpkg.com/@terminal-nerds/snippets-runtime/dist/variable/variable.js?label=brotli
 <!-- prettier-ignore-end -->
 
 ---
@@ -63,7 +45,7 @@
 [typescript]: https://typescriptlang.org/
 [typescript icon]: https://api.iconify.design/logos/typescript-icon.svg
 [supported typescript version badge]: https://img.shields.io/github/package-json/dependency-version/terminal-nerds/snippets/peer/typescript?filename=packages%2Ftypescript%2Fpackage.json&logo=typescript&style=for-the-badge&label=typescript
-[types badge]: https://img.shields.io/npm/types/@terminal-nerds/snippets-function?style=for-the-badge&logo=typescript
+[types badge]: https://img.shields.io/npm/types/@terminal-nerds/snippets-test?style=for-the-badge&logo=typescript
 
 If you are using ![typescript icon] [TypeScript],
 the latest version, which supports new features _(such as `satisfies`)_, is supported.
@@ -86,7 +68,7 @@ Take a look at our [shared browserslist configuration] for more details.
 
 ```html
 <script type="module">
-	import { snippet } from "https://cdn.jsdelivr.net/npm/@terminal-nerds/snippets";
+	import { snippet } from "https://cdn.jsdelivr.net/npm/@terminal-nerds/snippets-test";
 </script>
 ```
 
@@ -101,13 +83,13 @@ We aim to support the latest version of ![bun icon] [bun].
 Firstly, install it:
 
 ```sh
-bun add @terminal-nerds/snippets
+bun add @terminal-nerds/snippets-test
 ```
 
 And then in a particular file:
 
 ```js
-import { snippet } from "@terminal-nerds/snippets";
+import { snippet } from "@terminal-nerds/snippets-test";
 ```
 
 [bun]: https://bun.sh/
@@ -122,7 +104,7 @@ We aim to support the latest version of ![deno icon] [Deno].
 **Usage**:
 
 ```ts
-import { snippet } from "npm:@terminal-nerds/snippets";
+import { snippet } from "npm:@terminal-nerds/snippets-test";
 ```
 
 [deno]: https://deno.land/
@@ -145,13 +127,13 @@ The latest ![node.js icon] [Node.js] LTS _(Long-Term Support)_ version is the mi
 Install it first with the Node.js package manager of your choice. In our example, we use [pnpm].
 
 ```sh
-pnpm add @terminal-nerds/snippets
+pnpm add @terminal-nerds/snippets-test
 ```
 
 And then in a particular file:
 
 ```js
-import { snippet } from "@terminal-nerds/snippets";
+import { snippet } from "@terminal-nerds/snippets-test";
 ```
 
 [ES Module]: https://www.freecodecamp.org/news/javascript-es-modules-and-module-bundlers
