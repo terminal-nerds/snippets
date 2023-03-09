@@ -1,11 +1,17 @@
 declare global {
 	interface String {
+		and: (description: string) => string;
 		on: (situation: string) => string;
 		sample: (data: unknown) => string;
 		samples: (data: unknown) => string;
 		with: (options: Record<string, unknown>) => string;
 	}
 }
+
+/* eslint-disable func-names */
+String.prototype.and = function (description: string): string {
+	return `${this}, and ${description}`;
+};
 
 /* eslint-disable func-names */
 String.prototype.on = function (situation: string): string {
@@ -162,11 +168,12 @@ function stringifyValue(value: unknown, valueType: ValueTypeName): string | unde
 }
 
 function getStringifiedAndTruncatedArray(array: Array<unknown>): string {
+	const isMaxReached = array.length > 6;
 	const firstItems = array.slice(0, 3);
-	const middle = array.length - 6 > 0 ? `... truncated ${array.length - 6} samples ...` : ``;
-	const lastItems = array.slice(-4, -1);
+	const middle = isMaxReached ? ` ... truncated ${array.length - 6} samples ...` : ``;
+	const lastItems = isMaxReached ? array.slice(-4, -1) : [];
 
-	return JSON.stringify([...firstItems, "%mid%", ...lastItems], undefined, 1).replace(/"%mid%",/, middle);
+	return JSON.stringify([...firstItems, "%mid%", ...lastItems], undefined, 1).replace(/,\n "%mid%",?/, middle);
 }
 
 interface CustomValueDescription {
@@ -180,6 +187,7 @@ function isCustomValueDescription(value: unknown): value is CustomValueDescripti
 function createPrint(prefixEmoji: string, prefix: string, value: unknown | CustomValueDescription): string {
 	let customValue: unknown;
 	let valueTypeName: ValueTypeName;
+
 	if (isCustomValueDescription(value)) {
 		valueTypeName = value.what;
 		customValue = value.value;
@@ -187,6 +195,7 @@ function createPrint(prefixEmoji: string, prefix: string, value: unknown | Custo
 		customValue = value;
 		valueTypeName = getValueTypeName(value);
 	}
+
 	const valueTypeEmoji = getValueTypeEmoji(customValue, valueTypeName);
 	const stringifiedValue = stringifyValue(customValue, valueTypeName);
 	const displayStringifieddValue = stringifiedValue ? ` (${stringifiedValue})` : "";
@@ -195,4 +204,4 @@ function createPrint(prefixEmoji: string, prefix: string, value: unknown | Custo
 }
 
 export const throws = (value: unknown) => createPrint(`💥`, `throws`, value);
-export const returns = (value: unknown) => createPrint(`🔙`, `returns`, value);
+export const returns = (value?: unknown) => createPrint(`🔙`, `returns`, value);
