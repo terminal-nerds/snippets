@@ -91,6 +91,7 @@ importers:
 
   packages/runtime:
     specifiers:
+      '@edge-runtime/vm': 2.1.2
       '@terminal-nerds/snippets-error': workspace:*
       '@terminal-nerds/snippets-test': workspace:*
       happy-dom: 8.9.0
@@ -101,6 +102,7 @@ importers:
       '@terminal-nerds/snippets-test': link:../test
       zod: 3.20.6
     devDependencies:
+      '@edge-runtime/vm': 2.1.2
       happy-dom: 8.9.0
       jsdom: 21.1.0
 
@@ -514,6 +516,18 @@ packages:
     transitivePeerDependencies:
       - supports-color
       - typescript
+    dev: true
+
+  /@edge-runtime/primitives/2.1.2:
+    resolution: {integrity: sha512-SR04SMDybALlhIYIi0hiuEUwIl0b7Sn+RKwQkX6hydg4+AKMzBNDFhj2nqHDD1+xkHArV9EhmJIb6iGjShwSzg==}
+    engines: {node: '>=14'}
+    dev: true
+
+  /@edge-runtime/vm/2.1.2:
+    resolution: {integrity: sha512-j4H5S26NJhYOyjVMN8T/YJuwwslfnEX1P0j6N2Rq1FaubgNowdYunA9nlO7lg8Rgjv6dqJ2zKuM7GD1HFtNSGw==}
+    engines: {node: '>=14'}
+    dependencies:
+      '@edge-runtime/primitives': 2.1.2
     dev: true
 
   /@emotion/eslint-plugin/11.10.0_eslint@8.33.0:
