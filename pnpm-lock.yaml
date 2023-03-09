@@ -100,11 +100,11 @@ importers:
       zod: 3.20.6
     dependencies:
       '@terminal-nerds/snippets-error': link:../error
-      '@terminal-nerds/snippets-test': link:../test
       type-fest: 3.5.7
       zod: 3.20.6
     devDependencies:
       '@edge-runtime/vm': 2.1.2
+      '@terminal-nerds/snippets-test': link:../test
       happy-dom: 8.9.0
       jsdom: 21.1.0
 
