@@ -71,5 +71,8 @@
 		"typescript": {
 			"optional": true
 		}
+	},
+	"devDependencies": {
+		"jsdom": "21.1.0"
 	}
 }
