@@ -12,15 +12,25 @@
 
 ## Modules included
 
-| Name                                             | Size                                              |
-| ------------------------------------------------ | ------------------------------------------------- |
-| [`@terminal-nerds/snippets-runtime/environment`] | ![unit size gzip badge] ![unit size brotli badge] |
+| Name                                             | Size                                                            |
+| ------------------------------------------------ | --------------------------------------------------------------- |
+| [`@terminal-nerds/snippets-runtime/environment`] | ![environment size gzip badge] ![environment size brotli badge] |
+| [`@terminal-nerds/snippets-runtime/scope`]       | ![scope size gzip badge] ![scope size brotli badge]             |
+| [`@terminal-nerds/snippets-runtime/variable`]    | ![variable size gzip badge] ![variable size brotli badge]       |
 
 <!-- prettier-ignore-start -->
 <!-- MODULES LINKS -->
-[`@terminal-nerds/snippets-runtime/enviroment`]: https://github.com/terminal-nerds/snippets/blob/main/packages/runtime/source/unit/unit.ts
-[enviroment size gzip badge]: https://badgen.net/badgesize/gzip/file-url/unpkg.com/@terminal-nerds/snippets-runtime/dist/unit/unit.js?label=gzip
-[enviroment size brotli badge]: https://badgen.net/badgesize/brotli/file-url/unpkg.com/@terminal-nerds/snippets-runtime/dist/unit/unit.js?label=brotli
+[`@terminal-nerds/snippets-runtime/environment`]: https://github.com/terminal-nerds/snippets/blob/main/packages/runtime/source/environment/environment.ts
+[environment size gzip badge]: https://badgen.net/badgesize/gzip/file-url/unpkg.com/@terminal-nerds/snippets-runtime/dist/environment/environment.js?label=gzip
+[environment size brotli badge]: https://badgen.net/badgesize/brotli/file-url/unpkg.com/@terminal-nerds/snippets-runtime/dist/environment/environment.js?label=brotli
+
+[`@terminal-nerds/snippets-runtime/scope`]: https://github.com/terminal-nerds/snippets/blob/main/packages/runtime/source/scope/scope.ts
+[scope size gzip badge]: https://badgen.net/badgesize/gzip/file-url/unpkg.com/@terminal-nerds/snippets-runtime/dist/scope/scope.js?label=gzip
+[scope size brotli badge]: https://badgen.net/badgesize/brotli/file-url/unpkg.com/@terminal-nerds/snippets-runtime/dist/scope/scope.js?label=brotli
+
+[`@terminal-nerds/snippets-runtime/variable`]: https://github.com/terminal-nerds/snippets/blob/main/packages/runtime/source/variable/variable.ts
+[variable size gzip badge]: https://badgen.net/badgesize/gzip/file-url/unpkg.com/@terminal-nerds/snippets-runtime/dist/variable/variable.js?label=gzip
+[variable size brotli badge]: https://badgen.net/badgesize/brotli/file-url/unpkg.com/@terminal-nerds/snippets-runtime/dist/variable/variable.js?label=brotli
 <!-- prettier-ignore-end -->
 
 ---
