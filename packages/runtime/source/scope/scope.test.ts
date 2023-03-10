@@ -6,6 +6,11 @@ import { CI_CD_ENVIRONMENT_VARIABLES, inContinuousIntegration, inTest, TEST_ENVI
 
 describe("inContinuousIntegration()", () => {
 	it(returns(false).on(`non-existing environment variables`).samples(CI_CD_ENVIRONMENT_VARIABLES), () => {
+		// NOTE: This is for the CI & CD - test
+		for (const variable of CI_CD_ENVIRONMENT_VARIABLES) {
+			deleteEnvironmentVariable(variable);
+		}
+
 		expect(inContinuousIntegration()).toBe(false);
 	});
 
@@ -20,7 +25,10 @@ describe("inContinuousIntegration()", () => {
 
 describe("inTest()", () => {
 	it(returns(false).on(`non-existing environment variables`).samples(TEST_ENVIRONMENT_VARIABLES), () => {
-		deleteEnvironmentVariable("VITEST");
+		// NOTE: This is for the test
+		for (const variable of TEST_ENVIRONMENT_VARIABLES) {
+			deleteEnvironmentVariable(variable);
+		}
 		expect(inTest()).toBe(false);
 	});
 
