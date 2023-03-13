@@ -1,8 +1,8 @@
+import { ALL_SAMPLES, FALSY_STRINGS, SAMPLE_STRING } from "@terminal-nerds/snippets-test/sample";
 import { returns, throws } from "@terminal-nerds/snippets-test/unit";
 import { describe, expect, it } from "vitest";
 import { ZodError } from "zod";
 
-import { EMPTY_STRING_VALUES, SAMPLE_INPUT, testInvalidInput } from "../../tests/shared.js";
 import {
 	CHAR_TYPES,
 	type CharOptions,
@@ -27,6 +27,19 @@ import {
 	validateSingleChar,
 } from "./char.js";
 
+const EMPTY_STRINGS = FALSY_STRINGS;
+const NON_STRING_VALUES = ALL_SAMPLES.filter((v) => typeof v !== "string");
+
+/* eslint-disable @typescript-eslint/no-explicit-any */
+function testInvalidInput(method: (input: any, options?: any) => void, options?: any): void {
+	it(throws(ZodError).on(`passed non-string input`), () => {
+		for (const nonString of NON_STRING_VALUES) {
+			expect(() => method(nonString, options)).toThrowError(ZodError);
+		}
+	});
+}
+
+// @ts-ignore FIXME: I have absolutely no clue how to fix this one, help!
 const INPUT_WITH_ALL_CHARS = getJoinedChars(SINGLE_CHARS);
 const INPUT_WITH_UPPER_CASED_LATIN_CHARS = getJoinedChars(UPPER_CASED_LATIN_CHARS);
 const INPUT_WITH_LOWER_CASED_LATIN_CHARS = getJoinedChars(LOWER_CASED_LATIN_CHARS);
@@ -42,12 +55,12 @@ function testInvalidStringInput(method: Parameters<typeof testInvalidInput>[0]):
 function testInvalidCharInput(method: Parameters<typeof testInvalidInput>[0]): void {
 	testInvalidStringInput(method);
 
-	it(throws(ZodError).on(`input longer than 1 char`).sample(SAMPLE_INPUT), () => {
-		expect(() => method(SAMPLE_INPUT, { type: "latin" })).toThrowError(ZodError);
+	it(throws(ZodError).on(`input longer than 1 char`).sample(SAMPLE_STRING), () => {
+		expect(() => method(SAMPLE_STRING, { type: "latin" })).toThrowError(ZodError);
 	});
 
 	it(throws(ZodError).on(`empty string input`), () => {
-		for (const emptyString of EMPTY_STRING_VALUES) {
+		for (const emptyString of EMPTY_STRINGS) {
 			expect(() => method(emptyString, { type: "latin" })).toThrowError(ZodError);
 		}
 	});
@@ -58,7 +71,7 @@ function testInvalidCharTypeOption(method: (input: string, options: CharOptions<
 
 	it(throws(ZodError).on(`passed unrecognized char type option`).with(options), () => {
 		// @ts-expect-error Testing
-		expect(() => method(SAMPLE_INPUT, options)).toThrowError(ZodError);
+		expect(() => method(SAMPLE_STRING, options)).toThrowError(ZodError);
 	});
 }
 
@@ -69,8 +82,8 @@ describe("isSingleChar(input)", () => {
 		expect(isSingleChar("")).toBe(false);
 	});
 
-	it(returns(false).on(`input longer than 1 char`).sample(SAMPLE_INPUT), () => {
-		expect(isSingleChar(SAMPLE_INPUT)).toBe(false);
+	it(returns(false).on(`input longer than 1 char`).sample(SAMPLE_STRING), () => {
+		expect(isSingleChar(SAMPLE_STRING)).toBe(false);
 	});
 
 	it(returns(true).on(`single chars input`).samples(SINGLE_CHARS), () => {
@@ -250,6 +263,16 @@ describe("hasChars(input, options?)", () => {
 
 	it(
 		returns(true)
+			.on(`input with lowercased latin chars`)
+			.sample(INPUT_WITH_LOWER_CASED_LATIN_CHARS)
+			.with(latinInsentitiveOptions),
+		() => {
+			expect(hasChars(INPUT_WITH_LOWER_CASED_LATIN_CHARS, latinInsentitiveOptions)).toBe(true);
+		},
+	);
+
+	it(
+		returns(true)
 			.on(`input with uppercased latin chars`)
 			.sample(INPUT_WITH_UPPER_CASED_LATIN_CHARS)
 			.with(latinInsentitiveOptions),
@@ -291,33 +314,33 @@ describe("getChars(input, options?)", () => {
 
 	const latinOptions = { type: "latin" } as const;
 	/* prettier-ignore */
-	const expectedLatinChars = ["X", "E", "H", "O", "t", "e", "r", "m", "i", "n", "a", "l", "n", "e", "r", "d", "s"] as const;
+	const expectedLatinChars = ["t", "e", "r", "m", "i", "n", "a", "l", "n", "e", "r", "d", "s", "D", "E", "V"] as const;
 
-	it(returns(expectedLatinChars).on(`sample input`).sample(SAMPLE_INPUT).with(latinOptions), () => {
-		expect(getChars(SAMPLE_INPUT, latinOptions)).toStrictEqual(expectedLatinChars);
+	it(returns(expectedLatinChars).on(`sample input`).sample(SAMPLE_STRING).with(latinOptions), () => {
+		expect(getChars(SAMPLE_STRING, latinOptions)).toStrictEqual(expectedLatinChars);
 	});
 
 	const latinInsentitiveOptions = { type: "latin", caseInsensitive: false } as const;
 	const expectedLowerCasedLatinChars = ["t", "e", "r", "m", "i", "n", "a", "l", "n", "e", "r", "d", "s"] as const;
 
 	it(
-		returns(expectedLowerCasedLatinChars).on(`sample input`).sample(SAMPLE_INPUT).with(latinInsentitiveOptions),
+		returns(expectedLowerCasedLatinChars).on(`sample input`).sample(SAMPLE_STRING).with(latinInsentitiveOptions),
 		() => {
-			expect(getChars(SAMPLE_INPUT, latinInsentitiveOptions)).toStrictEqual(expectedLowerCasedLatinChars);
+			expect(getChars(SAMPLE_STRING, latinInsentitiveOptions)).toStrictEqual(expectedLowerCasedLatinChars);
 		},
 	);
 
 	const numberOptions = { type: "number" } as const;
-	const expectedNumberChars = ["9", "1"] as const;
+	const expectedNumberChars = ["2", "0", "2", "3"] as const;
 
-	it(returns(expectedNumberChars).on(`sample input`).sample(SAMPLE_INPUT).with(numberOptions), () => {
-		expect(getChars(SAMPLE_INPUT, numberOptions)).toStrictEqual(expectedNumberChars);
+	it(returns(expectedNumberChars).on(`sample input`).sample(SAMPLE_STRING).with(numberOptions), () => {
+		expect(getChars(SAMPLE_STRING, numberOptions)).toStrictEqual(expectedNumberChars);
 	});
 
 	const specialOptions = { type: "special" } as const;
-	const expectedSpecialChars = ["@", "-"] as const;
+	const expectedSpecialChars = ["-", ".", "@"] as const;
 
-	it(returns(expectedSpecialChars).on(`sample input`).sample(SAMPLE_INPUT).with(specialOptions), () => {
-		expect(getChars(SAMPLE_INPUT, specialOptions)).toStrictEqual(expectedSpecialChars);
+	it(returns(expectedSpecialChars).on(`sample input`).sample(SAMPLE_STRING).with(specialOptions), () => {
+		expect(getChars(SAMPLE_STRING, specialOptions)).toStrictEqual(expectedSpecialChars);
 	});
 });

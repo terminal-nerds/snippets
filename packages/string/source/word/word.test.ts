@@ -1,17 +1,30 @@
-import { returns } from "@terminal-nerds/snippets-test/unit";
+import { ALL_SAMPLES, FALSY_STRINGS, NUMERIC_STRINGS, SAMPLE_STRING } from "@terminal-nerds/snippets-test/sample";
+import { returns, throws } from "@terminal-nerds/snippets-test/unit";
 import { describe, expect, it } from "vitest";
+import { ZodError } from "zod";
 
-import { EMPTY_STRING_VALUES, SAMPLE_INPUT, testInvalidInput } from "../../tests/shared.js";
 import { SINGLE_CHARS } from "../char/char.js";
 import { isNumeric, isPalindrome, reverseString } from "./word.js";
+
+const EMPTY_STRING_VALUES = FALSY_STRINGS;
+const NON_STRING_VALUES = ALL_SAMPLES.filter((v) => typeof v !== "string");
+
+/* eslint-disable @typescript-eslint/no-explicit-any */
+function testInvalidInput(method: (input: any, options?: any) => void, options?: any): void {
+	it(throws(ZodError).on(`passed non-string input`), () => {
+		for (const nonString of NON_STRING_VALUES) {
+			expect(() => method(nonString, options)).toThrowError(ZodError);
+		}
+	});
+}
 
 describe("reverseString(input)", () => {
 	testInvalidInput(reverseString);
 
-	const reversedSampleString = `sdren-lanimret@19OHEX`;
+	const reversedSampleString = `3202@VED.sdren-lanimret`;
 
-	it(returns(reversedSampleString).on(`sample input`).sample(SAMPLE_INPUT), () => {
-		expect(reverseString(SAMPLE_INPUT)).toStrictEqual(reversedSampleString);
+	it(returns(reversedSampleString).on(`sample input`).sample(SAMPLE_STRING), () => {
+		expect(reverseString(SAMPLE_STRING)).toStrictEqual(reversedSampleString);
 	});
 });
 
@@ -25,8 +38,8 @@ const PALINDROME_SAMPLES = [
 describe("isPalindrome(input)", () => {
 	testInvalidInput(isPalindrome);
 
-	it(returns(false).on(`sample input`).sample(SAMPLE_INPUT), () => {
-		expect(isPalindrome(SAMPLE_INPUT)).toBe(false);
+	it(returns(false).on(`sample input`).sample(SAMPLE_STRING), () => {
+		expect(isPalindrome(SAMPLE_STRING)).toBe(false);
 	});
 
 	it(returns(true).on(`empty string inputs`).samples(EMPTY_STRING_VALUES), () => {
@@ -48,27 +61,11 @@ describe("isPalindrome(input)", () => {
 	});
 });
 
-/* prettier-ignore */
-const NUMERIC_STRING_SAMPLES = [
-	"123456789",
-	"-123456789",
-	"123.456789",
-	"-123.456789",
-	" 123.456789 ",
-	" -123.456789 ",
-	"0b11111111", // 255
-	"0o377", // 255
-	"0xFF", // 255
-	"10e1000",
-	"Infinity",
-	"-Infinity",
-] as const;
-
 describe("isNumeric(input)", () => {
 	testInvalidInput(isNumeric);
 
-	it(returns(false).on(`input`).sample(SAMPLE_INPUT), () => {
-		expect(isNumeric(SAMPLE_INPUT)).toBe(false);
+	it(returns(false).on(`input`).sample(SAMPLE_STRING), () => {
+		expect(isNumeric(SAMPLE_STRING)).toBe(false);
 	});
 
 	it(returns(false).on(`not a number string`).sample("NaN"), () => {
@@ -86,8 +83,8 @@ describe("isNumeric(input)", () => {
 		}
 	});
 
-	it(returns(true).on(`sample numeric strings inputs`).samples(NUMERIC_STRING_SAMPLES), () => {
-		for (const numericString of NUMERIC_STRING_SAMPLES) {
+	it(returns(true).on(`sample numeric strings inputs`).samples(NUMERIC_STRINGS), () => {
+		for (const numericString of NUMERIC_STRINGS) {
 			expect(isNumeric(numericString)).toBe(true);
 		}
 	});
