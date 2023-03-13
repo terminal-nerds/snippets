@@ -61,6 +61,6 @@
 		"test:unit": "vitest run --dir \"./source\""
 	},
 	"dependencies": {
-		"zod": "3.20.6"
+		"zod": "3.21.4"
 	}
 }
