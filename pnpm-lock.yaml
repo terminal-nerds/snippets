@@ -113,22 +113,26 @@ importers:
       '@terminal-nerds/snippets-runtime': workspace:*
       '@terminal-nerds/snippets-string': workspace:*
       '@terminal-nerds/snippets-test': workspace:*
+      '@terminal-nerds/snippets-type': workspace:*
     dependencies:
       '@terminal-nerds/snippets-error': link:../error
       '@terminal-nerds/snippets-regexp': link:../regexp
       '@terminal-nerds/snippets-runtime': link:../runtime
       '@terminal-nerds/snippets-string': link:../string
       '@terminal-nerds/snippets-test': link:../test
+      '@terminal-nerds/snippets-type': link:../type
 
   packages/string:
     specifiers:
       '@terminal-nerds/snippets-regexp': workspace:*
       '@terminal-nerds/snippets-test': workspace:*
+      '@terminal-nerds/snippets-type': workspace:*
       case-anything: 2.1.10
       type-fest: 3.5.7
       zod: 3.20.6
     dependencies:
       '@terminal-nerds/snippets-regexp': link:../regexp
+      '@terminal-nerds/snippets-type': link:../type
       case-anything: 2.1.10
       type-fest: 3.5.7
       zod: 3.20.6
@@ -137,6 +141,12 @@ importers:
 
   packages/test:
     specifiers: {}
+
+  packages/type:
+    specifiers:
+      zod: 3.20.6
+    dependencies:
+      zod: 3.20.6
 
   scripts/generate:
     specifiers:

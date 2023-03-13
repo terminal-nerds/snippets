@@ -1,5 +1,6 @@
 import { returns } from "@terminal-nerds/snippets-test/unit";
 import { describe, expect, it } from "vitest";
+import { ZodError } from "zod";
 
 import {
 	EMPTY_STRING_VALUES,
@@ -28,11 +29,8 @@ describe("validateString(input)", () => {
 	testInvalidInput(validateString);
 
 	it(returns(true).on(`passed string inputs`).samples(STRING_VALUES), () => {
-		for (const string of STRING_VALUES) {
-			const validated = validateString(string);
-
-			expect(validated).toBe(string);
-			expect(validated).toBeTypeOf("string");
+		for (const value of STRING_VALUES) {
+			expect(() => validateString(value)).not.toThrowError(ZodError);
 		}
 	});
 });

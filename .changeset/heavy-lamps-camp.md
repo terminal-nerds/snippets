@@ -2,7 +2,4 @@
 "@terminal-nerds/snippets-test": minor
 ---
 
-Add reusable snippets group for unit testing `unit`, it includes:
-
--   `returns`,
--   `throws`,
+Added a module `unit` for grouped snippets related to unit testing.
