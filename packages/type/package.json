@@ -61,7 +61,6 @@
 		"test:unit": "vitest run --dir \"./source\""
 	},
 	"dependencies": {
-		"type-fest": "3.5.7",
 		"zod": "3.20.6"
 	}
 }

@@ -18,12 +18,27 @@
 
 <!-- prettier-sort-markdown-table -->
 
-| Name                                        | Size                                                        |
-| ------------------------------------------- | ----------------------------------------------------------- |
-| [`@terminal-nerds/snippets-type/primitive`] | ![primitive size gzip badge] ![primitive size brotli badge] |
+| Name                                            | Size                                                                |
+| ----------------------------------------------- | ------------------------------------------------------------------- |
+| [`@terminal-nerds/snippets-type/built-in`]      | ![built-in size gzip badge] ![built-in size brotli badge]           |
+| [`@terminal-nerds/snippets-type/constructor`]   | ![constructor size gzip badge] ![constructor size brotli badge]     |
+| [`@terminal-nerds/snippets-type/non-primitive`] | ![non-primitive size gzip badge] ![non-primitive size brotli badge] |
+| [`@terminal-nerds/snippets-type/primitive`]     | ![primitive size gzip badge] ![primitive size brotli badge]         |
 
 <!-- prettier-ignore-start -->
 <!-- MODULES LINKS -->
+[`@terminal-nerds/snippets-type/constructor`]: https://github.com/terminal-nerds/snippets/blob/main/packages/type/source/constructor/constructor.ts
+[constructor size gzip badge]: https://badgen.net/badgesize/gzip/file-url/unpkg.com/@terminal-nerds/snippets-type/dist/constructor/constructor.js?label=gzip
+[constructor size brotli badge]: https://badgen.net/badgesize/brotli/file-url/unpkg.com/@terminal-nerds/snippets-type/dist/constructor/constructor.js?label=brotli
+
+[`@terminal-nerds/snippets-type/built-in`]: https://github.com/terminal-nerds/snippets/blob/main/packages/type/source/built-in/built-in.ts
+[built-in size gzip badge]: https://badgen.net/badgesize/gzip/file-url/unpkg.com/@terminal-nerds/snippets-type/dist/built-in/built-in.js?label=gzip
+[built-in size brotli badge]: https://badgen.net/badgesize/brotli/file-url/unpkg.com/@terminal-nerds/snippets-type/dist/built-in/built-in.js?label=brotli
+
+[`@terminal-nerds/snippets-type/non-primitive`]: https://github.com/terminal-nerds/snippets/blob/main/packages/type/source/non-primitive/non-primitive.ts
+[non-primitive size gzip badge]: https://badgen.net/badgesize/gzip/file-url/unpkg.com/@terminal-nerds/snippets-type/dist/non-primitive/non-primitive.js?label=gzip
+[non-primitive size brotli badge]: https://badgen.net/badgesize/brotli/file-url/unpkg.com/@terminal-nerds/snippets-type/dist/non-primitive/non-primitive.js?label=brotli
+
 [`@terminal-nerds/snippets-type/primitive`]: https://github.com/terminal-nerds/snippets/blob/main/packages/type/source/primitive/primitive.ts
 [primitive size gzip badge]: https://badgen.net/badgesize/gzip/file-url/unpkg.com/@terminal-nerds/snippets-type/dist/primitive/primitive.js?label=gzip
 [primitive size brotli badge]: https://badgen.net/badgesize/brotli/file-url/unpkg.com/@terminal-nerds/snippets-type/dist/primitive/primitive.js?label=brotli
