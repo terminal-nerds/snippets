@@ -1,6 +1,7 @@
 import { describe, expect, it } from "vitest";
 
-import { returns, throws, VALUE_TYPE_EMOJIS } from "./unit.js";
+import { VALUE_TYPE_EMOJIS } from "../emoji/emoji.js";
+import { returns, throws } from "./unit.js";
 
 describe("throws(value)", () => {
 	const expectedBase = `💥 throws 📛 'Error'`;
@@ -20,13 +21,13 @@ describe("throws(value)", () => {
 });
 
 describe("returns(value)", () => {
-	const expectedNumberBase = `🔙 returns ${VALUE_TYPE_EMOJIS.Number} 'Number' (0)`;
+	const expectedNumberBase = `🔙 returns ${VALUE_TYPE_EMOJIS.number} 'Number' (0)`;
 
 	it(`🔙 returns a string: "${expectedNumberBase}"`, () => {
 		expect(`${returns(0)}`).toStrictEqual(expectedNumberBase);
 	});
 
-	const expectedStringBase = `🔙 returns ${VALUE_TYPE_EMOJIS.String} 'String' ("")`;
+	const expectedStringBase = `🔙 returns ${VALUE_TYPE_EMOJIS.string} 'String' ("")`;
 
 	it(`🔙 returns a string: "${expectedStringBase}"`, () => {
 		expect(`${returns("")}`).toStrictEqual(expectedStringBase);

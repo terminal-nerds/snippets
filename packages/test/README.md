@@ -18,6 +18,14 @@
 
 <!-- prettier-ignore-start -->
 <!-- MODULES LINKS -->
+[`@terminal-nerds/snippets-test/emoji`]: https://github.com/terminal-nerds/snippets/blob/main/packages/test/source/emoji/emoji.ts
+[emoji size gzip badge]: https://badgen.net/badgesize/gzip/file-url/unpkg.com/@terminal-nerds/snippets-test/dist/emoji/emoji.js?label=gzip
+[emoji size brotli badge]: https://badgen.net/badgesize/brotli/file-url/unpkg.com/@terminal-nerds/snippets-test/dist/emoji/emoji.js?label=brotli
+
+[`@terminal-nerds/snippets-test/sample`]: https://github.com/terminal-nerds/snippets/blob/main/packages/test/source/sample/sample.ts
+[sample size gzip badge]: https://badgen.net/badgesize/gzip/file-url/unpkg.com/@terminal-nerds/snippets-test/dist/sample/sample.js?label=gzip
+[sample size brotli badge]: https://badgen.net/badgesize/brotli/file-url/unpkg.com/@terminal-nerds/snippets-test/dist/sample/sample.js?label=brotli
+
 [`@terminal-nerds/snippets-test/unit`]: https://github.com/terminal-nerds/snippets/blob/main/packages/test/source/unit/unit.ts
 [unit size gzip badge]: https://badgen.net/badgesize/gzip/file-url/unpkg.com/@terminal-nerds/snippets-test/dist/unit/unit.js?label=gzip
 [unit size brotli badge]: https://badgen.net/badgesize/brotli/file-url/unpkg.com/@terminal-nerds/snippets-test/dist/unit/unit.js?label=brotli

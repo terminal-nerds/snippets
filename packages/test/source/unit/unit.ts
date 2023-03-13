@@ -1,3 +1,8 @@
+import { getConstructorName } from "@terminal-nerds/snippets-type/constructor";
+import { isPrimitiveName } from "@terminal-nerds/snippets-type/primitive";
+
+import { getValueTypeEmoji } from "../emoji/emoji.js";
+
 declare global {
 	interface String {
 		and: (description: string) => string;
@@ -23,18 +28,19 @@ String.prototype.sample = function (value: unknown): string {
 	/* prettier-ignore */
 	switch (typeof value) {
 		/* eslint-disable unicorn/switch-case-braces */
-		case "bigint": return `${this}: ${value}`;
+		case "bigint": return `${this}: ${value}n`;
 		case "boolean": return `${this}: ${value}`;
 		case "function": return `${this}: ${value.name}()`;
 		case "number": return `${this}: ${value}`;
 		case "object": {
 			const stringified = value ? value.toString() : `null`;
+
 			return `${this}: ${stringified}`;
 		}
 		case "undefined": return this.toString();
 		case "string": return `${this}: "${value}"`;
 		case "symbol": return `${this}: ${value.toString()}`;
-		/* eslint-disable unicorn/switch-case-braces */
+		/* eslint-enable unicorn/switch-case-braces */
 	}
 };
 
@@ -55,152 +61,78 @@ String.prototype.with = function (options: Record<string, unknown>): string {
 	return `${this} - with options: ${stringifiedOptions}`;
 };
 
-// TODO: Move it to a spearate package
-// export const BUILT_IN_CONSTRUCTORS = [
-// 	Array,
-// 	// BigInt,
-// 	Boolean,
-// 	Date,
-// 	Error,
-// 	Number,
-// 	Map,
-// 	Object,
-// 	RegExp,
-// 	Set,
-// 	String,
-// 	// Symbol,
-// ] as const;
-
-// TODO: Move it to a spearate package
-function getObjectConstructorName(value: object): ValueTypeName {
-	const constructorName = value.constructor.name;
-
-	if (constructorName === "Object") {
-		// eslint-disable-next-line unicorn/better-regex
-		const match = value.toString().match(/(?<=\[object )(\w+)(?!=\])/);
-
-		if (match && match[0]) {
-			return match[0] as ValueTypeName;
-		} else {
-			throw new Error("RegExp did not work.");
+function stringifyValue(value: unknown, valueType: string): string | undefined {
+	if (isPrimitiveName(valueType.toLowerCase())) {
+		/* prettier-ignore */
+		switch(valueType.toLowerCase()) {
+			/* eslint-disable unicorn/switch-case-braces */
+			case "bigint": return `${value}n`;
+			case "boolean": return `${value}`;
+			case "number": return `${value}`;
+			case "string": return `"${value}"`;
+			/* eslint-enable unicorn/switch-case-braces */
 		}
 	} else {
-		return constructorName as ValueTypeName;
-	}
-}
-
-// TODO: Move it to a spearate package
-export const VALUE_TYPE_EMOJIS = {
-	Array: `🇦`,
-	BigInt: `🇧`,
-	Boolean: {
-		false: `🔴`,
-		true: `🟢`,
-	},
-	Date: `🗓️`,
-	Error: `📛`,
-	ZodError: `📛`,
-	Function: `🇫`,
-	Map: `🇲`,
-	Number: `🇳`,
-	Object: `🇴`,
-	null: `❎`,
-	RegExp: `🔎🇸"`,
-	Set: `🦄`,
-	Symbol: `💠`,
-	String: `🇸`,
-	undefined: `🫥`,
-} as const;
-
-// TODO: Move it to a spearate package
-export function getValueTypeName(value: unknown): ValueTypeName {
-	/* prettier-ignore */
-	switch (typeof value) {
-		/* eslint-disable unicorn/switch-case-braces */
-		case "function": return value.name as ValueTypeName;
-		case "object": return value ? getObjectConstructorName(value) : ("null" as ValueTypeName);
-		case "number": return "Number";
-		case "undefined": return "undefined";
-		case "bigint":
-		case "boolean":
-		case "string":
-		case "symbol":
-			return value.constructor.name as ValueTypeName;
-		/* eslint-enable unicorn/switch-case-braces */
-	}
-}
-
-// TODO: Move it to a spearate package
-export type ValueTypeName = keyof typeof VALUE_TYPE_EMOJIS;
-// TODO: Move it to a spearate package
-export type ValueTypeEmoji =
-	| (typeof VALUE_TYPE_EMOJIS)[Exclude<ValueTypeName, "Boolean">]
-	| (typeof VALUE_TYPE_EMOJIS)["Boolean"][keyof (typeof VALUE_TYPE_EMOJIS)["Boolean"]];
-
-// TODO: Move it to a spearate package
-export function getValueTypeEmoji(value: unknown, valueType: ValueTypeName): ValueTypeEmoji {
-	// eslint-disable-next-line unicorn/prefer-ternary
-	if (valueType === "Boolean" && typeof value === "boolean") {
-		return VALUE_TYPE_EMOJIS.Boolean[`${value}`];
-	} else if (value instanceof Error) {
-		return VALUE_TYPE_EMOJIS.Error;
-	} else {
-		return VALUE_TYPE_EMOJIS[valueType as Exclude<ValueTypeName, "Boolean">];
-	}
-}
-
-function stringifyValue(value: unknown, valueType: ValueTypeName): string | undefined {
-	/* prettier-ignore */
-	switch (valueType) {
-		/* eslint-disable unicorn/switch-case-braces */
-		case "Array":
-		case "Set": {
-			return getStringifiedAndTruncatedArray([...(value as Array<unknown> | Set<unknown>)]);
+		/* prettier-ignore */
+		switch (valueType) {
+			/* eslint-disable unicorn/switch-case-braces */
+			case "Array":
+			case "Set": return getStringifiedAndTruncatedArray([...(value as Array<unknown> | Set<unknown>)]);
+			case "Error": return (value as Error).message;
+			default: return "";
+			/* eslint-enable unicorn/switch-case-braces */
 		}
-		case "Boolean": return `${value}`;
-		case "Error": return (value as Error).message;
-		case "Number": return `${value}`;
-		case "null": return;
-		case "String": return `"${value}"`;
-		case "undefined": return;
-		/* eslint-enable unicorn/switch-case-braces */
 	}
+}
+
+function jsonReplacer(_key: string, value: unknown) {
+	return typeof value === "bigint" ? `${value.toString()}n` : value;
 }
 
 function getStringifiedAndTruncatedArray(array: Array<unknown>): string {
-	const isMaxReached = array.length > 6;
-	const firstItems = array.slice(0, 3);
-	const middle = isMaxReached ? ` ... truncated ${array.length - 6} samples ...` : ``;
-	const lastItems = isMaxReached ? array.slice(-4, -1) : [];
+	const { length } = array;
 
-	return JSON.stringify([...firstItems, "%mid%", ...lastItems], undefined, 1).replace(/,\n "%mid%",?/, middle);
+	if (length > 6) {
+		const firstItems = array.slice(0, 3);
+		const middle = ` ... truncated ${length - 6} samples ...`;
+		const lastItems = array.slice(-4, -1);
+
+		return JSON.stringify([...firstItems, "%mid%", ...lastItems], jsonReplacer, 1).replace(/,\n "%mid%",?/, middle);
+	} else {
+		return JSON.stringify(array, jsonReplacer, 1);
+	}
 }
 
 interface CustomValueDescription {
-	what: ValueTypeName;
+	what: string;
 	value: unknown;
 }
 function isCustomValueDescription(value: unknown): value is CustomValueDescription {
-	return typeof value === "object" && value ? Object.hasOwn(value, "what") && Object.hasOwn(value, "value") : false;
+	/* prettier-ignore */
+	return typeof value === "object" &&
+		value
+			? Object.hasOwn(value, "what") &&
+			  Object.hasOwn(value, "value")
+			: false;
 }
 
 function createPrint(prefixEmoji: string, prefix: string, value: unknown | CustomValueDescription): string {
-	let customValue: unknown;
-	let valueTypeName: ValueTypeName;
+	let processedValue: unknown;
+	let valueTypeName: string;
 
 	if (isCustomValueDescription(value)) {
 		valueTypeName = value.what;
-		customValue = value.value;
+		processedValue = value.value;
 	} else {
-		customValue = value;
-		valueTypeName = getValueTypeName(value);
+		processedValue = value;
+		valueTypeName = getConstructorName(value);
 	}
 
-	const valueTypeEmoji = getValueTypeEmoji(customValue, valueTypeName);
-	const stringifiedValue = stringifyValue(customValue, valueTypeName);
-	const displayStringifieddValue = stringifiedValue ? ` (${stringifiedValue})` : "";
+	const valueTypeEmoji = getValueTypeEmoji(processedValue);
+	const stringifiedValue = stringifyValue(processedValue, valueTypeName);
+	const displayStringifiedValue = stringifiedValue ? ` (${stringifiedValue})` : "";
 
-	return `${prefixEmoji} ${prefix} ${valueTypeEmoji} '${valueTypeName}'${displayStringifieddValue}`;
+	return `${prefixEmoji} ${prefix} ${valueTypeEmoji} '${valueTypeName}'${displayStringifiedValue}`;
 }
 
 export const throws = (value: unknown) => createPrint(`💥`, `throws`, value);
