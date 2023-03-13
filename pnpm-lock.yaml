@@ -138,13 +138,7 @@ importers:
       '@terminal-nerds/snippets-test': link:../test
 
   packages/test:
-    specifiers:
-      '@terminal-nerds/snippets-type': workspace:*
-      zod: ^3.21.4
-    dependencies:
-      '@terminal-nerds/snippets-type': link:../type
-    devDependencies:
-      zod: 3.21.4
+    specifiers: {}
 
   packages/type:
     specifiers:
@@ -8645,7 +8639,3 @@ packages:
   /zod/3.20.6:
     resolution: {integrity: sha512-oyu0m54SGCtzh6EClBVqDDlAYRz4jrVtKwQ7ZnsEmMI9HnzuZFj8QFwAY1M5uniIYACdGvv0PBWPF2kO0aNofA==}
     dev: false
-
-  /zod/3.21.4:
-    resolution: {integrity: sha512-m46AKbrzKVzOzs/DZgVnG5H55N1sv1M8qZU3A8RIKbs3mrACDNeIOeilDymVb2HdmP8uwshOCF4uJ8uM9rCqJw==}
-    dev: true
