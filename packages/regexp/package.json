@@ -61,7 +61,7 @@
 		"test:unit": "vitest run --dir \"./source\""
 	},
 	"dependencies": {
-		"magic-regexp": "0.6.2",
-		"zod": "3.20.6"
+		"magic-regexp": "0.6.3",
+		"zod": "3.21.4"
 	}
 }
