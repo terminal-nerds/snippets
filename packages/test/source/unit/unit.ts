@@ -61,28 +61,38 @@ String.prototype.with = function (options: Record<string, unknown>): string {
 	return `${this} - with options: ${stringifiedOptions}`;
 };
 
-function stringifyValue(value: unknown, valueType: string): string | undefined {
-	if (isPrimitiveName(valueType.toLowerCase())) {
-		/* prettier-ignore */
-		switch(valueType.toLowerCase()) {
+function getFormattedPrimitiveValue(value: unknown): string {
+	/* prettier-ignore */
+	switch(typeof value) {
 			/* eslint-disable unicorn/switch-case-braces */
 			case "bigint": return `${value}n`;
 			case "boolean": return `${value}`;
 			case "number": return `${value}`;
 			case "string": return `"${value}"`;
+			case "symbol": return `"${value.toString()}"`;
+			default: throw new TypeError(`The value is non-primitive.`);
 			/* eslint-enable unicorn/switch-case-braces */
 		}
-	} else {
-		/* prettier-ignore */
-		switch (valueType) {
-			/* eslint-disable unicorn/switch-case-braces */
-			case "Array":
-			case "Set": return getStringifiedAndTruncatedArray([...(value as Array<unknown> | Set<unknown>)]);
-			case "Error": return (value as Error).message;
-			default: return "";
-			/* eslint-enable unicorn/switch-case-braces */
-		}
+}
+
+function getFormattedNonPrimitiveValue(value: unknown, valueType: string): string {
+	switch (valueType) {
+		/* eslint-disable unicorn/switch-case-braces */
+		case "Array":
+		case "Set":
+			return getStringifiedAndTruncatedArray([...(value as Array<unknown> | Set<unknown>)]);
+		case "Error":
+			return (value as Error).message;
+		default:
+			return "";
+		/* eslint-enable unicorn/switch-case-braces */
 	}
+}
+
+function stringifyValue(value: unknown, valueType: string): string | undefined {
+	return isPrimitiveName(valueType.toLowerCase())
+		? getFormattedPrimitiveValue(value)
+		: getFormattedNonPrimitiveValue(value, valueType);
 }
 
 function jsonReplacer(_key: string, value: unknown) {
