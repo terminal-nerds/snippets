@@ -1,19 +1,19 @@
+function extractObjectName(value: object): string {
+	// eslint-disable-next-line unicorn/better-regex
+	const matches = value.toString().match(/(?<=\[object )(\w+)(?!=\])/);
+
+	if (matches && matches[0]) {
+		return matches[0];
+	} else {
+		throw new Error("RegExp did not work.");
+	}
+}
+
 function getObjectConstructorName(value: object | null): string {
 	if (value) {
 		const constructorName = value.constructor.name;
 
-		if (constructorName === "Object") {
-			// eslint-disable-next-line unicorn/better-regex
-			const matches = value.toString().match(/(?<=\[object )(\w+)(?!=\])/);
-
-			if (matches && matches[0]) {
-				return matches[0];
-			} else {
-				throw new Error("RegExp did not work.");
-			}
-		} else {
-			return constructorName;
-		}
+		return constructorName === "Object" ? extractObjectName(value) : constructorName;
 	} else {
 		return "null";
 	}
