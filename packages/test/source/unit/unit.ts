@@ -70,6 +70,7 @@ function getFormattedPrimitiveValue(value: unknown): string {
 			case "number": return `${value}`;
 			case "string": return `"${value}"`;
 			case "symbol": return `"${value.toString()}"`;
+			case "undefined": return ``;
 			default: throw new TypeError(`The value is non-primitive.`);
 			/* eslint-enable unicorn/switch-case-braces */
 		}
