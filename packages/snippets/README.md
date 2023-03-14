@@ -15,6 +15,11 @@
 
 ## Packages included
 
+[![documentation badge]][documentation url]
+
+[documentation badge]: https://img.shields.io/static/v1?color=informational&style=for-the-badge&label=documentation&message=jsdocs.io
+[documentation url]: https://jsdocs.io/package/@terminal-nerds/snippets
+
 | Name                        | Version                                      |
 | --------------------------- | -------------------------------------------- |
 | [![error badge]][error]     | [![error version badge]][error npm page]     |

@@ -12,6 +12,11 @@
 
 ## Modules included
 
+[![documentation badge]][documentation url]
+
+[documentation badge]: https://img.shields.io/static/v1?color=informational&style=for-the-badge&label=documentation&message=jsdocs.io
+[documentation url]: https://jsdocs.io/package/@terminal-nerds/snippets-test
+
 | Name                                   | Size                                              |
 | -------------------------------------- | ------------------------------------------------- |
 | [`@terminal-nerds/snippets-test/unit`] | ![unit size gzip badge] ![unit size brotli badge] |
