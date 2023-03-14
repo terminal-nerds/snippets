@@ -1,4 +1,4 @@
-import { STRING_SCHEMA, validatePrimitive } from "@terminal-nerds/snippets-type/primitive";
+import { isPrimitive, validatePrimitive } from "@terminal-nerds/snippets-type/primitive";
 import { z } from "zod";
 
 export function validateString(value: unknown): asserts value is string {
@@ -6,7 +6,7 @@ export function validateString(value: unknown): asserts value is string {
 }
 
 export function isString(value: unknown): value is string {
-	return STRING_SCHEMA.safeParse(value).success;
+	return isPrimitive(value, "string");
 }
 
 export type EmptyString = "";

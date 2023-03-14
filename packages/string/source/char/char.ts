@@ -1,8 +1,9 @@
 import { charIn, createRegExp, type RegExpOptions, setRegExpFlags } from "@terminal-nerds/snippets-regexp/creator";
+import { STRING_SCHEMA } from "@terminal-nerds/snippets-type";
 import type { Join, PascalCase } from "type-fest";
 import { z } from "zod";
 
-import { validateString } from "../main.js";
+import { validateString } from "../schema/schema.js";
 
 export const CHAR_TYPES = ["latin", "number", "special"] as const;
 export type CharType = (typeof CHAR_TYPES)[number];
@@ -47,7 +48,7 @@ export const NON_LATIN_CHARS = [...NUMBER_CHARS, ...SPECIAL_CHARS] as const;
 export const NON_NUMBER_CHARS = [...LATIN_CHARS, ...SPECIAL_CHARS] as const;
 export const NON_SPECIAL_CHARS = [...LATIN_CHARS, ...NUMBER_CHARS] as const;
 
-export const CHAR_SCHEMA = z.string().length(1, "This is supposed to be a single char");
+export const CHAR_SCHEMA = STRING_SCHEMA.length(1, "This is supposed to be a single char");
 export const CHAR_TYPE_SCHEMA = z.enum(CHAR_TYPES);
 
 export const LATIN_CHAR_SCHEMA = z.enum(LOWER_CASED_LATIN_CHARS);
@@ -62,14 +63,14 @@ export const CHARS_SCHEMAS = {
 } as const;
 /* c8 ignore stop */
 
+export function validateSingleChar(char: string): asserts char is SingleChar {
+	CHAR_SCHEMA.parse(char);
+}
+
 export function isSingleChar(input: string): input is SingleChar {
 	validateString(input);
 
 	return CHAR_SCHEMA.safeParse(input).success;
-}
-
-export function validateSingleChar(char: string): string {
-	return CHAR_SCHEMA.parse(char);
 }
 
 export function getJoinedChars<T extends readonly string[]>(chars: T) {
@@ -80,8 +81,8 @@ export interface CharOptions<T extends CharType> extends RegExpOptions {
 	type: T;
 }
 
-export function validateCharType(type: string): CharType {
-	return CHAR_TYPE_SCHEMA.parse(type);
+export function validateCharType(type: string): asserts type is CharType {
+	CHAR_TYPE_SCHEMA.parse(type);
 }
 
 export function isValidCharType(type: string): type is CharType {

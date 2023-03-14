@@ -11,7 +11,7 @@ export function reverseString<T extends string>(input: T): ReversedString<T> {
 	return [...input].reverse().join("") as ReversedString<T>;
 }
 
-/** Palindrome - {@link https://en.wikipedia.org/wiki/Palindrome} */
+/** @see {@link https://en.wikipedia.org/wiki/Palindrome} Palindrome */
 export function isPalindrome(input: string): boolean {
 	return reverseString(input) === input;
 }

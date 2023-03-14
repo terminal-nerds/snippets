@@ -96,12 +96,9 @@ describe("isSingleChar(input)", () => {
 describe("validateSingleChar(char)", () => {
 	testInvalidCharInput(validateSingleChar);
 
-	it(returns({ what: "String", value: "<single char>" }).on(`passed single chars`).samples(SINGLE_CHARS), () => {
+	it(returns().on(`passed single chars`).samples(SINGLE_CHARS), () => {
 		for (const singleChar of SINGLE_CHARS) {
-			const validatedChar = validateSingleChar(singleChar);
-
-			expect(validatedChar).toStrictEqual(singleChar);
-			expect(validatedChar).toBeTypeOf("string");
+			expect(() => validateSingleChar(singleChar)).not.toThrowError();
 		}
 	});
 });
@@ -113,12 +110,9 @@ describe("validateCharType(type)", () => {
 		expect(() => validateCharType(sample)).toThrowError(ZodError);
 	});
 
-	it(returns({ what: "String", value: "<valid char type>" }).on(`valid char types`).samples(CHAR_TYPES), () => {
+	it(returns().on(`valid char types`).samples(CHAR_TYPES), () => {
 		for (const type of CHAR_TYPES) {
-			const validatedCharType = validateCharType(type);
-
-			expect(validatedCharType).toBeTypeOf("string");
-			expect(validatedCharType).toStrictEqual(type);
+			expect(() => validateCharType(type)).not.toThrowError();
 		}
 	});
 });
