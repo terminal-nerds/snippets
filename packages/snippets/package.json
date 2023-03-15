@@ -59,6 +59,7 @@
 	},
 	"dependencies": {
 		"@terminal-nerds/snippets-error": "workspace:*",
+		"@terminal-nerds/snippets-extension": "workspace:*",
 		"@terminal-nerds/snippets-regexp": "workspace:*",
 		"@terminal-nerds/snippets-runtime": "workspace:*",
 		"@terminal-nerds/snippets-string": "workspace:*",

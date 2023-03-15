@@ -20,16 +20,22 @@
 [documentation badge]: https://img.shields.io/static/v1?color=informational&style=for-the-badge&label=documentation&message=jsdocs.io
 [documentation url]: https://jsdocs.io/package/@terminal-nerds/snippets
 
-| Name                        | Version                                      |
-| --------------------------- | -------------------------------------------- |
-| [![error badge]][error]     | [![error version badge]][error npm page]     |
-| [![regexp badge]][regexp]   | [![regexp version badge]][regexp npm page]   |
-| [![runtime badge]][runtime] | [![runtime version badge]][runtime npm page] |
-| [![string badge]][string]   | [![string version badge]][string npm page]   |
-| [![test badge]][test]       | [![test version badge]][test npm page]       |
+| Name                            | Version                                          |
+| ------------------------------- | ------------------------------------------------ |
+| [![extension badge]][extension] | [![extension version badge]][extension npm page] |
+| [![error badge]][error]         | [![error version badge]][error npm page]         |
+| [![regexp badge]][regexp]       | [![regexp version badge]][regexp npm page]       |
+| [![runtime badge]][runtime]     | [![runtime version badge]][runtime npm page]     |
+| [![string badge]][string]       | [![string version badge]][string npm page]       |
+| [![test badge]][test]           | [![test version badge]][test npm page]           |
 
 <!-- prettier-ignore-start -->
 <!-- PACKAGES LINKS -->
+[extension]: https://github.com/terminal-nerds/snippets/blob/main/packages/extension/README.md
+[extension badge]: https://img.shields.io/static/v1?label=%40terminal-nerds&message=snippets-extension&style=flat-square&color=informational
+[extension version badge]: https://img.shields.io/npm/v/@terminal-nerds/snippets-extension/latest?style=flat-square&logo=npm
+[extension npm page]: https://www.npmjs.com/package/@terminal-nerds/snippets-extension
+
 [error]: https://github.com/terminal-nerds/snippets/blob/main/packages/error/README.md
 [error badge]: https://img.shields.io/static/v1?label=%40terminal-nerds&message=snippets-error&style=flat-square&color=informational
 [error version badge]: https://img.shields.io/npm/v/@terminal-nerds/snippets-error/latest?style=flat-square&logo=npm

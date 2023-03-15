@@ -96,16 +96,17 @@ Reusable pieces of code, which can be **reused** across the projects.
     > Package names are prefixed with `snippets-`.\
     > As in: `@terminal-nerds/snippets-<package name>`
 
-| Name                          | Version                                        |
-| ----------------------------- | ---------------------------------------------- |
-| [![snippets badge]][snippets] | [![snippets version badge]][snippets npm page] |
-| <!-- PACKAGES -->             | <!-- PACKAGES -->                              |
-| [![error badge]][error]       | [![error version badge]][error npm page]       |
-| [![regexp badge]][regexp]     | [![regexp version badge]][regexp npm page]     |
-| [![runtime badge]][runtime]   | [![runtime version badge]][runtime npm page]   |
-| [![string badge]][string]     | [![string version badge]][string npm page]     |
-| [![test badge]][test]         | [![test version badge]][test npm page]         |
-| [![type badge]][type]         | [![type version badge]][type npm page]         |
+| Name                            | Version                                          |
+| ------------------------------- | ------------------------------------------------ |
+| [![snippets badge]][snippets]   | [![snippets version badge]][snippets npm page]   |
+| <!-- PACKAGES -->               | <!-- PACKAGES -->                                |
+| [![extension badge]][extension] | [![extension version badge]][extension npm page] |
+| [![error badge]][error]         | [![error version badge]][error npm page]         |
+| [![regexp badge]][regexp]       | [![regexp version badge]][regexp npm page]       |
+| [![runtime badge]][runtime]     | [![runtime version badge]][runtime npm page]     |
+| [![string badge]][string]       | [![string version badge]][string npm page]       |
+| [![test badge]][test]           | [![test version badge]][test npm page]           |
+| [![type badge]][type]           | [![type version badge]][type npm page]           |
 
 [snippets]: ./packages/snippets/README.md
 [snippets badge]: https://img.shields.io/static/v1?label=%40terminal-nerds&message=snippets&style=flat-square&color=informational
@@ -114,6 +115,11 @@ Reusable pieces of code, which can be **reused** across the projects.
 
 <!-- prettier-ignore-start -->
 <!-- PACKAGES LINKS -->
+[extension]: ./packages/extension/README.md
+[extension badge]: https://img.shields.io/static/v1?label=%40terminal-nerds&message=snippets-extension&style=flat-square&color=informational
+[extension version badge]: https://img.shields.io/npm/v/@terminal-nerds/snippets-extension/latest?style=flat-square&logo=npm
+[extension npm page]: https://www.npmjs.com/package/@terminal-nerds/snippets-extension
+
 [error]: ./packages/error/README.md
 [error badge]: https://img.shields.io/static/v1?label=%40terminal-nerds&message=snippets-error&style=flat-square&color=informational
 [error version badge]: https://img.shields.io/npm/v/@terminal-nerds/snippets-error/latest?style=flat-square&logo=npm
