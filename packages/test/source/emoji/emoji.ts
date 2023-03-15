@@ -65,11 +65,11 @@ export const BUILT_IN_OBJECTS_EMOJIS = {
 	FinalizationRegistry: `❔`,
 	// Control abstraction
 	Promise: `❔`,
-	// GeneratorFunction: `❔`,
-	// AsyncGeneratorFunction: `❔`,
-	// Generator: `❔`,
+	AsyncFunction: `❔`,
+	AsyncGeneratorFunction: `❔`,
+	GeneratorFunction: `❔`,
 	// AsyncGenerator: `❔`,
-	// AsyncFunction: `❔`,
+	// Generator: `❔`,
 	// Reflection
 	Reflect: `❔`,
 	Proxy: `❔`,

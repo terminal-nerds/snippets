@@ -30,7 +30,7 @@ String.prototype.sample = function (value: unknown): string {
 		/* eslint-disable unicorn/switch-case-braces */
 		case "bigint": return `${this}: ${value}n`;
 		case "boolean": return `${this}: ${value}`;
-		case "function": return `${this}: ${value.name}()`;
+		case "function": return `${this}: ${value.toString()}`;
 		case "number": return `${this}: ${value}`;
 		case "object": {
 			const stringified = value ? value.toString() : `null`;
@@ -67,6 +67,7 @@ function getFormattedPrimitiveValue(value: unknown): string {
 			/* eslint-disable unicorn/switch-case-braces */
 			case "bigint": return `${value}n`;
 			case "boolean": return `${value}`;
+			case "function": return `${value.toString()}`;
 			case "number": return `${value}`;
 			case "string": return `"${value}"`;
 			case "symbol": return `"${value.toString()}"`;
@@ -97,7 +98,15 @@ function stringifyValue(value: unknown, valueType: string): string | undefined {
 }
 
 function jsonReplacer(_key: string, value: unknown) {
-	return typeof value === "bigint" ? `${value.toString()}n` : value;
+	/* prettier-ignore */
+	switch(typeof value) {
+		/* eslint-disable unicorn/switch-case-braces */
+		case "bigint": return `${value.toString()}n`;
+		case "function": return value.toString();
+		case "undefined": return `undefined`;
+		default: return value;
+		/* eslint-enable unicorn/switch-case-braces */
+	}
 }
 
 function getStringifiedAndTruncatedArray(array: Array<unknown>): string {
