@@ -33,6 +33,10 @@
 		"./*": {
 			"types": "./dist/*/*.d.ts",
 			"import": "./dist/*/*.js"
+		},
+		"./sample/*": {
+			"types": "./dist/sample/groups/*.d.ts",
+			"import": "./dist/sample/groups/*.js"
 		}
 	},
 	"files": [
