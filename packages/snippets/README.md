@@ -24,6 +24,7 @@
 | ------------------------------- | ------------------------------------------------ |
 | [![extension badge]][extension] | [![extension version badge]][extension npm page] |
 | [![error badge]][error]         | [![error version badge]][error npm page]         |
+| [![function badge]][function]   | [![function version badge]][function npm page]   |
 | [![regexp badge]][regexp]       | [![regexp version badge]][regexp npm page]       |
 | [![runtime badge]][runtime]     | [![runtime version badge]][runtime npm page]     |
 | [![string badge]][string]       | [![string version badge]][string npm page]       |
@@ -40,6 +41,11 @@
 [error badge]: https://img.shields.io/static/v1?label=%40terminal-nerds&message=snippets-error&style=flat-square&color=informational
 [error version badge]: https://img.shields.io/npm/v/@terminal-nerds/snippets-error/latest?style=flat-square&logo=npm
 [error npm page]: https://www.npmjs.com/package/@terminal-nerds/snippets-error
+
+[function]: https://github.com/terminal-nerds/snippets/blob/main/packages/function/README.md
+[function badge]: https://img.shields.io/static/v1?label=%40terminal-nerds&message=snippets-function&style=flat-square&color=informational
+[function version badge]: https://img.shields.io/npm/v/@terminal-nerds/snippets-function/latest?style=flat-square&logo=npm
+[function npm page]: https://www.npmjs.com/package/@terminal-nerds/snippets-function
 
 [regexp]: https://github.com/terminal-nerds/snippets/blob/main/packages/regexp/README.md
 [regexp badge]: https://img.shields.io/static/v1?label=%40terminal-nerds&message=snippets-regexp&style=flat-square&color=informational
