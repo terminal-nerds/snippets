@@ -64,6 +64,9 @@
 	},
 	"dependencies": {
 		"@terminal-nerds/snippets-error": "workspace:*",
+		"local-pkg": "^0.4.3",
+		"read-pkg-up": "^9.1.0",
+		"type-fest": "3.5.7",
 		"zod": "3.20.6"
 	},
 	"peerDependenciesMeta": {
@@ -72,8 +75,8 @@
 		}
 	},
 	"devDependencies": {
-		"@terminal-nerds/snippets-test": "workspace:*",
 		"@edge-runtime/vm": "2.1.2",
+		"@terminal-nerds/snippets-test": "workspace:*",
 		"happy-dom": "8.9.0",
 		"jsdom": "21.1.0"
 	}
