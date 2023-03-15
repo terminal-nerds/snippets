@@ -81,6 +81,15 @@ importers:
     devDependencies:
       '@terminal-nerds/snippets-test': link:../test
 
+  packages/extension:
+    specifiers:
+      '@terminal-nerds/snippets-test': workspace:*
+      zod: 3.20.6
+    dependencies:
+      zod: 3.20.6
+    devDependencies:
+      '@terminal-nerds/snippets-test': link:../test
+
   packages/function:
     specifiers:
       '@terminal-nerds/snippets-runtime': workspace:*
@@ -122,6 +131,7 @@ importers:
   packages/snippets:
     specifiers:
       '@terminal-nerds/snippets-error': workspace:*
+      '@terminal-nerds/snippets-extension': workspace:*
       '@terminal-nerds/snippets-regexp': workspace:*
       '@terminal-nerds/snippets-runtime': workspace:*
       '@terminal-nerds/snippets-string': workspace:*
@@ -129,6 +139,7 @@ importers:
       '@terminal-nerds/snippets-type': workspace:*
     dependencies:
       '@terminal-nerds/snippets-error': link:../error
+      '@terminal-nerds/snippets-extension': link:../extension
       '@terminal-nerds/snippets-regexp': link:../regexp
       '@terminal-nerds/snippets-runtime': link:../runtime
       '@terminal-nerds/snippets-string': link:../string
