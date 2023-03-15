@@ -115,7 +115,7 @@ function getStringifiedAndTruncatedArray(array: Array<unknown>): string {
 	if (length > 6) {
 		const firstItems = array.slice(0, 3);
 		const middle = ` ... truncated ${length - 6} samples ...`;
-		const lastItems = array.slice(-4, -1);
+		const lastItems = array.slice(-4, length);
 
 		return JSON.stringify([...firstItems, "%mid%", ...lastItems], jsonReplacer, 1).replace(/,\n "%mid%",?/, middle);
 	} else {
