@@ -1,4 +1,5 @@
-import { ALL_SAMPLES, FALSY_STRINGS, NUMERIC_STRINGS, SAMPLE_STRING } from "@terminal-nerds/snippets-test/sample";
+import { ALL_SAMPLES } from "@terminal-nerds/snippets-test/sample";
+import { FALSY_STRINGS, NUMERIC_STRINGS, SAMPLE_STRING } from "@terminal-nerds/snippets-test/sample/string";
 import { returns, throws } from "@terminal-nerds/snippets-test/unit";
 import { describe, expect, it } from "vitest";
 import { ZodError } from "zod";
