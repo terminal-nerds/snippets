@@ -60,7 +60,15 @@
 		"lint:types": "tsc --noEmit",
 		"test:unit": "vitest run --dir \"./source\""
 	},
+	"peerDependencies": {
+		"typescript": "4.9.5"
+	},
 	"devDependencies": {
 		"@terminal-nerds/snippets-test": "workspace:*"
+	},
+	"peerDependenciesMeta": {
+		"typescript": {
+			"optional": true
+		}
 	}
 }
