@@ -64,8 +64,16 @@
 		"lint:types": "tsc --noEmit",
 		"test:unit": "vitest run --dir \"./source\""
 	},
+	"peerDependencies": {
+		"typescript": "4.9.5"
+	},
 	"dependencies": {
 		"@terminal-nerds/snippets-type": "workspace:*"
+	},
+	"peerDependenciesMeta": {
+		"typescript": {
+			"optional": true
+		}
 	},
 	"devDependencies": {
 		"zod": "3.20.6"
