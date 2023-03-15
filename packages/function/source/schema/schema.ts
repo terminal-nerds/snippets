@@ -77,18 +77,33 @@ export type FunctionType =
 	/** A classic, simple and asynchronous function `async function name() {}` */
 	| "simple-async"
 	/** A classic, simple, asynchronous and generator function `async function* name() {}` */
-	| "simple-async-generator";
+	| "simple-async-generator"
+	/** A classic, simple and generator function `function* name() {}` */
+	| "simple-generator";
+
+function determineArrowFunctionType(_function: AnyFunction): Extract<FunctionType, "arrow" | "arrow-async"> {
+	return isAsyncFunction(_function) ? "arrow-async" : "arrow";
+}
+
+function determineSimpleAsyncFunction(
+	_function: AnyFunction,
+): Extract<FunctionType, "simple-async-generator" | "simple-async"> {
+	return isGeneratorFunction(_function) ? "simple-async-generator" : "simple-async";
+}
+
+function determineSimpleSyncFunction(_function: AnyFunction): Extract<FunctionType, "simple" | "simple-generator"> {
+	return isGeneratorFunction(_function) ? "simple-generator" : "simple";
+}
+
+function determineSimpleFunctionType(
+	_function: AnyFunction,
+): Extract<FunctionType, "simple" | "simple-async" | "simple-async-generator" | "simple-generator"> {
+	return isAsyncFunction(_function)
+		? determineSimpleAsyncFunction(_function)
+		: determineSimpleSyncFunction(_function);
+}
 
 /** @see {@link FunctionType} */
 export function getFunctionType(_function: AnyFunction): FunctionType {
-	if (isArrowFunction(_function)) {
-		return isAsyncFunction(_function) ? "arrow-async" : "arrow";
-	} else {
-		// Simple function
-		if (isAsyncFunction(_function)) {
-			return isGeneratorFunction(_function) ? "simple-async-generator" : "simple-async";
-		} else {
-			return "simple";
-		}
-	}
+	return isArrowFunction(_function) ? determineArrowFunctionType(_function) : determineSimpleFunctionType(_function);
 }
