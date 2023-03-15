@@ -1,26 +1,35 @@
 import { z } from "zod";
 
+// eslint-disable-next-line func-names, @typescript-eslint/no-empty-function
+export const AsyncFunction = async function () {}.constructor as (...args: any[]) => Promise<any>;
+
+// eslint-disable-next-line func-names, @typescript-eslint/no-empty-function
+export const AsyncGeneratorFunction = async function* () {}.constructor as AsyncGeneratorFunction;
+
+// eslint-disable-next-line func-names, @typescript-eslint/no-empty-function
+export const GeneratorFunction = function* () {}.constructor as GeneratorFunction;
+
 /* prettier-ignore */
 /** @see {@link CONTROL_ABSTRACTION_BUILT_IN_OBJECTS} */
 export const CONTROL_ABSTRACTION_BUILT_IN_OBJECTS_NAMES = [
+	"AsyncFunction"	,
+	"AsyncGeneratorFunction",
+	"GeneratorFunction",
 	"Promise",
 	// NOTE: Those are not defined.
-	// "GeneratorFunction",
-	// "AsyncGeneratorFunction",
-	// "Generator",
 	// "AsyncGenerator",
-	// "AsyncFunction",
+	// "Generator",
 ] as const;
 
 /** @see {@link https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects#control_abstractions_objects} */
 export const CONTROL_ABSTRACTION_BUILT_IN_OBJECTS = {
+	AsyncFunction: AsyncFunction,
+	AsyncGeneratorFunction: AsyncGeneratorFunction,
+	GeneratorFunction: GeneratorFunction,
 	Promise: Promise,
 	// NOTE: Those are not defined, unlike what MDN says
-	// GeneratorFunction: GeneratorFunction,
-	// AsyncGeneratorFunction: AsyncGeneratorFunction,
-	// Generator: Generator,
 	// AsyncGenerator: AsyncGenerator,
-	// AsyncFunction: AsyncFunction,
+	// Generator: Generator,
 } as const;
 
 export type ControlAbstractionBuiltInObjectName = keyof typeof CONTROL_ABSTRACTION_BUILT_IN_OBJECTS;
@@ -30,11 +39,11 @@ export type ControlAbstractionBuiltInObject =
 export const CONTROL_ABSTRACTION_BUILT_IN_OBJECT_NAME_SCHEMA = z.enum(CONTROL_ABSTRACTION_BUILT_IN_OBJECTS_NAMES);
 
 export const CONTROL_ABSTRACTION_BUILT_IN_OBJECTS_SCHEMAS = {
-	Promise: z.instanceof(Promise),
+	AsyncFunction: z.function().returns(z.promise(z.any())),
+	AsyncGeneratorFunction: z.instanceof(AsyncGeneratorFunction),
+	GeneratorFunction: z.instanceof(GeneratorFunction),
+	Promise: z.promise(z.any()),
 	// NOTE: Those are not defined, unlike what MDN says
-	// GeneratorFunction: z.instanceof(GeneratorFunction),
-	// AsyncGeneratorFunction: z.instanceof(AsyncGeneratorFunction),
-	// Generator: z.instanceof(Generator),
 	// AsyncGenerator: z.instanceof(AsyncGenerator),
-	// AsyncFunction: z.instanceof(AsyncFunction),
+	// Generator: z.instanceof(Generator),
 } as const;

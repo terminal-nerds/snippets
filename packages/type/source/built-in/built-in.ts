@@ -127,3 +127,5 @@ export function isBuiltInObject(value: unknown): value is BuiltInObject {
 		? BUILT_IN_OBJECTS_SCHEMAS[name].safeParse(value).success
 		: false;
 }
+
+export { AsyncFunction, AsyncGeneratorFunction, GeneratorFunction } from "./groups/control-abstraction.js";
