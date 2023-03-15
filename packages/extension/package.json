@@ -1,0 +1,81 @@
+{
+	"$schema": "https://json.schemastore.org/package",
+	"type": "module",
+	"name": "@terminal-nerds/snippets-extension",
+	"version": "0.0.0",
+	"description": "@terminal-nerds reusable snippets for extensions.",
+	"keywords": [
+		"snippets",
+		"typescript",
+		"extension"
+	],
+	"license": "MIT",
+	"author": {
+		"name": "Mateusz Kadlubowski",
+		"email": "xeho91@pm.me",
+		"url": "https://xeho91.com"
+	},
+	"homepage": "https://github.com/terminal-nerds/snippets",
+	"repository": {
+		"type": "git",
+		"url": "https://github.com/terminal-nerds/snippets.git",
+		"directory": "packages/extension"
+	},
+	"bugs": "https://github.com/terminal-nerds/snippets/issues",
+	"engines": {
+		"node": ">=18"
+	},
+	"exports": {
+		".": {
+			"types": "./dist/main.d.ts",
+			"import": "./dist/main.js"
+		},
+		"./*": {
+			"types": "./dist/*/*.d.ts",
+			"import": "./dist/*/*.js"
+		},
+		"./schema/*": {
+			"types": "./dist/schema/groups/*.d.ts",
+			"import": "./dist/schema/groups/*.js"
+		}
+	},
+	"files": [
+		"dist/"
+	],
+	"scripts": {
+		"build": "tsup",
+		"clean": "concurrently \"pnpm:clean:*\" --group --timings",
+		"clean:build": "del \"./dist\"",
+		"clean:cache": "del \"./node_modules/.cache\"",
+		"clean:test": "del \"./coverage\"",
+		"dev:test": "vitest watch --ui",
+		"dev:pkg": "tsup --watch",
+		"fix": "concurrently \"pnpm:fix:*\" --group --timings",
+		"fix:format": "pretty-quick --branch main --pattern \"packages/extension/**/*\" --verbose",
+		"fix:js": "pnpm lint:js --fix",
+		"fix:md": "pnpm lint:md --fix",
+		"fix:pkg": "syncpack format ; syncpack fix-mismatches",
+		"lint": "concurrently \"pnpm:lint:*\" --group --timings",
+		"lint:deps": "depcheck",
+		"lint:format": "pnpm fix:format --check",
+		"lint:js": "DEBUG=\"eslint:cli-engine\" eslint . --ext .cjs,.js,.ts,.json,.yml --cache --cache-location \"./node_modules/.cache/eslint\"",
+		"lint:md": "markdownlint . --config \"../../.markdownlint.json\" --dot --ignore \"./LICENSE.md\" --ignore-path \"../../.gitignore\"",
+		"lint:pkg": "syncpack list-mismatches",
+		"lint:types": "tsc --noEmit",
+		"test:unit": "vitest run --dir \"./source\""
+	},
+	"peerDependencies": {
+		"typescript": "4.9.5"
+	},
+	"dependencies": {
+		"zod": "3.20.6"
+	},
+	"devDependencies": {
+		"@terminal-nerds/snippets-test": "workspace:*"
+	},
+	"peerDependenciesMeta": {
+		"typescript": {
+			"optional": true
+		}
+	}
+}
