@@ -64,8 +64,8 @@
 		"typescript": "4.9.5"
 	},
 	"dependencies": {
-		"magic-regexp": "0.6.2",
-		"zod": "3.20.6"
+		"magic-regexp": "0.6.3",
+		"zod": "3.21.4"
 	},
 	"peerDependenciesMeta": {
 		"typescript": {

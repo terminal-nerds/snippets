@@ -77,12 +77,12 @@ importers:
       '@terminal-nerds/snippets-test': workspace:*
       deepmerge-ts: 4.3.0
       pkg-dir: 7.0.0
-      type-fest: 3.5.7
+      type-fest: 3.6.1
     dependencies:
       '@terminal-nerds/snippets-runtime': link:../runtime
       deepmerge-ts: 4.3.0
       pkg-dir: 7.0.0
-      type-fest: 3.5.7
+      type-fest: 3.6.1
     devDependencies:
       '@terminal-nerds/snippets-test': link:../test
 
@@ -90,19 +90,19 @@ importers:
     specifiers:
       '@terminal-nerds/snippets-test': workspace:*
       modern-errors: 5.5.1
-      zod: 3.20.6
+      zod: 3.21.4
     dependencies:
       modern-errors: 5.5.1
-      zod: 3.20.6
+      zod: 3.21.4
     devDependencies:
       '@terminal-nerds/snippets-test': link:../test
 
   packages/extension:
     specifiers:
       '@terminal-nerds/snippets-test': workspace:*
-      zod: 3.20.6
+      zod: 3.21.4
     dependencies:
-      zod: 3.20.6
+      zod: 3.21.4
     devDependencies:
       '@terminal-nerds/snippets-test': link:../test
 
@@ -111,21 +111,21 @@ importers:
       '@terminal-nerds/snippets-runtime': workspace:*
       '@terminal-nerds/snippets-test': workspace:*
       '@terminal-nerds/snippets-type': workspace:*
-      zod: 3.20.6
+      zod: 3.21.4
     dependencies:
       '@terminal-nerds/snippets-runtime': link:../runtime
       '@terminal-nerds/snippets-type': link:../type
-      zod: 3.20.6
+      zod: 3.21.4
     devDependencies:
       '@terminal-nerds/snippets-test': link:../test
 
   packages/regexp:
     specifiers:
-      magic-regexp: 0.6.2
-      zod: 3.20.6
+      magic-regexp: 0.6.3
+      zod: 3.21.4
     dependencies:
-      magic-regexp: 0.6.2
-      zod: 3.20.6
+      magic-regexp: 0.6.3
+      zod: 3.21.4
 
   packages/runtime:
     specifiers:
@@ -136,14 +136,14 @@ importers:
       jsdom: 21.1.0
       local-pkg: ^0.4.3
       read-pkg-up: ^9.1.0
-      type-fest: 3.5.7
-      zod: 3.20.6
+      type-fest: 3.6.1
+      zod: 3.21.4
     dependencies:
       '@terminal-nerds/snippets-error': link:../error
       local-pkg: 0.4.3
       read-pkg-up: 9.1.0
-      type-fest: 3.5.7
-      zod: 3.20.6
+      type-fest: 3.6.1
+      zod: 3.21.4
     devDependencies:
       '@edge-runtime/vm': 2.1.2
       '@terminal-nerds/snippets-test': link:../test
@@ -176,14 +176,14 @@ importers:
       '@terminal-nerds/snippets-test': workspace:*
       '@terminal-nerds/snippets-type': workspace:*
       case-anything: 2.1.10
-      type-fest: 3.5.7
-      zod: 3.20.6
+      type-fest: 3.6.1
+      zod: 3.21.4
     dependencies:
       '@terminal-nerds/snippets-regexp': link:../regexp
       '@terminal-nerds/snippets-type': link:../type
       case-anything: 2.1.10
-      type-fest: 3.5.7
-      zod: 3.20.6
+      type-fest: 3.6.1
+      zod: 3.21.4
     devDependencies:
       '@terminal-nerds/snippets-test': link:../test
 
@@ -198,9 +198,9 @@ importers:
 
   packages/type:
     specifiers:
-      zod: 3.20.6
+      zod: 3.21.4
     dependencies:
-      zod: 3.20.6
+      zod: 3.21.4
 
   scripts/generate:
     specifiers:
@@ -1918,7 +1918,7 @@ packages:
     resolution: {integrity: sha512-IG23inYII3dWlU2EyiAiGj6Bwal5GzsgPMwjYGvc1HPE2dgbj4ZB5ToWBKSquKw74nB3TIuOwaI6/jSULzfgrw==}
     engines: {node: '>=14.16'}
     dependencies:
-      type-fest: 3.5.7
+      type-fest: 3.6.1
     dev: false
 
   /ansi-regex/5.0.1:
@@ -5573,13 +5573,13 @@ packages:
     hasBin: true
     dev: true
 
-  /magic-regexp/0.6.2:
-    resolution: {integrity: sha512-TU7mogmbA7W9YjGybLmCBJU6C2IGgLgRfr76ILmgWlM/fNGrYOxrZC9AeKzii/DCyFddgBB3t9B6BLzUHrxwxg==}
+  /magic-regexp/0.6.3:
+    resolution: {integrity: sha512-RQJGOUham95/bqe9KaaQDxSP5txZoySk1omZCY7ZiG6/mqRY1t0w8Mmv9TV3XE0VkAD84pjUXs8jFFNLIzf5ow==}
     dependencies:
       estree-walker: 3.0.3
-      magic-string: 0.27.0
-      mlly: 1.1.0
-      ufo: 1.0.1
+      magic-string: 0.30.0
+      mlly: 1.2.0
+      ufo: 1.1.1
       unplugin: 1.1.0
     dev: false
 
@@ -5589,8 +5589,8 @@ packages:
       sourcemap-codec: 1.4.8
     dev: true
 
-  /magic-string/0.27.0:
-    resolution: {integrity: sha512-8UnnX2PeRAPZuN12svgR9j7M1uWMovg/CEnIwIG0LFkXSJJe4PdfUGiTGl8V9bsBHFUtfVINcSyYxd7q+kx9fA==}
+  /magic-string/0.30.0:
+    resolution: {integrity: sha512-LA+31JYDJLs82r2ScLrlz1GjSgu66ZV518eyWT+S8VhyQn/JL0u9MeBOvQMGYiPk1DBiSN9DDMOcXvigJZaViQ==}
     engines: {node: '>=12'}
     dependencies:
       '@jridgewell/sourcemap-codec': 1.4.14
@@ -5987,15 +5987,6 @@ packages:
     hasBin: true
     dev: false
 
-  /mlly/1.1.0:
-    resolution: {integrity: sha512-cwzBrBfwGC1gYJyfcy8TcZU1f+dbH/T+TuOhtYP2wLv/Fb51/uV7HJQfBPtEupZ2ORLRU1EKFS/QfS3eo9+kBQ==}
-    dependencies:
-      acorn: 8.8.2
-      pathe: 1.1.0
-      pkg-types: 1.0.1
-      ufo: 1.0.1
-    dev: false
-
   /mlly/1.2.0:
     resolution: {integrity: sha512-+c7A3CV0KGdKcylsI6khWyts/CYrGTrRVo4R/I7u/cUsy0Conxa6LUhiEzVKIw14lc2L5aiO4+SeVe4TeGRKww==}
     dependencies:
@@ -6003,7 +5994,6 @@ packages:
       pathe: 1.1.0
       pkg-types: 1.0.2
       ufo: 1.1.1
-    dev: true
 
   /modern-errors/5.5.1:
     resolution: {integrity: sha512-/5uw5WNx1BJCoxIw1PJHcH6KNQGUOfRlz4Lq1dKeD2Ge57nzakK3nWEP6Z9Jh/b3rzss4qVcbeMyiyM+MT9dbA==}
@@ -6588,21 +6578,12 @@ packages:
       find-up: 6.3.0
     dev: false
 
-  /pkg-types/1.0.1:
-    resolution: {integrity: sha512-jHv9HB+Ho7dj6ItwppRDDl0iZRYBD0jsakHXtFgoLr+cHSF6xC+QL54sJmWxyGxOLYSHm0afhXhXcQDQqH9z8g==}
-    dependencies:
-      jsonc-parser: 3.2.0
-      mlly: 1.1.0
-      pathe: 1.1.0
-    dev: false
-
   /pkg-types/1.0.2:
     resolution: {integrity: sha512-hM58GKXOcj8WTqUXnsQyJYXdeAPbythQgEF3nTcEo+nkD49chjQ9IKm/QJy9xf6JakXptz86h7ecP2024rrLaQ==}
     dependencies:
       jsonc-parser: 3.2.0
       mlly: 1.2.0
       pathe: 1.1.0
-    dev: true
 
   /please-upgrade-node/3.2.0:
     resolution: {integrity: sha512-gQR3WpIgNIKwBMVLkpMUeR3e1/E1y42bqDQZfql+kDeXd8COYfM8PQA4X6y7a8u9Ua9FHmsrrmirW2vHs45hWg==}
@@ -8052,8 +8033,8 @@ packages:
     engines: {node: '>=12.20'}
     dev: false
 
-  /type-fest/3.5.7:
-    resolution: {integrity: sha512-6J4bYzb4sdkcLBty4XW7F18VPI66M4boXNE+CY40532oq2OJe6AVMB5NmjOp6skt/jw5mRjz/hLRpuglz0U+FA==}
+  /type-fest/3.6.1:
+    resolution: {integrity: sha512-htXWckxlT6U4+ilVgweNliPqlsVSSucbxVexRYllyMVJDtf5rTjv6kF/s+qAd4QSL1BZcnJPEJavYBPQiWuZDA==}
     engines: {node: '>=14.16'}
     dev: false
 
@@ -8075,13 +8056,8 @@ packages:
     resolution: {integrity: sha512-8Y75pvTYkLJW2hWQHXxoqRgV7qb9B+9vFEtidML+7koHUFapnVJAZ6cKs+Qjz5Aw3aZWHMC6u0wJE3At+nSGwA==}
     dev: true
 
-  /ufo/1.0.1:
-    resolution: {integrity: sha512-boAm74ubXHY7KJQZLlXrtMz52qFvpsbOxDcZOnw/Wf+LS4Mmyu7JxmzD4tDLtUQtmZECypJ0FrCz4QIe6dvKRA==}
-    dev: false
-
   /ufo/1.1.1:
     resolution: {integrity: sha512-MvlCc4GHrmZdAllBc0iUDowff36Q9Ndw/UzqmEKyrfSzokTd9ZCy1i+IIk5hrYKkjoYVQyNbrw7/F8XJ2rEwTg==}
-    dev: true
 
   /uglify-js/3.17.4:
     resolution: {integrity: sha512-T9q82TJI9e/C1TAxYvfb16xO120tMVFZrGA3f9/P4424DNu6ypK103y0GPFVa17yotwSyZW5iYXgjYHkGrJW/g==}
@@ -8718,3 +8694,7 @@ packages:
 
   /zod/3.20.6:
     resolution: {integrity: sha512-oyu0m54SGCtzh6EClBVqDDlAYRz4jrVtKwQ7ZnsEmMI9HnzuZFj8QFwAY1M5uniIYACdGvv0PBWPF2kO0aNofA==}
+
+  /zod/3.21.4:
+    resolution: {integrity: sha512-m46AKbrzKVzOzs/DZgVnG5H55N1sv1M8qZU3A8RIKbs3mrACDNeIOeilDymVb2HdmP8uwshOCF4uJ8uM9rCqJw==}
+    dev: false
