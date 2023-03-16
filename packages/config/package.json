@@ -72,6 +72,7 @@
 		}
 	},
 	"dependencies": {
+		"@terminal-nerds/snippets-runtime": "workspace:*",
 		"pkg-dir": "7.0.0"
 	}
 }
