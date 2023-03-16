@@ -23,11 +23,20 @@
 
 <!-- prettier-sort-markdown-table -->
 
-| Name | Size |
-| ---- | ---- |
+| Name                                     | Size                                                |
+| ---------------------------------------- | --------------------------------------------------- |
+| [`@terminal-nerds/snippets-error/merge`] | ![merge size gzip badge] ![merge size brotli badge] |
+| [`@terminal-nerds/snippets-error/read`]  | ![read size gzip badge] ![read size brotli badge]   |
 
 <!-- prettier-ignore-start -->
 <!-- MODULES LINKS -->
+[`@terminal-nerds/snippets-error/merge`]: https://github.com/terminal-nerds/snippets/blob/main/packages/error/source/merge/merge.ts
+[merge size gzip badge]: https://badgen.net/badgesize/gzip/file-url/unpkg.com/@terminal-nerds/snippets-error/dist/merge/merge.js?label=gzip
+[merge size brotli badge]: https://badgen.net/badgesize/brotli/file-url/unpkg.com/@terminal-nerds/snippets-error/dist/merge/merge.js?label=brotli
+
+[`@terminal-nerds/snippets-error/read`]: https://github.com/terminal-nerds/snippets/blob/main/packages/error/source/read/read.ts
+[read size gzip badge]: https://badgen.net/badgesize/gzip/file-url/unpkg.com/@terminal-nerds/snippets-error/dist/read/read.js?label=gzip
+[read size brotli badge]: https://badgen.net/badgesize/brotli/file-url/unpkg.com/@terminal-nerds/snippets-error/dist/read/read.js?label=brotli
 <!-- prettier-ignore-end -->
 
 ---
