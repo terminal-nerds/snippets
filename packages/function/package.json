@@ -63,7 +63,7 @@
 	"dependencies": {
 		"@terminal-nerds/snippets-runtime": "workspace:*",
 		"@terminal-nerds/snippets-type": "workspace:*",
-		"zod": "3.20.6"
+		"zod": "3.21.4"
 	},
 	"devDependencies": {
 		"@terminal-nerds/snippets-test": "workspace:*"
