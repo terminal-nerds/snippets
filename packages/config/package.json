@@ -75,6 +75,6 @@
 		"@terminal-nerds/snippets-runtime": "workspace:*",
 		"deepmerge-ts": "4.3.0",
 		"pkg-dir": "7.0.0",
-		"type-fest": "3.5.7"
+		"type-fest": "3.6.1"
 	}
 }
