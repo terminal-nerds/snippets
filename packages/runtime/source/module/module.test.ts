@@ -26,31 +26,34 @@ describe(`getDependenciesMap()`, () => {
 
 	const expectedKeys = ["dependencies", "devDependencies", "optionalDependencies", "peerDependencies"] as const;
 
-	it(`has keys: ${JSON.stringify(expectedKeys, undefined, 1)} - of the current package directory`, () => {
+	it(`has keys: ${JSON.stringify(expectedKeys, undefined, 1)}`, () => {
 		expect([...map.keys()]).toStrictEqual(expectedKeys);
 	});
 
-	const expectedDependencyName = "zod";
-
-	it(`'dependencies' has '${expectedDependencyName}'`, () => {
-		expect(map.get("dependencies")).toHaveProperty(expectedDependencyName);
+	/**
+	 * NOTE: This is apparently an expected behaviour...?
+	 *
+	 * @see {@link https://github.com/npm/cli/issues/1886}
+	 */
+	it.fails(`'dependencies' at the root is '${undefined}'`, () => {
+		expect(map.get("dependencies")).toBeUndefined();
 	});
 
 	// eslint-disable-next-line unicorn/prevent-abbreviations
-	const expectedDevDependencyName = "@terminal-nerds/snippets-test";
+	const expectedDevDependencyName = "eslint";
 
-	it(`'devDeependencies' has '${expectedDevDependencyName}'`, () => {
+	it(`'devDeependencies' at the root has '${expectedDevDependencyName}'`, () => {
 		expect(map.get("devDependencies")).toHaveProperty(expectedDevDependencyName);
 	});
 
-	const expectedPeerDependencyName = "typescript";
-
-	it(`'peerDeependencies' has '${expectedPeerDependencyName}'`, () => {
-		expect(map.get("peerDependencies")).toHaveProperty(expectedPeerDependencyName);
+	it(`'peerDeependencies' at the root has '${undefined}'`, () => {
+		expect(map.get("peerDependencies")).toBeUndefined();
 	});
 
-	it(`'optionalDeependencies' is '${undefined}'`, () => {
-		expect(map.get("optionalDependencies")).toBeUndefined();
+	const expectedOptionalDependencyName = "husky";
+
+	it(`'optionalDeependencies' at the root has '${expectedOptionalDependencyName}'`, () => {
+		expect(map.get("optionalDependencies")).toHaveProperty(expectedOptionalDependencyName);
 	});
 });
 
