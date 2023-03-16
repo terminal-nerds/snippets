@@ -81,10 +81,15 @@ function getFormattedNonPrimitiveValue(value: unknown, valueType: string): strin
 	switch (valueType) {
 		/* eslint-disable unicorn/switch-case-braces */
 		case "Array":
+			return `[ ...${(value as Array<unknown>).length} item(s)... ]`;
 		case "Set":
-			return getStringifiedAndTruncatedArray([...(value as Array<unknown> | Set<unknown>)]);
+			return `[ ...${(value as Set<unknown>).size} item(s)... ]`;
 		case "Error":
 			return (value as Error).message;
+		case "Map":
+			return `{ ...${(value as Map<unknown, unknown>).size} entry(ies)... }`;
+		case "Object":
+			return `{ ...${Object.entries(value as object).length} entry(ies)... }`;
 		default:
 			return "";
 		/* eslint-enable unicorn/switch-case-braces */
@@ -95,18 +100,6 @@ function stringifyValue(value: unknown, valueType: string): string | undefined {
 	return isPrimitiveName(valueType.toLowerCase())
 		? getFormattedPrimitiveValue(value)
 		: getFormattedNonPrimitiveValue(value, valueType);
-}
-
-function jsonReplacer(_key: string, value: unknown) {
-	/* prettier-ignore */
-	switch(typeof value) {
-		/* eslint-disable unicorn/switch-case-braces */
-		case "bigint": return `${value.toString()}n`;
-		case "function": return value.toString();
-		case "undefined": return `undefined`;
-		default: return value;
-		/* eslint-enable unicorn/switch-case-braces */
-	}
 }
 
 function getStringifiedAndTruncatedArray(array: Array<unknown>): string {
@@ -154,6 +147,18 @@ function createPrint(prefixEmoji: string, prefix: string, value: unknown | Custo
 	const displayStringifiedValue = stringifiedValue ? ` (${stringifiedValue})` : "";
 
 	return `${prefixEmoji} ${prefix} ${valueTypeEmoji} '${valueTypeName}'${displayStringifiedValue}`;
+}
+
+function jsonReplacer(_key: string, value: unknown) {
+	/* prettier-ignore */
+	switch(typeof value) {
+		/* eslint-disable unicorn/switch-case-braces */
+		case "bigint": return `${value.toString()}n`;
+		case "function": return value.toString();
+		case "undefined": return `undefined`;
+		default: return value;
+		/* eslint-enable unicorn/switch-case-braces */
+	}
 }
 
 export const throws = (value: unknown) => createPrint(`💥`, `throws`, value);
