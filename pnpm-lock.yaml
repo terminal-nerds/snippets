@@ -76,9 +76,11 @@ importers:
       '@terminal-nerds/snippets-runtime': workspace:*
       '@terminal-nerds/snippets-test': workspace:*
       pkg-dir: 7.0.0
+      type-fest: 3.5.7
     dependencies:
       '@terminal-nerds/snippets-runtime': link:../runtime
       pkg-dir: 7.0.0
+      type-fest: 3.5.7
     devDependencies:
       '@terminal-nerds/snippets-test': link:../test
 

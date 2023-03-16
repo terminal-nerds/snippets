@@ -73,6 +73,7 @@
 	},
 	"dependencies": {
 		"@terminal-nerds/snippets-runtime": "workspace:*",
-		"pkg-dir": "7.0.0"
+		"pkg-dir": "7.0.0",
+		"type-fest": "3.5.7"
 	}
 }
