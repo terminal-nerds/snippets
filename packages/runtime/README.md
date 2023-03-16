@@ -20,6 +20,7 @@
 | Name                                             | Size                                                            |
 | ------------------------------------------------ | --------------------------------------------------------------- |
 | [`@terminal-nerds/snippets-runtime/environment`] | ![environment size gzip badge] ![environment size brotli badge] |
+| [`@terminal-nerds/snippets-runtime/module`]      | ![module size gzip badge] ![module size brotli badge]           |
 | [`@terminal-nerds/snippets-runtime/scope`]       | ![scope size gzip badge] ![scope size brotli badge]             |
 | [`@terminal-nerds/snippets-runtime/variable`]    | ![variable size gzip badge] ![variable size brotli badge]       |
 
@@ -28,6 +29,10 @@
 [`@terminal-nerds/snippets-runtime/environment`]: https://github.com/terminal-nerds/snippets/blob/main/packages/runtime/source/environment/environment.ts
 [environment size gzip badge]: https://badgen.net/badgesize/gzip/file-url/unpkg.com/@terminal-nerds/snippets-runtime/dist/environment/environment.js?label=gzip
 [environment size brotli badge]: https://badgen.net/badgesize/brotli/file-url/unpkg.com/@terminal-nerds/snippets-runtime/dist/environment/environment.js?label=brotli
+
+[`@terminal-nerds/snippets-runtime/module`]: https://github.com/terminal-nerds/snippets/blob/main/packages/runtime/source/module/module.ts
+[module size gzip badge]: https://badgen.net/badgesize/gzip/file-url/unpkg.com/@terminal-nerds/snippets-runtime/dist/module/module.js?label=gzip
+[module size brotli badge]: https://badgen.net/badgesize/brotli/file-url/unpkg.com/@terminal-nerds/snippets-runtime/dist/module/module.js?label=brotli
 
 [`@terminal-nerds/snippets-runtime/scope`]: https://github.com/terminal-nerds/snippets/blob/main/packages/runtime/source/scope/scope.ts
 [scope size gzip badge]: https://badgen.net/badgesize/gzip/file-url/unpkg.com/@terminal-nerds/snippets-runtime/dist/scope/scope.js?label=gzip
