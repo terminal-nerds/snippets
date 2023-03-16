@@ -111,11 +111,12 @@ function jsonReplacer(_key: string, value: unknown) {
 
 function getStringifiedAndTruncatedArray(array: Array<unknown>): string {
 	const { length } = array;
+	const maxLength = 4;
 
-	if (length > 6) {
-		const firstItems = array.slice(0, 3);
-		const middle = ` ... truncated ${length - 6} samples ...`;
-		const lastItems = array.slice(-4, length);
+	if (length > maxLength) {
+		const firstItems = array.slice(0, maxLength / 2);
+		const middle = `\n... ${length - maxLength} items ...`;
+		const lastItems = array.slice(-(maxLength / 2), length);
 
 		return JSON.stringify([...firstItems, "%mid%", ...lastItems], jsonReplacer, 1).replace(/,\n "%mid%",?/, middle);
 	} else {
