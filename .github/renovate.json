@@ -3,16 +3,12 @@
 	"extends": ["github>terminal-nerds/.github//.github/renovate"],
 	"packageRules": [
 		{
-			"groupName": "project tools & linters",
-			"addLabels": ["🧰 project"],
+			"groupName": "configs",
+			"addLabels": ["⚙️ configuration"],
+			"matchUpdateTypes": ["major", "minor", "patch", "rollback"],
 			"packagePatterns": [
-				"@changesets/*",
 				"@terminal-nerds/*-config",
-				"@types/node",
-				"all-contributors-cli",
 				"browserslist",
-				"concurrently",
-				"del-cli",
 				"depcheck",
 				"eslint",
 				"husky",
@@ -23,20 +19,41 @@
 				"syncpack",
 				"tsup",
 				"typescript",
-				"vite",
 				"vitest"
 			]
 		},
 		{
-			"groupName": "dependencies",
-			"addLabels": ["🧩 dependencies"],
+			"groupName": "tools",
+			"addLabels": ["🧰 project"],
 			"matchUpdateTypes": ["major", "minor", "patch", "rollback"],
-			"packagePatterns": [""]
+			"packagePatterns": [
+				"@changesets/*",
+				"all-contributors-cli",
+				"concurrently",
+				"del-cli",
+				"husky",
+				"turbo",
+				"tsx"
+			]
+		},
+		{
+			"groupName": "types",
+			"addLabels": ["🧰 project"],
+			"matchUpdateTypes": ["major", "minor", "patch", "rollback"],
+			"packagePatterns": ["@total-typescript/ts-reset", "@types/node", "bun-types"]
 		},
 		{
 			"groupName": "project prerequisities",
 			"addLabels": ["🧰 project"],
+			"matchUpdateTypes": ["major", "minor", "patch", "rollback"],
 			"packagePatterns": ["node", "pnpm"]
+		},
+		{
+			"groupName": "package dependencies",
+			"addLabels": ["📦 packages"],
+			"matchDepTypes": ["dependencies"],
+            "matchPaths": ["./packages/**/package.json"],
+			"matchUpdateTypes": ["major", "minor", "patch", "rollback"]
 		}
 	]
 }
