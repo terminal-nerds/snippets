@@ -10,7 +10,7 @@
 	"engines": {
 		"node": ">=18"
 	},
-	"packageManager": "pnpm@7.25.0",
+	"packageManager": "pnpm@7.29.3",
 	"scripts": {
 		"build:pkgs": "turbo run build --api=$TURBO_API",
 		"changelog": "pnpm changeset add",
@@ -51,7 +51,7 @@
 		"@terminal-nerds/typescript-config": "0.4.0",
 		"@terminal-nerds/vitest-config": "0.4.0",
 		"@total-typescript/ts-reset": "0.3.7",
-		"@types/node": "18.13.0",
+		"@types/node": "18.15.1",
 		"browserslist": "4.21.5",
 		"bun-types": "0.5.7",
 		"depcheck": "1.4.3",
