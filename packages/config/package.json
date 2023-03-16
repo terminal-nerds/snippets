@@ -70,5 +70,8 @@
 		"typescript": {
 			"optional": true
 		}
+	},
+	"dependencies": {
+		"pkg-dir": "7.0.0"
 	}
 }
