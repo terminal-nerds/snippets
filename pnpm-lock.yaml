@@ -71,6 +71,21 @@ importers:
       typescript: 4.9.5
       vitest: 0.28.4
 
+  packages/config:
+    specifiers:
+      '@terminal-nerds/snippets-runtime': workspace:*
+      '@terminal-nerds/snippets-test': workspace:*
+      deepmerge-ts: 4.3.0
+      pkg-dir: 7.0.0
+      type-fest: 3.5.7
+    dependencies:
+      '@terminal-nerds/snippets-runtime': link:../runtime
+      deepmerge-ts: 4.3.0
+      pkg-dir: 7.0.0
+      type-fest: 3.5.7
+    devDependencies:
+      '@terminal-nerds/snippets-test': link:../test
+
   packages/error:
     specifiers:
       '@terminal-nerds/snippets-test': workspace:*
@@ -137,6 +152,7 @@ importers:
 
   packages/snippets:
     specifiers:
+      '@terminal-nerds/snippets-config': workspace:*
       '@terminal-nerds/snippets-error': workspace:*
       '@terminal-nerds/snippets-extension': workspace:*
       '@terminal-nerds/snippets-regexp': workspace:*
@@ -145,6 +161,7 @@ importers:
       '@terminal-nerds/snippets-test': workspace:*
       '@terminal-nerds/snippets-type': workspace:*
     dependencies:
+      '@terminal-nerds/snippets-config': link:../config
       '@terminal-nerds/snippets-error': link:../error
       '@terminal-nerds/snippets-extension': link:../extension
       '@terminal-nerds/snippets-regexp': link:../regexp
@@ -2732,6 +2749,11 @@ packages:
   /deep-is/0.1.4:
     resolution: {integrity: sha512-oIPzksmTg4/MriiaYGO+okXDT7ztn/w3Eptv/+gSIdMdKsJo0u4CfYNFJPy+4SKMuCqGw2wxnA+URMg3t8a/bQ==}
     dev: true
+
+  /deepmerge-ts/4.3.0:
+    resolution: {integrity: sha512-if3ZYdkD2dClhnXR5reKtG98cwyaRT1NeugQoAPTTfsOpV9kqyeiBF9Qa5RHjemb3KzD5ulqygv6ED3t5j9eJw==}
+    engines: {node: '>=12.4.0'}
+    dev: false
 
   /defaults/1.0.4:
     resolution: {integrity: sha512-eFuaLoy/Rxalv2kr+lqMlUnrDWV+3j4pljOIJgLIhI058IQfWJ7vXhyEIHu+HtC738klGALYxOKDO0bQP3tg8A==}
@@ -6558,6 +6580,13 @@ packages:
     dependencies:
       find-up: 4.1.0
     dev: true
+
+  /pkg-dir/7.0.0:
+    resolution: {integrity: sha512-Ie9z/WINcxxLp27BKOCHGde4ITq9UklYKDzVo1nhk5sqGEXU3FpkwP5GM2voTGJkGd9B3Otl+Q4uwSOeSUtOBA==}
+    engines: {node: '>=14.16'}
+    dependencies:
+      find-up: 6.3.0
+    dev: false
 
   /pkg-types/1.0.1:
     resolution: {integrity: sha512-jHv9HB+Ho7dj6ItwppRDDl0iZRYBD0jsakHXtFgoLr+cHSF6xC+QL54sJmWxyGxOLYSHm0afhXhXcQDQqH9z8g==}
