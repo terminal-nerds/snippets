@@ -71,6 +71,12 @@ importers:
       typescript: 4.9.5
       vitest: 0.28.4
 
+  packages/config:
+    specifiers:
+      '@terminal-nerds/snippets-test': workspace:*
+    devDependencies:
+      '@terminal-nerds/snippets-test': link:../test
+
   packages/error:
     specifiers:
       '@terminal-nerds/snippets-test': workspace:*
@@ -137,6 +143,7 @@ importers:
 
   packages/snippets:
     specifiers:
+      '@terminal-nerds/snippets-config': workspace:*
       '@terminal-nerds/snippets-error': workspace:*
       '@terminal-nerds/snippets-extension': workspace:*
       '@terminal-nerds/snippets-regexp': workspace:*
@@ -145,6 +152,7 @@ importers:
       '@terminal-nerds/snippets-test': workspace:*
       '@terminal-nerds/snippets-type': workspace:*
     dependencies:
+      '@terminal-nerds/snippets-config': link:../config
       '@terminal-nerds/snippets-error': link:../error
       '@terminal-nerds/snippets-extension': link:../extension
       '@terminal-nerds/snippets-regexp': link:../regexp
