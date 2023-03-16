@@ -1,6 +1,5 @@
-import { RuntimeError } from "@terminal-nerds/snippets-error/custom";
-
 import { getRuntimeEnvironmentName, type RuntimeEnvironment } from "../environment/environment.js";
+import { RuntimeError } from "../error/error.js";
 
 const SUPPORTED_RUNTIMES = ["bun", "deno", "node"] as const;
 type SupportedRuntime = Extract<RuntimeEnvironment, (typeof SUPPORTED_RUNTIMES)[number]>;
