@@ -2,7 +2,7 @@
 	"$schema": "https://json.schemastore.org/package",
 	"type": "module",
 	"name": "@terminal-nerds/snippets-runtime",
-	"version": "0.0.0",
+	"version": "0.1.0",
 	"description": "@terminal-nerds reusable snippets for runtime.",
 	"keywords": [
 		"snippets",
