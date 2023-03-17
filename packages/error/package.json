@@ -64,7 +64,7 @@
 		"typescript": "4.9.5"
 	},
 	"dependencies": {
-		"modern-errors": "5.5.1",
+		"modern-errors": "5.5.2",
 		"zod": "3.21.4"
 	},
 	"peerDependenciesMeta": {
