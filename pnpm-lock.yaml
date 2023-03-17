@@ -89,10 +89,10 @@ importers:
   packages/error:
     specifiers:
       '@terminal-nerds/snippets-test': workspace:*
-      modern-errors: 5.5.1
+      modern-errors: 5.5.2
       zod: 3.21.4
     dependencies:
-      modern-errors: 5.5.1
+      modern-errors: 5.5.2
       zod: 3.21.4
     devDependencies:
       '@terminal-nerds/snippets-test': link:../test
@@ -5995,8 +5995,8 @@ packages:
       pkg-types: 1.0.2
       ufo: 1.1.1
 
-  /modern-errors/5.5.1:
-    resolution: {integrity: sha512-/5uw5WNx1BJCoxIw1PJHcH6KNQGUOfRlz4Lq1dKeD2Ge57nzakK3nWEP6Z9Jh/b3rzss4qVcbeMyiyM+MT9dbA==}
+  /modern-errors/5.5.2:
+    resolution: {integrity: sha512-yLU+pQkzwoFnFIVK32/ybI8OPvlpRKQOXPYP9HE4EG2svLSq9NDp8SjdvvDarsVJYCGC0JA86Ku/1T4cma1h5g==}
     engines: {node: '>=14.18.0'}
     dependencies:
       error-class-utils: 2.5.0
