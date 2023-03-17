@@ -20,7 +20,7 @@
 		"dev:pkgs": "turbo run dev:pkg",
 		"dev:test": "vitest watch --dir \"./packages\" --ui",
 		"fix": "concurrently \"pnpm:fix:*\" --group --timings",
-		"fix:format": "pretty-quick --branch main --pattern \"**/*\" --patern \"!{shared,packages}/**/*\" --verbose",
+		"fix:format": "pretty-quick --branch main --pattern \"**/*\" --verbose",
 		"fix:js": "pnpm lint:js --fix",
 		"fix:md": "pnpm lint:md --fix",
 		"fix:pkgs": "syncpack format ; syncpack fix-mismatches",
