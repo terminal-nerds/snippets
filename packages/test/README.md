@@ -1,5 +1,9 @@
 # @terminal-nerds/snippets-test
 
+![package version badge]
+[![dependencies badge]][dependencies url]\
+[![install size badge]][install size url]
+
 ➡️ **This package wraps all available modules with snippets related to testing**
 — part of the [terminal-nerds/snippets] project.
 
@@ -7,8 +11,8 @@
 [package version badge]: https://img.shields.io/npm/v/@terminal-nerds/snippets-test/latest?style=for-the-badge&logo=npm
 [dependencies badge]: https://img.shields.io/librariesio/release/npm/@terminal-nerds/snippets-test?style=for-the-badge
 [dependencies url]: https://libraries.io/npm/@terminal-nerds%2snippets-test
-[size badge]: https://img.shields.io/bundlephobia/minzip/@terminal-nerds/snippets-test?style=for-the-badge&label=size
-[size url]: https://packagephobia.com/result?p=@terminal-nerds/snippets-test
+[install size badge]: https://packagephobia.com/badge?p=@terminal-nerds/snippets-test
+[install size url]: https://packagephobia.com/result?p=@terminal-nerds/snippets-test
 
 ## Modules included
 

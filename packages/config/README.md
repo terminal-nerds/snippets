@@ -1,8 +1,8 @@
 # @terminal-nerds/snippets-config
 
 ![package version badge]
-[![size badge]][size url]
-[![dependencies badge]][dependencies url]
+[![dependencies badge]][dependencies url]\
+[![install size badge]][install size url]
 
 ➡️ **This package wraps all available modules with snippets related to config**
 — part of the [terminal-nerds/snippets] project.
@@ -11,8 +11,8 @@
 [package version badge]: https://img.shields.io/npm/v/@terminal-nerds/snippets-config/latest?style=for-the-badge&logo=npm
 [dependencies badge]: https://img.shields.io/librariesio/release/npm/@terminal-nerds/snippets-config?style=for-the-badge
 [dependencies url]: https://libraries.io/npm/@terminal-nerds%2snippets-config
-[size badge]: https://img.shields.io/bundlephobia/minzip/@terminal-nerds/snippets-config?style=for-the-badge&label=size
-[size url]: https://packagephobia.com/result?p=@terminal-nerds/snippets-config
+[install size badge]: https://packagephobia.com/badge?p=@terminal-nerds/snippets-config
+[install size url]: https://packagephobia.com/result?p=@terminal-nerds/snippets-config
 
 ## Modules included
 
@@ -46,12 +46,10 @@
 ### Optional
 
 [![supported typescript version badge]][typescript]
-![types badge]
 
 [typescript]: https://typescriptlang.org/
 [typescript icon]: https://api.iconify.design/logos/typescript-icon.svg
 [supported typescript version badge]: https://img.shields.io/github/package-json/dependency-version/terminal-nerds/snippets/peer/typescript?filename=packages%2Ftypescript%2Fpackage.json&logo=typescript&style=for-the-badge&label=typescript
-[types badge]: https://img.shields.io/npm/types/@terminal-nerds/snippets-config?style=for-the-badge&logo=typescript
 
 If you are using ![typescript icon] [TypeScript],
 the latest version, which supports new features _(such as `satisfies`)_, is supported.

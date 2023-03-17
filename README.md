@@ -67,7 +67,7 @@ Reusable pieces of code, which can be **reused** across the projects.
 ## Packages
 
 ![workflow CI-CD badge]
-[![Dependencies badge]][dependencies url]
+[![dependencies badge]][dependencies url]
 
 [workflow ci-cd badge]: https://img.shields.io/github/actions/workflow/status/terminal-nerds/snippets/ci-cd.yml?label=CI%20%26%20CD&logo=github&style=for-the-badge&branch=main
 [dependencies badge]: https://img.shields.io/librariesio/github/terminal-nerds/snippets?style=for-the-badge
@@ -158,7 +158,7 @@ Reusable pieces of code, which can be **reused** across the projects.
 
 [type]: ./packages/type/README.md
 [type badge]: https://img.shields.io/static/v1?label=%40terminal-nerds&message=snippets-type&style=flat-square&color=informational
-[type version badge]: https://img.shields.io/npm/v/@terminal-nerds/snippets-type/latype?style=flat-square&logo=npm
+[type version badge]: https://img.shields.io/npm/v/@terminal-nerds/snippets-type/latest?style=flat-square&logo=npm
 [type npm page]: https://www.npmjs.com/package/@terminal-nerds/snippets-type
 <!-- prettier-ignore-end -->
 

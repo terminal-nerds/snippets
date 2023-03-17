@@ -1,8 +1,8 @@
 # @terminal-nerds/snippets
 
 ![package version badge]
-[![size badge]][size url]
-[![dependencies badge]][dependencies url]
+[![dependencies badge]][dependencies url]\
+[![install size badge]][install size url]
 
 ➡️ **This package wraps all available snippets packages in one** — part of the [terminal-nerds/snippets] project.
 
@@ -10,8 +10,8 @@
 [package version badge]: https://img.shields.io/npm/v/@terminal-nerds/snippets/latest?style=for-the-badge&logo=npm
 [dependencies badge]: https://img.shields.io/librariesio/release/npm/@terminal-nerds/snippets?style=for-the-badge
 [dependencies url]: https://libraries.io/npm/@terminal-nerds%2snippets
-[size badge]: https://img.shields.io/bundlephobia/minzip/@terminal-nerds/snippets?style=for-the-badge&label=size
-[size url]: https://packagephobia.com/result?p=@terminal-nerds/snippets
+[install size badge]: https://packagephobia.com/badge?p=@terminal-nerds/snippets
+[install size url]: https://packagephobia.com/result?p=@terminal-nerds/snippets
 
 ## Packages included
 
@@ -22,13 +22,15 @@
 
 | Name                            | Version                                          |
 | ------------------------------- | ------------------------------------------------ |
-| [![extension badge]][extension] | [![extension version badge]][extension npm page] |
+| [![config badge]][config]       | [![config version badge]][config npm page]       |
 | [![error badge]][error]         | [![error version badge]][error npm page]         |
+| [![extension badge]][extension] | [![extension version badge]][extension npm page] |
 | [![function badge]][function]   | [![function version badge]][function npm page]   |
 | [![regexp badge]][regexp]       | [![regexp version badge]][regexp npm page]       |
 | [![runtime badge]][runtime]     | [![runtime version badge]][runtime npm page]     |
 | [![string badge]][string]       | [![string version badge]][string npm page]       |
 | [![test badge]][test]           | [![test version badge]][test npm page]           |
+| [![type badge]][type]           | [![type version badge]][type npm page]           |
 
 <!-- prettier-ignore-start -->
 <!-- PACKAGES LINKS -->
@@ -37,15 +39,15 @@
 [config version badge]: https://img.shields.io/npm/v/@terminal-nerds/snippets-config/latest?style=flat-square&logo=npm
 [config npm page]: https://www.npmjs.com/package/@terminal-nerds/snippets-config
 
-[extension]: https://github.com/terminal-nerds/snippets/blob/main/packages/extension/README.md
-[extension badge]: https://img.shields.io/static/v1?label=%40terminal-nerds&message=snippets-extension&style=flat-square&color=informational
-[extension version badge]: https://img.shields.io/npm/v/@terminal-nerds/snippets-extension/latest?style=flat-square&logo=npm
-[extension npm page]: https://www.npmjs.com/package/@terminal-nerds/snippets-extension
-
 [error]: https://github.com/terminal-nerds/snippets/blob/main/packages/error/README.md
 [error badge]: https://img.shields.io/static/v1?label=%40terminal-nerds&message=snippets-error&style=flat-square&color=informational
 [error version badge]: https://img.shields.io/npm/v/@terminal-nerds/snippets-error/latest?style=flat-square&logo=npm
 [error npm page]: https://www.npmjs.com/package/@terminal-nerds/snippets-error
+
+[extension]: https://github.com/terminal-nerds/snippets/blob/main/packages/extension/README.md
+[extension badge]: https://img.shields.io/static/v1?label=%40terminal-nerds&message=snippets-extension&style=flat-square&color=informational
+[extension version badge]: https://img.shields.io/npm/v/@terminal-nerds/snippets-extension/latest?style=flat-square&logo=npm
+[extension npm page]: https://www.npmjs.com/package/@terminal-nerds/snippets-extension
 
 [function]: https://github.com/terminal-nerds/snippets/blob/main/packages/function/README.md
 [function badge]: https://img.shields.io/static/v1?label=%40terminal-nerds&message=snippets-function&style=flat-square&color=informational
@@ -71,6 +73,11 @@
 [test badge]: https://img.shields.io/static/v1?label=%40terminal-nerds&message=snippets-test&style=flat-square&color=informational
 [test version badge]: https://img.shields.io/npm/v/@terminal-nerds/snippets-test/latest?style=flat-square&logo=npm
 [test npm page]: https://www.npmjs.com/package/@terminal-nerds/snippets-test
+
+[type]: https://github.com/terminal-nerds/snippets/blob/main/packages/type/README.md
+[type badge]: https://img.shields.io/static/v1?label=%40terminal-nerds&message=snippets-type&style=flat-square&color=informational
+[type version badge]: https://img.shields.io/npm/v/@terminal-nerds/snippets-type/latest?style=flat-square&logo=npm
+[type npm page]: https://www.npmjs.com/package/@terminal-nerds/snippets-type
 <!-- prettier-ignore-end -->
 
 ---

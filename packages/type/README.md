@@ -1,8 +1,8 @@
 # @terminal-nerds/snippets-type
 
 ![package version badge]
-[![size badge]][size url]
-[![dependencies badge]][dependencies url]
+[![dependencies badge]][dependencies url]\
+[![install size badge]][install size url]
 
 ➡️ **This package wraps all available modules with snippets related to type**
 — part of the [terminal-nerds/snippets] project.
@@ -11,8 +11,8 @@
 [package version badge]: https://img.shields.io/npm/v/@terminal-nerds/snippets-type/latest?style=for-the-badge&logo=npm
 [dependencies badge]: https://img.shields.io/librariesio/release/npm/@terminal-nerds/snippets-type?style=for-the-badge
 [dependencies url]: https://libraries.io/npm/@terminal-nerds%2snippets-type
-[size badge]: https://img.shields.io/bundlephobia/minzip/@terminal-nerds/snippets-type?style=for-the-badge&label=size
-[size url]: https://packagephobia.com/result?p=@terminal-nerds/snippets-type
+[install size badge]: https://packagephobia.com/badge?p=@terminal-nerds/snippets-type
+[install size url]: https://packagephobia.com/result?p=@terminal-nerds/snippets-type
 
 ## Modules included
 
