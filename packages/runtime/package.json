@@ -57,7 +57,8 @@
 		"lint:js": "DEBUG=\"eslint:cli-engine\" eslint . --ext .cjs,.js,.ts,.json,.yml --cache --cache-location \"./node_modules/.cache/eslint\"",
 		"lint:md": "markdownlint . --config \"../../.markdownlint.json\" --dot --ignore \"./LICENSE.md\" --ignore-path \"../../.gitignore\"",
 		"lint:pkg": "syncpack list-mismatches",
-		"lint:types": "tsc --noEmit"
+		"lint:types": "tsc --noEmit",
+		"test:unit": "vitest run --dir \"./source\""
 	},
 	"peerDependencies": {
 		"typescript": "4.9.5"
