@@ -10,7 +10,7 @@ importers:
       '@terminal-nerds/browserslist-config': 0.1.2
       '@terminal-nerds/eslint-config': 0.15.0
       '@terminal-nerds/lint-staged-config': 0.2.0
-      '@terminal-nerds/markdownlint-config': 0.6.0
+      '@terminal-nerds/markdownlint-config': 0.7.0
       '@terminal-nerds/prettier-config': 0.7.0
       '@terminal-nerds/syncpack-config': 0.4.0
       '@terminal-nerds/tsup-config': 0.1.1
@@ -49,7 +49,7 @@ importers:
       '@terminal-nerds/browserslist-config': 0.1.2_browserslist@4.21.5
       '@terminal-nerds/eslint-config': 0.15.0_4vsywjlpuriuw3tl5oq6zy5a64
       '@terminal-nerds/lint-staged-config': 0.2.0_lint-staged@13.1.0
-      '@terminal-nerds/markdownlint-config': 0.6.0_markdownlint-cli@0.33.0
+      '@terminal-nerds/markdownlint-config': 0.7.0_markdownlint-cli@0.33.0
       '@terminal-nerds/prettier-config': 0.7.0_prettier@2.8.3
       '@terminal-nerds/syncpack-config': 0.4.0_syncpack@8.4.11
       '@terminal-nerds/tsup-config': 0.1.1_tsup@6.5.0
@@ -1289,8 +1289,8 @@ packages:
       lint-staged: 13.1.0
     dev: true
 
-  /@terminal-nerds/markdownlint-config/0.6.0_markdownlint-cli@0.33.0:
-    resolution: {integrity: sha512-VbbnW9AhfXzR8pfQUdRgBEqC974qd7wVaYuARGhbyXgugKr8rddJ8UoE8zl18X9dgxNxDztcYmv8qgNedZ9d1A==}
+  /@terminal-nerds/markdownlint-config/0.7.0_markdownlint-cli@0.33.0:
+    resolution: {integrity: sha512-j0i+9JKmrLg3w8fX3I16ERpbLRCveixbHkU1kJEfZ/w1rbOyYX+3xIFHs3JbhjA6YVG1cHEgHk7A9wSLVS7pBQ==}
     engines: {node: '>=18'}
     peerDependencies:
       markdownlint-cli: 0.33.0
