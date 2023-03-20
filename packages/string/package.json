@@ -9,12 +9,12 @@
 		"typescript",
 		"string"
 	],
-	"license": "MIT",
 	"author": {
 		"name": "Mateusz Kadlubowski",
 		"email": "xeho91@pm.me",
 		"url": "https://xeho91.com"
 	},
+	"license": "MIT",
 	"homepage": "https://github.com/terminal-nerds/snippets",
 	"repository": {
 		"type": "git",
@@ -38,14 +38,32 @@
 	"files": [
 		"dist/"
 	],
+	"dependencies": {
+		"@terminal-nerds/snippets-regexp": "workspace:*",
+		"@terminal-nerds/snippets-type": "workspace:*",
+		"case-anything": "2.1.10",
+		"type-fest": "3.6.1",
+		"zod": "3.21.4"
+	},
+	"peerDependencies": {
+		"typescript": "5.0.2"
+	},
+	"peerDependenciesMeta": {
+		"typescript": {
+			"optional": true
+		}
+	},
+	"devDependencies": {
+		"@terminal-nerds/snippets-test": "workspace:*"
+	},
 	"scripts": {
 		"build": "tsup",
 		"clean": "concurrently \"pnpm:clean:*\" --group --timings",
 		"clean:build": "del \"./dist\"",
 		"clean:cache": "del \"./node_modules/.cache\"",
 		"clean:test": "del \"./coverage\"",
-		"dev:test": "vitest watch --ui",
 		"dev:pkg": "tsup --watch",
+		"dev:test": "vitest watch --ui",
 		"fix": "concurrently \"pnpm:fix:*\" --group --timings",
 		"fix:format": "pretty-quick --branch main --pattern \"packages/string/**/*\" --verbose",
 		"fix:js": "pnpm lint:js --fix",
@@ -59,23 +77,5 @@
 		"lint:pkg": "syncpack list-mismatches",
 		"lint:types": "tsc --noEmit",
 		"test:unit": "vitest run --dir \"./source\""
-	},
-	"peerDependencies": {
-		"typescript": "4.9.5"
-	},
-	"dependencies": {
-		"@terminal-nerds/snippets-regexp": "workspace:*",
-		"@terminal-nerds/snippets-type": "workspace:*",
-		"case-anything": "2.1.10",
-		"type-fest": "3.6.1",
-		"zod": "3.21.4"
-	},
-	"peerDependenciesMeta": {
-		"typescript": {
-			"optional": true
-		}
-	},
-	"devDependencies": {
-		"@terminal-nerds/snippets-test": "workspace:*"
 	}
 }
