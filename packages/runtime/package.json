@@ -38,14 +38,35 @@
 	"files": [
 		"dist/"
 	],
+	"dependencies": {
+		"@terminal-nerds/snippets-error": "workspace:*",
+		"local-pkg": "^0.4.3",
+		"read-pkg-up": "^9.1.0",
+		"type-fest": "3.6.1",
+		"zod": "3.21.4"
+	},
+	"peerDependencies": {
+		"typescript": "5.0.2"
+	},
+	"peerDependenciesMeta": {
+		"typescript": {
+			"optional": true
+		}
+	},
+	"devDependencies": {
+		"@edge-runtime/vm": "2.1.2",
+		"@terminal-nerds/snippets-test": "workspace:*",
+		"happy-dom": "8.9.0",
+		"jsdom": "21.1.0"
+	},
 	"scripts": {
 		"build": "tsup",
 		"clean": "concurrently \"pnpm:clean:*\" --group --timings",
 		"clean:build": "del \"./dist\"",
 		"clean:cache": "del \"./node_modules/.cache\"",
 		"clean:test": "del \"./coverage\"",
-		"dev:test": "vitest watch --ui",
 		"dev:pkg": "tsup --watch",
+		"dev:test": "vitest watch --ui",
 		"fix": "concurrently \"pnpm:fix:*\" --group --timings",
 		"fix:format": "pretty-quick --branch main --pattern \"packages/runtime/**/*\" --verbose",
 		"fix:js": "pnpm lint:js --fix",
@@ -59,26 +80,5 @@
 		"lint:pkg": "syncpack list-mismatches",
 		"lint:types": "tsc --noEmit",
 		"test:unit": "vitest run --dir \"./source\""
-	},
-	"peerDependencies": {
-		"typescript": "4.9.5"
-	},
-	"dependencies": {
-		"@terminal-nerds/snippets-error": "workspace:*",
-		"local-pkg": "^0.4.3",
-		"read-pkg-up": "^9.1.0",
-		"type-fest": "3.6.1",
-		"zod": "3.21.4"
-	},
-	"peerDependenciesMeta": {
-		"typescript": {
-			"optional": true
-		}
-	},
-	"devDependencies": {
-		"@edge-runtime/vm": "2.1.2",
-		"@terminal-nerds/snippets-test": "workspace:*",
-		"happy-dom": "8.9.0",
-		"jsdom": "21.1.0"
 	}
 }

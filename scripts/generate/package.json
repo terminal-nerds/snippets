@@ -7,6 +7,22 @@
 	"engines": {
 		"node": ">=18"
 	},
+	"dependencies": {
+		"@terminal-nerds/snippets-string": "workspace:*",
+		"inquirer": "9.1.4",
+		"inquirer-autocomplete-prompt": "3.0.0",
+		"minimist": "1.2.8",
+		"node-plop": "0.31.1",
+		"plop": "3.1.2",
+		"which": "3.0.0",
+		"zod": "3.21.4"
+	},
+	"devDependencies": {
+		"@types/inquirer": "9.0.3",
+		"@types/inquirer-autocomplete-prompt": "3.0.0",
+		"@types/minimist": "1.2.2",
+		"@types/which": "2.0.2"
+	},
 	"scripts": {
 		"clean": "concurrently \"pnpm:clean:*\" --group --timings",
 		"clean:cache": "del \"./node_modules/.cache\"",
@@ -23,22 +39,6 @@
 		"lint:md": "markdownlint . --config \"../../.markdownlint.json\" --dot --ignore \"./LICENSE.md\" --ignore-path \"../../.gitignore\"",
 		"lint:pkg": "syncpack list-mismatches",
 		"lint:types": "tsc --noEmit"
-	},
-	"dependencies": {
-		"@terminal-nerds/snippets-string": "workspace:*",
-		"inquirer": "9.1.4",
-		"inquirer-autocomplete-prompt": "3.0.0",
-		"minimist": "1.2.8",
-		"node-plop": "0.31.1",
-		"plop": "3.1.2",
-		"which": "3.0.0",
-		"zod": "^3.20.6"
-	},
-	"devDependencies": {
-		"@types/inquirer": "9.0.3",
-		"@types/inquirer-autocomplete-prompt": "3.0.0",
-		"@types/minimist": "1.2.2",
-		"@types/which": "2.0.2"
 	},
 	"bin": {
 		"generate": "./source/cli.ts"

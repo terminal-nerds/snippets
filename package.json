@@ -11,31 +11,12 @@
 		"node": ">=18"
 	},
 	"packageManager": "pnpm@7.29.3",
-	"scripts": {
-		"build:pkgs": "turbo run build --api=$TURBO_API",
-		"changelog": "pnpm changeset add",
-		"clean": "concurrently \"pnpm:clean:*\" --group --timings",
-		"clean:cache": "del \"./node_modules/.cache\"",
-		"clean:test": "del \"./coverage\"",
-		"dev:pkgs": "turbo run dev:pkg",
-		"dev:test": "vitest watch --dir \"./packages\" --ui",
-		"fix": "concurrently \"pnpm:fix:*\" --group --timings",
-		"fix:format": "pretty-quick --branch main --pattern \"**/*\" --verbose",
-		"fix:js": "pnpm lint:js --fix",
-		"fix:md": "pnpm lint:md --fix",
-		"fix:pkgs": "syncpack format ; syncpack fix-mismatches",
-		"generate": "generate",
-		"lint": "concurrently \"pnpm:lint:*\" --group --timings",
-		"lint:deps": "depcheck",
-		"lint:format": "pnpm fix:format --check",
-		"lint:js": "DEBUG=\"eslint:cli-engine\" eslint . --ext .cjs,.js,.ts,.json,.yml --cache --cache-location \"./node_modules/.cache/eslint\" --ignore-pattern \"/packages/\" --ignore-pattern \"/types/\"",
-		"lint:md": "markdownlint . --dot --ignore-path \"./.gitignore\" --ignore \"./packages/**/*\"",
-		"lint:pkgs": "syncpack list-mismatches",
-		"lint:staged": "lint-staged --verbose",
-		"prepare": "husky install",
-		"preinstall": "npx only-allow pnpm",
-		"supported": "browserslist",
-		"test:unit": "vitest run --dir \"./packages\""
+	"optionalDependencies": {
+		"concurrently": "7.6.0",
+		"del-cli": "5.0.0",
+		"husky": "8.0.3",
+		"lint-staged": "13.2.0",
+		"tsx": "3.12.5"
 	},
 	"devDependencies": {
 		"@changesets/changelog-github": "0.4.8",
@@ -65,11 +46,30 @@
 		"typescript": "5.0.2",
 		"vitest": "0.29.3"
 	},
-	"optionalDependencies": {
-		"concurrently": "7.6.0",
-		"del-cli": "5.0.0",
-		"husky": "8.0.3",
-		"lint-staged": "13.2.0",
-		"tsx": "3.12.5"
+	"scripts": {
+		"build:pkgs": "turbo run build --api=$TURBO_API",
+		"changelog": "pnpm changeset add",
+		"clean": "concurrently \"pnpm:clean:*\" --group --timings",
+		"clean:cache": "del \"./node_modules/.cache\"",
+		"clean:test": "del \"./coverage\"",
+		"dev:pkgs": "turbo run dev:pkg",
+		"dev:test": "vitest watch --dir \"./packages\" --ui",
+		"fix": "concurrently \"pnpm:fix:*\" --group --timings",
+		"fix:format": "pretty-quick --branch main --pattern \"**/*\" --verbose",
+		"fix:js": "pnpm lint:js --fix",
+		"fix:md": "pnpm lint:md --fix",
+		"fix:pkgs": "syncpack format ; syncpack fix-mismatches",
+		"generate": "generate",
+		"lint": "concurrently \"pnpm:lint:*\" --group --timings",
+		"lint:deps": "depcheck",
+		"lint:format": "pnpm fix:format --check",
+		"lint:js": "DEBUG=\"eslint:cli-engine\" eslint . --ext .cjs,.js,.ts,.json,.yml --cache --cache-location \"./node_modules/.cache/eslint\" --ignore-pattern \"/packages/\" --ignore-pattern \"/types/\"",
+		"lint:md": "markdownlint . --dot --ignore-path \"./.gitignore\" --ignore \"./packages/**/*\"",
+		"lint:pkgs": "syncpack list-mismatches",
+		"lint:staged": "lint-staged --verbose",
+		"preinstall": "npx only-allow pnpm",
+		"prepare": "husky install",
+		"supported": "browserslist",
+		"test:unit": "vitest run --dir \"./packages\""
 	}
 }

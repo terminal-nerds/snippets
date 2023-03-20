@@ -190,11 +190,11 @@ importers:
   packages/test:
     specifiers:
       '@terminal-nerds/snippets-type': workspace:*
-      zod: 3.20.6
+      zod: 3.21.4
     dependencies:
       '@terminal-nerds/snippets-type': link:../type
     devDependencies:
-      zod: 3.20.6
+      zod: 3.21.4
 
   packages/type:
     specifiers:
@@ -215,7 +215,7 @@ importers:
       node-plop: 0.31.1
       plop: 3.1.2
       which: 3.0.0
-      zod: ^3.20.6
+      zod: 3.21.4
     dependencies:
       '@terminal-nerds/snippets-string': link:../../packages/string
       inquirer: 9.1.4
@@ -224,7 +224,7 @@ importers:
       node-plop: 0.31.1
       plop: 3.1.2
       which: 3.0.0
-      zod: 3.20.6
+      zod: 3.21.4
     devDependencies:
       '@types/inquirer': 9.0.3
       '@types/inquirer-autocomplete-prompt': 3.0.0
@@ -8174,6 +8174,7 @@ packages:
 
   /zod/3.20.6:
     resolution: {integrity: sha512-oyu0m54SGCtzh6EClBVqDDlAYRz4jrVtKwQ7ZnsEmMI9HnzuZFj8QFwAY1M5uniIYACdGvv0PBWPF2kO0aNofA==}
+    dev: true
 
   /zod/3.21.4:
     resolution: {integrity: sha512-m46AKbrzKVzOzs/DZgVnG5H55N1sv1M8qZU3A8RIKbs3mrACDNeIOeilDymVb2HdmP8uwshOCF4uJ8uM9rCqJw==}
