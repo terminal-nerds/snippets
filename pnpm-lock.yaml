@@ -155,6 +155,7 @@ importers:
       '@terminal-nerds/snippets-config': workspace:*
       '@terminal-nerds/snippets-error': workspace:*
       '@terminal-nerds/snippets-extension': workspace:*
+      '@terminal-nerds/snippets-function': workspace:*
       '@terminal-nerds/snippets-regexp': workspace:*
       '@terminal-nerds/snippets-runtime': workspace:*
       '@terminal-nerds/snippets-string': workspace:*
@@ -164,6 +165,7 @@ importers:
       '@terminal-nerds/snippets-config': link:../config
       '@terminal-nerds/snippets-error': link:../error
       '@terminal-nerds/snippets-extension': link:../extension
+      '@terminal-nerds/snippets-function': link:../function
       '@terminal-nerds/snippets-regexp': link:../regexp
       '@terminal-nerds/snippets-runtime': link:../runtime
       '@terminal-nerds/snippets-string': link:../string
