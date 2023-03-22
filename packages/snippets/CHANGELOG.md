@@ -1,5 +1,26 @@
 # @terminal-nerds/snippets<!-- markdownlint-disable line-length list-marker-space no-duplicate-header ul-style ul-indent no-bare-urls -->
 
+## 0.1.0
+
+### Minor Changes
+
+-   [#47](https://github.com/terminal-nerds/snippets/pull/47) [`4de8834`](https://github.com/terminal-nerds/snippets/commit/4de8834d6b98d141c87085a01849715d82abc354) Thanks [@xeho91](https://github.com/xeho91)! - 🐛 Fix missing packages re-exports
+
+-   [#53](https://github.com/terminal-nerds/snippets/pull/53) [`7ba7377`](https://github.com/terminal-nerds/snippets/commit/7ba73779bb732b0f1bfe7a9d1c702514fb99a193) Thanks [@xeho91](https://github.com/xeho91)! - ⬆️ Upgrade `typescript` to `v5`
+
+### Patch Changes
+
+-   Updated dependencies [[`7ba7377`](https://github.com/terminal-nerds/snippets/commit/7ba73779bb732b0f1bfe7a9d1c702514fb99a193)]:
+    -   @terminal-nerds/snippets-extension@0.2.0
+    -   @terminal-nerds/snippets-function@0.2.0
+    -   @terminal-nerds/snippets-runtime@0.2.0
+    -   @terminal-nerds/snippets-config@0.2.0
+    -   @terminal-nerds/snippets-regexp@0.2.0
+    -   @terminal-nerds/snippets-string@0.2.0
+    -   @terminal-nerds/snippets-error@0.2.0
+    -   @terminal-nerds/snippets-test@0.2.0
+    -   @terminal-nerds/snippets-type@0.2.0
+
 ## 0.0.1
 
 ### Patch Changes
