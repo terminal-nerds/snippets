@@ -117,6 +117,12 @@ importers:
     devDependencies:
       '@terminal-nerds/snippets-test': link:../test
 
+  packages/number:
+    specifiers:
+      '@terminal-nerds/snippets-test': workspace:*
+    devDependencies:
+      '@terminal-nerds/snippets-test': link:../test
+
   packages/regexp:
     specifiers:
       magic-regexp: 0.6.3
@@ -154,6 +160,7 @@ importers:
       '@terminal-nerds/snippets-error': workspace:*
       '@terminal-nerds/snippets-extension': workspace:*
       '@terminal-nerds/snippets-function': workspace:*
+      '@terminal-nerds/snippets-number': workspace:*
       '@terminal-nerds/snippets-regexp': workspace:*
       '@terminal-nerds/snippets-runtime': workspace:*
       '@terminal-nerds/snippets-string': workspace:*
@@ -164,6 +171,7 @@ importers:
       '@terminal-nerds/snippets-error': link:../error
       '@terminal-nerds/snippets-extension': link:../extension
       '@terminal-nerds/snippets-function': link:../function
+      '@terminal-nerds/snippets-number': link:../number
       '@terminal-nerds/snippets-regexp': link:../regexp
       '@terminal-nerds/snippets-runtime': link:../runtime
       '@terminal-nerds/snippets-string': link:../string

@@ -34,6 +34,11 @@
 
 <!-- prettier-ignore-start -->
 <!-- PACKAGES LINKS -->
+[number]: https://github.com/terminal-nerds/snippets/blob/main/packages/number/README.md
+[number badge]: https://img.shields.io/static/v1?label=%40terminal-nerds&message=snippets-number&style=flat-square&color=informational
+[number version badge]: https://img.shields.io/npm/v/@terminal-nerds/snippets-number/latest?style=flat-square&logo=npm
+[number npm page]: https://www.npmjs.com/package/@terminal-nerds/snippets-number
+
 [config]: https://github.com/terminal-nerds/snippets/blob/main/packages/config/README.md
 [config badge]: https://img.shields.io/static/v1?label=%40terminal-nerds&message=snippets-config&style=flat-square&color=informational
 [config version badge]: https://img.shields.io/npm/v/@terminal-nerds/snippets-config/latest?style=flat-square&logo=npm
