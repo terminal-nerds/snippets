@@ -2,7 +2,7 @@
 	"$schema": "https://json.schemastore.org/package",
 	"type": "module",
 	"name": "@terminal-nerds/snippets-extension",
-	"version": "0.2.0",
+	"version": "0.3.0",
 	"description": "@terminal-nerds reusable snippets for extensions.",
 	"keywords": [
 		"snippets",
