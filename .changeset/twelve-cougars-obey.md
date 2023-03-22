@@ -2,4 +2,4 @@
 "@terminal-nerds/snippets-runtime": minor
 ---
 
-✨ Add `inStorybook()`
+✨ Add `isIn()`
