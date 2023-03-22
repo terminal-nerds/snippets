@@ -1,52 +1,39 @@
-import { z } from "zod";
-
 import { IN_BROWSER } from "../environment/environment.ts";
 import { RuntimeError } from "../error/error.ts";
 import { getEnvironmentVariable } from "../variable/variable.ts";
+import { CI_CD_ENVIRONMENT_VARIABLES } from "./groups/continuous-integration.ts";
+import { STORYBOOK_ENVIRONMENT_VARIABLES } from "./groups/storybook.ts";
+import { TEST_ENVIRONMENT_VARIABLES } from "./groups/test.ts";
+import type { ScopeOptions } from "./shared.ts";
 
-export const CI_CD_ENVIRONMENT_VARIABLES = ["CI", "CONTINUOUS_INTEGRATION"] as const;
-export type CICDEnvironmentVariable = (typeof CI_CD_ENVIRONMENT_VARIABLES)[number];
-export const CI_CD_ENVIRONMENT_VARIABLE_SCHEMA = z.enum(CI_CD_ENVIRONMENT_VARIABLES);
+export * from "./groups/continuous-integration.ts";
+export * from "./groups/node.ts";
+export * from "./groups/storybook.ts";
+export * from "./groups/test.ts";
 
-export const TEST_ENVIRONMENT_VARIABLES = ["JEST", "VITEST"] as const;
-export type TestEnvironmentVariable = (typeof TEST_ENVIRONMENT_VARIABLES)[number];
-export const TEST_ENVIRONMENT_VARIABLE_SCHEMA = z.enum(TEST_ENVIRONMENT_VARIABLES);
+export const SCOPE_NAMES = ["continuousIntegration", "storybook", "test"] as const;
+export type ScopeName = (typeof SCOPE_NAMES)[number];
+export const SCOPE_VARIABLES = {
+	continuousIntegration: CI_CD_ENVIRONMENT_VARIABLES,
+	storybook: STORYBOOK_ENVIRONMENT_VARIABLES,
+	test: TEST_ENVIRONMENT_VARIABLES,
+} as const;
 
-interface ScopeOptions {
-	/**
-	 * Checks if it's being run in the JavaScript environment where continuous integration can be run.
-	 *
-	 * @defaultValue `false`
-	 */
-	strict?: boolean;
-}
-
-export function inContinuousIntegration(options: ScopeOptions = {}): boolean {
+export function isIn(scopeName: ScopeName, options: ScopeOptions = {}): boolean {
 	const { strict = false } = options;
 
-	if (IN_BROWSER) {
-		if (strict) throw new RuntimeError(`CI & CD cannot be run in browsers.`);
-		else return false;
-	} else {
-		for (const variable of CI_CD_ENVIRONMENT_VARIABLES) {
-			if (getEnvironmentVariable(variable)) return true;
-		}
-
-		return false;
-	}
+	return IN_BROWSER ? handleBrowserRuntime(strict) : isAnyVariableDefined(SCOPE_VARIABLES[scopeName]);
 }
 
-export function inTest(options: ScopeOptions = {}): boolean {
-	const { strict = false } = options;
+function handleBrowserRuntime(strict: boolean): boolean {
+	if (strict) throw new RuntimeError(`You cannot use this snippet in the browser.`);
+	else return false;
+}
 
-	if (IN_BROWSER) {
-		if (strict) throw new RuntimeError(`Test frameworks cannot be run in browsers.`);
-		else return false;
-	} else {
-		for (const variable of TEST_ENVIRONMENT_VARIABLES) {
-			if (getEnvironmentVariable(variable)) return true;
-		}
-
-		return false;
+function isAnyVariableDefined(names: readonly string[]): boolean {
+	for (const variable of names) {
+		if (getEnvironmentVariable(variable)) return true;
 	}
+
+	return false;
 }

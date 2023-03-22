@@ -31,7 +31,7 @@ export function getEnvironmentVariables() {
 
 const toMap = (v: Record<string, string | undefined>) => new Map<string, string | undefined>(Object.entries(v));
 
-interface EnvironmentVariableOptions {
+export interface EnvironmentVariableOptions {
 	/**
 	 * Strict checking. Will throw error if the variable name is non-existent.
 	 *
@@ -40,32 +40,42 @@ interface EnvironmentVariableOptions {
 	strict?: boolean;
 }
 
+/** Possible value types of the environment variable */
+export type EnvironmentVariableValue = boolean | number | string;
+
 export function hasEnvironmentVariable(variable: string): boolean {
 	return toMap(getEnvironmentVariables()).has(variable);
 }
 
+/* prettier-ignore */
+export function getEnvironmentVariable( variable: string, options?: { strict?: false }): EnvironmentVariableValue | undefined;
+export function getEnvironmentVariable(variable: string, options: { strict: true }): EnvironmentVariableValue;
 export function getEnvironmentVariable(
 	variable: string,
 	options: EnvironmentVariableOptions = {},
-): boolean | number | string | undefined {
+): EnvironmentVariableValue | undefined {
 	const { strict = false } = options;
 
-	const environmentVariable = toMap(getEnvironmentVariables()).get(variable);
+	const value = toMap(getEnvironmentVariables()).get(variable);
 
-	if (environmentVariable) {
-		if (environmentVariable === "true") return true;
-		else if (environmentVariable === "false") return false;
-		else {
-			const asNumber = Number(environmentVariable);
-
-			return Number.isNaN(asNumber) ? environmentVariable : asNumber;
-		}
+	if (value) {
+		return parseEnvironmentVariableValue(value);
 	} else if (strict) {
 		throw new RuntimeError(`The environment variable - "${variable}" - is not set. Getter aborted.`);
 	}
 }
 
-export function setEnvironmentVariable(name: string, value: string | number | boolean): void {
+function parseEnvironmentVariableValue(value: EnvironmentVariableValue) {
+	if (value === "true") return true;
+	else if (value === "false") return false;
+	else {
+		const asNumber = Number(value);
+
+		return Number.isNaN(asNumber) ? value : asNumber;
+	}
+}
+
+export function setEnvironmentVariable(name: string, value: EnvironmentVariableValue): void {
 	switch (getSupportedRuntime()) {
 		case "bun": {
 			Bun.env[name] = String(value);
