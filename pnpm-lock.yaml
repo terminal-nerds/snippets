@@ -8,12 +8,12 @@ importers:
       '@changesets/cli': 2.26.0
       '@scripts/generate': workspace:*
       '@terminal-nerds/browserslist-config': 0.2.0
-      '@terminal-nerds/eslint-config': 0.18.0
-      '@terminal-nerds/lint-staged-config': 0.3.0
+      '@terminal-nerds/eslint-config': 0.19.0
+      '@terminal-nerds/lint-staged-config': 0.4.0
       '@terminal-nerds/markdownlint-config': 0.7.0
       '@terminal-nerds/prettier-config': 0.8.0
       '@terminal-nerds/syncpack-config': 0.5.0
-      '@terminal-nerds/tsup-config': 0.2.0
+      '@terminal-nerds/tsup-config': 0.3.0
       '@terminal-nerds/typescript-config': 0.6.0
       '@terminal-nerds/vitest-config': 0.6.0
       '@total-typescript/ts-reset': 0.4.2
@@ -46,12 +46,12 @@ importers:
       '@changesets/cli': 2.26.0
       '@scripts/generate': link:scripts/generate
       '@terminal-nerds/browserslist-config': 0.2.0_browserslist@4.21.5
-      '@terminal-nerds/eslint-config': 0.18.0_j4766f7ecgqbon3u7zlxn5zszu
-      '@terminal-nerds/lint-staged-config': 0.3.0_uemmommajrempsjc6ynwy4nsze
+      '@terminal-nerds/eslint-config': 0.19.0_j4766f7ecgqbon3u7zlxn5zszu
+      '@terminal-nerds/lint-staged-config': 0.4.0_uemmommajrempsjc6ynwy4nsze
       '@terminal-nerds/markdownlint-config': 0.7.0_markdownlint-cli@0.33.0
       '@terminal-nerds/prettier-config': 0.8.0_tcllvk4eo3otqqvuorc2duftpy
       '@terminal-nerds/syncpack-config': 0.5.0_syncpack@9.8.4
-      '@terminal-nerds/tsup-config': 0.2.0_tsup@6.7.0
+      '@terminal-nerds/tsup-config': 0.3.0_tsup@6.7.0
       '@terminal-nerds/typescript-config': 0.6.0_typescript@5.0.2
       '@terminal-nerds/vitest-config': 0.6.0_4q72obb6mbi3qioley4wecz46e
       '@total-typescript/ts-reset': 0.4.2
@@ -918,8 +918,8 @@ packages:
     resolution: {integrity: sha512-n2RC9d6XatVbWFdHLimzzUJxJ1KY8LdjqrW6YvGPiRmsHkhOUx74/Ct10x5Yo7bC/Jvqx7cDEW8IMPv/+vwEzA==}
     dev: true
 
-  /@mdn/browser-compat-data/5.2.43:
-    resolution: {integrity: sha512-J/hkYAUdvmnN1uk7W2UkwyIFEDbM2HK+rqqZpOKxUn9paJ8yzbUrtCv0dAA+mmCoy6U2bBewRq5bENx+M2YVlA==}
+  /@mdn/browser-compat-data/5.2.44:
+    resolution: {integrity: sha512-UMynPbyNsh6ltKeks3C5Xim8XTecUZYyCaZ00RArugtpqEDsmh9XU+bLwzhYRetG2Tugjzo7K3YCmByhBOWE5w==}
     dev: true
 
   /@microsoft/tsdoc-config/0.16.2:
@@ -1004,8 +1004,8 @@ packages:
     engines: {node: '>=18'}
     dev: true
 
-  /@terminal-nerds/eslint-config/0.18.0_j4766f7ecgqbon3u7zlxn5zszu:
-    resolution: {integrity: sha512-gW0gUHOymCiQkQ2Si3vdlKFysSoLSLvriZrwyXVZuUVr4IgXRNfqyC0A1CPAL7LFZP0RMM9PR2W/I4qabma5rg==}
+  /@terminal-nerds/eslint-config/0.19.0_j4766f7ecgqbon3u7zlxn5zszu:
+    resolution: {integrity: sha512-d5fCuMBpkvWarTvi+CKHltJRa0tYi6EQSitwBYnDxrJtD80qgTuOmzZgpaG7m7XEI3zbyOJHYHk+lnlU0bF1ng==}
     engines: {node: '>=18'}
     peerDependencies:
       eslint: 8.36.0
@@ -1028,7 +1028,7 @@ packages:
       eslint: 8.36.0
       eslint-config-next: 13.2.4_j4766f7ecgqbon3u7zlxn5zszu
       eslint-config-prettier: 8.7.0_eslint@8.36.0
-      eslint-define-config: 1.16.0
+      eslint-define-config: 1.17.0
       eslint-plugin-compat: 4.1.2_eslint@8.36.0
       eslint-plugin-diff: 2.0.1_eslint@8.36.0
       eslint-plugin-es-x: 6.0.0_eslint@8.36.0
@@ -1036,7 +1036,7 @@ packages:
       eslint-plugin-jest: 27.2.1_6ijeciauhuaefmxnwfqfqlk4ki
       eslint-plugin-jest-dom: 4.0.3_eslint@8.36.0
       eslint-plugin-jest-formatting: 3.1.0_eslint@8.36.0
-      eslint-plugin-jsdoc: 40.0.3_eslint@8.36.0
+      eslint-plugin-jsdoc: 40.1.0_eslint@8.36.0
       eslint-plugin-json-schema-validator: 4.2.0_eslint@8.36.0
       eslint-plugin-jsonc: 2.7.0_eslint@8.36.0
       eslint-plugin-jsx-a11y: 6.7.1_eslint@8.36.0
@@ -1066,8 +1066,8 @@ packages:
       - typescript
     dev: true
 
-  /@terminal-nerds/lint-staged-config/0.3.0_uemmommajrempsjc6ynwy4nsze:
-    resolution: {integrity: sha512-gJ92rQMXhRWYon3HOMeAcmDZkhU+8uwfn7+hkaODCwZcHapnlOG8SX+TW3PnuoPrEzB9Bdauhb/gywCsHbYVrA==}
+  /@terminal-nerds/lint-staged-config/0.4.0_uemmommajrempsjc6ynwy4nsze:
+    resolution: {integrity: sha512-ex8MmbPqVyjS5LEym51QyBnwx/P+SOu+rfsgM9vdpldAoI7HzPHJsMSaPV4IAnCE09TJE9deiRU6haE+4zRduA==}
     engines: {node: '>=18'}
     peerDependencies:
       lint-staged: 13.2.0
@@ -1194,11 +1194,11 @@ packages:
       syncpack: 9.8.4
     dev: true
 
-  /@terminal-nerds/tsup-config/0.2.0_tsup@6.7.0:
-    resolution: {integrity: sha512-h/g5ztXPV93EYEM7aRQvZemuV13I5OF0lVM3iWRUJ7FhWWWpyo9pUQGA26Hma+p59wRvME2Cptjbcye9Rs0xjA==}
+  /@terminal-nerds/tsup-config/0.3.0_tsup@6.7.0:
+    resolution: {integrity: sha512-/CzTvl+hi6oKQiRdVelNLFaOeDYy8GH10Cm7GQhhdw1gU199UHpLMfTo4SXw7A+zkHEPp8HeadgWcCiDUGW79w==}
     engines: {node: '>=18'}
     peerDependencies:
-      tsup: 6.6.3
+      tsup: 6.7.0
     dependencies:
       tsup: 6.7.0_typescript@5.0.2
     dev: true
@@ -3002,8 +3002,8 @@ packages:
       eslint: 8.36.0
     dev: true
 
-  /eslint-define-config/1.16.0:
-    resolution: {integrity: sha512-0gMi2IIDVDNAcy0nDaRss41cBTRMFFAp83WBcGIPi5S7uMOLhNmvbSPozvOoUxv5dIRuGV6E6l+HUnEoFyEbFg==}
+  /eslint-define-config/1.17.0:
+    resolution: {integrity: sha512-J1sweMoWsLcokaiAlfOCC4yMoHbvC/kDAxorm5TkUcD74w+kauMIyjKLM3dOadNxVKOjDiYN1Tu2x9N+4EUuuQ==}
     engines: {node: ^14.17.0 || ^16.13.0 || >=18.0.0, npm: '>=6.14.13', pnpm: '>= 7.0.0'}
     dev: true
 
@@ -3102,7 +3102,7 @@ packages:
     peerDependencies:
       eslint: ^4.0.0 || ^5.0.0 || ^6.0.0 || ^7.0.0 || ^8.0.0
     dependencies:
-      '@mdn/browser-compat-data': 5.2.43
+      '@mdn/browser-compat-data': 5.2.44
       ast-metadata-inferer: 0.7.0
       browserslist: 4.21.5
       caniuse-lite: 1.0.30001469
@@ -3251,8 +3251,8 @@ packages:
       - typescript
     dev: true
 
-  /eslint-plugin-jsdoc/40.0.3_eslint@8.36.0:
-    resolution: {integrity: sha512-4QXkuo4yVFJWsZIvdgFMBs6ZWVGDBZGO06kcgM060/96G8+6Fr7JZWy+Wg0I1C0+qxxfpB+aIepdE29vYxX2kA==}
+  /eslint-plugin-jsdoc/40.1.0_eslint@8.36.0:
+    resolution: {integrity: sha512-ANvrhiu62VlSorARM0hup60VQsS3hNyp0Ca7cnJDj8tpJzM7tNhBVqMVYXSuLzEmqrpwx6aAh+NAN2DdAGG5fQ==}
     engines: {node: ^14 || ^16 || ^17 || ^18 || ^19}
     peerDependencies:
       eslint: ^7.0.0 || ^8.0.0
@@ -3503,7 +3503,7 @@ packages:
     peerDependencies:
       typescript: ^3.9.7 || ^4.0.0 || ^5.0.0
     dependencies:
-      '@mdn/browser-compat-data': 5.2.43
+      '@mdn/browser-compat-data': 5.2.44
       '@typescript-eslint/experimental-utils': 5.56.0_j4766f7ecgqbon3u7zlxn5zszu
       browserslist: 4.21.5
       semver: 7.3.8
@@ -4960,7 +4960,7 @@ packages:
   /jsonfile/4.0.0:
     resolution: {integrity: sha512-m6F1R3z8jjlf2imQHS2Qez5sjKWQzbuuhuJ/FKYFRZvPE3PuHcSMVZzfsLhGVOkfd20obL5SWEBew5ShlquNxg==}
     optionalDependencies:
-      graceful-fs: 4.2.11
+      graceful-fs: 4.2.10
     dev: true
 
   /jsonfile/6.1.0:

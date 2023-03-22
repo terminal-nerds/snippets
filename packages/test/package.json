@@ -28,15 +28,18 @@
 	"exports": {
 		".": {
 			"types": "./dist/main.d.ts",
-			"import": "./dist/main.js"
+			"import": "./dist/main.js",
+			"require": "./dist/main.cjs"
 		},
 		"./*": {
 			"types": "./dist/*/*.d.ts",
-			"import": "./dist/*/*.js"
+			"import": "./dist/*/*.js",
+			"require": "./dist/*/*.cjs"
 		},
 		"./sample/*": {
 			"types": "./dist/sample/groups/*.d.ts",
-			"import": "./dist/sample/groups/*.js"
+			"import": "./dist/sample/groups/*.js",
+			"require": "./dist/sample/groups/*.cjs"
 		}
 	},
 	"files": [

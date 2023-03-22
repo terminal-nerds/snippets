@@ -28,11 +28,13 @@
 	"exports": {
 		".": {
 			"types": "./dist/main.d.ts",
-			"import": "./dist/main.js"
+			"import": "./dist/main.js",
+			"require": "./dist/main.cjs",
 		},
 		"./*": {
 			"types": "./dist/*/*.d.ts",
-			"import": "./dist/*/*.js"
+			"import": "./dist/*/*.js",
+			"require": "./dist/main.cjs"
 		}
 	},
 	"files": [
