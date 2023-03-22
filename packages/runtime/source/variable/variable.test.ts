@@ -43,13 +43,13 @@ describe(`hasEnvironmentVariable(name)`, () => {
 });
 
 describe(`getEnvironmentVariable(name, options?)`, () => {
-	const strictOptions = { strict: true };
+	const strictOptions = { strict: true } as const;
 
 	it(throws(RuntimeError).on(`non-existing variable`).sample(NEW_VARIABLE).with(strictOptions), () => {
 		expect(() => getEnvironmentVariable(NEW_VARIABLE, strictOptions)).toThrow(RuntimeError);
 	});
 
-	const nonStrictOptions = { strict: false };
+	const nonStrictOptions = { strict: false } as const;
 
 	it(returns().on(`non-existing variable`).sample(NEW_VARIABLE).with(nonStrictOptions), () => {
 		expect(getEnvironmentVariable(NEW_VARIABLE, nonStrictOptions)).toBeUndefined();

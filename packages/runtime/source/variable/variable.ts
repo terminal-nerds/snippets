@@ -31,7 +31,7 @@ export function getEnvironmentVariables() {
 
 const toMap = (v: Record<string, string | undefined>) => new Map<string, string | undefined>(Object.entries(v));
 
-interface EnvironmentVariableOptions {
+export interface EnvironmentVariableOptions {
 	/**
 	 * Strict checking. Will throw error if the variable name is non-existent.
 	 *
@@ -40,14 +40,20 @@ interface EnvironmentVariableOptions {
 	strict?: boolean;
 }
 
+/** Possible value types of the environment variable */
+export type EnvironmentVariableValue = boolean | number | string;
+
 export function hasEnvironmentVariable(variable: string): boolean {
 	return toMap(getEnvironmentVariables()).has(variable);
 }
 
+/* prettier-ignore */
+export function getEnvironmentVariable( variable: string, options?: { strict?: false }): EnvironmentVariableValue | undefined;
+export function getEnvironmentVariable(variable: string, options: { strict: true }): EnvironmentVariableValue;
 export function getEnvironmentVariable(
 	variable: string,
 	options: EnvironmentVariableOptions = {},
-): boolean | number | string | undefined {
+): EnvironmentVariableValue | undefined {
 	const { strict = false } = options;
 
 	const environmentVariable = toMap(getEnvironmentVariables()).get(variable);
@@ -65,7 +71,7 @@ export function getEnvironmentVariable(
 	}
 }
 
-export function setEnvironmentVariable(name: string, value: string | number | boolean): void {
+export function setEnvironmentVariable(name: string, value: EnvironmentVariableValue): void {
 	switch (getSupportedRuntime()) {
 		case "bun": {
 			Bun.env[name] = String(value);

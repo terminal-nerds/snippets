@@ -1,52 +1,35 @@
-import { z } from "zod";
-
-import { IN_BROWSER } from "../environment/environment.ts";
+import { IN_NODE } from "../environment/environment.ts";
 import { RuntimeError } from "../error/error.ts";
 import { getEnvironmentVariable } from "../variable/variable.ts";
+import type { ScopeOptions } from "./shared.ts";
 
-export const CI_CD_ENVIRONMENT_VARIABLES = ["CI", "CONTINUOUS_INTEGRATION"] as const;
-export type CICDEnvironmentVariable = (typeof CI_CD_ENVIRONMENT_VARIABLES)[number];
-export const CI_CD_ENVIRONMENT_VARIABLE_SCHEMA = z.enum(CI_CD_ENVIRONMENT_VARIABLES);
+export * from "./groups/continuous-integration.ts";
+export * from "./groups/storybook.ts";
+export * from "./groups/test.ts";
 
-export const TEST_ENVIRONMENT_VARIABLES = ["JEST", "VITEST"] as const;
-export type TestEnvironmentVariable = (typeof TEST_ENVIRONMENT_VARIABLES)[number];
-export const TEST_ENVIRONMENT_VARIABLE_SCHEMA = z.enum(TEST_ENVIRONMENT_VARIABLES);
-
-interface ScopeOptions {
-	/**
-	 * Checks if it's being run in the JavaScript environment where continuous integration can be run.
-	 *
-	 * @defaultValue `false`
-	 */
-	strict?: boolean;
+export function inDevelopment(options: ScopeOptions = {}): boolean {
+	return isNodeEnvironment("development", options);
 }
 
-export function inContinuousIntegration(options: ScopeOptions = {}): boolean {
-	const { strict = false } = options;
-
-	if (IN_BROWSER) {
-		if (strict) throw new RuntimeError(`CI & CD cannot be run in browsers.`);
-		else return false;
-	} else {
-		for (const variable of CI_CD_ENVIRONMENT_VARIABLES) {
-			if (getEnvironmentVariable(variable)) return true;
-		}
-
-		return false;
-	}
+export function inProduction(options: ScopeOptions = {}): boolean {
+	return isNodeEnvironment("production", options);
 }
 
-export function inTest(options: ScopeOptions = {}): boolean {
+export type NodeEnvironment = "development" | "production";
+
+function isNodeEnvironment(value: NodeEnvironment, options: ScopeOptions = {}): boolean {
 	const { strict = false } = options;
 
-	if (IN_BROWSER) {
-		if (strict) throw new RuntimeError(`Test frameworks cannot be run in browsers.`);
-		else return false;
-	} else {
-		for (const variable of TEST_ENVIRONMENT_VARIABLES) {
-			if (getEnvironmentVariable(variable)) return true;
-		}
+	if (IN_NODE) {
+		const variable = getEnvironmentVariable("NODE_ENV");
 
-		return false;
+		if (variable) {
+			return variable === value;
+		} else {
+			throw new RuntimeError(`The environment variable "NODE_ENV" is not set!`);
+		}
+	} else {
+		if (strict) throw new RuntimeError(`Currently you can check only inside the Node.js runtime environment.`);
+		else return false;
 	}
 }
