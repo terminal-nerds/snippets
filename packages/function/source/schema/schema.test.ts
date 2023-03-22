@@ -23,7 +23,7 @@ import {
 	isGeneratorFunction,
 	isSimpleFunction,
 	validateFunction,
-} from "./schema.js";
+} from "./schema.ts";
 
 const NON_PRIMITIVES_WITHOUT_A_FUNCTION = SAMPLE_NON_PRIMITIVES.filter((v) => typeof v !== "function");
 const NON_FUNCTION_VALUES = [...SAMPLE_PRIMITIVES, NON_PRIMITIVES_WITHOUT_A_FUNCTION];

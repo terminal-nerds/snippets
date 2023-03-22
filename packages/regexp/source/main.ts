@@ -1,2 +1,2 @@
 /* MODULES */
-export * from "./creator/creator.js";
+export * from "./creator/creator.ts";

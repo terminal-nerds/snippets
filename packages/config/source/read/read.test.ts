@@ -6,7 +6,7 @@ import {
 	getCurrentWorkingDirectory,
 	getNearestConfigPath,
 	getNearestPackageRootPath,
-} from "./read.js";
+} from "./read.ts";
 
 describe(`getNearestPackageRootPath(cwd?)`, () => {
 	const expected = getCurrentWorkingDirectory();

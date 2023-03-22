@@ -1,7 +1,7 @@
 import { returns } from "@terminal-nerds/snippets-test/unit";
 import { describe, expect, it } from "vitest";
 
-import { isRuntimeError, isValidationError, RuntimeError, ValidationError } from "./custom.js";
+import { isRuntimeError, isValidationError, RuntimeError, ValidationError } from "./custom.ts";
 
 describe("isRuntimeError(error)", () => {
 	it(returns(false).on(`Error`), () => {

@@ -2,7 +2,7 @@ import { FALSY_PRIMITIVES } from "@terminal-nerds/snippets-test/sample";
 import { returns } from "@terminal-nerds/snippets-test/unit";
 import { describe, expect, it } from "vitest";
 
-import { createMergedConfig } from "./merge.js";
+import { createMergedConfig } from "./merge.ts";
 
 const SAMPLE_CONFIG_1 = {
 	array: ["one"],

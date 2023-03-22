@@ -15,7 +15,7 @@ import { describe, expect, it } from "vitest";
 // 	IN_JSDOM,
 // 	IN_NODE,
 // 	IN_WEB_WORKER,
-// } from "./environment.js";
+// } from "./environment.ts";
 
 // describe.todo("getRuntimeEnvironmentName() - in Edge Runtime", () => {
 // 	it.fails(returns("edge"), () => {

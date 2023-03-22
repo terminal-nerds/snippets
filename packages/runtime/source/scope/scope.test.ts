@@ -1,8 +1,8 @@
 import { returns } from "@terminal-nerds/snippets-test/unit";
 import { describe, expect, it } from "vitest";
 
-import { deleteEnvironmentVariable, setEnvironmentVariable } from "../variable/variable.js";
-import { CI_CD_ENVIRONMENT_VARIABLES, inContinuousIntegration, inTest, TEST_ENVIRONMENT_VARIABLES } from "./scope.js";
+import { deleteEnvironmentVariable, setEnvironmentVariable } from "../variable/variable.ts";
+import { CI_CD_ENVIRONMENT_VARIABLES, inContinuousIntegration, inTest, TEST_ENVIRONMENT_VARIABLES } from "./scope.ts";
 
 describe("inContinuousIntegration()", () => {
 	it(returns(false).on(`non-existing environment variables`).samples(CI_CD_ENVIRONMENT_VARIABLES), () => {

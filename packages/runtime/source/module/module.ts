@@ -1,9 +1,9 @@
 import { resolveModule } from "local-pkg";
 import { type NormalizedPackageJson, readPackageUpSync } from "read-pkg-up";
-import type { KebabCase } from "type-fest/source/kebab-case.js";
+import type { KebabCase } from "type-fest/source/kebab-case.ts";
 
-import { IN_BROWSER } from "../environment/environment.js";
-import { RuntimeError } from "../error/error.js";
+import { IN_BROWSER } from "../environment/environment.ts";
+import { RuntimeError } from "../error/error.ts";
 
 /** @see {@link https://nodejs.org/api/modules.html#modules-commonjs-modules} CommonJS Module */
 export const IN_CJS = typeof globalThis.require === "function";

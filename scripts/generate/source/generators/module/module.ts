@@ -14,7 +14,7 @@ import {
 	defineToolAction,
 	formatWithPrettier,
 	PACKAGES_DIRECTORY_PATH,
-} from "../../shared.js";
+} from "../../shared.ts";
 
 // TODO: __dirname should return current file path
 const TEMPLATES_DIRECTORY_PATH = join(__dirname, "generators", "module", "templates");

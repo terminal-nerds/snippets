@@ -1,7 +1,7 @@
 import { describe, expect, it } from "vitest";
 import { ZodError } from "zod";
 
-import { isPrimitive, PRIMITIVE_NAMES, validatePrimitive } from "./primitive.js";
+import { isPrimitive, PRIMITIVE_NAMES, validatePrimitive } from "./primitive.ts";
 
 const SAMPLE_PRIMITIVES = {
 	bigint: 1n,

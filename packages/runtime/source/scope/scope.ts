@@ -1,8 +1,8 @@
 import { z } from "zod";
 
-import { IN_BROWSER } from "../environment/environment.js";
-import { RuntimeError } from "../error/error.js";
-import { getEnvironmentVariable } from "../variable/variable.js";
+import { IN_BROWSER } from "../environment/environment.ts";
+import { RuntimeError } from "../error/error.ts";
+import { getEnvironmentVariable } from "../variable/variable.ts";
 
 export const CI_CD_ENVIRONMENT_VARIABLES = ["CI", "CONTINUOUS_INTEGRATION"] as const;
 export type CICDEnvironmentVariable = (typeof CI_CD_ENVIRONMENT_VARIABLES)[number];

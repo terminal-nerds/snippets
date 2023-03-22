@@ -2,7 +2,7 @@ import { returns, throws } from "@terminal-nerds/snippets-test/unit";
 import { describe, expect, it } from "vitest";
 import { ZodError } from "zod";
 
-import { isValidRuntimeEnvironmentName, RUNTIME_ENVIRONMENTS, validateRuntimeEnvironmentName } from "./environment.js";
+import { isValidRuntimeEnvironmentName, RUNTIME_ENVIRONMENTS, validateRuntimeEnvironmentName } from "./environment.ts";
 
 describe("validateRuntimeEnvironmentName(input)", () => {
 	const sample = "blazingly-fast";

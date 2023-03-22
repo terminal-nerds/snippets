@@ -1,7 +1,7 @@
 import { returns } from "@terminal-nerds/snippets-test/unit";
 import { describe, expect, it } from "vitest";
 
-import { getDependenciesMap, getPackagesNames, hasModule } from "./module.js";
+import { getDependenciesMap, getPackagesNames, hasModule } from "./module.ts";
 
 describe(`hasModule(name)`, () => {
 	const nonExistingModuleName = "terminal-nerdss";

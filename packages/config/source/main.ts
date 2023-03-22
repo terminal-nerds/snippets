@@ -1,3 +1,3 @@
 /* MODULES */
-export * from "./merge/merge.js";
-export * from "./read/read.js";
+export * from "./merge/merge.ts";
+export * from "./read/read.ts";

@@ -1,6 +1,6 @@
 import { z } from "zod";
 
-import { RuntimeError } from "../error/error.js";
+import { RuntimeError } from "../error/error.ts";
 
 /* prettier-ignore */
 export const RUNTIME_ENVIRONMENTS = [

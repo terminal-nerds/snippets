@@ -4,7 +4,7 @@ import { returns, throws } from "@terminal-nerds/snippets-test/unit";
 import { describe, expect, it } from "vitest";
 import { ZodError } from "zod";
 
-import { isString, isStringEmpty, validateString } from "./schema.js";
+import { isString, isStringEmpty, validateString } from "./schema.ts";
 
 const EMPTY_STRINGS = FALSY_STRINGS;
 const NON_EMPTY_STRINGS = TRUTHY_STRINGS;

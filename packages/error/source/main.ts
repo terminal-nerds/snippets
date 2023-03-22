@@ -1,3 +1,3 @@
 /* MODULES */
-export * from "./built-in/built-in.js";
-export * from "./custom/custom.js";
+export * from "./built-in/built-in.ts";
+export * from "./custom/custom.ts";

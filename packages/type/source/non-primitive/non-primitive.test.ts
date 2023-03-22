@@ -1,7 +1,7 @@
 import { describe, expect, it } from "vitest";
 import { ZodError } from "zod";
 
-import { isNonPrimitive, NON_PRIMITIVE_NAMES, validateNonPrimitive } from "./non-primitive.js";
+import { isNonPrimitive, NON_PRIMITIVE_NAMES, validateNonPrimitive } from "./non-primitive.ts";
 
 const SAMPLE_NON_PRIMITIVES = {
 	function: () => void 0,

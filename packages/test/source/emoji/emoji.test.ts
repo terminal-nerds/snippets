@@ -1,7 +1,7 @@
 import { describe, expect, it } from "vitest";
 import { ZodError } from "zod";
 
-import { getValueTypeEmoji, VALUE_TYPE_EMOJIS } from "./emoji.js";
+import { getValueTypeEmoji, VALUE_TYPE_EMOJIS } from "./emoji.ts";
 
 describe("getValueTypeEmoji(value)", () => {
 	const expected = VALUE_TYPE_EMOJIS.ZodError;

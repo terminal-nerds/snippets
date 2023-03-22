@@ -8,7 +8,7 @@ import {
 	getEnvironmentVariables,
 	hasEnvironmentVariable,
 	setEnvironmentVariable,
-} from "./variable.js";
+} from "./variable.ts";
 
 const EXISTING_VARIABLE = "VITEST";
 const FALSE_VARIABLE = "TEST_FALSE";

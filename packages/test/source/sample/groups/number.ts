@@ -1,5 +1,5 @@
-import { SAMPLE_INFINITIES } from "./infinity.js";
-import { SAMPLE_NANS } from "./nan.js";
+import { SAMPLE_INFINITIES } from "./infinity.ts";
+import { SAMPLE_NANS } from "./nan.ts";
 
 export const SAMPLE_NUMBER = 1337;
 

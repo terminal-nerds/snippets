@@ -1,7 +1,7 @@
 import { describe, expect, it } from "vitest";
 
-import { VALUE_TYPE_EMOJIS } from "../emoji/emoji.js";
-import { returns, throws } from "./unit.js";
+import { VALUE_TYPE_EMOJIS } from "../emoji/emoji.ts";
+import { returns, throws } from "./unit.ts";
 
 describe("throws(value)", () => {
 	const expectedBase = `💥 throws 📛 'Error'`;

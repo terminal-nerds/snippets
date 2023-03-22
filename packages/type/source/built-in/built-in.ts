@@ -1,61 +1,61 @@
 import { z } from "zod";
 
-import { getConstructorName } from "../constructor/constructor.js";
+import { getConstructorName } from "../constructor/constructor.ts";
 import {
 	CONTROL_ABSTRACTION_BUILT_IN_OBJECTS,
 	CONTROL_ABSTRACTION_BUILT_IN_OBJECTS_NAMES,
 	CONTROL_ABSTRACTION_BUILT_IN_OBJECTS_SCHEMAS,
-} from "./groups/control-abstraction.js";
+} from "./groups/control-abstraction.ts";
 import {
 	ERROR_BUILT_IN_OBJECTS,
 	ERROR_BUILT_IN_OBJECTS_NAMES,
 	ERROR_BUILT_IN_OBJECTS_SCHEMAS,
-} from "./groups/error.js";
+} from "./groups/error.ts";
 import {
 	FUNDAMENTAL_BUILT_IN_OBJECTS,
 	FUNDAMENTAL_BUILT_IN_OBJECTS_NAMES,
 	FUNDAMENTAL_BUILT_IN_OBJECTS_SCHEMAS,
-} from "./groups/fundamental.js";
+} from "./groups/fundamental.ts";
 import {
 	INDEXED_COLLECTION_BUILT_IN_OBJECTS,
 	INDEXED_COLLECTION_BUILT_IN_OBJECTS_NAMES,
 	INDEXED_COLLECTION_BUILT_IN_OBJECTS_SCHEMAS,
-} from "./groups/indexed-collection.js";
+} from "./groups/indexed-collection.ts";
 import {
 	INTERNATIONALIZATION_BUILT_IN_OBJECTS,
 	INTERNATIONALIZATION_BUILT_IN_OBJECTS_NAMES,
 	INTERNATIONALIZATION_BUILT_IN_OBJECTS_SCHEMAS,
-} from "./groups/internationalization.js";
+} from "./groups/internationalization.ts";
 import {
 	KEYED_COLLECTION_BUILT_IN_OBJECTS,
 	KEYED_COLLECTION_BUILT_IN_OBJECTS_NAMES,
 	KEYED_COLLECTION_BUILT_IN_OBJECTS_SCHEMAS,
-} from "./groups/keyed-collection.js";
+} from "./groups/keyed-collection.ts";
 import {
 	MANAGING_MEMORY_BUILT_IN_OBJECTS,
 	MANAGING_MEMORY_BUILT_IN_OBJECTS_NAMES,
 	MANAGING_MEMORY_BUILT_IN_OBJECTS_SCHEMAS,
-} from "./groups/managing-memory.js";
+} from "./groups/managing-memory.ts";
 import {
 	NUMBER_AND_DATE_BUILT_IN_OBJECTS,
 	NUMBER_AND_DATE_BUILT_IN_OBJECTS_NAMES,
 	NUMBER_AND_DATE_BUILT_IN_OBJECTS_SCHEMAS,
-} from "./groups/number-and-date.js";
+} from "./groups/number-and-date.ts";
 import {
 	REFLECTION_BUILT_IN_OBJECTS,
 	REFLECTION_BUILT_IN_OBJECTS_NAMES,
 	REFLECTION_BUILT_IN_OBJECTS_SCHEMAS,
-} from "./groups/reflection.js";
+} from "./groups/reflection.ts";
 import {
 	STRUCTURED_DATA_BUILT_IN_OBJECTS,
 	STRUCTURED_DATA_BUILT_IN_OBJECTS_NAMES,
 	STRUCTURED_DATA_BUILT_IN_OBJECTS_SCHEMAS,
-} from "./groups/structured-data.js";
+} from "./groups/structured-data.ts";
 import {
 	TEXT_PROCESSING_BUILT_IN_OBJECTS,
 	TEXT_PROCESSING_BUILT_IN_OBJECTS_NAMES,
 	TEXT_PROCESSING_BUILT_IN_OBJECTS_SCHEMAS,
-} from "./groups/test-processing.js";
+} from "./groups/test-processing.ts";
 
 /** @see {@link BUILT_IN_OBJECTS} */
 export const BUILT_IN_OBJECTS_NAMES = [
@@ -128,4 +128,4 @@ export function isBuiltInObject(value: unknown): value is BuiltInObject {
 		: false;
 }
 
-export { AsyncFunction, AsyncGeneratorFunction, GeneratorFunction } from "./groups/control-abstraction.js";
+export { AsyncFunction, AsyncGeneratorFunction, GeneratorFunction } from "./groups/control-abstraction.ts";

@@ -1,6 +1,6 @@
 import type { Join, Split } from "type-fest";
 
-import { validateString } from "../schema/schema.js";
+import { validateString } from "../schema/schema.ts";
 
 export type ReversedTuple<T> = T extends [infer Head, ...infer Rest] ? [...ReversedTuple<Rest>, Head] : [];
 export type ReversedString<T extends string> = Join<ReversedTuple<Split<T, "">>, "">;

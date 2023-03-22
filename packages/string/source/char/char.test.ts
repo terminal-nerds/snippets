@@ -26,7 +26,7 @@ import {
 	UPPER_CASED_LATIN_CHARS,
 	validateCharType,
 	validateSingleChar,
-} from "./char.js";
+} from "./char.ts";
 
 const EMPTY_STRINGS = FALSY_STRINGS;
 const NON_STRING_VALUES = ALL_SAMPLES.filter((v) => typeof v !== "string");

@@ -1,17 +1,17 @@
-import { SAMPLE_ARRAYS } from "./groups/array.js";
-import { FALSY_BIG_INTS, SAMPLE_BIG_INTS, TRUTHY_BIG_INTS } from "./groups/bigint.js";
-import { FALSY_BOOLEANS, SAMPLE_BOOLEANS, TRUTHY_BOOLEANS } from "./groups/boolean.js";
-import { SAMPLE_DATES } from "./groups/date.js";
-import { SAMPLE_FUNCTIONS } from "./groups/function.js";
-import { SAMPLE_MAPS } from "./groups/map.js";
-import { SAMPLE_NULLS } from "./groups/null.js";
-import { FALSY_NUMBERS, SAMPLE_NUMBERS, TRUTHY_NUMBERS } from "./groups/number.js";
-import { SAMPLE_OBJECTS } from "./groups/object.js";
-import { SAMPLE_REGEXES } from "./groups/regexp.js";
-import { SAMPLE_SETS } from "./groups/set.js";
-import { FALSY_STRINGS, SAMPLE_STRINGS, TRUTHY_STRINGS } from "./groups/string.js";
-import { SAMPLE_SYMBOLS } from "./groups/symbol.js";
-import { SAMPLE_UNDEFINEDES } from "./groups/undefined.js";
+import { SAMPLE_ARRAYS } from "./groups/array.ts";
+import { FALSY_BIG_INTS, SAMPLE_BIG_INTS, TRUTHY_BIG_INTS } from "./groups/bigint.ts";
+import { FALSY_BOOLEANS, SAMPLE_BOOLEANS, TRUTHY_BOOLEANS } from "./groups/boolean.ts";
+import { SAMPLE_DATES } from "./groups/date.ts";
+import { SAMPLE_FUNCTIONS } from "./groups/function.ts";
+import { SAMPLE_MAPS } from "./groups/map.ts";
+import { SAMPLE_NULLS } from "./groups/null.ts";
+import { FALSY_NUMBERS, SAMPLE_NUMBERS, TRUTHY_NUMBERS } from "./groups/number.ts";
+import { SAMPLE_OBJECTS } from "./groups/object.ts";
+import { SAMPLE_REGEXES } from "./groups/regexp.ts";
+import { SAMPLE_SETS } from "./groups/set.ts";
+import { FALSY_STRINGS, SAMPLE_STRINGS, TRUTHY_STRINGS } from "./groups/string.ts";
+import { SAMPLE_SYMBOLS } from "./groups/symbol.ts";
+import { SAMPLE_UNDEFINEDES } from "./groups/undefined.ts";
 
 /** @see {@link https://developer.mozilla.org/en-US/docs/Glossary/Falsy} */
 export const FALSY_PRIMITIVES = [

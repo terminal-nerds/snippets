@@ -9,7 +9,7 @@ import {
 	isSyntaxError,
 	isTypeError,
 	isURIError,
-} from "./built-in.js";
+} from "./built-in.ts";
 
 describe("isError(error)", () => {
 	it(returns(true).on(`Error`), () => {

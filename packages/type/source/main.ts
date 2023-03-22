@@ -1,5 +1,5 @@
 /* MODULES */
-export * from "./built-in/built-in.js";
-export * from "./constructor/constructor.js";
-export * from "./non-primitive/non-primitive.js";
-export * from "./primitive/primitive.js";
+export * from "./built-in/built-in.ts";
+export * from "./constructor/constructor.ts";
+export * from "./non-primitive/non-primitive.ts";
+export * from "./primitive/primitive.ts";

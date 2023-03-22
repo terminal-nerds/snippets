@@ -12,7 +12,7 @@ import {
 	IN_JSDOM,
 	IN_NODE,
 	IN_WEB_WORKER,
-} from "./environment.js";
+} from "./environment.ts";
 
 // @vitest-environment happy-dom
 describe("getRuntimeEnvironmentName() - in happy DOM", () => {

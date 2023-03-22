@@ -1,6 +1,6 @@
 import { describe, expect, it } from "vitest";
 
-import { getConstructorName } from "./constructor.js";
+import { getConstructorName } from "./constructor.ts";
 
 describe("getConstructorName(value)", () => {
 	it(`returns 'null' on 'null'`, () => {

@@ -1,7 +1,7 @@
 import { getConstructorName } from "@terminal-nerds/snippets-type/constructor";
 import { isPrimitiveName } from "@terminal-nerds/snippets-type/primitive";
 
-import { getValueTypeEmoji } from "../emoji/emoji.js";
+import { getValueTypeEmoji } from "../emoji/emoji.ts";
 
 declare global {
 	interface String {

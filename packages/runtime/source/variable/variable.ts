@@ -1,5 +1,5 @@
-import { getRuntimeEnvironmentName, type RuntimeEnvironment } from "../environment/environment.js";
-import { RuntimeError } from "../error/error.js";
+import { getRuntimeEnvironmentName, type RuntimeEnvironment } from "../environment/environment.ts";
+import { RuntimeError } from "../error/error.ts";
 
 const SUPPORTED_RUNTIMES = ["bun", "deno", "node"] as const;
 type SupportedRuntime = Extract<RuntimeEnvironment, (typeof SUPPORTED_RUNTIMES)[number]>;

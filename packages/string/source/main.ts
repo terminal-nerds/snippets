@@ -1,5 +1,5 @@
 /* MODULES */
-export * from "./case/case.js";
-export * from "./char/char.js";
-export * from "./schema/schema.js";
-export * from "./word/word.js";
+export * from "./case/case.ts";
+export * from "./char/char.ts";
+export * from "./schema/schema.ts";
+export * from "./word/word.ts";

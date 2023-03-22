@@ -9,7 +9,7 @@ import {
 	type RegExpOptions,
 	setRegExpFlags,
 	validateRegExpFlag,
-} from "./creator.js";
+} from "./creator.ts";
 
 const INVALID_FLAGS = [..."abcefhjklnoprtvwxz"];
 const VALID_FLAGS = [..."isgdmuy"];

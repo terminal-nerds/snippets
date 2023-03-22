@@ -1,4 +1,4 @@
 /* MODULES */
-export * from "./emoji/emoji.js";
-export * from "./sample/sample.js";
-export * from "./unit/unit.js";
+export * from "./emoji/emoji.ts";
+export * from "./sample/sample.ts";
+export * from "./unit/unit.ts";

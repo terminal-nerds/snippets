@@ -16,7 +16,7 @@ import {
 	STYLESHEETS_EXTENSIONS,
 	TYPESCRIPT_EXTENSIONS,
 	YAML_EXTENSIONS,
-} from "./schema.js";
+} from "./schema.ts";
 
 describe("isHTMLExtension(extension)", () => {
 	it(returns(false).on(`non-valid HTML extensions`).samples(YAML_EXTENSIONS), () => {

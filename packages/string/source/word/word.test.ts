@@ -4,8 +4,8 @@ import { returns, throws } from "@terminal-nerds/snippets-test/unit";
 import { describe, expect, it } from "vitest";
 import { ZodError } from "zod";
 
-import { SINGLE_CHARS } from "../char/char.js";
-import { isNumeric, isPalindrome, reverseString } from "./word.js";
+import { SINGLE_CHARS } from "../char/char.ts";
+import { isNumeric, isPalindrome, reverseString } from "./word.ts";
 
 const EMPTY_STRING_VALUES = FALSY_STRINGS;
 const NON_STRING_VALUES = ALL_SAMPLES.filter((v) => typeof v !== "string");

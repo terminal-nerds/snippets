@@ -3,7 +3,7 @@ import { STRING_SCHEMA } from "@terminal-nerds/snippets-type";
 import type { Join, PascalCase } from "type-fest";
 import { z } from "zod";
 
-import { validateString } from "../schema/schema.js";
+import { validateString } from "../schema/schema.ts";
 
 export const CHAR_TYPES = ["latin", "number", "special"] as const;
 export type CharType = (typeof CHAR_TYPES)[number];

@@ -1,6 +1,6 @@
 /* MODULES */
-export * from "./environment/environment.js";
-export * from "./error/error.js";
-export * from "./module/module.js";
-export * from "./scope/scope.js";
-export * from "./variable/variable.js";
+export * from "./environment/environment.ts";
+export * from "./error/error.ts";
+export * from "./module/module.ts";
+export * from "./scope/scope.ts";
+export * from "./variable/variable.ts";

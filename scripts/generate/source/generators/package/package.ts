@@ -15,7 +15,7 @@ import {
 	PACKAGES_DIRECTORY_PATH,
 	ROOT_DIRECTORY_PATH,
 	SNIPPETS_DIRECTORY_PATH,
-} from "../../shared.js";
+} from "../../shared.ts";
 
 const PROJECT_README_FILE_PATH = join(ROOT_DIRECTORY_PATH, "README.md");
 const PROJECT_LICENSE_FILE_PATH = join(ROOT_DIRECTORY_PATH, "LICENSE.md");

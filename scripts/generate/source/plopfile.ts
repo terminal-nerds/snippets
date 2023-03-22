@@ -1,8 +1,8 @@
 import autocompletePrompt from "inquirer-autocomplete-prompt";
 import type { NodePlopAPI } from "plop";
 
-import { snippetModuleGenerator } from "./generators/module/module.js";
-import { packageDirectoryGenerator } from "./generators/package/package.js";
+import { snippetModuleGenerator } from "./generators/module/module.ts";
+import { packageDirectoryGenerator } from "./generators/package/package.ts";
 
 export default function setupPlop(plop: NodePlopAPI) {
 	plop.setPrompt("autocomplete", autocompletePrompt);
