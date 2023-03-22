@@ -80,6 +80,7 @@ export function defineAddManyAction(
 ): AddManyActionConfig {
 	const { base = "", data = {}, destination, templateFiles = "" } = config;
 
+	// @ts-ignore Not a bug
 	return {
 		type: "addMany",
 		base,
