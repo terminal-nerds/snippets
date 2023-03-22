@@ -72,5 +72,10 @@
 		"typescript": {
 			"optional": true
 		}
+	},
+	"dependencies": {
+		"@terminal-nerds/snippets-type": "workspace:^0.2.0",
+		"type-fest": "3.6.1",
+		"zod": "3.21.4"
 	}
 }
