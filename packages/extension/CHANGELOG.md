@@ -1,5 +1,11 @@
 # @terminal-nerds/snippets-extension<!-- markdownlint-disable line-length list-marker-space no-duplicate-header ul-style ul-indent no-bare-urls -->
 
+## 0.3.0
+
+### Minor Changes
+
+-   [#57](https://github.com/terminal-nerds/snippets/pull/57) [`9193c29`](https://github.com/terminal-nerds/snippets/commit/9193c299155b8ebefadb3eddd891dfd105e727ef) Thanks [@xeho91](https://github.com/xeho91)! - ✨ Add extensions related to UI Libraries _(JSX-based, Astro, Svelte, Vue)_
+
 ## 0.2.0
 
 ### Minor Changes

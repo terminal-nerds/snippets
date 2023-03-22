@@ -1,5 +1,15 @@
 # @terminal-nerds/snippets-runtime<!-- markdownlint-disable line-length list-marker-space no-duplicate-header ul-style ul-indent no-bare-urls -->
 
+## 0.3.0
+
+### Minor Changes
+
+-   [#55](https://github.com/terminal-nerds/snippets/pull/55) [`2a474e0`](https://github.com/terminal-nerds/snippets/commit/2a474e0f693bcc245108ccba1ad1606a747c3591) Thanks [@xeho91](https://github.com/xeho91)! - 🔥 Remove `inContinuousIntegration()` and `inTest()` in favour of `isIn(scopeName)`
+
+-   [#55](https://github.com/terminal-nerds/snippets/pull/55) [`2a474e0`](https://github.com/terminal-nerds/snippets/commit/2a474e0f693bcc245108ccba1ad1606a747c3591) Thanks [@xeho91](https://github.com/xeho91)! - ✨ Add `isIn()`
+
+-   [#55](https://github.com/terminal-nerds/snippets/pull/55) [`2a474e0`](https://github.com/terminal-nerds/snippets/commit/2a474e0f693bcc245108ccba1ad1606a747c3591) Thanks [@xeho91](https://github.com/xeho91)! - ✨ Improve return type for the snippet `getEnvironmentVariable()`
+
 ## 0.2.0
 
 ### Minor Changes
