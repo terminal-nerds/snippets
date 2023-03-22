@@ -9,12 +9,14 @@ import {
 	isMarkdownExtension,
 	isStylesheetExtension,
 	isTypeScriptExtension,
+	isUILibraryExtension,
 	isYAMLExtension,
 	JAVASCRIPT_EXTENSIONS,
 	JSON_EXTENSIONS,
 	MARKDOWN_EXTENSIONS,
 	STYLESHEETS_EXTENSIONS,
 	TYPESCRIPT_EXTENSIONS,
+	UI_LIBRARY_EXTENSIONS,
 	YAML_EXTENSIONS,
 } from "./schema.ts";
 
@@ -98,6 +100,20 @@ describe("isTypeScriptExtension(extension)", () => {
 	it(returns(true).on(`valid TypeScript extensions`).samples(TYPESCRIPT_EXTENSIONS), () => {
 		for (const extension of TYPESCRIPT_EXTENSIONS) {
 			expect(isTypeScriptExtension(extension)).toBe(true);
+		}
+	});
+});
+
+describe("isUILibraryExtension(extension)", () => {
+	it(returns(false).on(`non-valid UI library extensions`).samples(JAVASCRIPT_EXTENSIONS), () => {
+		for (const extension of JAVASCRIPT_EXTENSIONS) {
+			expect(isUILibraryExtension(extension)).toBe(false);
+		}
+	});
+
+	it(returns(true).on(`valid UI library extensions`).samples(UI_LIBRARY_EXTENSIONS), () => {
+		for (const extension of UI_LIBRARY_EXTENSIONS) {
+			expect(isUILibraryExtension(extension)).toBe(true);
 		}
 	});
 });
