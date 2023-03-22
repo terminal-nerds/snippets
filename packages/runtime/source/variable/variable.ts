@@ -56,18 +56,22 @@ export function getEnvironmentVariable(
 ): EnvironmentVariableValue | undefined {
 	const { strict = false } = options;
 
-	const environmentVariable = toMap(getEnvironmentVariables()).get(variable);
+	const value = toMap(getEnvironmentVariables()).get(variable);
 
-	if (environmentVariable) {
-		if (environmentVariable === "true") return true;
-		else if (environmentVariable === "false") return false;
-		else {
-			const asNumber = Number(environmentVariable);
-
-			return Number.isNaN(asNumber) ? environmentVariable : asNumber;
-		}
+	if (value) {
+		return parseEnvironmentVariableValue(value);
 	} else if (strict) {
 		throw new RuntimeError(`The environment variable - "${variable}" - is not set. Getter aborted.`);
+	}
+}
+
+function parseEnvironmentVariableValue(value: EnvironmentVariableValue) {
+	if (value === "true") return true;
+	else if (value === "false") return false;
+	else {
+		const asNumber = Number(value);
+
+		return Number.isNaN(asNumber) ? value : asNumber;
 	}
 }
 
