@@ -141,7 +141,7 @@ function setPackageReadmeFileActions(paths: Paths): Array<ActionType> {
 	const appendToReadmeLinksAction = defineAppendAction({
 		path: readmeFilePath,
 		templateFile: readmeLinksTemplatePath,
-		pattern: `<!-- MODULES LINKS -->`,
+		pattern: /<!-- MODULES LINKS -->/,
 	});
 	const appendToReadmeTableAction = defineAppendAction({
 		path: readmeFilePath,
@@ -157,5 +157,10 @@ function setPackageReadmeFileActions(paths: Paths): Array<ActionType> {
 		return `Formatted: ${readmeFilePath}`;
 	};
 
-	return [appendToReadmeTableAction, appendToReadmeLinksAction, formatReadmeFileAction];
+	/* prettier-ignore */
+	return [
+		appendToReadmeTableAction,
+		appendToReadmeLinksAction,
+		formatReadmeFileAction,
+	];
 }
