@@ -6,105 +6,105 @@
 	},
 	"pipeline": {
 		"build": {
+			"cache": true,
 			"dependsOn": ["^build"],
-			"outputs": ["dist/**"],
-			"cache": true
+			"inputs": ["!**/*.test.ts", "!.eslintrc.cjs", "!tsconfig.json", "!vitest.config.ts"],
+			"outputs": ["dist/**"]
 		},
 		"clean": {
+			"cache": false,
 			"dependsOn": [],
-			"outputs": [],
-			"cache": false
+			"outputs": []
 		},
 		"clean:build": {
+			"cache": false,
 			"dependsOn": [],
-			"outputs": [],
-			"cache": false
+			"outputs": []
 		},
 		"clean:cache": {
+			"cache": false,
 			"dependsOn": [],
-			"outputs": [],
-			"cache": false
+			"outputs": []
 		},
 		"dev:pkg": {
+			"cache": false,
 			"dependsOn": [],
-			"outputs": [],
-			"cache": false
+			"outputs": []
 		},
 		"dev:test": {
+			"cache": false,
 			"dependsOn": [],
-			"outputs": [],
-			"cache": false
+			"outputs": []
 		},
 		"format": {
+			"cache": true,
 			"dependsOn": [],
-			"outputs": [],
-			"cache": true
+			"outputs": []
 		},
 		"lint": {
+			"cache": true,
 			"dependsOn": [],
-			"outputs": [],
-			"cache": true
+			"outputs": []
 		},
 		"fix:format": {
+			"cache": true,
 			"dependsOn": [],
-			"outputs": [],
-			"cache": true
+			"outputs": []
 		},
 		"fix:js": {
+			"cache": true,
 			"dependsOn": [],
-			"outputs": [],
-			"cache": true
+			"outputs": []
 		},
 		"fix:md": {
+			"cache": true,
 			"dependsOn": [],
-			"outputs": [],
-			"cache": true
+			"outputs": []
 		},
 		"fix:pkg": {
+			"cache": true,
 			"dependsOn": [],
-			"outputs": [],
-			"cache": true
+			"outputs": []
 		},
 		"fix:types": {
+			"cache": true,
 			"dependsOn": [],
-			"outputs": [],
-			"cache": true
+			"outputs": []
 		},
 		"lint:deps": {
-			"dependsOn": [],
+			"cache": true,
 			"outputs": [],
-			"cache": true
+			"dependsOn": []
 		},
 		"lint:format": {
-			"dependsOn": [],
+			"cache": true,
 			"outputs": [],
-			"cache": true
+			"dependsOn": []
 		},
 		"lint:js": {
-			"dependsOn": [],
+			"cache": true,
 			"outputs": [],
-			"cache": true
+			"dependsOn": []
 		},
 		"lint:md": {
-			"dependsOn": [],
+			"cache": true,
 			"outputs": [],
-			"cache": true
+			"dependsOn": []
 		},
 		"lint:pkg": {
-			"dependsOn": [],
+			"cache": true,
 			"outputs": [],
-			"cache": true
+			"dependsOn": []
 		},
 		"lint:types": {
-			"dependsOn": [],
+			"cache": true,
 			"outputs": [],
-			"cache": true
+			"dependsOn": []
 		},
 		"test:unit": {
+			"cache": true,
 			"dependsOn": ["build"],
-			"outputs": [],
-			"inputs": ["source/**/*.ts"],
-			"cache": true
+			"outputs": ["coverage/**"]
 		}
 	}
 }
