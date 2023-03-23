@@ -120,6 +120,13 @@ importers:
   packages/number:
     specifiers:
       '@terminal-nerds/snippets-test': workspace:*
+      '@terminal-nerds/snippets-type': workspace:^0.2.0
+      type-fest: 3.6.1
+      zod: 3.21.4
+    dependencies:
+      '@terminal-nerds/snippets-type': link:../type
+      type-fest: 3.6.1
+      zod: 3.21.4
     devDependencies:
       '@terminal-nerds/snippets-test': link:../test
 
@@ -4968,7 +4975,7 @@ packages:
   /jsonfile/4.0.0:
     resolution: {integrity: sha512-m6F1R3z8jjlf2imQHS2Qez5sjKWQzbuuhuJ/FKYFRZvPE3PuHcSMVZzfsLhGVOkfd20obL5SWEBew5ShlquNxg==}
     optionalDependencies:
-      graceful-fs: 4.2.10
+      graceful-fs: 4.2.11
     dev: true
 
   /jsonfile/6.1.0:
