@@ -9,16 +9,20 @@ export interface RandomNumberOptions {
     min?: number;
 }
 
+export function getSafeRandomNumber(): number {
+	return globalThis.crypto.getRandomValues(new Uint32Array(1)).at(0) as number;
+}
+
 /** Get a random **integer** number from the specified range. */
 export function getRandomIntNumber(options: RandomNumberOptions = {}): number {
 	const { max = Number.MAX_SAFE_INTEGER, min = Number.MIN_SAFE_INTEGER } = options;
 
-	return Math.floor(Math.random() * (max - min + 1) + min);
+	return Math.floor(getSafeRandomNumber() * (max - min + 1) + min);
 }
 
 /** Get a random number **_(with decimals!)_** from the specified range. */
 export function getRandomNumber(options: RandomNumberOptions = {}): number {
 	const { max = Number.MAX_SAFE_INTEGER, min = Number.MIN_SAFE_INTEGER } = options;
 
-	return Math.random() * (max - min) + min;
+	return getSafeRandomNumber() * (max - min) + min;
 }
