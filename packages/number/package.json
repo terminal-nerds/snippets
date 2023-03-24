@@ -34,7 +34,12 @@
 		"./*": {
 			"types": "./dist/*/*.d.ts",
 			"import": "./dist/*/*.js",
-			"require": "./dist/main.cjs"
+			"require": "./dist/*/*.cjs"
+		},
+		"./schema/*": {
+			"types": "./dist/schema/groups/*.d.ts",
+			"import": "./dist/schema/groups/*.js",
+			"require": "./dist/schema/groups/*.cjs"
 		}
 	},
 	"files": [
@@ -74,7 +79,7 @@
 		}
 	},
 	"dependencies": {
-		"@terminal-nerds/snippets-type": "workspace:^0.2.0",
+		"@terminal-nerds/snippets-type": "workspace:*",
 		"type-fest": "3.6.1",
 		"zod": "3.21.4"
 	}
