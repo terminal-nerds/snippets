@@ -1,8 +1,8 @@
 import type { Float } from "type-fest/source/numeric";
 
 /* import { z } from "zod"; */
-import { isFiniteNumber } from "./finite";
-import { isInteger } from "./integer";
+import { isFiniteNumber } from "../finite/finite.ts";
+import { isInteger } from "../integer/integer.ts";
 
 export type { Float } from "type-fest/source/numeric";
 

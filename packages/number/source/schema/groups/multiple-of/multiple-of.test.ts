@@ -3,8 +3,8 @@ import { returns, throws } from "@terminal-nerds/snippets-test/unit";
 import { describe, expect, it } from "vitest";
 import { ZodError } from "zod";
 
+import { isNumber } from "../number/number.ts";
 import { isEven, isMultipleOf, isOdd } from "./multiple-of.ts";
-import { isNumber } from "./number.ts";
 
 const SAMPLE_NON_NUMBERS = SAMPLE_PRIMITIVES.filter((v) => !isNumber(v));
 const SAMPLE_FLOATS = [-2.02, 6.6, -111.111] as const;

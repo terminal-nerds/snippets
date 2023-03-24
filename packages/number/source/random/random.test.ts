@@ -1,7 +1,7 @@
 import { returns } from "@terminal-nerds/snippets-test/unit";
 import { describe, expect, it } from "vitest";
 
-import { isInteger } from "../schema/groups/integer.ts";
+import { isInteger } from "../schema/groups/integer/integer.ts";
 import { getRandomIntNumber, getRandomNumber } from "./random.ts";
 
 describe(`getRandomIntNumber(options?)`, () => {

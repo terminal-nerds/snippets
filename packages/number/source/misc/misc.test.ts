@@ -3,7 +3,7 @@ import { returns, throws } from "@terminal-nerds/snippets-test/unit";
 import { describe, expect, it } from "vitest";
 import { ZodError } from "zod";
 
-import { isNumber } from "../schema/groups/number.ts";
+import { isNumber } from "../schema/groups/number/number.ts";
 import { isHappyNumber } from "./misc.ts";
 
 const SAMPLE_NON_NUMBERS = SAMPLE_PRIMITIVES.filter((v) => !isNumber(v));

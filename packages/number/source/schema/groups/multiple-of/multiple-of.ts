@@ -1,8 +1,8 @@
 import { z } from "zod";
 
-import { validateInteger } from "./integer.ts";
-import { validateNumber } from "./number.ts";
-import { validateNonZero } from "./zero.ts";
+import { validateInteger } from "../integer/integer.ts";
+import { validateNumber } from "../number/number.ts";
+import { validateNonZero } from "../zero/zero.ts";
 
 export function isEven(number: number): boolean {
 	validateInteger(number);

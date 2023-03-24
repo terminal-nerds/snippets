@@ -1,4 +1,4 @@
-import { validateNumber } from "../schema/groups/number.ts";
+import { validateNumber } from "../schema/groups/number/number.ts";
 
 export interface RoundingNumberOptions {
 	/** @defaultValue `2` */
@@ -22,5 +22,3 @@ export function roundDownNumber(value: number, options: RoundingNumberOptions = 
 
 	return Number(Math.floor(Number.parseFloat(value + "e" + decimals)) + "e-" + decimals);
 }
-
-roundDownNumber(0.0002);

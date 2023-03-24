@@ -1,4 +1,4 @@
-import { validatePositiveInteger } from "../schema/groups/integer.ts";
+import { validatePositiveInteger } from "../schema/groups/integer/integer.ts";
 
 /** @see {@link https://en.wikipedia.org/wiki/Fibonacci_number} Fibonacci number */
 export function fibonacci(number: number): number {

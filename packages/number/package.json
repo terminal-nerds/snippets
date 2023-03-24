@@ -37,9 +37,9 @@
 			"require": "./dist/*/*.cjs"
 		},
 		"./schema/*": {
-			"types": "./dist/schema/groups/*.d.ts",
-			"import": "./dist/schema/groups/*.js",
-			"require": "./dist/schema/groups/*.cjs"
+			"types": "./dist/schema/groups/*/*.d.ts",
+			"import": "./dist/schema/groups/*/*.js",
+			"require": "./dist/schema/groups/*/*.cjs"
 		}
 	},
 	"files": [

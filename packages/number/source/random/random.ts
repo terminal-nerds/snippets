@@ -1,5 +1,5 @@
 // eslint-disable-next-line @typescript-eslint/no-unused-vars
-import type { MaxSafeInteger, MinSafeInteger } from "../schema/groups/safe.ts";
+import type { MaxSafeInteger, MinSafeInteger } from "../schema/groups/safe/safe.ts";
 
 /* prettier-ignore */
 export interface RandomNumberOptions {

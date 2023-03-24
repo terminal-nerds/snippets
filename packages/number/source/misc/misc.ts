@@ -1,4 +1,4 @@
-import { validateNumber } from "../schema/groups/number.ts";
+import { validateNumber } from "../schema/groups/number/number.ts";
 
 /** @see {@link https://en.wikipedia.org/wiki/Happy_number} Happy number */
 export function isHappyNumber(number: number): boolean {
