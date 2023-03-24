@@ -4,9 +4,10 @@
 [![dependencies badge]][dependencies url]\
 [![install size badge]][install size url]
 
-➡️ **This package wraps all available modules with snippets related to number**
+➡️ **This package wraps all available modules with snippets related to [Number]**
 — part of the [terminal-nerds/snippets] project.
 
+[Number]: https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Number
 [terminal-nerds/snippets]: https://github.com/terminal-nerds/snippets
 [package version badge]: https://img.shields.io/npm/v/@terminal-nerds/snippets-number/latest?style=for-the-badge&logo=npm
 [dependencies badge]: https://img.shields.io/librariesio/release/npm/@terminal-nerds/snippets-number?style=for-the-badge
@@ -25,6 +26,7 @@
 
 | Name                                       | Size                                                  |
 | ------------------------------------------ | ----------------------------------------------------- |
+| [`@terminal-nerds/snippets-number/math`]   | ![math size gzip badge] ![math size brotli badge]     |
 | [`@terminal-nerds/snippets-number/misc`]   | ![misc size gzip badge] ![misc size brotli badge]     |
 | [`@terminal-nerds/snippets-number/random`] | ![random size gzip badge] ![random size brotli badge] |
 | [`@terminal-nerds/snippets-number/round`]  | ![round size gzip badge] ![round size brotli badge]   |
@@ -32,6 +34,10 @@
 
 <!-- prettier-ignore-start -->
 <!-- MODULES LINKS -->
+[`@terminal-nerds/snippets-number/math`]: https://github.com/terminal-nerds/snippets/blob/main/packages/number/source/math/math.ts
+[math size gzip badge]: https://badgen.net/badgesize/gzip/file-url/unpkg.com/@terminal-nerds/snippets-number/dist/math/math.js?label=gzip
+[math size brotli badge]: https://badgen.net/badgesize/brotli/file-url/unpkg.com/@terminal-nerds/snippets-number/dist/math/math.js?label=brotli
+
 [`@terminal-nerds/snippets-number/misc`]: https://github.com/terminal-nerds/snippets/blob/main/packages/number/source/misc/misc.ts
 [misc size gzip badge]: https://badgen.net/badgesize/gzip/file-url/unpkg.com/@terminal-nerds/snippets-number/dist/misc/misc.js?label=gzip
 [misc size brotli badge]: https://badgen.net/badgesize/brotli/file-url/unpkg.com/@terminal-nerds/snippets-number/dist/misc/misc.js?label=brotli
