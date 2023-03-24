@@ -16,9 +16,9 @@ describe("validateNaN(value)", () => {
 	});
 
 	it(returns().on(`NaN`), () => {
-        for (const nan of SAMPLE_NANS) {
-            expect(() => validateNaN(nan)).not.toThrow();
-        }
+		for (const nan of SAMPLE_NANS) {
+			expect(() => validateNaN(nan)).not.toThrow();
+		}
 	});
 });
 

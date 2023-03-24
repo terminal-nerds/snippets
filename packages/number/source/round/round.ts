@@ -9,7 +9,7 @@ export interface RoundingNumberOptions {
 export function roundUpNumber(value: number, options: RoundingNumberOptions = {}): number {
 	validateNumber(value);
 
-    const { decimals = 2 } = options;
+	const { decimals = 2 } = options;
 
 	return Number(Math.round(Number(value + "e" + decimals)) + "e-" + decimals);
 }
@@ -18,7 +18,9 @@ export function roundUpNumber(value: number, options: RoundingNumberOptions = {}
 export function roundDownNumber(value: number, options: RoundingNumberOptions = {}): number {
 	validateNumber(value);
 
-    const { decimals = 2 } = options;
+	const { decimals = 2 } = options;
 
 	return Number(Math.floor(Number.parseFloat(value + "e" + decimals)) + "e-" + decimals);
 }
+
+roundDownNumber(0.0002);

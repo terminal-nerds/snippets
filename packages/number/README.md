@@ -25,12 +25,17 @@
 
 | Name                                       | Size                                                  |
 | ------------------------------------------ | ----------------------------------------------------- |
+| [`@terminal-nerds/snippets-number/misc`]   | ![misc size gzip badge] ![misc size brotli badge]     |
 | [`@terminal-nerds/snippets-number/random`] | ![random size gzip badge] ![random size brotli badge] |
 | [`@terminal-nerds/snippets-number/round`]  | ![round size gzip badge] ![round size brotli badge]   |
 | [`@terminal-nerds/snippets-number/schema`] | ![schema size gzip badge] ![schema size brotli badge] |
 
 <!-- prettier-ignore-start -->
 <!-- MODULES LINKS -->
+[`@terminal-nerds/snippets-number/misc`]: https://github.com/terminal-nerds/snippets/blob/main/packages/number/source/misc/misc.ts
+[misc size gzip badge]: https://badgen.net/badgesize/gzip/file-url/unpkg.com/@terminal-nerds/snippets-number/dist/misc/misc.js?label=gzip
+[misc size brotli badge]: https://badgen.net/badgesize/brotli/file-url/unpkg.com/@terminal-nerds/snippets-number/dist/misc/misc.js?label=brotli
+
 [`@terminal-nerds/snippets-number/random`]: https://github.com/terminal-nerds/snippets/blob/main/packages/number/source/random/random.ts
 [random size gzip badge]: https://badgen.net/badgesize/gzip/file-url/unpkg.com/@terminal-nerds/snippets-number/dist/random/random.js?label=gzip
 [random size brotli badge]: https://badgen.net/badgesize/brotli/file-url/unpkg.com/@terminal-nerds/snippets-number/dist/random/random.js?label=brotli

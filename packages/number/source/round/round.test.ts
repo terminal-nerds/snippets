@@ -28,9 +28,15 @@ describe(`roundUpNumber(value, options?)`, () => {
 	const expectedToThreeDecimals = [1.235, -9.877, 0.005, -100.123] as const;
 
 	for (const [index, sampleFloat] of SAMPLE_FLOAT_NUMBERS.entries()) {
-		it(returns(expectedToThreeDecimals.at(index)).on(`sample float number`).sample(sampleFloat).and(`decimals set to: 3`), () => {
-			expect(roundUpNumber(sampleFloat, { decimals: 3 })).toEqual(expectedToThreeDecimals.at(index));
-		});
+		it(
+			returns(expectedToThreeDecimals.at(index))
+				.on(`sample float number`)
+				.sample(sampleFloat)
+				.and(`decimals set to: 3`),
+			() => {
+				expect(roundUpNumber(sampleFloat, { decimals: 3 })).toEqual(expectedToThreeDecimals.at(index));
+			},
+		);
 	}
 });
 
@@ -53,8 +59,14 @@ describe(`roundDownNumber(value, options?)`, () => {
 	const expectedToThreeDecimals = [1.234, -9.877, 0.005, -100.124] as const;
 
 	for (const [index, sampleFloat] of SAMPLE_FLOAT_NUMBERS.entries()) {
-		it(returns(expectedToThreeDecimals.at(index)).on(`sample float number`).sample(sampleFloat).and(`decimals set to: 3`), () => {
-			expect(roundDownNumber(sampleFloat, { decimals: 3 })).toEqual(expectedToThreeDecimals.at(index));
-		});
+		it(
+			returns(expectedToThreeDecimals.at(index))
+				.on(`sample float number`)
+				.sample(sampleFloat)
+				.and(`decimals set to: 3`),
+			() => {
+				expect(roundDownNumber(sampleFloat, { decimals: 3 })).toEqual(expectedToThreeDecimals.at(index));
+			},
+		);
 	}
 });
