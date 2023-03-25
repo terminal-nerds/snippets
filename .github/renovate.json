@@ -31,6 +31,7 @@
 				"all-contributors-cli",
 				"concurrently",
 				"del-cli",
+				"inquirer",
 				"husky",
 				"turbo",
 				"tsx"
@@ -46,20 +47,21 @@
 			"groupName": "project prerequisities",
 			"addLabels": ["🧰 project"],
 			"matchUpdateTypes": ["major", "minor", "patch", "rollback"],
-			"packagePatterns": ["node", "pnpm"]
+			"packagePatterns": ["node", "pnpm"],
+			"excludePackageNames": ["@types/node"]
 		},
 		{
 			"groupName": "package(s) dependencies",
 			"addLabels": ["📦 packages"],
 			"matchDepTypes": ["dependencies", "peerDependencies"],
-            "matchPaths": ["packages/**/package.json"],
+			"matchPaths": ["packages/**/package.json"],
 			"matchUpdateTypes": ["major", "minor", "patch", "rollback"]
 		},
 		{
 			"groupName": "package(s) development dependencies",
 			"addLabels": ["📦 packages"],
 			"matchDepTypes": ["devDependencies"],
-            "matchPaths": ["packages/**/package.json"],
+			"matchPaths": ["packages/**/package.json"],
 			"matchUpdateTypes": ["major", "minor", "patch", "rollback"]
 		}
 	]
