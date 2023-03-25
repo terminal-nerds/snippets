@@ -9,7 +9,7 @@
 	},
 	"dependencies": {
 		"@terminal-nerds/snippets-string": "workspace:*",
-		"inquirer": "9.1.4",
+		"inquirer": "9.1.5",
 		"inquirer-autocomplete-prompt": "3.0.0",
 		"minimist": "1.2.8",
 		"node-plop": "0.31.1",

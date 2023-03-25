@@ -226,7 +226,7 @@ importers:
       '@types/inquirer-autocomplete-prompt': 3.0.0
       '@types/minimist': 1.2.2
       '@types/which': 2.0.2
-      inquirer: 9.1.4
+      inquirer: 9.1.5
       inquirer-autocomplete-prompt: 3.0.0
       minimist: 1.2.8
       node-plop: 0.31.1
@@ -235,8 +235,8 @@ importers:
       zod: 3.21.4
     dependencies:
       '@terminal-nerds/snippets-string': link:../../packages/string
-      inquirer: 9.1.4
-      inquirer-autocomplete-prompt: 3.0.0_inquirer@9.1.4
+      inquirer: 9.1.5
+      inquirer-autocomplete-prompt: 3.0.0_inquirer@9.1.5
       minimist: 1.2.8
       node-plop: 0.31.1
       plop: 3.1.2
@@ -4427,7 +4427,7 @@ packages:
     engines: {node: ^12.13.0 || ^14.15.0 || >=16.0.0}
     dev: true
 
-  /inquirer-autocomplete-prompt/3.0.0_inquirer@9.1.4:
+  /inquirer-autocomplete-prompt/3.0.0_inquirer@9.1.5:
     resolution: {integrity: sha512-nsPWllBQB3qhvpVgV1UIJN4xo3yz7Qv8y1+zrNVpJUNPxtUZ7btCum/4UCAs5apPCe/FVhKH1V6Wx0cAwkreyg==}
     engines: {node: '>=12'}
     peerDependencies:
@@ -4435,7 +4435,7 @@ packages:
     dependencies:
       ansi-escapes: 6.0.0
       figures: 5.0.0
-      inquirer: 9.1.4
+      inquirer: 9.1.5
       picocolors: 1.0.0
       run-async: 2.4.1
       rxjs: 7.8.0
@@ -4462,9 +4462,9 @@ packages:
       wrap-ansi: 7.0.0
     dev: false
 
-  /inquirer/9.1.4:
-    resolution: {integrity: sha512-9hiJxE5gkK/cM2d1mTEnuurGTAoHebbkX0BYl3h7iEg7FYfuNIom+nDfBCSWtvSnoSrWCeBxqqBZu26xdlJlXA==}
-    engines: {node: '>=12.0.0'}
+  /inquirer/9.1.5:
+    resolution: {integrity: sha512-3ygAIh8gcZavV9bj6MTdYddG2zPSYswP808fKS46NOwlF0zZljVpnLCHODDqItWJDbDpLb3aouAxGaJbkxoppA==}
+    engines: {node: '>=14.18.0'}
     dependencies:
       ansi-escapes: 6.0.0
       chalk: 5.2.0
@@ -4473,7 +4473,7 @@ packages:
       external-editor: 3.1.0
       figures: 5.0.0
       lodash: 4.17.21
-      mute-stream: 0.0.8
+      mute-stream: 1.0.0
       ora: 6.1.2
       run-async: 2.4.1
       rxjs: 7.8.0
@@ -5716,6 +5716,11 @@ packages:
 
   /mute-stream/0.0.8:
     resolution: {integrity: sha512-nnbWWOkoWyUsTjKrhgD0dcz22mdkSnpYqbEjIm2nhwhuxlSkpywJmBo8h0ZqJdkp73mb90SssHkN4rsRaBAfAA==}
+    dev: false
+
+  /mute-stream/1.0.0:
+    resolution: {integrity: sha512-avsJQhyd+680gKXyG/sQc0nXaC6rBkPOfyHYcFb9+hdkqQkR9bdnkJ0AMZhke0oesPqIO+mFFJ+IdBc7mst4IA==}
+    engines: {node: ^14.17.0 || ^16.13.0 || >=18.0.0}
     dev: false
 
   /mz/2.7.0:
