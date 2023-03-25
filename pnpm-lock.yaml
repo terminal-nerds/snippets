@@ -119,7 +119,7 @@ importers:
 
   packages/number:
     specifiers:
-      '@terminal-nerds/snippets-runtime': workspace:^0.3.0
+      '@terminal-nerds/snippets-runtime': workspace:*
       '@terminal-nerds/snippets-test': workspace:*
       '@terminal-nerds/snippets-type': workspace:*
       type-fest: 3.6.1
