@@ -71,10 +71,12 @@ importers:
 
   packages/array:
     specifiers:
+      '@terminal-nerds/snippets-number': workspace:*
       '@terminal-nerds/snippets-test': workspace:*
       '@terminal-nerds/snippets-type': workspace:*
       zod: 3.21.4
     dependencies:
+      '@terminal-nerds/snippets-number': link:../number
       '@terminal-nerds/snippets-type': link:../type
       zod: 3.21.4
     devDependencies:

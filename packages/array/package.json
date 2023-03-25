@@ -79,6 +79,7 @@
 		}
 	},
 	"dependencies": {
+		"@terminal-nerds/snippets-number": "workspace:*",
 		"@terminal-nerds/snippets-type": "workspace:*",
 		"zod": "3.21.4"
 	}
