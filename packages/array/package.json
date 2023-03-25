@@ -1,24 +1,25 @@
 {
 	"$schema": "https://json.schemastore.org/package",
 	"type": "module",
-	"name": "@terminal-nerds/snippets",
-	"version": "0.1.1",
-	"description": "@terminal-nerds all of the reusable snippets.",
+	"name": "@terminal-nerds/snippets-array",
+	"version": "0.0.0",
+	"description": "@terminal-nerds reusable snippets for arrays.",
 	"keywords": [
 		"snippets",
-		"typescript"
+		"typescript",
+		"array"
 	],
+	"license": "MIT",
 	"author": {
 		"name": "Mateusz Kadlubowski",
 		"email": "xeho91@pm.me",
 		"url": "https://xeho91.com"
 	},
-	"license": "MIT",
 	"homepage": "https://github.com/terminal-nerds/snippets",
 	"repository": {
 		"type": "git",
 		"url": "https://github.com/terminal-nerds/snippets.git",
-		"directory": "packages/snippets"
+		"directory": "packages/array"
 	},
 	"bugs": "https://github.com/terminal-nerds/snippets/issues",
 	"engines": {
@@ -29,42 +30,26 @@
 			"types": "./dist/main.d.ts",
 			"import": "./dist/main.js",
 			"require": "./dist/main.cjs"
+		},
+		"./*": {
+			"types": "./dist/*/*.d.ts",
+			"import": "./dist/*/*.js",
+			"require": "./dist/main.cjs"
 		}
 	},
 	"files": [
 		"dist/"
 	],
-	"dependencies": {
-		"@terminal-nerds/snippets-array": "workspace:*",
-		"@terminal-nerds/snippets-config": "workspace:*",
-		"@terminal-nerds/snippets-error": "workspace:*",
-		"@terminal-nerds/snippets-extension": "workspace:*",
-		"@terminal-nerds/snippets-function": "workspace:*",
-		"@terminal-nerds/snippets-number": "workspace:*",
-		"@terminal-nerds/snippets-regexp": "workspace:*",
-		"@terminal-nerds/snippets-runtime": "workspace:*",
-		"@terminal-nerds/snippets-string": "workspace:*",
-		"@terminal-nerds/snippets-test": "workspace:*",
-		"@terminal-nerds/snippets-type": "workspace:*"
-	},
-	"peerDependencies": {
-		"typescript": "5.0.2"
-	},
-	"peerDependenciesMeta": {
-		"typescript": {
-			"optional": true
-		}
-	},
 	"scripts": {
 		"build": "tsup",
 		"clean": "concurrently \"pnpm:clean:*\" --group --timings",
 		"clean:build": "del \"./dist\"",
 		"clean:cache": "del \"./node_modules/.cache\"",
 		"clean:test": "del \"./coverage\"",
-		"dev:pkg": "tsup --watch",
 		"dev:test": "vitest watch --ui",
+		"dev:pkg": "tsup --watch",
 		"fix": "concurrently \"pnpm:fix:*\" --group --timings",
-		"fix:format": "pretty-quick --branch main --pattern \"packages/snippets/**/*\" --verbose",
+		"fix:format": "pretty-quick --branch main --pattern \"packages/array/**/*\" --verbose",
 		"fix:js": "pnpm lint:js --fix",
 		"fix:md": "pnpm lint:md --fix",
 		"fix:pkg": "syncpack format ; syncpack fix-mismatches",
@@ -74,6 +59,18 @@
 		"lint:js": "DEBUG=\"eslint:cli-engine\" eslint . --ext .cjs,.js,.ts,.json,.yml --cache --cache-location \"./node_modules/.cache/eslint\"",
 		"lint:md": "markdownlint . --config \"../../.markdownlint.json\" --dot --ignore \"./LICENSE.md\" --ignore-path \"../../.gitignore\"",
 		"lint:pkg": "syncpack list-mismatches",
-		"lint:types": "tsc --noEmit"
+		"lint:types": "tsc --noEmit",
+		"test:unit": "vitest run --dir \"./source\""
+	},
+	"peerDependencies": {
+		"typescript": "4.9.5"
+	},
+	"devDependencies": {
+		"@terminal-nerds/snippets-test": "workspace:*"
+	},
+	"peerDependenciesMeta": {
+		"typescript": {
+			"optional": true
+		}
 	}
 }

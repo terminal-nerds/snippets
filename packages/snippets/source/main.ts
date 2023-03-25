@@ -1,4 +1,5 @@
 /* PACKAGES */
+export * from "@terminal-nerds/snippets-array";
 export * from "@terminal-nerds/snippets-config";
 export * from "@terminal-nerds/snippets-error";
 export * from "@terminal-nerds/snippets-extension";
