@@ -4,9 +4,10 @@
 [![dependencies badge]][dependencies url]\
 [![install size badge]][install size url]
 
-➡️ **This package wraps all available modules with snippets related to array**
+➡️ **This package wraps all available modules with snippets related to [Array]**
 — part of the [terminal-nerds/snippets] project.
 
+[Array]: https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array
 [terminal-nerds/snippets]: https://github.com/terminal-nerds/snippets
 [package version badge]: https://img.shields.io/npm/v/@terminal-nerds/snippets-array/latest?style=for-the-badge&logo=npm
 [dependencies badge]: https://img.shields.io/librariesio/release/npm/@terminal-nerds/snippets-array?style=for-the-badge
@@ -23,11 +24,15 @@
 
 <!-- prettier-sort-markdown-table -->
 
-| Name | Size |
-| ---- | ---- |
+| Name                                       | Size                                                  |
+| ------------------------------------------ | ----------------------------------------------------- |
+| [`@terminal-nerds/snippets-string/schema`] | ![schema size gzip badge] ![schema size brotli badge] |
 
 <!-- prettier-ignore-start -->
 <!-- MODULES LINKS -->
+[`@terminal-nerds/snippets-string/schema`]: https://github.com/terminal-nerds/snippets/blob/main/packages/string/source/schema/schema.ts
+[schema size gzip badge]: https://badgen.net/badgesize/gzip/file-url/unpkg.com/@terminal-nerds/snippets-string/dist/schema/schema.js?label=gzip
+[schema size brotli badge]: https://badgen.net/badgesize/brotli/file-url/unpkg.com/@terminal-nerds/snippets-string/dist/schema/schema.js?label=brotli
 <!-- prettier-ignore-end -->
 
 ---
