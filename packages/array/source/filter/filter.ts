@@ -1,23 +1,21 @@
-import { type AnyArray, validateArray } from "../schema/schema.ts";
+import { validateArrays } from "../schema/schema.ts";
 
 /** Filter out wanted items from an array. */
-export function exclude<Array extends AnyArray, Items extends AnyArray>(
-	array: Array,
-	items: Items,
-): Extract<Array, Items> {
-	validateArray(array);
-	validateArray(items);
+export function exclude<ValueType>(
+	array: ReadonlyArray<ValueType>,
+	items: ReadonlyArray<ValueType>,
+): Exclude<ReadonlyArray<ValueType>, ValueType> {
+	validateArrays(array, items);
 
-	return array.filter((item) => !items.includes(item)) as Extract<Array, Items>;
+	return array.filter((item) => !items.includes(item)) as unknown as Exclude<ReadonlyArray<ValueType>, ValueType>;
 }
 
 /** Filter out unwanted items from an array. */
-export function extract<Array extends AnyArray, Items extends AnyArray>(
-	array: Array,
-	items: Items,
-): Exclude<Array, Items> {
-	validateArray(array);
-	validateArray(items);
+export function extract<ValueType>(
+	array: ReadonlyArray<ValueType>,
+	items: ReadonlyArray<ValueType>,
+): Extract<ReadonlyArray<ValueType>, ValueType> {
+	validateArrays(array, items);
 
-	return array.filter((item) => items.includes(item)) as Exclude<Array, Items>;
+	return array.filter((item) => items.includes(item)) as Extract<ReadonlyArray<ValueType>, ValueType>;
 }

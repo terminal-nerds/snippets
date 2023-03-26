@@ -24,14 +24,24 @@
 
 <!-- prettier-sort-markdown-table -->
 
-| Name                                       | Size                                                  |
-| ------------------------------------------ | ----------------------------------------------------- |
-| [`@terminal-nerds/snippets-string/filter`] | ![filter size gzip badge] ![filter size brotli badge] |
-| [`@terminal-nerds/snippets-string/random`] | ![random size gzip badge] ![random size brotli badge] |
-| [`@terminal-nerds/snippets-string/schema`] | ![schema size gzip badge] ![schema size brotli badge] |
+| Name                                           | Size                                                          |
+| ---------------------------------------------- | ------------------------------------------------------------- |
+| [`@terminal-nerds/snippets-string/compare`]    | ![compare size gzip badge] ![compare size brotli badge]       |
+| [`@terminal-nerds/snippets-string/difference`] | ![difference size gzip badge] ![difference size brotli badge] |
+| [`@terminal-nerds/snippets-string/filter`]     | ![filter size gzip badge] ![filter size brotli badge]         |
+| [`@terminal-nerds/snippets-string/random`]     | ![random size gzip badge] ![random size brotli badge]         |
+| [`@terminal-nerds/snippets-string/schema`]     | ![schema size gzip badge] ![schema size brotli badge]         |
 
 <!-- prettier-ignore-start -->
 <!-- MODULES LINKS -->
+[`@terminal-nerds/snippets-string/compare`]: https://github.com/terminal-nerds/snippets/blob/main/packages/string/source/compare/compare.ts
+[compare size gzip badge]: https://badgen.net/badgesize/gzip/file-url/unpkg.com/@terminal-nerds/snippets-string/dist/compare/compare.js?label=gzip
+[compare size brotli badge]: https://badgen.net/badgesize/brotli/file-url/unpkg.com/@terminal-nerds/snippets-string/dist/compare/compare.js?label=brotli
+
+[`@terminal-nerds/snippets-string/difference`]: https://github.com/terminal-nerds/snippets/blob/main/packages/string/source/difference/difference.ts
+[difference size gzip badge]: https://badgen.net/badgesize/gzip/file-url/unpkg.com/@terminal-nerds/snippets-string/dist/difference/difference.js?label=gzip
+[difference size brotli badge]: https://badgen.net/badgesize/brotli/file-url/unpkg.com/@terminal-nerds/snippets-string/dist/difference/difference.js?label=brotli
+
 [`@terminal-nerds/snippets-string/filter`]: https://github.com/terminal-nerds/snippets/blob/main/packages/string/source/filter/filter.ts
 [filter size gzip badge]: https://badgen.net/badgesize/gzip/file-url/unpkg.com/@terminal-nerds/snippets-string/dist/filter/filter.js?label=gzip
 [filter size brotli badge]: https://badgen.net/badgesize/brotli/file-url/unpkg.com/@terminal-nerds/snippets-string/dist/filter/filter.js?label=brotli

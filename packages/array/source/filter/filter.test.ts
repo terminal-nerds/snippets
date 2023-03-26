@@ -12,7 +12,7 @@ describe(`exclude(array, items)`, () => {
 	it(throws(ZodError).on(`passed array that is not an array`), () => {
 		for (const sample of SAMPLE_PRIMITIVES) {
 			// @ts-expect-error Testing
-			expect(() => exclude(sample, [1, 2])).toThrowError(ZodError);
+			expect(() => exclude(sample, [0, -1])).toThrowError(ZodError);
 		}
 	});
 
@@ -24,7 +24,7 @@ describe(`exclude(array, items)`, () => {
 	});
 
 	const expected = ["terminal-nerds", "xeho91", "terminal-nerds", true, 0] as const;
-	const itemsToExclude = [1337, -1];
+	const itemsToExclude = [1337, -1] as const;
 
 	describe(
 		returns(expected).on(`sample array`).samples(SAMPLE_ARRAY).and(`items to exclude: [${itemsToExclude}]`),
@@ -60,7 +60,7 @@ describe(`extract(array, items)`, () => {
 	});
 
 	const expected = ["terminal-nerds", "xeho91", "terminal-nerds", true] as const;
-	const itemsToExtract = ["terminal-nerds", "xeho91", true];
+	const itemsToExtract = ["terminal-nerds", "xeho91", true] as const;
 
 	describe(
 		returns(expected).on(`sample array`).samples(SAMPLE_ARRAY).and(`items to extract: [${itemsToExtract}]`),
