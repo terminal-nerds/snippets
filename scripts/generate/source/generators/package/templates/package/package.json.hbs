@@ -34,7 +34,7 @@
 		"./*": {
 			"types": "./dist/*/*.d.ts",
 			"import": "./dist/*/*.js",
-			"require": "./dist/main.cjs"
+			"require": "./dist/*/*.cjs"
 		}
 	},
 	"files": [
@@ -63,7 +63,7 @@
 		"test:unit": "vitest run --dir \"./source\""
 	},
 	"peerDependencies": {
-		"typescript": "4.9.5"
+		"typescript": "5.0.2"
 	},
 	"devDependencies": {
 		"@terminal-nerds/snippets-test": "workspace:*"
