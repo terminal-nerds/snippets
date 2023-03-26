@@ -10,17 +10,23 @@ export async function getRandomIndex(length: number): Promise<number> {
 export async function getRandomItem<Type = unknown>(array: Array<Type> | readonly Type[]): Promise<Type> {
 	validateArray(array);
 
-	return array.at(await getRandomIndex(array.length)) as Type;
+	const item = array.at(await getRandomIndex(array.length));
+
+	if (item) {
+		return item;
+	} else {
+		throw new TypeError(`Something went wrong with obtaining a random array item.`);
+	}
 }
 
 interface RandomArrayItemsOptions {
 	/**
 	 * A positive integer, with a count of how many random items you want to be picked.
-	 * NOTE: It could create duplicates.
 	 */
 	count: number;
 }
 
+/** NOTE: It could create duplicates. */
 export async function getRandomItems<Type = unknown>(
 	array: Array<Type> | readonly Type[],
 	options: RandomArrayItemsOptions,
