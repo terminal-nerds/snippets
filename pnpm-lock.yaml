@@ -75,7 +75,7 @@ importers:
       '@terminal-nerds/snippets-test': workspace:*
       '@terminal-nerds/snippets-type': workspace:*
       array-differ: 4.0.0
-      array-union: ^3.0.1
+      array-union: 3.0.1
       fast-deep-equal: 3.1.3
       zod: 3.21.4
     dependencies:
