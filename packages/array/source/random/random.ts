@@ -10,13 +10,7 @@ export async function getRandomIndex(length: number): Promise<number> {
 export async function getRandomItem<Type = unknown>(array: Array<Type> | readonly Type[]): Promise<Type> {
 	validateArray(array);
 
-	const item = array.at(await getRandomIndex(array.length));
-
-	if (item) {
-		return item;
-	} else {
-		throw new TypeError(`Something went wrong with obtaining a random array item.`);
-	}
+	return array.at(await getRandomIndex(array.length)) as Type;
 }
 
 interface RandomArrayItemsOptions {
