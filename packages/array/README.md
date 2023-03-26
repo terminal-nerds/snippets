@@ -31,6 +31,9 @@
 | [`@terminal-nerds/snippets-string/filter`]     | ![filter size gzip badge] ![filter size brotli badge]         |
 | [`@terminal-nerds/snippets-string/random`]     | ![random size gzip badge] ![random size brotli badge]         |
 | [`@terminal-nerds/snippets-string/schema`]     | ![schema size gzip badge] ![schema size brotli badge]         |
+| [`@terminal-nerds/snippets-string/shuffle`]    | ![shuffle size gzip badge] ![shuffle size brotli badge]       |
+| [`@terminal-nerds/snippets-string/union`]      | ![union size gzip badge] ![union size brotli badge]           |
+| [`@terminal-nerds/snippets-string/unique`]     | ![unique size gzip badge] ![unique size brotli badge]         |
 
 <!-- prettier-ignore-start -->
 <!-- MODULES LINKS -->
@@ -53,6 +56,18 @@
 [`@terminal-nerds/snippets-string/schema`]: https://github.com/terminal-nerds/snippets/blob/main/packages/string/source/schema/schema.ts
 [schema size gzip badge]: https://badgen.net/badgesize/gzip/file-url/unpkg.com/@terminal-nerds/snippets-string/dist/schema/schema.js?label=gzip
 [schema size brotli badge]: https://badgen.net/badgesize/brotli/file-url/unpkg.com/@terminal-nerds/snippets-string/dist/schema/schema.js?label=brotli
+
+[`@terminal-nerds/snippets-string/shuffle`]: https://github.com/terminal-nerds/snippets/blob/main/packages/string/source/shuffle/shuffle.ts
+[shuffle size gzip badge]: https://badgen.net/badgesize/gzip/file-url/unpkg.com/@terminal-nerds/snippets-string/dist/shuffle/shuffle.js?label=gzip
+[shuffle size brotli badge]: https://badgen.net/badgesize/brotli/file-url/unpkg.com/@terminal-nerds/snippets-string/dist/shuffle/shuffle.js?label=brotli
+
+[`@terminal-nerds/snippets-string/union`]: https://github.com/terminal-nerds/snippets/blob/main/packages/string/source/union/union.ts
+[union size gzip badge]: https://badgen.net/badgesize/gzip/file-url/unpkg.com/@terminal-nerds/snippets-string/dist/union/union.js?label=gzip
+[union size brotli badge]: https://badgen.net/badgesize/brotli/file-url/unpkg.com/@terminal-nerds/snippets-string/dist/union/union.js?label=brotli
+
+[`@terminal-nerds/snippets-string/unique`]: https://github.com/terminal-nerds/snippets/blob/main/packages/string/source/unique/unique.ts
+[unique size gzip badge]: https://badgen.net/badgesize/gzip/file-url/unpkg.com/@terminal-nerds/snippets-string/dist/unique/unique.js?label=gzip
+[unique size brotli badge]: https://badgen.net/badgesize/brotli/file-url/unpkg.com/@terminal-nerds/snippets-string/dist/unique/unique.js?label=brotli
 <!-- prettier-ignore-end -->
 
 ---

@@ -3,10 +3,14 @@ import { getRandomIntNumber } from "@terminal-nerds/snippets-number/random";
 
 import { validateArray } from "../schema/schema.ts";
 
+export async function getRandomIndex(length: number): Promise<number> {
+	return await getRandomIntNumber({ min: 0, max: length - 1 });
+}
+
 export async function getRandomItem<Type = unknown>(array: Array<Type> | readonly Type[]): Promise<Type> {
 	validateArray(array);
 
-	return array.at(await getRandomIntNumber({ min: 0, max: array.length - 1 })) as Type;
+	return array.at(await getRandomIndex(array.length)) as Type;
 }
 
 interface RandomArrayItemsOptions {
