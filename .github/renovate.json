@@ -28,6 +28,7 @@
 			"matchUpdateTypes": ["major", "minor", "patch", "rollback"],
 			"packagePatterns": [
 				"@changesets/*",
+				"@types/which",
 				"all-contributors-cli",
 				"concurrently",
 				"del-cli",
