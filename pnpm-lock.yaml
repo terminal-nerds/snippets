@@ -69,6 +69,25 @@ importers:
       typescript: 5.0.2
       vitest: 0.29.7
 
+  packages/array:
+    specifiers:
+      '@terminal-nerds/snippets-number': workspace:*
+      '@terminal-nerds/snippets-test': workspace:*
+      '@terminal-nerds/snippets-type': workspace:*
+      array-differ: 4.0.0
+      array-union: 3.0.1
+      fast-deep-equal: 3.1.3
+      zod: 3.21.4
+    dependencies:
+      '@terminal-nerds/snippets-number': link:../number
+      '@terminal-nerds/snippets-type': link:../type
+      array-differ: 4.0.0
+      array-union: 3.0.1
+      fast-deep-equal: 3.1.3
+      zod: 3.21.4
+    devDependencies:
+      '@terminal-nerds/snippets-test': link:../test
+
   packages/config:
     specifiers:
       '@terminal-nerds/snippets-runtime': workspace:*
@@ -165,6 +184,7 @@ importers:
 
   packages/snippets:
     specifiers:
+      '@terminal-nerds/snippets-array': workspace:*
       '@terminal-nerds/snippets-config': workspace:*
       '@terminal-nerds/snippets-error': workspace:*
       '@terminal-nerds/snippets-extension': workspace:*
@@ -176,6 +196,7 @@ importers:
       '@terminal-nerds/snippets-test': workspace:*
       '@terminal-nerds/snippets-type': workspace:*
     dependencies:
+      '@terminal-nerds/snippets-array': link:../array
       '@terminal-nerds/snippets-config': link:../config
       '@terminal-nerds/snippets-error': link:../error
       '@terminal-nerds/snippets-extension': link:../extension
@@ -1875,6 +1896,11 @@ packages:
     engines: {node: '>=8'}
     dev: true
 
+  /array-differ/4.0.0:
+    resolution: {integrity: sha512-Q6VPTLMsmXZ47ENG3V+wQyZS1ZxXMxFyYzA+Z/GMrJ6yIutAIEf9wTyroTzmGjNfox9/h3GdGBCVh43GVFx4Uw==}
+    engines: {node: ^12.20.0 || ^14.13.1 || >=16.0.0}
+    dev: false
+
   /array-each/1.0.1:
     resolution: {integrity: sha512-zHjL5SZa68hkKHBFBK6DJCTtr9sfTCPCaph/L7tMSLcTFgy+zX7E+6q5UArbtOtMBCtxdICpfTCspRse+ywyXA==}
     engines: {node: '>=0.10.0'}
@@ -1899,6 +1925,11 @@ packages:
   /array-union/2.1.0:
     resolution: {integrity: sha512-HGyxoOTYUyCM6stUe6EJgnd4EoewAI7zMdfqO+kGjnlZmBDz/cR5pf8r/cR4Wq60sL/p0IkcjUEEPwS3GFrIyw==}
     engines: {node: '>=8'}
+
+  /array-union/3.0.1:
+    resolution: {integrity: sha512-1OvF9IbWwaeiM9VhzYXVQacMibxpXOMYVNIvMtKRyX9SImBXpKcFr8XvFDeEslCyuH/t6KRt7HEO94AlP8Iatw==}
+    engines: {node: '>=12'}
+    dev: false
 
   /array.prototype.flat/1.3.1:
     resolution: {integrity: sha512-roTU0KWIOmJ4DRLmwKd19Otg0/mT3qPNt0Qb3GWW8iObuZXxrjB/pzn0R3hqpRSWg4HCwqx+0vwOnWnvlOyeIA==}
@@ -3807,7 +3838,6 @@ packages:
 
   /fast-deep-equal/3.1.3:
     resolution: {integrity: sha512-f3qQ9oQy9j2AhBe/H9VC91wLmKBCCU/gDOnKNAYG5hswO7BLKj09Hc5HYNz9cGI++xlpDCIgDaitVs03ATR84Q==}
-    dev: true
 
   /fast-glob/3.2.12:
     resolution: {integrity: sha512-DVj4CQIYYow0BlaelwK1pHl5n5cRSJfM60UA0zK891sVInoPri2Ekj7+e1CT3/3qxXenpI+nBBmQAcJPJgaj4w==}
@@ -4990,7 +5020,7 @@ packages:
   /jsonfile/4.0.0:
     resolution: {integrity: sha512-m6F1R3z8jjlf2imQHS2Qez5sjKWQzbuuhuJ/FKYFRZvPE3PuHcSMVZzfsLhGVOkfd20obL5SWEBew5ShlquNxg==}
     optionalDependencies:
-      graceful-fs: 4.2.10
+      graceful-fs: 4.2.11
     dev: true
 
   /jsonfile/6.1.0:
