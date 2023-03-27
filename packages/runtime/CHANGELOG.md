@@ -1,5 +1,16 @@
 # @terminal-nerds/snippets-runtime<!-- markdownlint-disable line-length list-marker-space no-duplicate-header ul-style ul-indent no-bare-urls -->
 
+## 0.4.0
+
+### Minor Changes
+
+-   [#69](https://github.com/terminal-nerds/snippets/pull/69) [`7591f40`](https://github.com/terminal-nerds/snippets/commit/7591f402ea0d6287ccc30c93aab16e725ebd252d) Thanks [@xeho91](https://github.com/xeho91)! - 🐛 Resolve issue with duplicated re-export - `RuntimeError`
+
+### Patch Changes
+
+-   Updated dependencies [[`7591f40`](https://github.com/terminal-nerds/snippets/commit/7591f402ea0d6287ccc30c93aab16e725ebd252d)]:
+    -   @terminal-nerds/snippets-error@0.3.0
+
 ## 0.3.0
 
 ### Minor Changes
