@@ -41,6 +41,7 @@
 		"dist/"
 	],
 	"dependencies": {
+		"@terminal-nerds/snippets-error": "workspace:*",
 		"@terminal-nerds/snippets-runtime": "workspace:*",
 		"deepmerge-ts": "4.3.0",
 		"pkg-dir": "7.0.0",
