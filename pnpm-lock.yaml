@@ -245,6 +245,9 @@ importers:
   packages/url:
     specifiers:
       '@terminal-nerds/snippets-test': workspace:*
+      zod: 3.21.4
+    dependencies:
+      zod: 3.21.4
     devDependencies:
       '@terminal-nerds/snippets-test': link:../test
 

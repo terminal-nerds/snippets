@@ -72,5 +72,8 @@
 		"typescript": {
 			"optional": true
 		}
+	},
+	"dependencies": {
+		"zod": "3.21.4"
 	}
 }

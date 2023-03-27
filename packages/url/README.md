@@ -4,9 +4,10 @@
 [![dependencies badge]][dependencies url]\
 [![install size badge]][install size url]
 
-➡️ **This package wraps all available modules with snippets related to url**
+➡️ **This package wraps all available modules with snippets related to [url]**
 — part of the [terminal-nerds/snippets] project.
 
+[url]: https://developer.mozilla.org/en-US/docs/Web/API/URL
 [terminal-nerds/snippets]: https://github.com/terminal-nerds/snippets
 [package version badge]: https://img.shields.io/npm/v/@terminal-nerds/snippets-url/latest?style=for-the-badge&logo=npm
 [dependencies badge]: https://img.shields.io/librariesio/release/npm/@terminal-nerds/snippets-url?style=for-the-badge
@@ -28,6 +29,21 @@
 
 <!-- prettier-ignore-start -->
 <!-- MODULES LINKS -->
+[`@terminal-nerds/snippets-url/localhost`]: https://github.com/terminal-nerds/snippets/blob/main/packages/url/source/localhost/localhost.ts
+[localhost size gzip badge]: https://badgen.net/badgesize/gzip/file-url/unpkg.com/@terminal-nerds/snippets-url/dist/localhost/localhost.js?label=gzip
+[localhost size brotli badge]: https://badgen.net/badgesize/brotli/file-url/unpkg.com/@terminal-nerds/snippets-url/dist/localhost/localhost.js?label=brotli
+
+[`@terminal-nerds/snippets-url/social-media`]: https://github.com/terminal-nerds/snippets/blob/main/packages/url/source/social-media/social-media.ts
+[social-media size gzip badge]: https://badgen.net/badgesize/gzip/file-url/unpkg.com/@terminal-nerds/snippets-url/dist/social-media/social-media.js?label=gzip
+[social-media size brotli badge]: https://badgen.net/badgesize/brotli/file-url/unpkg.com/@terminal-nerds/snippets-url/dist/social-media/social-media.js?label=brotli
+
+[`@terminal-nerds/snippets-url/target`]: https://github.com/terminal-nerds/snippets/blob/main/packages/url/source/target/target.ts
+[target size gzip badge]: https://badgen.net/badgesize/gzip/file-url/unpkg.com/@terminal-nerds/snippets-url/dist/target/target.js?label=gzip
+[target size brotli badge]: https://badgen.net/badgesize/brotli/file-url/unpkg.com/@terminal-nerds/snippets-url/dist/target/target.js?label=brotli
+
+[`@terminal-nerds/snippets-url/schema`]: https://github.com/terminal-nerds/snippets/blob/main/packages/url/source/schema/schema.ts
+[schema size gzip badge]: https://badgen.net/badgesize/gzip/file-url/unpkg.com/@terminal-nerds/snippets-url/dist/schema/schema.js?label=gzip
+[schema size brotli badge]: https://badgen.net/badgesize/brotli/file-url/unpkg.com/@terminal-nerds/snippets-url/dist/schema/schema.js?label=brotli
 <!-- prettier-ignore-end -->
 
 ---
