@@ -35,6 +35,11 @@
 			"types": "./dist/*/*.d.ts",
 			"import": "./dist/*/*.js",
 			"require": "./dist/*/*.cjs"
+		},
+		"./custom/*": {
+			"types": "./dist/custom/*/*.d.ts",
+			"import": "./dist/custom/*/*.js",
+			"require": "./dist/custom/*/*.cjs"
 		}
 	},
 	"files": [

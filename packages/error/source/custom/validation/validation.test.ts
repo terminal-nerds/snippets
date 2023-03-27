@@ -1,21 +1,7 @@
 import { returns } from "@terminal-nerds/snippets-test/unit";
 import { describe, expect, it } from "vitest";
 
-import { isRuntimeError, isValidationError, RuntimeError, ValidationError } from "./custom.ts";
-
-describe("isRuntimeError(error)", () => {
-	it(returns(false).on(`Error`), () => {
-		expect(isRuntimeError(Error)).toBe(false);
-	});
-
-	it(returns(false).on(`random value`).sample(""), () => {
-		expect(isRuntimeError("")).toBe(false);
-	});
-
-	it(returns(true).on(`RuntimeError`), () => {
-		expect(isRuntimeError(new RuntimeError("message"))).toBe(true);
-	});
-});
+import { isValidationError, ValidationError } from "./validation.ts";
 
 describe("isValidationError(error)", () => {
 	it(returns(false).on(`Error`), () => {

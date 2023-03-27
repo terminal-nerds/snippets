@@ -90,12 +90,14 @@ importers:
 
   packages/config:
     specifiers:
+      '@terminal-nerds/snippets-error': workspace:*
       '@terminal-nerds/snippets-runtime': workspace:*
       '@terminal-nerds/snippets-test': workspace:*
       deepmerge-ts: 4.3.0
       pkg-dir: 7.0.0
       type-fest: 3.6.1
     dependencies:
+      '@terminal-nerds/snippets-error': link:../error
       '@terminal-nerds/snippets-runtime': link:../runtime
       deepmerge-ts: 4.3.0
       pkg-dir: 7.0.0
