@@ -195,6 +195,7 @@ importers:
       '@terminal-nerds/snippets-string': workspace:*
       '@terminal-nerds/snippets-test': workspace:*
       '@terminal-nerds/snippets-type': workspace:*
+      '@terminal-nerds/snippets-url': workspace:*
     dependencies:
       '@terminal-nerds/snippets-array': link:../array
       '@terminal-nerds/snippets-config': link:../config
@@ -207,6 +208,7 @@ importers:
       '@terminal-nerds/snippets-string': link:../string
       '@terminal-nerds/snippets-test': link:../test
       '@terminal-nerds/snippets-type': link:../type
+      '@terminal-nerds/snippets-url': link:../url
 
   packages/string:
     specifiers:
@@ -239,6 +241,12 @@ importers:
       zod: 3.21.4
     dependencies:
       zod: 3.21.4
+
+  packages/url:
+    specifiers:
+      '@terminal-nerds/snippets-test': workspace:*
+    devDependencies:
+      '@terminal-nerds/snippets-test': link:../test
 
   scripts/generate:
     specifiers:
