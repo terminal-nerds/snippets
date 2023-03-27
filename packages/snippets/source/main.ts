@@ -10,3 +10,4 @@ export * from "@terminal-nerds/snippets-runtime";
 export * from "@terminal-nerds/snippets-string";
 export * from "@terminal-nerds/snippets-test";
 export * from "@terminal-nerds/snippets-type";
+export * from "@terminal-nerds/snippets-url";
