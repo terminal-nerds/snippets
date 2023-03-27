@@ -1,5 +1,12 @@
 # @terminal-nerds/snippets-array<!-- markdownlint-disable line-length list-marker-space no-duplicate-header ul-style ul-indent no-bare-urls -->
 
+## 0.1.1
+
+### Patch Changes
+
+-   Updated dependencies []:
+    -   @terminal-nerds/snippets-number@0.1.1
+
 ## 0.1.0
 
 ### Minor Changes
