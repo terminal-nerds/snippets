@@ -1,5 +1,6 @@
+import { RuntimeError } from "@terminal-nerds/snippets-error/custom";
+
 import { IN_BROWSER } from "../environment/environment.ts";
-import { RuntimeError } from "../error/error.ts";
 import { getEnvironmentVariable } from "../variable/variable.ts";
 import { CI_CD_ENVIRONMENT_VARIABLES } from "./groups/continuous-integration.ts";
 import { STORYBOOK_ENVIRONMENT_VARIABLES } from "./groups/storybook.ts";

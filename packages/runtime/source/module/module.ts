@@ -1,9 +1,9 @@
+import { RuntimeError } from "@terminal-nerds/snippets-error/custom";
 import { resolveModule } from "local-pkg";
 import { type NormalizedPackageJson, readPackageUpSync } from "read-pkg-up";
 import type { KebabCase } from "type-fest/source/kebab-case.ts";
 
 import { IN_BROWSER } from "../environment/environment.ts";
-import { RuntimeError } from "../error/error.ts";
 
 /** @see {@link https://nodejs.org/api/modules.html#modules-commonjs-modules} CommonJS Module */
 export const IN_CJS = typeof globalThis.require === "function";
@@ -60,7 +60,11 @@ export function getPackagesNames(): Set<PackageName> {
 	return new Set(Object.keys(getDepedencies()));
 }
 
-/** TODO: Add targetting, for better debugging (required, dev, optional or peer) */
+/**
+ * TODO: Add targetting, for better debugging (required, dev, optional or peer)
+ *
+ * @param name
+ */
 export function hasPackage(name: string): boolean {
 	return getPackagesNames().has(name);
 }

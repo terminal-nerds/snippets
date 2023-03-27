@@ -1,5 +1,6 @@
+import { RuntimeError } from "@terminal-nerds/snippets-error/custom";
+
 import { IN_NODE } from "../../environment/environment.ts";
-import { RuntimeError } from "../../error/error.ts";
 import { getEnvironmentVariable } from "../../variable/variable.ts";
 import type { ScopeOptions } from "../shared.ts";
 
