@@ -219,6 +219,25 @@ importers:
         specifier: workspace:*
         version: link:../test
 
+  packages/object:
+    dependencies:
+      '@terminal-nerds/snippets-type':
+        specifier: workspace:*
+        version: link:../type
+      type-fest:
+        specifier: 3.6.1
+        version: 3.6.1
+      typescript:
+        specifier: 5.0.2
+        version: 5.0.2
+      zod:
+        specifier: 3.21.4
+        version: 3.21.4
+    devDependencies:
+      '@terminal-nerds/snippets-test':
+        specifier: workspace:*
+        version: link:../test
+
   packages/regexp:
     dependencies:
       magic-regexp:
@@ -285,6 +304,9 @@ importers:
       '@terminal-nerds/snippets-number':
         specifier: workspace:*
         version: link:../number
+      '@terminal-nerds/snippets-object':
+        specifier: workspace:*
+        version: link:../object
       '@terminal-nerds/snippets-regexp':
         specifier: workspace:*
         version: link:../regexp
