@@ -4,7 +4,7 @@ import { returns, throws } from "@terminal-nerds/snippets-test/unit";
 import { describe, expect, it } from "vitest";
 import { ZodError } from "zod";
 
-import { isNaN, validateNaN } from "./nan.ts";
+import { isItNaN, validateNaN } from "./nan.ts";
 
 const SAMPLE_NON_NANS = SAMPLE_NUMBERS.filter((n) => !Number.isNaN(n));
 
@@ -22,16 +22,16 @@ describe("validateNaN(value)", () => {
 	});
 });
 
-describe("isNaN(value)", () => {
+describe("isItNaN(value)", () => {
 	it(returns(false).on(`non-NaN`).samples(SAMPLE_NON_NANS), () => {
 		for (const nonNaNSample of SAMPLE_NON_NANS) {
-			expect(isNaN(nonNaNSample)).toBe(false);
+			expect(isItNaN(nonNaNSample)).toBe(false);
 		}
 	});
 
 	it(returns(true).on(`NaN`).samples(SAMPLE_NANS), () => {
 		for (const infinitySample of SAMPLE_NANS) {
-			expect(isNaN(infinitySample)).toBe(true);
+			expect(isItNaN(infinitySample)).toBe(true);
 		}
 	});
 });

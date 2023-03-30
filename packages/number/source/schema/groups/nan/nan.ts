@@ -8,6 +8,6 @@ export function validateNaN(value: number): asserts value is NaN {
 	NAN_SCHEMA.parse(value);
 }
 
-export function isNaN(value: number): value is NaN {
+export function isItNaN(value: number): value is NaN {
 	return NAN_SCHEMA.safeParse(value).success;
 }
