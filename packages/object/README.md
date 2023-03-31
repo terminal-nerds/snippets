@@ -23,11 +23,20 @@
 
 <!-- prettier-sort-markdown-table -->
 
-| Name | Size |
-| ---- | ---- |
+| Name                                       | Size                                                  |
+| ------------------------------------------ | ----------------------------------------------------- |
+| [`@terminal-nerds/snippets-object/keys`]   | ![keys size gzip badge] ![keys size brotli badge]     |
+| [`@terminal-nerds/snippets-object/schema`] | ![schema size gzip badge] ![schema size brotli badge] |
 
 <!-- prettier-ignore-start -->
 <!-- MODULES LINKS -->
+[`@terminal-nerds/snippets-object/keys`]: https://github.com/terminal-nerds/snippets/blob/main/packages/object/source/keys/keys.ts
+[keys size gzip badge]: https://badgen.net/badgesize/gzip/file-object/unpkg.com/@terminal-nerds/snippets-object/dist/keys/keys.js?label=gzip
+[keys size brotli badge]: https://badgen.net/badgesize/brotli/file-object/unpkg.com/@terminal-nerds/snippets-object/dist/keys/keys.js?label=brotli
+
+[`@terminal-nerds/snippets-object/schema`]: https://github.com/terminal-nerds/snippets/blob/main/packages/object/source/schema/schema.ts
+[schema size gzip badge]: https://badgen.net/badgesize/gzip/file-object/unpkg.com/@terminal-nerds/snippets-object/dist/schema/schema.js?label=gzip
+[schema size brotli badge]: https://badgen.net/badgesize/brotli/file-object/unpkg.com/@terminal-nerds/snippets-object/dist/schema/schema.js?label=brotli
 <!-- prettier-ignore-end -->
 
 ---
