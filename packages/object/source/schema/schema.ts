@@ -1,13 +1,11 @@
-import { z } from "zod";
-
-export const OBJECT_SCHEMA = z.object({});
+import { isNonPrimitive, validateNonPrimitive } from "@terminal-nerds/snippets-type/non-primitive";
 
 export function validateObject(value: unknown): asserts value is object {
-	OBJECT_SCHEMA.parse(value);
+	validateNonPrimitive(value, "object");
 }
 
 export function isObject(value: unknown): value is object {
-	return OBJECT_SCHEMA.safeParse(value).success;
+	return isNonPrimitive(value, "object");
 }
 
 export * from "./empty/empty.ts";
