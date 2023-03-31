@@ -1,5 +1,11 @@
 # @terminal-nerds/snippets-number<!-- markdownlint-disable line-length list-marker-space no-duplicate-header ul-style ul-indent no-bare-urls -->
 
+## 0.1.2
+
+### Patch Changes
+
+-   [#70](https://github.com/terminal-nerds/snippets/pull/70) [`2cb9e45`](https://github.com/terminal-nerds/snippets/commit/2cb9e452aeb01637c982e7e98e2a7e0aa2ef3612) Thanks [@xeho91](https://github.com/xeho91)! - ♻ Rename `isNaN()` to `isItNaN()` to silence the SonarQube issue
+
 ## 0.1.1
 
 ### Patch Changes
