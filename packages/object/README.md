@@ -4,9 +4,10 @@
 [![dependencies badge]][dependencies url]\
 [![install size badge]][install size url]
 
-➡️ **This package wraps all available modules with snippets related to object**
+➡️ **This package wraps all available modules with snippets related to [object]**
 — part of the [terminal-nerds/snippets] project.
 
+[object]: https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Object
 [terminal-nerds/snippets]: https://github.com/terminal-nerds/snippets
 [package version badge]: https://img.shields.io/npm/v/@terminal-nerds/snippets-object/latest?style=for-the-badge&logo=npm
 [dependencies badge]: https://img.shields.io/librariesio/release/npm/@terminal-nerds/snippets-object?style=for-the-badge
