@@ -24,8 +24,12 @@
 
 <!-- prettier-sort-markdown-table -->
 
-| Name | Size |
-| ---- | ---- |
+| Name                                          | Size                                                              |
+| --------------------------------------------- | ----------------------------------------------------------------- |
+| [`@terminal-nerds/snippets-url/localhost`]    | ![localhost size gzip badge] ![localhost size brotli badge]       |
+| [`@terminal-nerds/snippets-url/schema`]       | ![schema size gzip badge] ![schema size brotli badge]             |
+| [`@terminal-nerds/snippets-url/social-media`] | ![social-media size gzip badge] ![social-media size brotli badge] |
+| [`@terminal-nerds/snippets-url/target`]       | ![target size gzip badge] ![target size brotli badge]             |
 
 <!-- prettier-ignore-start -->
 <!-- MODULES LINKS -->
