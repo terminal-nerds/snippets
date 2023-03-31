@@ -221,9 +221,6 @@ importers:
 
   packages/object:
     dependencies:
-      '@terminal-nerds/snippets-type':
-        specifier: workspace:*
-        version: link:../type
       type-fest:
         specifier: 3.6.1
         version: 3.6.1
