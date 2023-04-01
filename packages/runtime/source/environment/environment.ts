@@ -51,16 +51,24 @@ export const IN_WEB_WORKER =
 
 /** Receive the name _(in lowercase)_ of the currently running JavaScript environment. */
 export function getRuntimeEnvironmentName(): RuntimeEnvironment {
-	if (IN_EDGE) return "edge";
-	else if (IN_BUN) return "bun";
-	else if (IN_HAPPY_DOM) return "happy-dom";
-	else if (IN_JSDOM) return "jsdom";
-	else if (IN_DENO) return "deno";
-	else if (IN_BROWSER) return "browser";
-	else if (IN_NODE) return "node";
-	else if (IN_WEB_WORKER) return "web-worker";
-	else if (IN_DOM) return "dom";
-	else throw new RuntimeError(`Unrecognized JavaScript runtime environment!`);
+	/** NOTE: Order matters! */
+	const conditions = {
+		"edge": IN_EDGE,
+		"bun": IN_BUN,
+		"happy-dom": IN_HAPPY_DOM,
+		"jsdom": IN_JSDOM,
+		"deno": IN_DENO,
+		"browser": IN_BROWSER,
+		"node": IN_NODE,
+		"web-worker": IN_WEB_WORKER,
+		"dom": IN_DOM,
+	} as const;
+
+	for (const [name, isTrue] of Object.entries(conditions)) {
+		if (isTrue) return name as RuntimeEnvironment;
+	}
+
+	throw new RuntimeError(`Unrecognized JavaScript runtime environment!`);
 }
 
 export function validateRuntimeEnvironmentName(name: string): asserts name is RuntimeEnvironment {
