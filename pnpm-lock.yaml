@@ -241,10 +241,10 @@ importers:
   packages/project:
     dependencies:
       '@terminal-nerds/snippets-error':
-        specifier: workspace:^
+        specifier: workspace:*
         version: link:../error
       '@terminal-nerds/snippets-runtime':
-        specifier: workspace:^
+        specifier: workspace:*
         version: link:../runtime
       monorepo-root:
         specifier: 2.3.0

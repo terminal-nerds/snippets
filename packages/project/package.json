@@ -74,8 +74,8 @@
 		}
 	},
 	"dependencies": {
-		"@terminal-nerds/snippets-error": "workspace:^",
-		"@terminal-nerds/snippets-runtime": "workspace:^",
+		"@terminal-nerds/snippets-error": "workspace:*",
+		"@terminal-nerds/snippets-runtime": "workspace:*",
 		"monorepo-root": "2.3.0"
 	}
 }
