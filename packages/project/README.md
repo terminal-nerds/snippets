@@ -23,11 +23,15 @@
 
 <!-- prettier-sort-markdown-table -->
 
-| Name | Size |
-| ---- | ---- |
+| Name                                          | Size                                                      |
+| --------------------------------------------- | --------------------------------------------------------- |
+| [`@terminal-nerds/snippets-project/monorepo`] | ![monorepo size gzip badge] ![monorepo size brotli badge] |
 
 <!-- prettier-ignore-start -->
 <!-- MODULES LINKS -->
+[`@terminal-nerds/snippets-project/monorepo`]: https://github.com/terminal-nerds/snippets/blob/main/packages/project/source/localhost/localhost.ts
+[monorepo size gzip badge]: https://badgen.net/badgesize/gzip/file-project/unpkg.com/@terminal-nerds/snippets-project/dist/localhost/localhost.js?label=gzip
+[monorepo size brotli badge]: https://badgen.net/badgesize/brotli/file-project/unpkg.com/@terminal-nerds/snippets-project/dist/localhost/localhost.js?label=brotli
 <!-- prettier-ignore-end -->
 
 ---
