@@ -238,6 +238,19 @@ importers:
         specifier: workspace:*
         version: link:../test
 
+  packages/project:
+    dependencies:
+      monorepo-root:
+        specifier: 2.3.0
+        version: 2.3.0
+      typescript:
+        specifier: 5.0.2
+        version: 5.0.2
+    devDependencies:
+      '@terminal-nerds/snippets-test':
+        specifier: workspace:*
+        version: link:../test
+
   packages/regexp:
     dependencies:
       magic-regexp:
@@ -307,6 +320,9 @@ importers:
       '@terminal-nerds/snippets-object':
         specifier: workspace:*
         version: link:../object
+      '@terminal-nerds/snippets-project':
+        specifier: workspace:*
+        version: link:../project
       '@terminal-nerds/snippets-regexp':
         specifier: workspace:*
         version: link:../regexp
@@ -1144,6 +1160,33 @@ packages:
       glob: 7.1.7
     dev: true
 
+  /@node-kit/extra.fs@2.3.0:
+    resolution: {integrity: sha512-zRhA+C0udCSTuKNpzrLxH4mD/MsW1/K4218jI6fl1jr5p/AN0LX/LCK73nz8AsKmXsgamg5YOuheBABpcY8s7w==}
+    dev: false
+
+  /@node-kit/lerna-workspace-root@2.3.0:
+    resolution: {integrity: sha512-5NziPVScmmjOZy6MTT8bbim8UY1Wr3zU+MI/KZ97eQWcpCDaYZ3zH+ogs4ZYF5nI1AGM00qSX+Uhotk7d/tQiw==}
+    dependencies:
+      '@node-kit/extra.fs': 2.3.0
+      find-up: 5.0.0
+    dev: false
+
+  /@node-kit/pnpm-workspace-root@2.3.0:
+    resolution: {integrity: sha512-uZSdwPuw2iIVrpwdIhSkykj0sMai9xHTEUsJaLX2W+8YpjvIUY1ZPiMUdRsOHwo+euxwZJHrx3WQmSpOuVMFZA==}
+    dependencies:
+      '@node-kit/extra.fs': 2.3.0
+      '@pnpm/error': 4.0.1
+      find-up: 5.0.0
+    dev: false
+
+  /@node-kit/yarn-workspace-root@2.3.0:
+    resolution: {integrity: sha512-mNEc45r6ZQqAKzOeRPEgcdD6hYwhNpuyOnRD+nPoCkkqNN8L37r5mYm1W/1cqeK4Hzul2A0yXW+SWiVJLXbDpA==}
+    dependencies:
+      '@node-kit/extra.fs': 2.3.0
+      find-up: 5.0.0
+      micromatch: 4.0.5
+    dev: false
+
   /@nodelib/fs.scandir@2.1.5:
     resolution: {integrity: sha512-vq24Bq3ym5HEQm2NKCr3yXDwjc7vTsEThRDnkp2DK9p1uqLR+DHurm/NOTo0KG7HYHU7eppKZj3MyqYuMBf62g==}
     engines: {node: '>= 8'}
@@ -1173,6 +1216,18 @@ packages:
       tiny-glob: 0.2.9
       tslib: 2.5.0
     dev: true
+
+  /@pnpm/constants@6.2.0:
+    resolution: {integrity: sha512-GlDVUkeTR2WK0oZAM+wtDY6RBMLw6b0Z/5qKgBbDszx4e+R7CHyfG7JofyypogRCfeWXeAXp2C2FkFTh+sNgIg==}
+    engines: {node: '>=14.6'}
+    dev: false
+
+  /@pnpm/error@4.0.1:
+    resolution: {integrity: sha512-6UFakGqUDhnZVzYCfN+QaG1epxtBVS1M9mb9RzoBuvWxcimBYTT04fdYuyk1Nay8y/TvAVl3AVB/lCziWG0+2w==}
+    engines: {node: '>=14.6'}
+    dependencies:
+      '@pnpm/constants': 6.2.0
+    dev: false
 
   /@polka/url@1.0.0-next.21:
     resolution: {integrity: sha512-a5Sab1C4/icpTZVzZc5Ghpz88yQtGOyNqYXcZgOssB2uuAr+wF/MvN6bgtW32q7HHrvBki+BsZ0OuNv6EV3K9g==}
@@ -5882,6 +5937,12 @@ packages:
       set-error-props: 4.0.0
       set-error-stack: 1.0.0
 
+  /monorepo-root@2.3.0:
+    resolution: {integrity: sha512-YeEh0lobJ1JKuoTrPcOekjuFiyz0ztkx1qEPMTZtj+YyZcbpuZ8rWdw5Gqcqec5j51ktrLOzr08v5pIdhqv0oQ==}
+    dependencies:
+      workspace-root: 2.3.0
+    dev: false
+
   /mri@1.2.0:
     resolution: {integrity: sha512-tzzskb3bG8LvYGFF/mDTpq3jpI6Q9wc3LEmBaghu+DdCssd1FakN7Bc0hVNmEyGq1bq3RgfkCb3cmQLpNPOroA==}
     engines: {node: '>=4'}
@@ -8384,6 +8445,14 @@ packages:
 
   /wordwrap@1.0.0:
     resolution: {integrity: sha512-gvVzJFlPycKc5dZN4yPkP8w7Dc37BtP1yczEneOb4uq34pXZcvrtRTmWV8W+Ume+XCxKgbjM+nevkyFPMybd4Q==}
+    dev: false
+
+  /workspace-root@2.3.0:
+    resolution: {integrity: sha512-f4EXkcGr+7A6glDhvQ5XmllR3rSPBCSdu4DftHmvem46PNB6vhhvg6WXGrpuPpPfKU7z7aF04UyR7FIn8C3ObQ==}
+    dependencies:
+      '@node-kit/lerna-workspace-root': 2.3.0
+      '@node-kit/pnpm-workspace-root': 2.3.0
+      '@node-kit/yarn-workspace-root': 2.3.0
     dev: false
 
   /wrap-ansi@6.2.0:
