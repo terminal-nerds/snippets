@@ -221,6 +221,9 @@ importers:
 
   packages/object:
     dependencies:
+      '@terminal-nerds/snippets-function':
+        specifier: workspace:^
+        version: link:../function
       '@terminal-nerds/snippets-type':
         specifier: workspace:*
         version: link:../type

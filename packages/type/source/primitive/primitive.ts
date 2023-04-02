@@ -36,6 +36,15 @@ export const STRING_SCHEMA = z.string();
 export const SYMBOL_SCHEMA = z.symbol();
 export const UNDEFINED_SCHEMA = z.undefined();
 
+/* prettier-ignore */
+export const PRIMITIVE_SCHEMA = BIG_INT_SCHEMA
+    .or(BOOLEAN_SCHEMA)
+	.or(NUMBER_SCHEMA)
+	.or(NULL_SCHEMA)
+	.or(STRING_SCHEMA)
+	.or(SYMBOL_SCHEMA)
+	.or(UNDEFINED_SCHEMA);
+
 export const PRIMITIVE_SCHEMAS = {
 	bigint: BIG_INT_SCHEMA,
 	boolean: BOOLEAN_SCHEMA,
