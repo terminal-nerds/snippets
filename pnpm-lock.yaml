@@ -136,8 +136,8 @@ importers:
         specifier: workspace:*
         version: link:../runtime
       deepmerge-ts:
-        specifier: 4.3.0
-        version: 4.3.0
+        specifier: 5.0.0
+        version: 5.0.0
       pkg-dir:
         specifier: 7.0.0
         version: 7.0.0
@@ -2952,6 +2952,12 @@ packages:
   /deepmerge-ts@4.3.0:
     resolution: {integrity: sha512-if3ZYdkD2dClhnXR5reKtG98cwyaRT1NeugQoAPTTfsOpV9kqyeiBF9Qa5RHjemb3KzD5ulqygv6ED3t5j9eJw==}
     engines: {node: '>=12.4.0'}
+    dev: true
+
+  /deepmerge-ts@5.0.0:
+    resolution: {integrity: sha512-esq9xUO8+CQCG63IlpkoOBNlpm1m4WBm0NRLFrGL/dcgzqWi1tmTLfG7QTvffqYt6T+dS+xaxrHxdexqGWkV1g==}
+    engines: {node: '>=16.0.0'}
+    dev: false
 
   /defaults@1.0.4:
     resolution: {integrity: sha512-eFuaLoy/Rxalv2kr+lqMlUnrDWV+3j4pljOIJgLIhI058IQfWJ7vXhyEIHu+HtC738klGALYxOKDO0bQP3tg8A==}

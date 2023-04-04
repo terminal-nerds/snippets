@@ -43,7 +43,7 @@
 	"dependencies": {
 		"@terminal-nerds/snippets-error": "workspace:*",
 		"@terminal-nerds/snippets-runtime": "workspace:*",
-		"deepmerge-ts": "4.3.0",
+		"deepmerge-ts": "5.0.0",
 		"pkg-dir": "7.0.0",
 		"type-fest": "3.6.1"
 	},
