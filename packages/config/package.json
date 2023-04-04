@@ -2,7 +2,7 @@
 	"$schema": "https://json.schemastore.org/package",
 	"type": "module",
 	"name": "@terminal-nerds/snippets-config",
-	"version": "0.3.0",
+	"version": "0.3.1",
 	"description": "@terminal-nerds reusable snippets for configs.",
 	"keywords": [
 		"snippets",

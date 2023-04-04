@@ -1,5 +1,11 @@
 # @terminal-nerds/snippets-number<!-- markdownlint-disable line-length list-marker-space no-duplicate-header ul-style ul-indent no-bare-urls -->
 
+## 0.2.0
+
+### Minor Changes
+
+-   [#73](https://github.com/terminal-nerds/snippets/pull/73) [`1268648`](https://github.com/terminal-nerds/snippets/commit/12686482558ef5911336d1524862c06731192f13) Thanks [@xeho91](https://github.com/xeho91)! - ✨ Add `validateFloatNumber()` and use zod on `isNumber()`
+
 ## 0.1.2
 
 ### Patch Changes
