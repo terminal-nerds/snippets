@@ -1,8 +1,10 @@
 import { z } from "zod";
 
-const OBJECT_KEY_SCHEMA = z.number().or(z.string()).or(z.symbol());
+export const OBJECT_KEY_SCHEMA = z.number().or(z.string()).or(z.symbol());
+
 const RENAMER_SCHEMA = z.function().args(OBJECT_KEY_SCHEMA).returns(OBJECT_KEY_SCHEMA);
-type ObjectKey = number | string | symbol;
+
+export type ObjectKey = number | string | symbol;
 
 export function renameObjectKeys<OldKey extends ObjectKey, Value, NewKey extends ObjectKey>(
 	object: Record<OldKey, Value>,
