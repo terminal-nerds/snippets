@@ -21,7 +21,7 @@
 		"@types/inquirer": "9.0.3",
 		"@types/inquirer-autocomplete-prompt": "3.0.0",
 		"@types/minimist": "1.2.2",
-		"@types/which": "2.0.2"
+		"@types/which": "3.0.0"
 	},
 	"scripts": {
 		"clean": "concurrently \"pnpm:clean:*\" --group --timings",
