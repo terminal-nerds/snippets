@@ -44,11 +44,11 @@
 		"@terminal-nerds/snippets-regexp": "workspace:*",
 		"@terminal-nerds/snippets-type": "workspace:*",
 		"case-anything": "2.1.10",
-		"type-fest": "3.6.1",
+		"type-fest": "3.7.2",
 		"zod": "3.21.4"
 	},
 	"peerDependencies": {
-		"typescript": "5.0.2"
+		"typescript": "5.0.3"
 	},
 	"peerDependenciesMeta": {
 		"typescript": {

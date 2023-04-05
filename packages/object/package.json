@@ -63,7 +63,7 @@
 		"test:unit": "vitest run --dir \"./source\""
 	},
 	"peerDependencies": {
-		"typescript": "5.0.2"
+		"typescript": "5.0.3"
 	},
 	"devDependencies": {
 		"@terminal-nerds/snippets-test": "workspace:*"
@@ -76,7 +76,7 @@
 	"dependencies": {
 		"@terminal-nerds/snippets-type": "workspace:*",
 		"deepmerge-ts": "5.0.0",
-		"type-fest": "3.6.1",
+		"type-fest": "3.7.2",
 		"zod": "3.21.4"
 	}
 }

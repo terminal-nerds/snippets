@@ -46,11 +46,11 @@
 		"dist/"
 	],
 	"dependencies": {
-		"modern-errors": "5.5.2",
+		"modern-errors": "5.5.4",
 		"zod": "3.21.4"
 	},
 	"peerDependencies": {
-		"typescript": "5.0.2"
+		"typescript": "5.0.3"
 	},
 	"peerDependenciesMeta": {
 		"typescript": {

@@ -68,7 +68,7 @@
 		"test:unit": "vitest run --dir \"./source\""
 	},
 	"peerDependencies": {
-		"typescript": "5.0.2"
+		"typescript": "5.0.3"
 	},
 	"devDependencies": {
 		"@terminal-nerds/snippets-test": "workspace:*"
