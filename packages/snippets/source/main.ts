@@ -6,6 +6,7 @@ export * from "@terminal-nerds/snippets-extension";
 export * from "@terminal-nerds/snippets-function";
 export * from "@terminal-nerds/snippets-number";
 export * from "@terminal-nerds/snippets-object";
+export * from "@terminal-nerds/snippets-package";
 export * from "@terminal-nerds/snippets-project";
 export * from "@terminal-nerds/snippets-regexp";
 export * from "@terminal-nerds/snippets-runtime";

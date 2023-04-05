@@ -20,44 +20,32 @@
 [documentation badge]: https://img.shields.io/static/v1?color=informational&style=for-the-badge&label=documentation&message=jsdocs.io
 [documentation url]: https://jsdocs.io/package/@terminal-nerds/snippets
 
+<!-- prettier-sort-markdown-table -->
+
 | Name                            | Version                                          |
 | ------------------------------- | ------------------------------------------------ |
+| [![array badge]][array]         | [![array version badge]][array npm page]         |
 | [![config badge]][config]       | [![config version badge]][config npm page]       |
 | [![error badge]][error]         | [![error version badge]][error npm page]         |
 | [![extension badge]][extension] | [![extension version badge]][extension npm page] |
 | [![function badge]][function]   | [![function version badge]][function npm page]   |
+| [![number badge]][number]       | [![number version badge]][number npm page]       |
+| [![object badge]][object]       | [![object version badge]][object npm page]       |
+| [![package badge]][package]     | [![package version badge]][package npm page]     |
+| [![project badge]][project]     | [![project version badge]][project npm page]     |
 | [![regexp badge]][regexp]       | [![regexp version badge]][regexp npm page]       |
 | [![runtime badge]][runtime]     | [![runtime version badge]][runtime npm page]     |
 | [![string badge]][string]       | [![string version badge]][string npm page]       |
 | [![test badge]][test]           | [![test version badge]][test npm page]           |
 | [![type badge]][type]           | [![type version badge]][type npm page]           |
+| [![url badge]][url]             | [![url version badge]][url npm page]             |
 
 <!-- prettier-ignore-start -->
 <!-- PACKAGES LINKS -->
-[project]: https://github.com/terminal-nerds/snippets/blob/main/packages/project/README.md
-[project badge]: https://img.shields.io/static/v1?label=%40terminal-nerds&message=snippets-project&style=flat-square&color=informational
-[project version badge]: https://img.shields.io/npm/v/@terminal-nerds/snippets-project/latest?style=flat-square&logo=npm
-[project npm page]: https://www.npmjs.com/package/@terminal-nerds/snippets-project
-
-[object]: https://github.com/terminal-nerds/snippets/blob/main/packages/object/README.md
-[object badge]: https://img.shields.io/static/v1?label=%40terminal-nerds&message=snippets-object&style=flat-square&color=informational
-[object version badge]: https://img.shields.io/npm/v/@terminal-nerds/snippets-object/latest?style=flat-square&logo=npm
-[object npm page]: https://www.npmjs.com/package/@terminal-nerds/snippets-object
-
-[url]: https://github.com/terminal-nerds/snippets/blob/main/packages/url/README.md
-[url badge]: https://img.shields.io/static/v1?label=%40terminal-nerds&message=snippets-url&style=flat-square&color=informational
-[url version badge]: https://img.shields.io/npm/v/@terminal-nerds/snippets-url/latest?style=flat-square&logo=npm
-[url npm page]: https://www.npmjs.com/package/@terminal-nerds/snippets-url
-
 [array]: https://github.com/terminal-nerds/snippets/blob/main/packages/array/README.md
 [array badge]: https://img.shields.io/static/v1?label=%40terminal-nerds&message=snippets-array&style=flat-square&color=informational
 [array version badge]: https://img.shields.io/npm/v/@terminal-nerds/snippets-array/latest?style=flat-square&logo=npm
 [array npm page]: https://www.npmjs.com/package/@terminal-nerds/snippets-array
-
-[number]: https://github.com/terminal-nerds/snippets/blob/main/packages/number/README.md
-[number badge]: https://img.shields.io/static/v1?label=%40terminal-nerds&message=snippets-number&style=flat-square&color=informational
-[number version badge]: https://img.shields.io/npm/v/@terminal-nerds/snippets-number/latest?style=flat-square&logo=npm
-[number npm page]: https://www.npmjs.com/package/@terminal-nerds/snippets-number
 
 [config]: https://github.com/terminal-nerds/snippets/blob/main/packages/config/README.md
 [config badge]: https://img.shields.io/static/v1?label=%40terminal-nerds&message=snippets-config&style=flat-square&color=informational
@@ -74,10 +62,30 @@
 [extension version badge]: https://img.shields.io/npm/v/@terminal-nerds/snippets-extension/latest?style=flat-square&logo=npm
 [extension npm page]: https://www.npmjs.com/package/@terminal-nerds/snippets-extension
 
+[number]: https://github.com/terminal-nerds/snippets/blob/main/packages/number/README.md
+[number badge]: https://img.shields.io/static/v1?label=%40terminal-nerds&message=snippets-number&style=flat-square&color=informational
+[number version badge]: https://img.shields.io/npm/v/@terminal-nerds/snippets-number/latest?style=flat-square&logo=npm
+[number npm page]: https://www.npmjs.com/package/@terminal-nerds/snippets-number
+
 [function]: https://github.com/terminal-nerds/snippets/blob/main/packages/function/README.md
 [function badge]: https://img.shields.io/static/v1?label=%40terminal-nerds&message=snippets-function&style=flat-square&color=informational
 [function version badge]: https://img.shields.io/npm/v/@terminal-nerds/snippets-function/latest?style=flat-square&logo=npm
 [function npm page]: https://www.npmjs.com/package/@terminal-nerds/snippets-function
+
+[object]: https://github.com/terminal-nerds/snippets/blob/main/packages/object/README.md
+[object badge]: https://img.shields.io/static/v1?label=%40terminal-nerds&message=snippets-object&style=flat-square&color=informational
+[object version badge]: https://img.shields.io/npm/v/@terminal-nerds/snippets-object/latest?style=flat-square&logo=npm
+[object npm page]: https://www.npmjs.com/package/@terminal-nerds/snippets-object
+
+[package]: https://github.com/terminal-nerds/snippets/blob/main/packages/package/README.md
+[package badge]: https://img.shields.io/static/v1?label=%40terminal-nerds&message=snippets-package&style=flat-square&color=informational
+[package version badge]: https://img.shields.io/npm/v/@terminal-nerds/snippets-package/latest?style=flat-square&logo=npm
+[package npm page]: https://www.npmjs.com/package/@terminal-nerds/snippets-package
+
+[project]: https://github.com/terminal-nerds/snippets/blob/main/packages/project/README.md
+[project badge]: https://img.shields.io/static/v1?label=%40terminal-nerds&message=snippets-project&style=flat-square&color=informational
+[project version badge]: https://img.shields.io/npm/v/@terminal-nerds/snippets-project/latest?style=flat-square&logo=npm
+[project npm page]: https://www.npmjs.com/package/@terminal-nerds/snippets-project
 
 [regexp]: https://github.com/terminal-nerds/snippets/blob/main/packages/regexp/README.md
 [regexp badge]: https://img.shields.io/static/v1?label=%40terminal-nerds&message=snippets-regexp&style=flat-square&color=informational
@@ -103,6 +111,11 @@
 [type badge]: https://img.shields.io/static/v1?label=%40terminal-nerds&message=snippets-type&style=flat-square&color=informational
 [type version badge]: https://img.shields.io/npm/v/@terminal-nerds/snippets-type/latest?style=flat-square&logo=npm
 [type npm page]: https://www.npmjs.com/package/@terminal-nerds/snippets-type
+
+[url]: https://github.com/terminal-nerds/snippets/blob/main/packages/url/README.md
+[url badge]: https://img.shields.io/static/v1?label=%40terminal-nerds&message=snippets-url&style=flat-square&color=informational
+[url version badge]: https://img.shields.io/npm/v/@terminal-nerds/snippets-url/latest?style=flat-square&logo=npm
+[url npm page]: https://www.npmjs.com/package/@terminal-nerds/snippets-url
 <!-- prettier-ignore-end -->
 
 ---

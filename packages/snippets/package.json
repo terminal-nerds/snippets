@@ -42,6 +42,7 @@
 		"@terminal-nerds/snippets-function": "workspace:*",
 		"@terminal-nerds/snippets-number": "workspace:*",
 		"@terminal-nerds/snippets-object": "workspace:*",
+		"@terminal-nerds/snippets-package": "workspace:*",
 		"@terminal-nerds/snippets-project": "workspace:*",
 		"@terminal-nerds/snippets-regexp": "workspace:*",
 		"@terminal-nerds/snippets-runtime": "workspace:*",
