@@ -28,6 +28,7 @@
 | ------------------------------------------------- | ----------------------------------------------------------------- |
 | [`@terminal-nerds/snippets-package/dependencies`] | ![dependencies size gzip badge] ![dependencies size brotli badge] |
 | [`@terminal-nerds/snippets-package/json`]         | ![json size gzip badge] ![json size brotli badge]                 |
+| [`@terminal-nerds/snippets-package/schema`]       | ![schema size gzip badge] ![schema size brotli badge]             |
 
 <!-- prettier-ignore-start -->
 <!-- MODULES LINKS -->
@@ -38,6 +39,10 @@
 [`@terminal-nerds/snippets-package/json`]: https://github.com/terminal-nerds/snippets/blob/main/packages/package/source/json/json.ts
 [json size gzip badge]: https://badgen.net/badgesize/gzip/file-url/unpkg.com/@terminal-nerds/snippets-package/dist/json/json.js?label=gzip
 [json size brotli badge]: https://badgen.net/badgesize/brotli/file-url/unpkg.com/@terminal-nerds/snippets-package/dist/json/json.js?label=brotli
+
+[`@terminal-nerds/snippets-package/schema`]: https://github.com/terminal-nerds/snippets/blob/main/packages/package/source/schema/schema.ts
+[schema size gzip badge]: https://badgen.net/badgesize/gzip/file-url/unpkg.com/@terminal-nerds/snippets-package/dist/schema/schema.js?label=gzip
+[schema size brotli badge]: https://badgen.net/badgesize/brotli/file-url/unpkg.com/@terminal-nerds/snippets-package/dist/schema/schema.js?label=brotli
 <!-- prettier-ignore-end -->
 
 ---

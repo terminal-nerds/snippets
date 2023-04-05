@@ -42,9 +42,7 @@
 	],
 	"dependencies": {
 		"@terminal-nerds/snippets-error": "workspace:*",
-		"local-pkg": "^0.4.3",
-		"read-pkg-up": "^9.1.0",
-		"type-fest": "3.7.2",
+		"local-pkg": "0.4.3",
 		"zod": "3.21.4"
 	},
 	"peerDependencies": {
