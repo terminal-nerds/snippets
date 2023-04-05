@@ -49,30 +49,39 @@ export function hasEnvironmentVariable(variable: string): boolean {
 }
 
 /* prettier-ignore */
-export function getEnvironmentVariable( variable: string, options?: { strict?: false }): EnvironmentVariableValue | undefined;
-export function getEnvironmentVariable(variable: string, options: { strict: true }): EnvironmentVariableValue;
-export function getEnvironmentVariable(
+export function getEnvironmentVariable<ValueType extends EnvironmentVariableValue>(variable: string, options?: { strict?: false }): ValueType | undefined;
+/* prettier-ignore */
+export function getEnvironmentVariable<ValueType extends EnvironmentVariableValue>(variable: string, options: { strict: true }): ValueType;
+export function getEnvironmentVariable<ValueType extends EnvironmentVariableValue>(
 	variable: string,
 	options: EnvironmentVariableOptions = {},
-): EnvironmentVariableValue | undefined {
+): ValueType | undefined {
 	const { strict = false } = options;
 
 	const value = toMap(getEnvironmentVariables()).get(variable);
 
 	if (value) {
-		return parseEnvironmentVariableValue(value);
+		return parseEnvironmentVariableValue(value) as ValueType;
 	} else if (strict) {
 		throw new RuntimeError(`The environment variable - "${variable}" - is not set. Getter aborted.`);
 	}
 }
 
-function parseEnvironmentVariableValue(value: EnvironmentVariableValue) {
-	if (value === "true") return true;
-	else if (value === "false") return false;
+type ParsedEnvVariableValue<Value extends string> = Value extends "true"
+	? true
+	: Value extends "false"
+	? false
+	: Value extends `${number}`
+	? number
+	: string;
+
+function parseEnvironmentVariableValue<Value extends string>(value: Value): ParsedEnvVariableValue<Value> {
+	if (value === "true") return true as ParsedEnvVariableValue<Value>;
+	else if (value === "false") return false as ParsedEnvVariableValue<Value>;
 	else {
 		const asNumber = Number(value);
 
-		return Number.isNaN(asNumber) ? value : asNumber;
+		return (Number.isNaN(asNumber) ? value : asNumber) as ParsedEnvVariableValue<Value>;
 	}
 }
 
