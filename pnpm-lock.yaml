@@ -133,7 +133,7 @@ importers:
         specifier: workspace:*
         version: link:../error
       '@terminal-nerds/snippets-object':
-        specifier: workspace:^
+        specifier: workspace:*
         version: link:../object
       '@terminal-nerds/snippets-runtime':
         specifier: workspace:*
@@ -243,6 +243,9 @@ importers:
 
   packages/package:
     dependencies:
+      '@terminal-nerds/snippets-error':
+        specifier: workspace:*
+        version: link:../error
       '@terminal-nerds/snippets-runtime':
         specifier: workspace:*
         version: link:../runtime
