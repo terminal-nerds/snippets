@@ -3,6 +3,8 @@ import { z } from "zod";
 
 export * from "magic-regexp";
 
+// TODO: Get rid of this
+/* eslint-disable no-unused-vars */
 export enum REGEXP_FLAGS {
 	/** Case-insensitive search */
 	caseInsensitive = "i",
@@ -19,6 +21,7 @@ export enum REGEXP_FLAGS {
 	/** Perform a "sticky" search that matches starting at the current position in the target string */
 	sticky = "y",
 }
+/* eslint-enable no-unused-vars */
 
 export type RegExpFlagName = keyof typeof REGEXP_FLAGS;
 
@@ -31,6 +34,7 @@ export function validateRegExpFlag(flag: string): Flag {
 export function isValidRegExpFlag(flag: string): flag is Flag {
 	return REGEXP_FLAG_SCHEMA.safeParse(flag).success;
 }
+// eslint-disable-next-line no-unused-vars
 export type RegExpOptions = Partial<{ [name in RegExpFlagName]: boolean }>;
 
 export function setRegExpFlags(options: RegExpOptions): Array<Flag> {

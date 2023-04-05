@@ -1,6 +1,6 @@
 import { IN_NODE } from "@terminal-nerds/snippets-runtime/environment";
 
-// eslint-disable-next-line @typescript-eslint/no-unused-vars
+// eslint-disable-next-line @typescript-eslint/no-unused-vars, no-unused-vars
 import type { MaxSafeInteger, MinSafeInteger } from "../schema/groups/safe/safe.ts";
 
 /* prettier-ignore */

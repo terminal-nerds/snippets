@@ -32,7 +32,7 @@ const EMPTY_STRINGS = FALSY_STRINGS;
 const NON_STRING_VALUES = ALL_SAMPLES.filter((v) => typeof v !== "string");
 
 /* eslint-disable @typescript-eslint/no-explicit-any */
-function testInvalidInput(method: (input: any, options?: any) => void, options?: any): void {
+function testInvalidInput(method: (_input: any, _options?: any) => void, options?: any): void {
 	it(throws(ZodError).on(`passed non-string input`), () => {
 		for (const nonString of NON_STRING_VALUES) {
 			expect(() => method(nonString, options)).toThrowError(ZodError);
@@ -67,7 +67,7 @@ function testInvalidCharInput(method: Parameters<typeof testInvalidInput>[0]): v
 	});
 }
 
-function testInvalidCharTypeOption(method: (input: string, options: CharOptions<CharType>) => void): void {
+function testInvalidCharTypeOption(method: (_input: string, _options: CharOptions<CharType>) => void): void {
 	const options = { type: "wrong" };
 
 	it(throws(ZodError).on(`passed unrecognized char type option`).with(options), () => {

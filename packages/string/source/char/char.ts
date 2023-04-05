@@ -128,7 +128,7 @@ export function isChar<T extends CharType>(
 /* prettier-ignore */
 export function hasChars<T extends CharType>(
 	input: string,
-	/** @default `{ caseInsensitive: true }` */
+	/** @defaultValue `{ caseInsensitive: true }` */
 	options: CharOptions<T>,
 ): boolean {
 	const { type, ...regExpOptions } = options;
@@ -151,7 +151,7 @@ export function hasChars<T extends CharType>(
 /* prettier-ignore */
 export function getChars<T extends CharType>(
 	input: string,
-	/** @default `{ caseInsensitive: true, global: true, multiline: true }` */
+	/** @defaultValue `{ caseInsensitive: true, global: true, multiline: true }` */
 	options: CharOptions<T>,
 ): Array<Char<T>> {
 	const { type, ...regExpOptions } = options;

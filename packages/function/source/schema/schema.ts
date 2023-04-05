@@ -8,7 +8,7 @@ import { AsyncFunction, AsyncGeneratorFunction, GeneratorFunction } from "@termi
 import { isNonPrimitive, validateNonPrimitive } from "@terminal-nerds/snippets-type/non-primitive";
 
 /* eslint-disable-next-line @typescript-eslint/no-explicit-any */
-export type AnyFunction = (...args: any) => any;
+export type AnyFunction = (..._args: any) => any;
 
 export function validateFunction(value: unknown): asserts value is AnyFunction {
 	validateNonPrimitive(value, "function");
@@ -51,7 +51,7 @@ export function isAsyncFunction(_function: AnyFunction): _function is typeof Asy
 	return IN_BROWSER ? _function instanceof AsyncFunction : nodeIsAsyncFunction(_function);
 }
 
-/** @see {@link https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Statements/async_function any} Async generator function */
+/** @see {@link https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Statements/async_function} Async generator function */
 export function isAsyncGeneratorFunction(_function: AnyFunction): _function is typeof AsyncGeneratorFunction {
 	validateFunction(_function);
 
@@ -60,7 +60,7 @@ export function isAsyncGeneratorFunction(_function: AnyFunction): _function is t
 		: isAsyncFunction(_function) && isGeneratorFunction(_function);
 }
 
-/** @see {@link https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Statements/function any} Generator function */
+/** @see {@link https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Statements/function} Generator function */
 export function isGeneratorFunction(_function: AnyFunction): _function is GeneratorFunction {
 	validateFunction(_function);
 

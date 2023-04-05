@@ -5,11 +5,11 @@ import { getValueTypeEmoji } from "../emoji/emoji.ts";
 
 declare global {
 	interface String {
-		and: (description: string) => string;
-		on: (situation: string) => string;
-		sample: (data: unknown) => string;
-		samples: (data: unknown) => string;
-		with: (options: Record<string, unknown>) => string;
+		and: (_description: string) => string;
+		on: (_situation: string) => string;
+		sample: (_data: unknown) => string;
+		samples: (_data: unknown) => string;
+		with: (_options: Record<string, unknown>) => string;
 	}
 }
 

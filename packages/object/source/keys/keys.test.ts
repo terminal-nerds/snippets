@@ -1,4 +1,4 @@
-import { returns, throws } from "@terminal-nerds/snippets-test/unit";
+import { returns } from "@terminal-nerds/snippets-test/unit";
 import { describe, it } from "vitest";
 
 import { renameObjectKeys } from "./keys.ts";

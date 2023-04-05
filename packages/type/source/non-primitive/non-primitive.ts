@@ -10,7 +10,7 @@ export const NON_PRIMITIVE_NAMES = [
 export const NON_PRIMITIVE_NAME_SCHEMA = z.enum(NON_PRIMITIVE_NAMES);
 
 export interface NonPrimitives {
-	function: (...args: unknown[]) => unknown;
+	function: (..._args: unknown[]) => unknown;
 	object: object;
 }
 

@@ -123,7 +123,7 @@ interface FileAndDirectoryPaths {
 	file: string;
 }
 
-function runFileCommandAction(paths: FileAndDirectoryPaths, commandFunction: (filePath: string) => void) {
+function runFileCommandAction(paths: FileAndDirectoryPaths, commandFunction: (_filePath: string) => void) {
 	const { directory, file } = paths;
 
 	chdir(directory);
@@ -134,12 +134,14 @@ type Tool = "eslint" | "prettier" | "syncpack";
 
 export function defineToolAction(tool: Tool, paths: FileAndDirectoryPaths): CustomActionFunction {
 	const { file } = paths;
+	// eslint-disable-next-line no-unused-vars
 	const messages: { [key in Tool]: string } = {
 		eslint: `Fixed issues with ESLint in: ${file}`,
 		prettier: `Formatted with Prettier in: ${file}`,
 		syncpack: `Formatted with syncpack in: ${file}`,
 	};
-	const runCommandFunctions: { [key in Tool]: (file: string) => void } = {
+	// eslint-disable-next-line no-unused-vars
+	const runCommandFunctions: { [key in Tool]: (_file: string) => void } = {
 		eslint: fixWithESLint,
 		prettier: formatWithPrettier,
 		syncpack: formatWithSyncpack,

@@ -1,7 +1,7 @@
 import { z } from "zod";
 
 // eslint-disable-next-line func-names, @typescript-eslint/no-empty-function
-export const AsyncFunction = async function () {}.constructor as (...args: any[]) => Promise<any>;
+export const AsyncFunction = async function () {}.constructor as (..._args: unknown[]) => Promise<unknown>;
 
 // eslint-disable-next-line func-names, @typescript-eslint/no-empty-function
 export const AsyncGeneratorFunction = async function* () {}.constructor as AsyncGeneratorFunction;

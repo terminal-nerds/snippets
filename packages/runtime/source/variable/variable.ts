@@ -41,17 +41,21 @@ export interface EnvironmentVariableOptions {
 	strict?: boolean;
 }
 
-/** Possible value types of the environment variable */
+/** Possible value types of the environment variable. */
 export type EnvironmentVariableValue = boolean | number | string;
 
 export function hasEnvironmentVariable(variable: string): boolean {
 	return toMap(getEnvironmentVariables()).has(variable);
 }
 
-/* prettier-ignore */
-export function getEnvironmentVariable<ValueType extends EnvironmentVariableValue>(variable: string, options?: { strict?: false }): ValueType | undefined;
-/* prettier-ignore */
-export function getEnvironmentVariable<ValueType extends EnvironmentVariableValue>(variable: string, options: { strict: true }): ValueType;
+export function getEnvironmentVariable<ValueType extends EnvironmentVariableValue>(
+	_variable: string,
+	_options?: { strict?: false },
+): ValueType | undefined;
+export function getEnvironmentVariable<ValueType extends EnvironmentVariableValue>(
+	_variable: string,
+	_options: { strict: true },
+): ValueType;
 export function getEnvironmentVariable<ValueType extends EnvironmentVariableValue>(
 	variable: string,
 	options: EnvironmentVariableOptions = {},
