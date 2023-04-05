@@ -52,7 +52,7 @@
 		"@terminal-nerds/snippets-url": "workspace:*"
 	},
 	"peerDependencies": {
-		"typescript": "5.0.2"
+		"typescript": "5.0.3"
 	},
 	"peerDependenciesMeta": {
 		"typescript": {
