@@ -1,13 +1,13 @@
 {
 	"$schema": "https://json.schemastore.org/package",
 	"type": "module",
-	"name": "@terminal-nerds/snippets-runtime",
-	"version": "0.4.0",
-	"description": "@terminal-nerds reusable snippets for runtime.",
+	"name": "@terminal-nerds/snippets-package",
+	"version": "0.0.0",
+	"description": "@terminal-nerds reusable snippets for packages.",
 	"keywords": [
 		"snippets",
 		"typescript",
-		"runtime"
+		"package"
 	],
 	"author": {
 		"name": "Mateusz Kadlubowski",
@@ -19,7 +19,7 @@
 	"repository": {
 		"type": "git",
 		"url": "https://github.com/terminal-nerds/snippets.git",
-		"directory": "packages/runtime"
+		"directory": "packages/package"
 	},
 	"bugs": "https://github.com/terminal-nerds/snippets/issues",
 	"engines": {
@@ -42,11 +42,12 @@
 	],
 	"dependencies": {
 		"@terminal-nerds/snippets-error": "workspace:*",
-		"local-pkg": "0.4.3",
-		"zod": "3.21.4"
+		"@terminal-nerds/snippets-runtime": "workspace:*",
+		"read-pkg-up": "9.1.0",
+		"type-fest": "3.7.2"
 	},
 	"peerDependencies": {
-		"typescript": "5.0.3"
+		"typescript": "5.0.2"
 	},
 	"peerDependenciesMeta": {
 		"typescript": {
@@ -54,10 +55,7 @@
 		}
 	},
 	"devDependencies": {
-		"@edge-runtime/vm": "2.1.2",
-		"@terminal-nerds/snippets-test": "workspace:*",
-		"happy-dom": "8.9.0",
-		"jsdom": "21.1.0"
+		"@terminal-nerds/snippets-test": "workspace:*"
 	},
 	"scripts": {
 		"build": "tsup",
@@ -68,7 +66,7 @@
 		"dev:pkg": "tsup --watch",
 		"dev:test": "vitest watch --ui",
 		"fix": "concurrently \"pnpm:fix:*\" --group --timings",
-		"fix:format": "pretty-quick --branch main --pattern \"packages/runtime/**/*\" --verbose",
+		"fix:format": "pretty-quick --branch main --pattern \"packages/package/**/*\" --verbose",
 		"fix:js": "pnpm lint:js --fix",
 		"fix:md": "pnpm lint:md --fix",
 		"fix:pkg": "syncpack format ; syncpack fix-mismatches",

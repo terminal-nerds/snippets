@@ -117,8 +117,8 @@ importers:
         specifier: 3.1.3
         version: 3.1.3
       typescript:
-        specifier: 5.0.2
-        version: 5.0.2
+        specifier: 5.0.3
+        version: 5.0.3
       zod:
         specifier: 3.21.4
         version: 3.21.4
@@ -133,7 +133,7 @@ importers:
         specifier: workspace:*
         version: link:../error
       '@terminal-nerds/snippets-object':
-        specifier: workspace:^
+        specifier: workspace:*
         version: link:../object
       '@terminal-nerds/snippets-runtime':
         specifier: workspace:*
@@ -142,11 +142,11 @@ importers:
         specifier: 7.0.0
         version: 7.0.0
       type-fest:
-        specifier: 3.6.1
-        version: 3.6.1
+        specifier: 3.7.2
+        version: 3.7.2
       typescript:
-        specifier: 5.0.2
-        version: 5.0.2
+        specifier: 5.0.3
+        version: 5.0.3
     devDependencies:
       '@terminal-nerds/snippets-test':
         specifier: workspace:*
@@ -155,11 +155,11 @@ importers:
   packages/error:
     dependencies:
       modern-errors:
-        specifier: 5.5.2
-        version: 5.5.2
+        specifier: 5.5.4
+        version: 5.5.4
       typescript:
-        specifier: 5.0.2
-        version: 5.0.2
+        specifier: 5.0.3
+        version: 5.0.3
       zod:
         specifier: 3.21.4
         version: 3.21.4
@@ -171,8 +171,8 @@ importers:
   packages/extension:
     dependencies:
       typescript:
-        specifier: 5.0.2
-        version: 5.0.2
+        specifier: 5.0.3
+        version: 5.0.3
       zod:
         specifier: 3.21.4
         version: 3.21.4
@@ -206,11 +206,11 @@ importers:
         specifier: workspace:*
         version: link:../type
       type-fest:
-        specifier: 3.6.1
-        version: 3.6.1
+        specifier: 3.7.2
+        version: 3.7.2
       typescript:
-        specifier: 5.0.2
-        version: 5.0.2
+        specifier: 5.0.3
+        version: 5.0.3
       zod:
         specifier: 3.21.4
         version: 3.21.4
@@ -228,14 +228,36 @@ importers:
         specifier: 5.0.0
         version: 5.0.0
       type-fest:
-        specifier: 3.6.1
-        version: 3.6.1
+        specifier: 3.7.2
+        version: 3.7.2
       typescript:
-        specifier: 5.0.2
-        version: 5.0.2
+        specifier: 5.0.3
+        version: 5.0.3
       zod:
         specifier: 3.21.4
         version: 3.21.4
+    devDependencies:
+      '@terminal-nerds/snippets-test':
+        specifier: workspace:*
+        version: link:../test
+
+  packages/package:
+    dependencies:
+      '@terminal-nerds/snippets-error':
+        specifier: workspace:*
+        version: link:../error
+      '@terminal-nerds/snippets-runtime':
+        specifier: workspace:*
+        version: link:../runtime
+      read-pkg-up:
+        specifier: 9.1.0
+        version: 9.1.0
+      type-fest:
+        specifier: 3.7.2
+        version: 3.7.2
+      typescript:
+        specifier: 5.0.2
+        version: 5.0.2
     devDependencies:
       '@terminal-nerds/snippets-test':
         specifier: workspace:*
@@ -253,8 +275,8 @@ importers:
         specifier: 2.3.0
         version: 2.3.0
       typescript:
-        specifier: 5.0.2
-        version: 5.0.2
+        specifier: 5.0.3
+        version: 5.0.3
     devDependencies:
       '@terminal-nerds/snippets-test':
         specifier: workspace:*
@@ -266,8 +288,8 @@ importers:
         specifier: 0.6.3
         version: 0.6.3
       typescript:
-        specifier: 5.0.2
-        version: 5.0.2
+        specifier: 5.0.3
+        version: 5.0.3
       zod:
         specifier: 3.21.4
         version: 3.21.4
@@ -278,17 +300,11 @@ importers:
         specifier: workspace:*
         version: link:../error
       local-pkg:
-        specifier: ^0.4.3
+        specifier: 0.4.3
         version: 0.4.3
-      read-pkg-up:
-        specifier: ^9.1.0
-        version: 9.1.0
-      type-fest:
-        specifier: 3.6.1
-        version: 3.6.1
       typescript:
-        specifier: 5.0.2
-        version: 5.0.2
+        specifier: 5.0.3
+        version: 5.0.3
       zod:
         specifier: 3.21.4
         version: 3.21.4
@@ -329,6 +345,9 @@ importers:
       '@terminal-nerds/snippets-object':
         specifier: workspace:*
         version: link:../object
+      '@terminal-nerds/snippets-package':
+        specifier: workspace:*
+        version: link:../package
       '@terminal-nerds/snippets-project':
         specifier: workspace:*
         version: link:../project
@@ -351,8 +370,8 @@ importers:
         specifier: workspace:*
         version: link:../url
       typescript:
-        specifier: 5.0.2
-        version: 5.0.2
+        specifier: 5.0.3
+        version: 5.0.3
 
   packages/string:
     dependencies:
@@ -366,11 +385,11 @@ importers:
         specifier: 2.1.10
         version: 2.1.10
       type-fest:
-        specifier: 3.6.1
-        version: 3.6.1
+        specifier: 3.7.2
+        version: 3.7.2
       typescript:
-        specifier: 5.0.2
-        version: 5.0.2
+        specifier: 5.0.3
+        version: 5.0.3
       zod:
         specifier: 3.21.4
         version: 3.21.4
@@ -395,8 +414,8 @@ importers:
   packages/type:
     dependencies:
       typescript:
-        specifier: 5.0.2
-        version: 5.0.2
+        specifier: 5.0.3
+        version: 5.0.3
       zod:
         specifier: 3.21.4
         version: 3.21.4
@@ -404,8 +423,8 @@ importers:
   packages/url:
     dependencies:
       typescript:
-        specifier: 5.0.2
-        version: 5.0.2
+        specifier: 5.0.3
+        version: 5.0.3
       zod:
         specifier: 3.21.4
         version: 3.21.4
@@ -2100,7 +2119,7 @@ packages:
     resolution: {integrity: sha512-bQyg9bzRntwR/8b89DOEhGwctcwCrbWW/TuqTQnpqpy5Fz3aovcOTj5i8NJV6AHc8OGNdMaqdxAWww8pz2kiKg==}
     engines: {node: '>=14.16'}
     dependencies:
-      type-fest: 3.6.1
+      type-fest: 3.7.2
     dev: false
 
   /ansi-regex@5.0.1:
@@ -5951,6 +5970,22 @@ packages:
       set-error-message: 1.6.0
       set-error-props: 4.0.0
       set-error-stack: 1.0.0
+    dev: true
+
+  /modern-errors@5.5.4:
+    resolution: {integrity: sha512-yBPPJAkAQVxA/536xKGpbFIIdA9vxiWLcDXviU+AREYZ5IviZvUZdY3RvL3JSzBiiSfi8pwmn1tPeC8UVEVvOg==}
+    engines: {node: '>=14.18.0'}
+    dependencies:
+      error-class-utils: 2.5.0
+      error-custom-class: 8.4.0
+      filter-obj: 5.1.0
+      is-plain-obj: 4.1.0
+      merge-error-cause: 3.5.0
+      normalize-exception: 2.11.0
+      set-error-message: 1.6.0
+      set-error-props: 4.0.0
+      set-error-stack: 1.0.0
+    dev: false
 
   /monorepo-root@2.3.0:
     resolution: {integrity: sha512-YeEh0lobJ1JKuoTrPcOekjuFiyz0ztkx1qEPMTZtj+YyZcbpuZ8rWdw5Gqcqec5j51ktrLOzr08v5pIdhqv0oQ==}
@@ -8057,6 +8092,12 @@ packages:
   /type-fest@3.6.1:
     resolution: {integrity: sha512-htXWckxlT6U4+ilVgweNliPqlsVSSucbxVexRYllyMVJDtf5rTjv6kF/s+qAd4QSL1BZcnJPEJavYBPQiWuZDA==}
     engines: {node: '>=14.16'}
+    dev: true
+
+  /type-fest@3.7.2:
+    resolution: {integrity: sha512-f9BHrLjRJ4MYkfOsnC/53PNDzZJcVo14MqLp2+hXE39p5bgwqohxR5hDZztwxlbxmIVuvC2EFAKrAkokq23PLA==}
+    engines: {node: '>=14.16'}
+    dev: false
 
   /typed-array-length@1.0.4:
     resolution: {integrity: sha512-KjZypGq+I/H7HI5HlOoGHkWUUGq+Q0TPhQurLbyrVrvnKTBgzLhIJ7j6J/XTQOi0d1RjyZ0wdas8bKs2p0x3Ng==}
@@ -8070,6 +8111,12 @@ packages:
     resolution: {integrity: sha512-wVORMBGO/FAs/++blGNeAVdbNKtIh1rbBL2EyQ1+J9lClJ93KiiKe8PmFIVdXhHcyv44SL9oglmfeSsndo0jRw==}
     engines: {node: '>=12.20'}
     hasBin: true
+
+  /typescript@5.0.3:
+    resolution: {integrity: sha512-xv8mOEDnigb/tN9PSMTwSEqAnUvkoXMQlicOb0IUVDBSQCgBSaAAROUZYy2IcUy5qU6XajK5jjjO7TMWqBTKZA==}
+    engines: {node: '>=12.20'}
+    hasBin: true
+    dev: false
 
   /uc.micro@1.0.6:
     resolution: {integrity: sha512-8Y75pvTYkLJW2hWQHXxoqRgV7qb9B+9vFEtidML+7koHUFapnVJAZ6cKs+Qjz5Aw3aZWHMC6u0wJE3At+nSGwA==}

@@ -42,7 +42,7 @@
 	],
 	"dependencies": {
 		"@terminal-nerds/snippets-error": "workspace:*",
-		"@terminal-nerds/snippets-object": "workspace:^",
+		"@terminal-nerds/snippets-object": "workspace:*",
 		"@terminal-nerds/snippets-runtime": "workspace:*",
 		"pkg-dir": "7.0.0",
 		"type-fest": "3.7.2"
