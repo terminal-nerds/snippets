@@ -1,5 +1,11 @@
 # @terminal-nerds/snippets-object<!-- markdownlint-disable line-length list-marker-space no-duplicate-header ul-style ul-indent no-bare-urls -->
 
+## 0.4.0
+
+### Minor Changes
+
+-   [#83](https://github.com/terminal-nerds/snippets/pull/83) [`393100f`](https://github.com/terminal-nerds/snippets/commit/393100f9044407c6b907c363470092eaca2715f9) Thanks [@xeho91](https://github.com/xeho91)! - Add `index` to `renameObjectKeys()`-> `renamer(key, index)`
+
 ## 0.3.0
 
 ### Minor Changes
