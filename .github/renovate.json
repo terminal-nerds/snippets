@@ -34,8 +34,10 @@
 				"del-cli",
 				"inquirer",
 				"husky",
+				"plop",
 				"turbo",
-				"tsx"
+				"tsx",
+				"which"
 			]
 		},
 		{
