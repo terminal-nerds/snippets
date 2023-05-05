@@ -139,8 +139,8 @@ importers:
         specifier: 7.0.0
         version: 7.0.0
       type-fest:
-        specifier: 3.7.2
-        version: 3.7.2
+        specifier: 3.9.0
+        version: 3.9.0
     devDependencies:
       '@terminal-nerds/snippets-test':
         specifier: workspace:*
@@ -194,8 +194,8 @@ importers:
         specifier: workspace:*
         version: link:../type
       type-fest:
-        specifier: 3.7.2
-        version: 3.7.2
+        specifier: 3.9.0
+        version: 3.9.0
       zod:
         specifier: 3.21.4
         version: 3.21.4
@@ -210,11 +210,11 @@ importers:
         specifier: workspace:*
         version: link:../type
       deepmerge-ts:
-        specifier: 5.0.0
-        version: 5.0.0
+        specifier: 5.1.0
+        version: 5.1.0
       type-fest:
-        specifier: 3.7.2
-        version: 3.7.2
+        specifier: 3.9.0
+        version: 3.9.0
       zod:
         specifier: 3.21.4
         version: 3.21.4
@@ -235,8 +235,8 @@ importers:
         specifier: 9.1.0
         version: 9.1.0
       type-fest:
-        specifier: 3.7.2
-        version: 3.7.2
+        specifier: 3.9.0
+        version: 3.9.0
     devDependencies:
       '@terminal-nerds/snippets-test':
         specifier: workspace:*
@@ -251,8 +251,8 @@ importers:
         specifier: workspace:*
         version: link:../runtime
       monorepo-root:
-        specifier: 2.3.0
-        version: 2.3.0
+        specifier: 2.5.1
+        version: 2.5.1
     devDependencies:
       '@terminal-nerds/snippets-test':
         specifier: workspace:*
@@ -352,8 +352,8 @@ importers:
         specifier: 2.1.10
         version: 2.1.10
       type-fest:
-        specifier: 3.7.2
-        version: 3.7.2
+        specifier: 3.9.0
+        version: 3.9.0
       zod:
         specifier: 3.21.4
         version: 3.21.4
@@ -1147,29 +1147,29 @@ packages:
       glob: 7.1.7
     dev: true
 
-  /@node-kit/extra.fs@2.3.0:
-    resolution: {integrity: sha512-zRhA+C0udCSTuKNpzrLxH4mD/MsW1/K4218jI6fl1jr5p/AN0LX/LCK73nz8AsKmXsgamg5YOuheBABpcY8s7w==}
+  /@node-kit/extra.fs@2.5.1:
+    resolution: {integrity: sha512-cj0gMQ+yE4jNmCrtz1TEXYMX+zNOJEGxGy1YzG2IBek0ndKszIYRxyLbIz3URh1MSTMGT+f9Zxy3iARB8vVP9g==}
     dev: false
 
-  /@node-kit/lerna-workspace-root@2.3.0:
-    resolution: {integrity: sha512-5NziPVScmmjOZy6MTT8bbim8UY1Wr3zU+MI/KZ97eQWcpCDaYZ3zH+ogs4ZYF5nI1AGM00qSX+Uhotk7d/tQiw==}
+  /@node-kit/lerna-workspace-root@2.5.1:
+    resolution: {integrity: sha512-6uoro6IlkkZUtXDiKH8JiRzJMv5ozIT8wtTr2GvieAOBppc62/Rxz1VuSgAoRLBYSFUrfzwdEBAJMi6s4UMZ5Q==}
     dependencies:
-      '@node-kit/extra.fs': 2.3.0
+      '@node-kit/extra.fs': 2.5.1
       find-up: 5.0.0
     dev: false
 
-  /@node-kit/pnpm-workspace-root@2.3.0:
-    resolution: {integrity: sha512-uZSdwPuw2iIVrpwdIhSkykj0sMai9xHTEUsJaLX2W+8YpjvIUY1ZPiMUdRsOHwo+euxwZJHrx3WQmSpOuVMFZA==}
+  /@node-kit/pnpm-workspace-root@2.5.1:
+    resolution: {integrity: sha512-G8scVrTODQorLajnGUzgGZyc4Ny0wfVUClbz0RwpS5O+9EMJHDHzKBMN2yR608F0X+qDQ0p5Du6fuPYf4JjGHw==}
     dependencies:
-      '@node-kit/extra.fs': 2.3.0
-      '@pnpm/error': 4.0.1
+      '@node-kit/extra.fs': 2.5.1
+      '@pnpm/error': 5.0.0
       find-up: 5.0.0
     dev: false
 
-  /@node-kit/yarn-workspace-root@2.3.0:
-    resolution: {integrity: sha512-mNEc45r6ZQqAKzOeRPEgcdD6hYwhNpuyOnRD+nPoCkkqNN8L37r5mYm1W/1cqeK4Hzul2A0yXW+SWiVJLXbDpA==}
+  /@node-kit/yarn-workspace-root@2.5.1:
+    resolution: {integrity: sha512-Oeno9PlUSkw7eJZDK3YU5Q+dcdHvaIZN85uPcILSyJWS0bfPnz5pNCWl1btCWg5sIAClaeSTZ8QO9XTlsBwA0g==}
     dependencies:
-      '@node-kit/extra.fs': 2.3.0
+      '@node-kit/extra.fs': 2.5.1
       find-up: 5.0.0
       micromatch: 4.0.5
     dev: false
@@ -1204,16 +1204,16 @@ packages:
       tslib: 2.5.0
     dev: true
 
-  /@pnpm/constants@6.2.0:
-    resolution: {integrity: sha512-GlDVUkeTR2WK0oZAM+wtDY6RBMLw6b0Z/5qKgBbDszx4e+R7CHyfG7JofyypogRCfeWXeAXp2C2FkFTh+sNgIg==}
-    engines: {node: '>=14.6'}
+  /@pnpm/constants@7.0.0:
+    resolution: {integrity: sha512-YA2EO2+uKrDWhtEhsbLdArJwQBr1n5VpCJzz+cLLQ98gbSKCOHAR8qwbn1wChcZitTVAr0HVyxO146nL/wujXg==}
+    engines: {node: '>=16.14'}
     dev: false
 
-  /@pnpm/error@4.0.1:
-    resolution: {integrity: sha512-6UFakGqUDhnZVzYCfN+QaG1epxtBVS1M9mb9RzoBuvWxcimBYTT04fdYuyk1Nay8y/TvAVl3AVB/lCziWG0+2w==}
-    engines: {node: '>=14.6'}
+  /@pnpm/error@5.0.0:
+    resolution: {integrity: sha512-8Bezq6YSSorPyaiQIr3lWF7hTIuatBTPWVCO7rbgJAGw4pq6t3DmLoN2K3EznVHMBIaqEBmkfB1lkKvXaJIVbw==}
+    engines: {node: '>=16.14'}
     dependencies:
-      '@pnpm/constants': 6.2.0
+      '@pnpm/constants': 7.0.0
     dev: false
 
   /@polka/url@1.0.0-next.21:
@@ -2135,7 +2135,7 @@ packages:
     resolution: {integrity: sha512-bQyg9bzRntwR/8b89DOEhGwctcwCrbWW/TuqTQnpqpy5Fz3aovcOTj5i8NJV6AHc8OGNdMaqdxAWww8pz2kiKg==}
     engines: {node: '>=14.16'}
     dependencies:
-      type-fest: 3.7.2
+      type-fest: 3.9.0
     dev: false
 
   /ansi-regex@5.0.1:
@@ -2972,6 +2972,12 @@ packages:
   /deepmerge-ts@5.0.0:
     resolution: {integrity: sha512-esq9xUO8+CQCG63IlpkoOBNlpm1m4WBm0NRLFrGL/dcgzqWi1tmTLfG7QTvffqYt6T+dS+xaxrHxdexqGWkV1g==}
     engines: {node: '>=16.0.0'}
+    dev: true
+
+  /deepmerge-ts@5.1.0:
+    resolution: {integrity: sha512-eS8dRJOckyo9maw9Tu5O5RUi/4inFLrnoLkBe3cPfDMx3WZioXtmOew4TXQaxq7Rhl4xjDtR7c6x8nNTxOvbFw==}
+    engines: {node: '>=16.0.0'}
+    dev: false
 
   /defaults@1.0.4:
     resolution: {integrity: sha512-eFuaLoy/Rxalv2kr+lqMlUnrDWV+3j4pljOIJgLIhI058IQfWJ7vXhyEIHu+HtC738klGALYxOKDO0bQP3tg8A==}
@@ -5944,10 +5950,10 @@ packages:
       set-error-props: 4.0.0
       set-error-stack: 1.0.0
 
-  /monorepo-root@2.3.0:
-    resolution: {integrity: sha512-YeEh0lobJ1JKuoTrPcOekjuFiyz0ztkx1qEPMTZtj+YyZcbpuZ8rWdw5Gqcqec5j51ktrLOzr08v5pIdhqv0oQ==}
+  /monorepo-root@2.5.1:
+    resolution: {integrity: sha512-4sgeX1n6xAeYLRyU0DxtCHAW3aXQICaHDXwpV1GaiId/MyU6m7P6iMwvGFeqzuujuoMHCOe53hzccWX74uVVmw==}
     dependencies:
-      workspace-root: 2.3.0
+      workspace-root: 2.5.1
     dev: false
 
   /mri@1.2.0:
@@ -7928,6 +7934,12 @@ packages:
   /type-fest@3.7.2:
     resolution: {integrity: sha512-f9BHrLjRJ4MYkfOsnC/53PNDzZJcVo14MqLp2+hXE39p5bgwqohxR5hDZztwxlbxmIVuvC2EFAKrAkokq23PLA==}
     engines: {node: '>=14.16'}
+    dev: true
+
+  /type-fest@3.9.0:
+    resolution: {integrity: sha512-hR8JP2e8UiH7SME5JZjsobBlEiatFoxpzCP+R3ZeCo7kAaG1jXQE5X/buLzogM6GJu8le9Y4OcfNuIQX0rZskA==}
+    engines: {node: '>=14.16'}
+    dev: false
 
   /typed-array-length@1.0.4:
     resolution: {integrity: sha512-KjZypGq+I/H7HI5HlOoGHkWUUGq+Q0TPhQurLbyrVrvnKTBgzLhIJ7j6J/XTQOi0d1RjyZ0wdas8bKs2p0x3Ng==}
@@ -8351,12 +8363,12 @@ packages:
     resolution: {integrity: sha512-gvVzJFlPycKc5dZN4yPkP8w7Dc37BtP1yczEneOb4uq34pXZcvrtRTmWV8W+Ume+XCxKgbjM+nevkyFPMybd4Q==}
     dev: false
 
-  /workspace-root@2.3.0:
-    resolution: {integrity: sha512-f4EXkcGr+7A6glDhvQ5XmllR3rSPBCSdu4DftHmvem46PNB6vhhvg6WXGrpuPpPfKU7z7aF04UyR7FIn8C3ObQ==}
+  /workspace-root@2.5.1:
+    resolution: {integrity: sha512-pgC3AXnpwJ7E26Y+IolqBm/pqCyGZz6lk+QXyLJYGGXF8AOkwH3w49kEXbBt+6f9nKG39v0O0VAJ4y/k7qPIJQ==}
     dependencies:
-      '@node-kit/lerna-workspace-root': 2.3.0
-      '@node-kit/pnpm-workspace-root': 2.3.0
-      '@node-kit/yarn-workspace-root': 2.3.0
+      '@node-kit/lerna-workspace-root': 2.5.1
+      '@node-kit/pnpm-workspace-root': 2.5.1
+      '@node-kit/yarn-workspace-root': 2.5.1
     dev: false
 
   /wrap-ansi@6.2.0:

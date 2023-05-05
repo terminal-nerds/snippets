@@ -50,7 +50,7 @@
 		"zod": "3.21.4"
 	},
 	"peerDependencies": {
-		"typescript": "5.0.3"
+		"typescript": "5.0.4"
 	},
 	"peerDependenciesMeta": {
 		"typescript": {

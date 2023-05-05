@@ -48,11 +48,11 @@
 	"dependencies": {
 		"@terminal-nerds/snippets-runtime": "workspace:*",
 		"@terminal-nerds/snippets-type": "workspace:*",
-		"type-fest": "3.7.2",
+		"type-fest": "3.9.0",
 		"zod": "3.21.4"
 	},
 	"peerDependencies": {
-		"typescript": "5.0.3"
+		"typescript": "5.0.4"
 	},
 	"peerDependenciesMeta": {
 		"typescript": {
