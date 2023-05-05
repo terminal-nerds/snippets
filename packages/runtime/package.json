@@ -56,8 +56,8 @@
 	"devDependencies": {
 		"@edge-runtime/vm": "2.1.2",
 		"@terminal-nerds/snippets-test": "workspace:*",
-		"happy-dom": "8.9.0",
-		"jsdom": "21.1.0"
+		"happy-dom": "9.10.5",
+		"jsdom": "22.0.0"
 	},
 	"scripts": {
 		"build": "tsup",
