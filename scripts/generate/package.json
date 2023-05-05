@@ -9,12 +9,12 @@
 	},
 	"dependencies": {
 		"@terminal-nerds/snippets-string": "workspace:*",
-		"inquirer": "9.1.5",
+		"inquirer": "9.2.0",
 		"inquirer-autocomplete-prompt": "3.0.0",
 		"minimist": "1.2.8",
 		"node-plop": "0.31.1",
 		"plop": "3.1.2",
-		"which": "3.0.0",
+		"which": "3.0.1",
 		"zod": "3.21.4"
 	},
 	"devDependencies": {
