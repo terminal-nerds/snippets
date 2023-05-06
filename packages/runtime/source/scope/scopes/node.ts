@@ -1,4 +1,4 @@
-import { RuntimeError } from "@terminal-nerds/snippets-error/custom";
+/* import { RuntimeError } from "@terminal-nerds/snippets-error/custom"; */
 
 import { IN_NODE } from "../../environment/environment.ts";
 import { getEnvironmentVariable } from "../../variable/variable.ts";
@@ -24,6 +24,6 @@ export function isNodeEnvironment(value: NodeEnvironment, options: ScopeOptions 
 }
 
 function handleNonNodeRuntime(strict: boolean) {
-	if (strict) throw new RuntimeError(`Currently you can check only inside the Node.js runtime environment.`);
+	if (strict) throw new Error(`Currently you can check only inside the Node.js runtime environment.`);
 	else return false;
 }

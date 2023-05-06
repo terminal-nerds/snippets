@@ -2,15 +2,11 @@ import { returns } from "@terminal-nerds/snippets-test/unit";
 import { describe, expect, it } from "vitest";
 
 import { deleteEnvironmentVariable, getEnvironmentVariable, setEnvironmentVariable } from "../variable/variable.ts";
-import {
-	CI_CD_ENVIRONMENT_VARIABLES,
-	inDevelopment,
-	inProduction,
-	isIn,
-	type ScopeName,
-	STORYBOOK_ENVIRONMENT_VARIABLES,
-	TEST_ENVIRONMENT_VARIABLES,
-} from "./scope.ts";
+import { isIn, type ScopeName } from "./name.ts";
+import { CI_CD_ENVIRONMENT_VARIABLES } from "./scopes/continuous-integration.ts";
+import { inDevelopment, inProduction } from "./scopes/node.ts";
+import { STORYBOOK_ENVIRONMENT_VARIABLES } from "./scopes/storybook.ts";
+import { TEST_ENVIRONMENT_VARIABLES } from "./scopes/test.ts";
 
 describe(`isIn("continuousIntegration", options?)`, () => {
 	const scopeName: ScopeName = "continuousIntegration";
