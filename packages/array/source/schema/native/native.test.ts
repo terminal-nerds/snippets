@@ -3,7 +3,7 @@ import { returns, throws } from "@terminal-nerds/snippets-test/unit";
 import { describe, expect, it } from "vitest";
 import { ZodError } from "zod";
 
-import { validateArray } from "./schema.ts";
+import { validateArray } from "./native.ts";
 
 describe("validateArray(value)", () => {
 	it(throws(ZodError).on(`non-array values`).samples(SAMPLE_PRIMITIVES), () => {
