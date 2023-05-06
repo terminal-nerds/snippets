@@ -1,5 +1,6 @@
 /* import { RuntimeError } from "@terminal-nerds/snippets-error/custom"; */
 import { z } from "zod";
+
 /* prettier-ignore */
 export const RUNTIME_ENVIRONMENTS = [
 	"browser",

@@ -1,4 +1,4 @@
-import { RuntimeError } from "@terminal-nerds/snippets-error/custom";
+/* import { RuntimeError } from "@terminal-nerds/snippets-error/custom"; */
 import { returns, throws } from "@terminal-nerds/snippets-test/unit";
 import { afterEach, describe, expect, it } from "vitest";
 
@@ -45,8 +45,8 @@ describe(`hasEnvironmentVariable(name)`, () => {
 describe(`getEnvironmentVariable(name, options?)`, () => {
 	const strictOptions = { strict: true } as const;
 
-	it(throws(RuntimeError).on(`non-existing variable`).sample(NEW_VARIABLE).with(strictOptions), () => {
-		expect(() => getEnvironmentVariable(NEW_VARIABLE, strictOptions)).toThrow(RuntimeError);
+	it(throws(Error).on(`non-existing variable`).sample(NEW_VARIABLE).with(strictOptions), () => {
+		expect(() => getEnvironmentVariable(NEW_VARIABLE, strictOptions)).toThrow(Error);
 	});
 
 	const nonStrictOptions = { strict: false } as const;
@@ -96,14 +96,14 @@ describe(`setEnvironmentVariable(name, value)`, () => {
 describe(`deleteEnvironmentVariable(name, options?)`, () => {
 	const strictOptions = { strict: true };
 
-	it(throws(RuntimeError).on(`deleting non-existing variable`).sample(NEW_VARIABLE).with(strictOptions), () => {
-		expect(() => deleteEnvironmentVariable(NEW_VARIABLE, strictOptions)).toThrow(RuntimeError);
+	it(throws(Error).on(`deleting non-existing variable`).sample(NEW_VARIABLE).with(strictOptions), () => {
+		expect(() => deleteEnvironmentVariable(NEW_VARIABLE, strictOptions)).toThrow(Error);
 	});
 
 	const nonStrictOptions = { strict: false };
 
 	it(returns().on(`deleting non-existing variable`).sample(NEW_VARIABLE).with(nonStrictOptions), () => {
-		expect(() => deleteEnvironmentVariable(NEW_VARIABLE, nonStrictOptions)).not.toThrow(RuntimeError);
+		expect(() => deleteEnvironmentVariable(NEW_VARIABLE, nonStrictOptions)).not.toThrow(Error);
 		expect(deleteEnvironmentVariable(NEW_VARIABLE, nonStrictOptions)).toBeUndefined();
 	});
 

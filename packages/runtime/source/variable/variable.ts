@@ -1,4 +1,4 @@
-import { RuntimeError } from "@terminal-nerds/snippets-error/custom";
+/* import { RuntimeError } from "@terminal-nerds/snippets-error/custom"; */
 
 import { getRuntimeEnvironmentName, type RuntimeEnvironment } from "../environment/environment.ts";
 
@@ -15,7 +15,7 @@ function getSupportedRuntime(): SupportedRuntime {
 	if (isSupportedRuntime(runtimeName)) {
 		return runtimeName;
 	} else {
-		throw new RuntimeError(`This snippet cannot be run in a runtime: ${runtimeName}!`);
+		throw new Error(`This snippet cannot be run in a runtime: ${runtimeName}!`);
 	}
 }
 
@@ -41,7 +41,9 @@ export interface EnvironmentVariableOptions {
 	strict?: boolean;
 }
 
-/** Possible value types of the environment variable. */
+/**
+ * Possible value types of the environment variable.
+ */
 export type EnvironmentVariableValue = boolean | number | string;
 
 export function hasEnvironmentVariable(variable: string): boolean {
@@ -67,7 +69,7 @@ export function getEnvironmentVariable<ValueType extends EnvironmentVariableValu
 	if (value) {
 		return parseEnvironmentVariableValue(value) as ValueType;
 	} else if (strict) {
-		throw new RuntimeError(`The environment variable - "${variable}" - is not set. Getter aborted.`);
+		throw new Error(`The environment variable - "${variable}" - is not set. Getter aborted.`);
 	}
 }
 
@@ -125,6 +127,6 @@ export function deleteEnvironmentVariable(name: string, options: EnvironmentVari
 			}
 		}
 	} else if (strict) {
-		throw new RuntimeError(`The environment variable name: "${name}" does not exist. Deletion aborted.`);
+		throw new Error(`The environment variable name: "${name}" does not exist. Deletion aborted.`);
 	}
 }
