@@ -1,5 +1,11 @@
 # @terminal-nerds/snippets-runtime<!-- markdownlint-disable line-length list-marker-space no-duplicate-header ul-style ul-indent no-bare-urls -->
 
+## 0.6.2
+
+### Patch Changes
+
+-   [#93](https://github.com/terminal-nerds/snippets/pull/93) [`d86ad4a`](https://github.com/terminal-nerds/snippets/commit/d86ad4abf89db7ed01dfce729594d07b74d189a7) Thanks [@xeho91](https://github.com/xeho91)! - ♻️ Remove more occurences of `RuntimeError` to fix CJS issues
+
 ## 0.6.1
 
 ### Patch Changes
