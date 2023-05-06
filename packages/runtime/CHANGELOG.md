@@ -1,5 +1,18 @@
 # @terminal-nerds/snippets-runtime<!-- markdownlint-disable line-length list-marker-space no-duplicate-header ul-style ul-indent no-bare-urls -->
 
+## 0.6.0
+
+### Minor Changes
+
+-   [#90](https://github.com/terminal-nerds/snippets/pull/90) [`b2341ed`](https://github.com/terminal-nerds/snippets/commit/b2341ed3378773a64fe9df1283e4a3225da0b90e) Thanks [@xeho91](https://github.com/xeho91)! - Use native `Error` instead of custom `RuntimeError`
+
+### Patch Changes
+
+-   [#81](https://github.com/terminal-nerds/snippets/pull/81) [`3d519ff`](https://github.com/terminal-nerds/snippets/commit/3d519ffcc696e8c102fcb8856c9067ad6e51c35d) Thanks [@renovate](https://github.com/apps/renovate)! - ⬆️ Update package(s) dependencies
+
+-   Updated dependencies [[`3d519ff`](https://github.com/terminal-nerds/snippets/commit/3d519ffcc696e8c102fcb8856c9067ad6e51c35d)]:
+    -   @terminal-nerds/snippets-error@0.4.1
+
 ## 0.5.0
 
 ### Minor Changes

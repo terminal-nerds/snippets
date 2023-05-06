@@ -1,5 +1,28 @@
 # @terminal-nerds/snippets<!-- markdownlint-disable line-length list-marker-space no-duplicate-header ul-style ul-indent no-bare-urls -->
 
+## 0.2.2
+
+### Patch Changes
+
+-   [#81](https://github.com/terminal-nerds/snippets/pull/81) [`3d519ff`](https://github.com/terminal-nerds/snippets/commit/3d519ffcc696e8c102fcb8856c9067ad6e51c35d) Thanks [@renovate](https://github.com/apps/renovate)! - ⬆️ Update package(s) dependencies
+
+-   Updated dependencies [[`3d519ff`](https://github.com/terminal-nerds/snippets/commit/3d519ffcc696e8c102fcb8856c9067ad6e51c35d), [`b2341ed`](https://github.com/terminal-nerds/snippets/commit/b2341ed3378773a64fe9df1283e4a3225da0b90e)]:
+    -   @terminal-nerds/snippets-array@0.2.1
+    -   @terminal-nerds/snippets-config@0.4.2
+    -   @terminal-nerds/snippets-error@0.4.1
+    -   @terminal-nerds/snippets-extension@0.4.1
+    -   @terminal-nerds/snippets-number@0.3.1
+    -   @terminal-nerds/snippets-object@0.4.1
+    -   @terminal-nerds/snippets-package@0.1.1
+    -   @terminal-nerds/snippets-project@0.2.1
+    -   @terminal-nerds/snippets-regexp@0.3.1
+    -   @terminal-nerds/snippets-runtime@0.6.0
+    -   @terminal-nerds/snippets-string@0.3.1
+    -   @terminal-nerds/snippets-type@0.3.1
+    -   @terminal-nerds/snippets-url@0.2.1
+    -   @terminal-nerds/snippets-function@0.2.4
+    -   @terminal-nerds/snippets-test@0.2.2
+
 ## 0.2.1
 
 ### Patch Changes
