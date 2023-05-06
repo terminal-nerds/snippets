@@ -269,9 +269,6 @@ importers:
 
   packages/runtime:
     dependencies:
-      '@terminal-nerds/snippets-error':
-        specifier: workspace:*
-        version: link:../error
       local-pkg:
         specifier: 0.4.3
         version: 0.4.3
