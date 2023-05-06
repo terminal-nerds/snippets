@@ -1,4 +1,4 @@
-import { ARRAY_SCHEMA, validateArray } from "../schema.ts";
+import { ARRAY_SCHEMA, validateArray } from "../native/native.ts";
 
 export const EMPTY_ARRAY_SCHEMA = ARRAY_SCHEMA.length(0);
 
