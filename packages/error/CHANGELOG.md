@@ -1,5 +1,11 @@
 # @terminal-nerds/snippets-error<!-- markdownlint-disable line-length list-marker-space no-duplicate-header ul-style ul-indent no-bare-urls -->
 
+## 0.4.1
+
+### Patch Changes
+
+-   [#81](https://github.com/terminal-nerds/snippets/pull/81) [`3d519ff`](https://github.com/terminal-nerds/snippets/commit/3d519ffcc696e8c102fcb8856c9067ad6e51c35d) Thanks [@renovate](https://github.com/apps/renovate)! - ⬆️ Update package(s) dependencies
+
 ## 0.4.0
 
 ### Minor Changes
