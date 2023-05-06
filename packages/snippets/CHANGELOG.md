@@ -1,5 +1,18 @@
 # @terminal-nerds/snippets<!-- markdownlint-disable line-length list-marker-space no-duplicate-header ul-style ul-indent no-bare-urls -->
 
+## 0.2.3
+
+### Patch Changes
+
+-   Updated dependencies [[`05015d5`](https://github.com/terminal-nerds/snippets/commit/05015d567ddfc7beff51b9c09aac59c06f3380b9)]:
+    -   @terminal-nerds/snippets-runtime@0.6.1
+    -   @terminal-nerds/snippets-config@0.4.3
+    -   @terminal-nerds/snippets-function@0.2.5
+    -   @terminal-nerds/snippets-number@0.3.2
+    -   @terminal-nerds/snippets-package@0.1.2
+    -   @terminal-nerds/snippets-project@0.2.2
+    -   @terminal-nerds/snippets-array@0.2.2
+
 ## 0.2.2
 
 ### Patch Changes
