@@ -55,7 +55,7 @@
 	"devDependencies": {
 		"@edge-runtime/vm": "2.1.2",
 		"@terminal-nerds/snippets-test": "workspace:*",
-		"happy-dom": "9.10.5",
+		"happy-dom": "9.19.2",
 		"jsdom": "22.0.0"
 	},
 	"scripts": {
