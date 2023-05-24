@@ -43,8 +43,8 @@
 	"dependencies": {
 		"@terminal-nerds/snippets-regexp": "workspace:*",
 		"@terminal-nerds/snippets-type": "workspace:*",
-		"case-anything": "2.1.10",
-		"type-fest": "3.9.0",
+		"case-anything": "2.1.11",
+		"type-fest": "3.11.0",
 		"zod": "3.21.4"
 	},
 	"peerDependencies": {

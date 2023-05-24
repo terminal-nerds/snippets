@@ -45,7 +45,7 @@
 		"@terminal-nerds/snippets-object": "workspace:*",
 		"@terminal-nerds/snippets-runtime": "workspace:*",
 		"pkg-dir": "7.0.0",
-		"type-fest": "3.9.0"
+		"type-fest": "3.11.0"
 	},
 	"peerDependencies": {
 		"typescript": "5.0.4"

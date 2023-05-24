@@ -41,7 +41,7 @@
 		"dist/"
 	],
 	"dependencies": {
-		"magic-regexp": "0.6.3",
+		"magic-regexp": "0.7.0",
 		"zod": "3.21.4"
 	},
 	"peerDependencies": {
