@@ -39,8 +39,8 @@ importers:
         specifier: 0.5.0
         version: 0.5.0(lint-staged@13.2.2)(typescript@5.0.4)
       '@terminal-nerds/markdownlint-config':
-        specifier: 0.8.0
-        version: 0.8.0(markdownlint-cli@0.34.0)
+        specifier: 0.9.0
+        version: 0.9.0(markdownlint-cli@0.34.0)
       '@terminal-nerds/prettier-config':
         specifier: 0.12.0
         version: 0.12.0(prettier@2.8.8)(typescript@5.0.4)
@@ -1336,11 +1336,11 @@ packages:
       - typescript
     dev: true
 
-  /@terminal-nerds/markdownlint-config@0.8.0(markdownlint-cli@0.34.0):
-    resolution: {integrity: sha512-F+rmKVQQA/Zp1QCQamulUKPD9emT/+SWQjUtdGd4WmgAc6vl+aF+46rrKe1NS0/w1mVBto9ohII89/8iWL22Eg==}
+  /@terminal-nerds/markdownlint-config@0.9.0(markdownlint-cli@0.34.0):
+    resolution: {integrity: sha512-1+1Enac9t3Nnoyv0nyOcltWD5xjXi1SO0S6cV0TzC+Ta8diGnmcite/mJSOchmCg09sFgyKDsMHK54o0VGomzg==}
     engines: {node: '>=18'}
     peerDependencies:
-      markdownlint-cli: 0.33.0
+      markdownlint-cli: 0.34.0
     dependencies:
       markdownlint-cli: 0.34.0
     dev: true
