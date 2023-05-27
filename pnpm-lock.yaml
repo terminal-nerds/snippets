@@ -346,8 +346,8 @@ importers:
         specifier: workspace:*
         version: link:../type
       case-anything:
-        specifier: 2.1.11
-        version: 2.1.11
+        specifier: 2.1.13
+        version: 2.1.13
       type-fest:
         specifier: 3.11.0
         version: 3.11.0
@@ -2575,8 +2575,8 @@ packages:
       upper-case-first: 2.0.2
     dev: false
 
-  /case-anything@2.1.11:
-    resolution: {integrity: sha512-uzKDXzdM/x914cepWPzElU3y50NRKYhjkO4ittOHLq+rF6M0AgRLF/+yPR1tvwLNAh8WHEPTfhuciZGPfX+oyg==}
+  /case-anything@2.1.13:
+    resolution: {integrity: sha512-zlOQ80VrQ2Ue+ymH5OuM/DlDq64mEm+B9UTdHULv5osUMD6HalNTblf2b1u/m6QecjsnOkBpqVZ+XPwIVsy7Ng==}
     engines: {node: '>=12.13'}
     dev: false
 
