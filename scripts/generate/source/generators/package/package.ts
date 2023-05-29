@@ -14,16 +14,12 @@ import {
 	defineToolAction,
 	PACKAGES_DIRECTORY_PATH,
 	ROOT_DIRECTORY_PATH,
-	SNIPPETS_DIRECTORY_PATH,
 } from "../../shared.ts";
 
 const PROJECT_README_FILE_PATH = join(ROOT_DIRECTORY_PATH, "README.md");
 const PROJECT_LICENSE_FILE_PATH = join(ROOT_DIRECTORY_PATH, "LICENSE.md");
 // TODO: __dirname should return current file path
 const TEMPLATES_DIRECTORY_PATH = join(__dirname, "generators", "package", "templates");
-const SNIPPETS_MAIN_FILE_PATH = join(SNIPPETS_DIRECTORY_PATH, "source", "main.ts");
-const SNIPPETS_README_FILE_PATH = join(SNIPPETS_DIRECTORY_PATH, "README.md");
-const SNIPPETS_PACKAGE_JSON_FILE_PATH = join(SNIPPETS_DIRECTORY_PATH, "package.json");
 
 export const packageDirectoryGenerator: PlopGeneratorConfig = {
 	description: "Generate a package directory",
@@ -39,13 +35,7 @@ export const packageDirectoryGenerator: PlopGeneratorConfig = {
 			const name = getName(answers);
 			const paths = getPaths(name);
 
-			return [
-				...setPackageDirectoryActions(answers, paths),
-				...setSnippetsMainFileActions(answers, paths),
-				...setSnippetsPackageJSONActions(answers),
-				...setSnippetsReadmeFileActions(answers),
-				...setProjectReadmeFileActions(answers, paths),
-			];
+			return [...setPackageDirectoryActions(answers, paths), ...setProjectReadmeFileActions(answers, paths)];
 		} else {
 			throw new Error("Something went wrong with getting answers.");
 		}
@@ -101,59 +91,7 @@ function setPackageDirectoryActions(data: GeneratePackageDirectoryAnswers, paths
 	return actions;
 }
 
-/** Add export of the package in the `./packages/snippets/source/main.ts` file */
-function setSnippetsMainFileActions(data: GeneratePackageDirectoryAnswers, paths: Paths): Array<ActionType> {
-	const { directoryPath } = paths;
-	const appendAction = defineAppendAction({
-		path: SNIPPETS_MAIN_FILE_PATH,
-		data,
-		pattern: /\/\* PACKAGES \*\//g,
-		templateFile: join(TEMPLATES_DIRECTORY_PATH, "snippets-main-export.ts.hbs"),
-	});
-	const fixAction = defineToolAction("eslint", { directory: directoryPath, file: SNIPPETS_MAIN_FILE_PATH });
-
-	return [appendAction, fixAction];
-}
-
-/** Generate an dependency entry in in snippets `package.json` file */
-function setSnippetsPackageJSONActions(data: GeneratePackageDirectoryAnswers): Array<ActionType> {
-	const appendAction = defineAppendAction({
-		path: join(SNIPPETS_DIRECTORY_PATH, "package.json"),
-		data,
-		pattern: `"dependencies": {`,
-		templateFile: join(TEMPLATES_DIRECTORY_PATH, "snippets-package-dependency.json.hbs"),
-	});
-	const formatAction = defineToolAction("syncpack", {
-		directory: SNIPPETS_DIRECTORY_PATH,
-		file: SNIPPETS_PACKAGE_JSON_FILE_PATH,
-	});
-
-	return [appendAction, formatAction];
-}
-
-/** Append to `./packages/snippets/README.md` table and links */
-function setSnippetsReadmeFileActions(data: GeneratePackageDirectoryAnswers): Array<ActionType> {
-	const appendTableAction = defineAppendAction({
-		path: SNIPPETS_README_FILE_PATH,
-		data,
-		pattern: /## Packages included\n\n.*\n.*- \|$/gm,
-		templateFile: join(TEMPLATES_DIRECTORY_PATH, "snippets-README-table.md.hbs"),
-	});
-	const appendLinksAction = defineAppendAction({
-		path: SNIPPETS_README_FILE_PATH,
-		data,
-		pattern: `<!-- PACKAGES LINKS -->`,
-		templateFile: join(TEMPLATES_DIRECTORY_PATH, "snippets-README-links.md.hbs"),
-	});
-	const formatAction = defineToolAction("prettier", {
-		directory: SNIPPETS_DIRECTORY_PATH,
-		file: SNIPPETS_README_FILE_PATH,
-	});
-
-	return [appendTableAction, appendLinksAction, formatAction];
-}
-
-/** Generate an row and links in project's `README.md` file */
+/** Generate an row and links in project's `README.md` file. */
 function setProjectReadmeFileActions(data: GeneratePackageDirectoryAnswers, paths: Paths): Array<ActionType> {
 	const { projectReadmeTableTemplatePath } = paths;
 	const appendToProjectReadmeFileTableAction = defineAppendAction({

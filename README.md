@@ -77,29 +77,17 @@ Reusable pieces of code, which can be **reused** across the projects.
 
 > **Note**\
 > **All of them are [scoped] - they are prefixed with `@terminal-nerds/`.**\
-> They are accessible for public use and downloadable from the [npmjs.com registry].
+> They are accessible for public use and downloadable from the [npmjs.com registry].\
+> **Also**, package names are prefixed with **`snippets-`**.\
+> So, **the final name format is: `@terminal-nerds/snippets-<package name>`**.
 
 [scoped]: https://docs.npmjs.com/cli/v6/using-npm/scope
 [npmjs.com registry]: https://npmjs.com/org/terminal-nerds
 
-**There are two recommended ways to use the snippets**:
-
-1. **If you are still determining which snippets you will need**,\
-   use the [`@terminal-nerds/snippets`][snippets] package, which contains all snippets.
-
-1. **You know which snippets you need**;\
-   you can download one or a few specific snippets.\
-   It might help understand what is being used in the project(s),
-   reduce the automated Pull Requests related to updating dependencies, etc.
-
-    > **Note**\
-    > Package names are prefixed with `snippets-`.\
-    > As in: `@terminal-nerds/snippets-<package name>`
+<!-- prettier-sort-markdown-table -->
 
 | Name                            | Version                                          |
 | ------------------------------- | ------------------------------------------------ |
-| [![snippets badge]][snippets]   | [![snippets version badge]][snippets npm page]   |
-| <!-- PACKAGES -->               | <!-- PACKAGES -->                                |
 | [![array badge]][array]         | [![array version badge]][array npm page]         |
 | [![config badge]][config]       | [![config version badge]][config npm page]       |
 | [![error badge]][error]         | [![error version badge]][error npm page]         |
@@ -115,11 +103,7 @@ Reusable pieces of code, which can be **reused** across the projects.
 | [![test badge]][test]           | [![test version badge]][test npm page]           |
 | [![type badge]][type]           | [![type version badge]][type npm page]           |
 | [![url badge]][url]             | [![url version badge]][url npm page]             |
-
-[snippets]: ./packages/snippets/README.md
-[snippets badge]: https://img.shields.io/static/v1?label=%40terminal-nerds&message=snippets&style=flat-square&color=informational
-[snippets version badge]: https://img.shields.io/npm/v/@terminal-nerds/snippets/latest?style=flat-square&logo=npm
-[snippets npm page]: https://www.npmjs.com/package/@terminal-nerds/snippets
+| <!-- PACKAGES -->               | <!-- PACKAGES -->                                |
 
 <!-- prettier-ignore-start -->
 <!-- PACKAGES LINKS -->

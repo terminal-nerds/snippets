@@ -22,10 +22,9 @@ const PNPM_EXECUTABLE_PATH = getPnpmExecutablePath();
 // TODO: Make it more flexible by finding the project root path
 export const ROOT_DIRECTORY_PATH = join(__dirname, "..", "..", "..");
 export const PACKAGES_DIRECTORY_PATH = join(ROOT_DIRECTORY_PATH, "packages");
-export const SNIPPETS_DIRECTORY_PATH = join(PACKAGES_DIRECTORY_PATH, "snippets");
 
 /**
- * TODO: How to solve the problem on append action duplicates? Plop is asynchronous and makes it difficult
+ * TODO: How to solve the problem on append action duplicates? Plop is asynchronous and makes it difficult.
  *
  * @deprecated Needs rethinking.
  */
@@ -41,7 +40,7 @@ export async function hasAppendedTemplate(action: ActionType): Promise<boolean> 
 	}
 }
 
-/** @deprecated Needs rethinking on how to solve the problem */
+/** @deprecated Needs rethinking on how to solve the problem. */
 async function getGeneratedTemplate(action: AppendActionConfig): Promise<string> {
 	const { data, template, templateFile } = action;
 	const plop = await nodePlop();

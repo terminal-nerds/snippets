@@ -5,6 +5,10 @@ const config = {
 		browser: true,
 		node: true,
 	},
+
+	rules: {
+		"jsdoc/require-param": ["off"],
+	},
 };
 
 module.exports = config;
