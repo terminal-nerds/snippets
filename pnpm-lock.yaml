@@ -1,4 +1,8 @@
-lockfileVersion: '6.0'
+lockfileVersion: '6.1'
+
+settings:
+  autoInstallPeers: false
+  excludeLinksFromLockfile: false
 
 importers:
 
@@ -190,6 +194,9 @@ importers:
       '@terminal-nerds/snippets-runtime':
         specifier: workspace:*
         version: link:../runtime
+      '@terminal-nerds/snippets-string':
+        specifier: workspace:^
+        version: link:../string
       '@terminal-nerds/snippets-type':
         specifier: workspace:*
         version: link:../type
@@ -288,54 +295,6 @@ importers:
       jsdom:
         specifier: 22.0.0
         version: 22.0.0
-
-  packages/snippets:
-    dependencies:
-      '@terminal-nerds/snippets-array':
-        specifier: workspace:*
-        version: link:../array
-      '@terminal-nerds/snippets-config':
-        specifier: workspace:*
-        version: link:../config
-      '@terminal-nerds/snippets-error':
-        specifier: workspace:*
-        version: link:../error
-      '@terminal-nerds/snippets-extension':
-        specifier: workspace:*
-        version: link:../extension
-      '@terminal-nerds/snippets-function':
-        specifier: workspace:*
-        version: link:../function
-      '@terminal-nerds/snippets-number':
-        specifier: workspace:*
-        version: link:../number
-      '@terminal-nerds/snippets-object':
-        specifier: workspace:*
-        version: link:../object
-      '@terminal-nerds/snippets-package':
-        specifier: workspace:*
-        version: link:../package
-      '@terminal-nerds/snippets-project':
-        specifier: workspace:*
-        version: link:../project
-      '@terminal-nerds/snippets-regexp':
-        specifier: workspace:*
-        version: link:../regexp
-      '@terminal-nerds/snippets-runtime':
-        specifier: workspace:*
-        version: link:../runtime
-      '@terminal-nerds/snippets-string':
-        specifier: workspace:*
-        version: link:../string
-      '@terminal-nerds/snippets-test':
-        specifier: workspace:*
-        version: link:../test
-      '@terminal-nerds/snippets-type':
-        specifier: workspace:*
-        version: link:../type
-      '@terminal-nerds/snippets-url':
-        specifier: workspace:*
-        version: link:../url
 
   packages/string:
     dependencies:
