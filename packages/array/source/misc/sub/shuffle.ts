@@ -1,11 +1,11 @@
-import { getRandomIndex } from "../random/random.ts";
-import { isEmptyArray } from "../schema/empty/empty.ts";
-import { validateArray } from "../schema/schema.ts";
+import { isArrayEmpty } from "../../schema/sub/empty.ts";
+import { validateArray } from "../../schema/sub/native.ts";
+import { getRandomIndex } from "./random.ts";
 
 export async function shuffleArray<ValueType>(array: ReadonlyArray<ValueType>): Promise<Array<ValueType>> {
 	validateArray(array);
 
-	if (isEmptyArray(array)) return [];
+	if (isArrayEmpty(array)) return [];
 	else {
 		const shuffled = [...array];
 

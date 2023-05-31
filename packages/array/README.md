@@ -24,50 +24,25 @@
 
 <!-- prettier-sort-markdown-table -->
 
-| Name                                           | Size                                                          |
-| ---------------------------------------------- | ------------------------------------------------------------- |
-| [`@terminal-nerds/snippets-string/compare`]    | ![compare size gzip badge] ![compare size brotli badge]       |
-| [`@terminal-nerds/snippets-string/difference`] | ![difference size gzip badge] ![difference size brotli badge] |
-| [`@terminal-nerds/snippets-string/filter`]     | ![filter size gzip badge] ![filter size brotli badge]         |
-| [`@terminal-nerds/snippets-string/random`]     | ![random size gzip badge] ![random size brotli badge]         |
-| [`@terminal-nerds/snippets-string/schema`]     | ![schema size gzip badge] ![schema size brotli badge]         |
-| [`@terminal-nerds/snippets-string/shuffle`]    | ![shuffle size gzip badge] ![shuffle size brotli badge]       |
-| [`@terminal-nerds/snippets-string/union`]      | ![union size gzip badge] ![union size brotli badge]           |
-| [`@terminal-nerds/snippets-string/unique`]     | ![unique size gzip badge] ![unique size brotli badge]         |
+| Name                                       | Size                                                  |
+| ------------------------------------------ | ----------------------------------------------------- |
+| [`@terminal-nerds/snippets-string/misc`]   | ![misc size gzip badge] ![misc size brotli badge]     |
+| [`@terminal-nerds/snippets-string/schema`] | ![schema size gzip badge] ![schema size brotli badge] |
+| [`@terminal-nerds/snippets-string/set`]    | ![set size gzip badge] ![set size brotli badge]       |
 
 <!-- prettier-ignore-start -->
 <!-- MODULES LINKS -->
-[`@terminal-nerds/snippets-string/compare`]: https://github.com/terminal-nerds/snippets/blob/main/packages/string/source/compare/compare.ts
-[compare size gzip badge]: https://badgen.net/badgesize/gzip/file-url/unpkg.com/@terminal-nerds/snippets-string/dist/compare/compare.js?label=gzip
-[compare size brotli badge]: https://badgen.net/badgesize/brotli/file-url/unpkg.com/@terminal-nerds/snippets-string/dist/compare/compare.js?label=brotli
-
-[`@terminal-nerds/snippets-string/difference`]: https://github.com/terminal-nerds/snippets/blob/main/packages/string/source/difference/difference.ts
-[difference size gzip badge]: https://badgen.net/badgesize/gzip/file-url/unpkg.com/@terminal-nerds/snippets-string/dist/difference/difference.js?label=gzip
-[difference size brotli badge]: https://badgen.net/badgesize/brotli/file-url/unpkg.com/@terminal-nerds/snippets-string/dist/difference/difference.js?label=brotli
-
-[`@terminal-nerds/snippets-string/filter`]: https://github.com/terminal-nerds/snippets/blob/main/packages/string/source/filter/filter.ts
-[filter size gzip badge]: https://badgen.net/badgesize/gzip/file-url/unpkg.com/@terminal-nerds/snippets-string/dist/filter/filter.js?label=gzip
-[filter size brotli badge]: https://badgen.net/badgesize/brotli/file-url/unpkg.com/@terminal-nerds/snippets-string/dist/filter/filter.js?label=brotli
-
-[`@terminal-nerds/snippets-string/random`]: https://github.com/terminal-nerds/snippets/blob/main/packages/string/source/random/random.ts
-[random size gzip badge]: https://badgen.net/badgesize/gzip/file-url/unpkg.com/@terminal-nerds/snippets-string/dist/random/random.js?label=gzip
-[random size brotli badge]: https://badgen.net/badgesize/brotli/file-url/unpkg.com/@terminal-nerds/snippets-string/dist/random/random.js?label=brotli
+[`@terminal-nerds/snippets-string/schema`]: https://github.com/terminal-nerds/snippets/blob/main/packages/string/source/schema/schema.ts
+[misc size gzip badge]: https://badgen.net/badgesize/gzip/file-url/unpkg.com/@terminal-nerds/snippets-string/dist/misc/misc.js?label=gzip
+[misc size brotli badge]: https://badgen.net/badgesize/brotli/file-url/unpkg.com/@terminal-nerds/snippets-string/dist/misc/misc.js?label=brotli
 
 [`@terminal-nerds/snippets-string/schema`]: https://github.com/terminal-nerds/snippets/blob/main/packages/string/source/schema/schema.ts
 [schema size gzip badge]: https://badgen.net/badgesize/gzip/file-url/unpkg.com/@terminal-nerds/snippets-string/dist/schema/schema.js?label=gzip
 [schema size brotli badge]: https://badgen.net/badgesize/brotli/file-url/unpkg.com/@terminal-nerds/snippets-string/dist/schema/schema.js?label=brotli
 
-[`@terminal-nerds/snippets-string/shuffle`]: https://github.com/terminal-nerds/snippets/blob/main/packages/string/source/shuffle/shuffle.ts
-[shuffle size gzip badge]: https://badgen.net/badgesize/gzip/file-url/unpkg.com/@terminal-nerds/snippets-string/dist/shuffle/shuffle.js?label=gzip
-[shuffle size brotli badge]: https://badgen.net/badgesize/brotli/file-url/unpkg.com/@terminal-nerds/snippets-string/dist/shuffle/shuffle.js?label=brotli
-
-[`@terminal-nerds/snippets-string/union`]: https://github.com/terminal-nerds/snippets/blob/main/packages/string/source/union/union.ts
-[union size gzip badge]: https://badgen.net/badgesize/gzip/file-url/unpkg.com/@terminal-nerds/snippets-string/dist/union/union.js?label=gzip
-[union size brotli badge]: https://badgen.net/badgesize/brotli/file-url/unpkg.com/@terminal-nerds/snippets-string/dist/union/union.js?label=brotli
-
-[`@terminal-nerds/snippets-string/unique`]: https://github.com/terminal-nerds/snippets/blob/main/packages/string/source/unique/unique.ts
-[unique size gzip badge]: https://badgen.net/badgesize/gzip/file-url/unpkg.com/@terminal-nerds/snippets-string/dist/unique/unique.js?label=gzip
-[unique size brotli badge]: https://badgen.net/badgesize/brotli/file-url/unpkg.com/@terminal-nerds/snippets-string/dist/unique/unique.js?label=brotli
+[`@terminal-nerds/snippets-string/set`]: https://github.com/terminal-nerds/snippets/blob/main/packages/string/source/set/set.ts
+[set size gzip badge]: https://badgen.net/badgesize/gzip/file-url/unpkg.com/@terminal-nerds/snippets-string/dist/set/set.js?label=gzip
+[set size brotli badge]: https://badgen.net/badgesize/brotli/file-url/unpkg.com/@terminal-nerds/snippets-string/dist/set/set.js?label=brotli
 <!-- prettier-ignore-end -->
 
 ---

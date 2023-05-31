@@ -1,6 +1,4 @@
-import arrayDiffer from "array-differ";
-
-import { validateArrays } from "../schema/schema.ts";
+import { validateArrays } from "../../schema/sub/native.ts";
 
 /** NOTE: This doesn't consider non-primitive values. */
 export function getArrayDifference<ValueType>(
@@ -9,7 +7,9 @@ export function getArrayDifference<ValueType>(
 ): Array<ValueType> {
 	validateArrays(input, ...values);
 
-	return arrayDiffer(input, ...values);
+	const valuesSet = new Set(values.flat());
+
+	return input.filter((value) => !valuesSet.has(value));
 }
 
 /** NOTE: This doesn't consider non-primitive values. */

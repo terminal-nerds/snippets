@@ -1,11 +1,11 @@
 import { z } from "zod";
 
-export const ARRAY_SCHEMA = z.array(z.any());
+export const SCHEMA_ARRAY = z.array(z.any());
 
 export type AnyArray = ReadonlyArray<unknown>;
 
 export function validateArray(value: unknown): asserts value is AnyArray {
-	ARRAY_SCHEMA.parse(value);
+	SCHEMA_ARRAY.parse(value);
 }
 
 export function validateArrays(...arrays: AnyArray[]): void {

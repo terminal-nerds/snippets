@@ -1,6 +1,6 @@
 import deepEqual from "fast-deep-equal/es6/react";
 
-import { validateArrays } from "../schema/schema.ts";
+import { validateArrays } from "../../schema/sub/native.ts";
 
 export function areArraysEqual<ValueType>(left: ReadonlyArray<ValueType>, right: ReadonlyArray<ValueType>): boolean {
 	validateArrays(left, right);
