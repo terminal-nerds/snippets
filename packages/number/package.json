@@ -32,14 +32,18 @@
 			"require": "./dist/main.cjs"
 		},
 		"./*": {
-			"types": "./dist/*/*.d.ts",
-			"import": "./dist/*/*.js",
-			"require": "./dist/*/*.cjs"
-		},
-		"./schema/*": {
-			"types": "./dist/schema/groups/*/*.d.ts",
-			"import": "./dist/schema/groups/*/*.js",
-			"require": "./dist/schema/groups/*/*.cjs"
+			"types": [
+				"./dist/*.d.ts",
+				"./dist/*/index.d.ts"
+			],
+			"import": [
+				"./dist/*.js",
+				"./dist/*/index.js"
+			],
+			"require": [
+				"./dist/*.cjs",
+				"./dist/*/index.cjs"
+			]
 		}
 	},
 	"files": [

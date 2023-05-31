@@ -8,5 +8,7 @@ export type ReversedString<T extends string> = Join<ReversedTuple<Split<T, "">>,
 export function reverseString<T extends string>(input: T): ReversedString<T> {
 	validateString(input);
 
-	return [...input].reverse().join("") as ReversedString<T>;
+	return globalThis.Buffer === undefined
+		? ([...input].reverse().join("") as ReversedString<T>)
+		: (Buffer.from(input).reverse().toString() as ReversedString<T>);
 }
