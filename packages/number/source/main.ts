@@ -1,6 +1,4 @@
 /* MODULES */
-export * from "./math/math.ts";
-export * from "./misc/misc.ts";
-export * from "./random/random.ts";
-export * from "./round/round.ts";
-export * from "./schema/schema.ts";
+export * from "./math/index.ts";
+export * from "./misc/index.ts";
+export * from "./schema/index.ts";
