@@ -1,4 +1,3 @@
 /* MODULES */
-export * from "./keys/keys.ts";
-export * from "./merge/merge.ts";
-export * from "./schema/schema.ts";
+export * from "./misc/index.ts";
+export * from "./schema/index.ts";

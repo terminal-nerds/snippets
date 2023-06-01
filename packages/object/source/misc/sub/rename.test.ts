@@ -3,7 +3,7 @@ import { returns, throws } from "@terminal-nerds/snippets-test/unit";
 import { describe, it } from "vitest";
 import { ZodError } from "zod";
 
-import { renameObjectKeys } from "./keys.ts";
+import { renameObjectKeys } from "./rename.ts";
 
 const SAMPLE_OBJECT = {
 	one: "one",
@@ -25,7 +25,7 @@ describe("renameObjectKeys(object, renamer)", () => {
 		throws(ZodError)
 			.on(`passed sample object`)
 			.sample(SAMPLE_OBJECT)
-			.and(`with renamer returning non-string value`),
+			.and(`with renamer returning invalid object key type`),
 		({ expect }) => {
 			// @ts-ignore Testing
 			expect(() => renameObjectKeys(SAMPLE_OBJECT, () => void 0)).toThrowError(ZodError);
