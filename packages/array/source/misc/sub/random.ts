@@ -1,10 +1,10 @@
-import { validatePositiveInteger } from "@terminal-nerds/snippets-number";
-import { getRandomIntNumber } from "@terminal-nerds/snippets-number/random";
+import { getRandomNumberInt } from "@terminal-nerds/snippets-number/misc/sub/random";
+import { validateNumberIntegerPositive } from "@terminal-nerds/snippets-number/schema/sub/integer";
 
-import { validateArray } from "../schema/schema.ts";
+import { validateArray } from "../../schema/sub/native.ts";
 
 export async function getRandomIndex(length: number): Promise<number> {
-	return await getRandomIntNumber({ min: 0, max: length - 1 });
+	return await getRandomNumberInt({ min: 0, max: length - 1 });
 }
 
 export async function getRandomItem<Type = unknown>(array: Array<Type> | readonly Type[]): Promise<Type> {
@@ -13,7 +13,7 @@ export async function getRandomItem<Type = unknown>(array: Array<Type> | readonl
 	return array.at(await getRandomIndex(array.length)) as Type;
 }
 
-interface RandomArrayItemsOptions {
+interface GetRandomItemsOptions {
 	/**
 	 * A positive integer, with a count of how many random items you want to be picked.
 	 */
@@ -23,11 +23,11 @@ interface RandomArrayItemsOptions {
 /** NOTE: It could create duplicates. */
 export async function getRandomItems<Type = unknown>(
 	array: Array<Type> | readonly Type[],
-	options: RandomArrayItemsOptions,
+	options: GetRandomItemsOptions,
 ): Promise<Array<Type>> {
 	const { count } = options;
 
-	validatePositiveInteger(count);
+	validateNumberIntegerPositive(count);
 
 	const results: Array<Type> = [];
 

@@ -1,4 +1,4 @@
-import { validateArrays } from "../schema/schema.ts";
+import { validateArrays } from "../../schema/sub/native.ts";
 
 /** NOTE: It doesn't consider non-primitive types on items */
 export function getArraysIntersection<ValueType>(
