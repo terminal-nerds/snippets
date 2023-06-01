@@ -32,9 +32,18 @@
 			"require": "./dist/main.cjs"
 		},
 		"./*": {
-			"types": "./dist/*/*.d.ts",
-			"import": "./dist/*/*.js",
-			"require": "./dist/*/*.cjs"
+			"types": [
+				"./dist/*.d.ts",
+				"./dist/*/index.d.ts"
+			],
+			"import": [
+				"./dist/*.js",
+				"./dist/*/index.js"
+			],
+			"require": [
+				"./dist/*.cjs",
+				"./dist/*/index.cjs"
+			]
 		}
 	},
 	"files": [
