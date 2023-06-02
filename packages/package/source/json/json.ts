@@ -1,5 +1,5 @@
 import { RuntimeError } from "@terminal-nerds/snippets-error/custom";
-import { IN_BROWSER } from "@terminal-nerds/snippets-runtime/environment";
+import { IN_BROWSER } from "@terminal-nerds/snippets-environment/environment";
 import { type NormalizedPackageJson, readPackageUpSync } from "read-pkg-up";
 
 export function readPackageJSON(): NormalizedPackageJson {

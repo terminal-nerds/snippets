@@ -41,7 +41,7 @@
 		"dist/"
 	],
 	"dependencies": {
-		"@terminal-nerds/snippets-runtime": "workspace:*",
+		"@terminal-nerds/snippets-environment": "workspace:*",
 		"@terminal-nerds/snippets-type": "workspace:*",
 		"zod": "3.21.4"
 	},

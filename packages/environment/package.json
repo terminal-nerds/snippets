@@ -1,13 +1,13 @@
 {
 	"$schema": "https://json.schemastore.org/package",
 	"type": "module",
-	"name": "@terminal-nerds/snippets-runtime",
+	"name": "@terminal-nerds/snippets-environment",
 	"version": "0.6.2",
-	"description": "@terminal-nerds reusable snippets for runtime.",
+	"description": "@terminal-nerds reusable snippets for environment.",
 	"keywords": [
 		"snippets",
 		"typescript",
-		"runtime"
+		"environment"
 	],
 	"author": {
 		"name": "Mateusz Kadlubowski",
@@ -19,7 +19,7 @@
 	"repository": {
 		"type": "git",
 		"url": "https://github.com/terminal-nerds/snippets.git",
-		"directory": "packages/runtime"
+		"directory": "packages/environment"
 	},
 	"bugs": "https://github.com/terminal-nerds/snippets/issues",
 	"engines": {
@@ -32,16 +32,25 @@
 			"require": "./dist/main.cjs"
 		},
 		"./*": {
-			"types": "./dist/*/*.d.ts",
-			"import": "./dist/*/*.js",
-			"require": "./dist/*/*.cjs"
+			"types": [
+				"./dist/*.d.ts",
+				"./dist/*/index.d.ts"
+			],
+			"import": [
+				"./dist/*.js",
+				"./dist/*/index.js"
+			],
+			"require": [
+				"./dist/*.cjs",
+				"./dist/*/index.cjs"
+			]
 		}
 	},
 	"files": [
 		"dist/"
 	],
 	"dependencies": {
-		"local-pkg": "0.4.3",
+		"@terminal-nerds/snippets-array": "workspace:^",
 		"zod": "3.21.4"
 	},
 	"peerDependencies": {
@@ -67,7 +76,7 @@
 		"dev:pkg": "tsup --watch",
 		"dev:test": "vitest watch --ui",
 		"fix": "concurrently \"pnpm:fix:*\" --group --timings",
-		"fix:format": "pretty-quick --branch main --pattern \"packages/runtime/**/*\" --verbose",
+		"fix:format": "pretty-quick --branch main --pattern \"packages/environment/**/*\" --verbose",
 		"fix:js": "pnpm lint:js --fix",
 		"fix:md": "pnpm lint:md --fix",
 		"fix:pkg": "syncpack format ; syncpack fix-mismatches",
