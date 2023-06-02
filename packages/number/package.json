@@ -50,7 +50,7 @@
 		"dist/"
 	],
 	"dependencies": {
-		"@terminal-nerds/snippets-runtime": "workspace:*",
+		"@terminal-nerds/snippets-environment": "workspace:*",
 		"@terminal-nerds/snippets-string": "workspace:^",
 		"@terminal-nerds/snippets-type": "workspace:*",
 		"type-fest": "3.11.0",

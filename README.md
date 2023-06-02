@@ -159,8 +159,8 @@ Reusable pieces of code, which can be **reused** across the projects.
 
 [runtime]: ./packages/runtime/README.md
 [runtime badge]: https://img.shields.io/static/v1?label=%40terminal-nerds&message=snippets-runtime&style=flat-square&color=informational
-[runtime version badge]: https://img.shields.io/npm/v/@terminal-nerds/snippets-runtime/latest?style=flat-square&logo=npm
-[runtime npm page]: https://www.npmjs.com/package/@terminal-nerds/snippets-runtime
+[runtime version badge]: https://img.shields.io/npm/v/@terminal-nerds/snippets-environment/latest?style=flat-square&logo=npm
+[runtime npm page]: https://www.npmjs.com/package/@terminal-nerds/snippets-environment
 
 [string]: ./packages/string/README.md
 [string badge]: https://img.shields.io/static/v1?label=%40terminal-nerds&message=snippets-string&style=flat-square&color=informational

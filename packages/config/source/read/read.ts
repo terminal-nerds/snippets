@@ -2,7 +2,7 @@ import { existsSync } from "node:fs";
 import { join } from "node:path";
 
 import { RuntimeError } from "@terminal-nerds/snippets-error/custom/runtime";
-import { getRuntimeEnvironmentName, IN_BROWSER } from "@terminal-nerds/snippets-runtime/environment";
+import { getRuntimeEnvironmentName, IN_BROWSER } from "@terminal-nerds/snippets-environment/environment";
 import { packageDirectorySync } from "pkg-dir";
 import type { Join } from "type-fest";
 

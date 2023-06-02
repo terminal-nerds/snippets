@@ -1,4 +1,4 @@
-import { IN_NODE } from "@terminal-nerds/snippets-runtime/environment";
+import { IN_NODE } from "@terminal-nerds/snippets-environment/environment";
 
 // eslint-disable-next-line @typescript-eslint/no-unused-vars, no-unused-vars
 import type { IntegerSafeMax, IntegerSafeMin } from "../../schema/sub/safe.ts";

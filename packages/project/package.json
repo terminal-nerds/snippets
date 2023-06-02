@@ -42,7 +42,7 @@
 	],
 	"dependencies": {
 		"@terminal-nerds/snippets-error": "workspace:*",
-		"@terminal-nerds/snippets-runtime": "workspace:*",
+		"@terminal-nerds/snippets-environment": "workspace:*",
 		"monorepo-root": "2.5.1"
 	},
 	"peerDependencies": {

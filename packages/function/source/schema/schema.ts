@@ -3,7 +3,7 @@ import {
 	isGeneratorFunction as nodeIsGeneratorFunction,
 } from "node:util/types";
 
-import { IN_BROWSER } from "@terminal-nerds/snippets-runtime/environment";
+import { IN_BROWSER } from "@terminal-nerds/snippets-environment/environment";
 import { AsyncFunction, AsyncGeneratorFunction, GeneratorFunction } from "@terminal-nerds/snippets-type/built-in";
 import { isNonPrimitive, validateNonPrimitive } from "@terminal-nerds/snippets-type/non-primitive";
 
