@@ -25,7 +25,7 @@
 		"@terminal-nerds/browserslist-config": "0.3.0",
 		"@terminal-nerds/eslint-config": "0.24.0",
 		"@terminal-nerds/lint-staged-config": "0.5.0",
-		"@terminal-nerds/markdownlint-config": "0.9.0",
+		"@terminal-nerds/markdownlint-config": "0.13.0",
 		"@terminal-nerds/prettier-config": "0.12.0",
 		"@terminal-nerds/syncpack-config": "0.6.0",
 		"@terminal-nerds/tsup-config": "0.4.0",
