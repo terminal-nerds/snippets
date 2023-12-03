@@ -62,10 +62,10 @@
 		}
 	},
 	"devDependencies": {
-		"@edge-runtime/vm": "2.1.2",
+		"@edge-runtime/vm": "3.1.7",
 		"@terminal-nerds/snippets-test": "workspace:*",
-		"happy-dom": "9.19.2",
-		"jsdom": "22.0.0"
+		"happy-dom": "12.10.3",
+		"jsdom": "23.0.1"
 	},
 	"scripts": {
 		"build": "tsup",
