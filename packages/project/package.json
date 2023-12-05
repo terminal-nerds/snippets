@@ -43,7 +43,7 @@
 	"dependencies": {
 		"@terminal-nerds/snippets-error": "workspace:*",
 		"@terminal-nerds/snippets-environment": "workspace:*",
-		"monorepo-root": "2.5.1"
+		"monorepo-root": "3.2.0"
 	},
 	"peerDependencies": {
 		"typescript": "5.0.4"

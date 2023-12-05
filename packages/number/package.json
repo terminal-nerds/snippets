@@ -53,7 +53,7 @@
 		"@terminal-nerds/snippets-environment": "workspace:*",
 		"@terminal-nerds/snippets-string": "workspace:^",
 		"@terminal-nerds/snippets-type": "workspace:*",
-		"type-fest": "3.11.0",
+		"type-fest": "4.8.3",
 		"zod": "3.21.4"
 	},
 	"peerDependencies": {

@@ -43,8 +43,8 @@
 	"dependencies": {
 		"@terminal-nerds/snippets-error": "workspace:*",
 		"@terminal-nerds/snippets-environment": "workspace:*",
-		"read-pkg-up": "9.1.0",
-		"type-fest": "3.11.0"
+		"read-pkg-up": "10.1.0",
+		"type-fest": "4.8.3"
 	},
 	"peerDependencies": {
 		"typescript": "5.0.4"
