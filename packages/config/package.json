@@ -44,8 +44,8 @@
 		"@terminal-nerds/snippets-error": "workspace:*",
 		"@terminal-nerds/snippets-object": "workspace:*",
 		"@terminal-nerds/snippets-environment": "workspace:*",
-		"pkg-dir": "7.0.0",
-		"type-fest": "3.11.0"
+		"pkg-dir": "8.0.0",
+		"type-fest": "4.8.3"
 	},
 	"peerDependencies": {
 		"typescript": "5.0.4"
