@@ -51,10 +51,10 @@
 	],
 	"dependencies": {
 		"@terminal-nerds/snippets-array": "workspace:^",
-		"zod": "3.21.4"
+		"zod": "3.22.4"
 	},
 	"peerDependencies": {
-		"typescript": "5.0.4"
+		"typescript": "5.3.3"
 	},
 	"peerDependenciesMeta": {
 		"typescript": {

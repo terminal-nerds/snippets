@@ -45,10 +45,10 @@
 		"@terminal-nerds/snippets-object": "workspace:*",
 		"@terminal-nerds/snippets-environment": "workspace:*",
 		"pkg-dir": "7.0.0",
-		"type-fest": "3.11.0"
+		"type-fest": "3.13.1"
 	},
 	"peerDependencies": {
-		"typescript": "5.0.4"
+		"typescript": "5.3.3"
 	},
 	"peerDependenciesMeta": {
 		"typescript": {
