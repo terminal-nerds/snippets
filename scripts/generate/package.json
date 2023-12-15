@@ -9,8 +9,8 @@
 	},
 	"dependencies": {
 		"@terminal-nerds/snippets-string": "workspace:*",
-		"inquirer": "9.2.8",
-		"inquirer-autocomplete-prompt": "3.0.0",
+		"inquirer": "9.2.12",
+		"inquirer-autocomplete-prompt": "3.0.1",
 		"minimist": "1.2.8",
 		"node-plop": "0.31.1",
 		"plop": "3.1.2",
@@ -18,10 +18,10 @@
 		"zod": "3.21.4"
 	},
 	"devDependencies": {
-		"@types/inquirer": "9.0.3",
-		"@types/inquirer-autocomplete-prompt": "3.0.0",
+		"@types/inquirer": "9.0.7",
+		"@types/inquirer-autocomplete-prompt": "3.0.3",
 		"@types/minimist": "1.2.2",
-		"@types/which": "3.0.0"
+		"@types/which": "3.0.3"
 	},
 	"scripts": {
 		"clean": "concurrently \"pnpm:clean:*\" --group --timings",
