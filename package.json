@@ -16,7 +16,7 @@
 		"del-cli": "5.0.0",
 		"husky": "8.0.3",
 		"lint-staged": "13.2.2",
-		"tsx": "3.12.7"
+		"tsx": "4.7.0"
 	},
 	"devDependencies": {
 		"@changesets/changelog-github": "0.4.8",
