@@ -13,8 +13,8 @@
 		"inquirer-autocomplete-prompt": "3.0.0",
 		"minimist": "1.2.8",
 		"node-plop": "0.31.1",
-		"plop": "3.1.2",
-		"which": "3.0.1",
+		"plop": "4.0.1",
+		"which": "4.0.0",
 		"zod": "3.21.4"
 	},
 	"devDependencies": {
